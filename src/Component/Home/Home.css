@@ -1,0 +1,29 @@
+.HomeBG{
+    background-image:linear-gradient(90deg, rgba(122, 58, 187, 0.3) 0%,rgba(0,0,0,0.7) 100%);
+    height: 100%;
+    opacity: 1
+}
+
+.Home{
+    background-image: url(/src/img/Homebackground.jpg) ;
+    background-size:cover ;
+    background-position:center ;
+    width: 100%;
+    height: 610px;
+    
+}
+
+.HomeMain{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 400px;
+}
+
+.HomeMain_left{
+    align-self: center;
+}
+
+
+

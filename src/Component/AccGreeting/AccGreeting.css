@@ -1,0 +1,6 @@
+.AccGreeting{
+    background: linear-gradient(to top, #BABFF0 0%, #fff 100%); 
+    background-clip: text;
+    color: transparent;
+    font-size: 1.2rem;
+}

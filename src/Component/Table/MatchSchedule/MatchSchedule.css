@@ -1,0 +1,9 @@
+.MatchSchedule{
+    width: 600px;
+}
+
+.MatchScheduleContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

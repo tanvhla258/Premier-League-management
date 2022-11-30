@@ -1,0 +1,6 @@
+.TableHeader{
+    background-color: rgba(122, 58, 187, 1);
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,18 @@
+.title{
+    background: linear-gradient(to top, #BABFF0 0%, #fff 100%); 
+    background-clip: text;
+    color: transparent;
+    font-size: 3.5rem;
+}
+.subtitle{
+    color: white;
+    font-size: 1.6rem;
+    padding: 20px 0;
+}
+.HomeIntro_button{
+    margin: 20px 40px;
+}
+
+.HomeIntro{
+    margin-left: 40px;
+}

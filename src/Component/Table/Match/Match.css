@@ -1,0 +1,40 @@
+.Match{
+    display: flex;
+    background-color:  #BABFF0;
+    padding: 8px 10px;
+    max-height: 120px;
+    min-width: 400px;
+    margin: 5px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+.TeamLogo{
+    width: 60px;
+    height: 60px;
+}
+.TeamLogoImg{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.MatchInfo{
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 300px;
+}
+.MatchInfoHeader{
+    display: flex;
+}
+
+
+
+.Time{
+    font-size: 0.8rem;
+    margin:8px 0
+}
+.Stadium{
+    font-size: 0.9rem;
+}

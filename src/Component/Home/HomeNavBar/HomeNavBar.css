@@ -1,0 +1,12 @@
+.HomeNavbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 10px;
+}
+.menu{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}

@@ -1,0 +1,22 @@
+
+.LogoWrap{
+    height: 50px;
+    width: 50px;
+    align-items: center;
+}
+
+.LogoImg{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.LogoTitle{
+    margin: 0 8px;
+    font-size: 2.3rem;
+}
