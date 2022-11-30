@@ -1,0 +1,17 @@
+.StandingPageNavBar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.StandingPageNavBar .AccGreeting{
+    font-weight: 700;
+    color: black;
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
