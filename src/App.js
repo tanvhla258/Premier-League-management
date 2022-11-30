@@ -4,14 +4,17 @@ import "./App.css";
 import "./index.css";
 import "../src/Component/Home/Home.js";
 import Home from "../src/Component/Home/Home.js";
-import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Switch } from "react-router-dom";
 import HomeNavbar from "./Component/Home/HomeNavBar/HomeNavBar";
-const mylink = "/Home";
+import StandingPage from "./Component/StadingPage/StadingPage";
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/StandingPage" element={<StandingPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
