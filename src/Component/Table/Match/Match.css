@@ -3,10 +3,11 @@
     background-color:  #BABFF0;
     padding: 8px 10px;
     max-height: 120px;
-    min-width: 400px;
-    margin: 5px 0;
+    margin: 5px 10px;
     align-items: center;
     justify-content: space-between;
+    border-radius: 10px;
+    padding: 10px;
 }
 .TeamLogo{
     width: 60px;
@@ -27,9 +28,14 @@
 }
 .MatchInfoHeader{
     display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
-
+.MatchInfoHeader span{
+    width: 27%;
+    text-align: center;
+}
 
 .Time{
     font-size: 0.8rem;
@@ -37,5 +43,4 @@
 }
 .Stadium{
     font-size: 0.9rem;
-    color: red;
 }
