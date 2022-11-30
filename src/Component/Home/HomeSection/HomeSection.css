@@ -3,6 +3,7 @@
     height:  100%;
     opacity: 1;
     position: relative;
+
 }
 
 .HomeSectionHeader{
@@ -10,4 +11,33 @@
 }
 .HomeSectionWrapper{
     display: flex;
+}
+
+.HomeSectionItem{
+    width: 40%;
+    margin: 0 20px;
+}
+.HomeSectionNav{
+    width: 10%;
+}
+
+.HomeSectionNavWrapper button{
+    border-radius: 5px;
+    margin: 20px;
+    margin-left: 0;
+    font-size: 0.9rem;
+    text-align: start;
+    padding: 10px 5px;
+}
+
+.HomeSectionNavWrapepr{
+    width: 100%;
+    height: 30%;
+    padding: 20px 5px;
+}
+.HomeSectionNavWrapper{
+    background: linear-gradient(to top, #BABFF0 0%, #fff 100%); 
+    border-radius: 10px;
+
+    
 }

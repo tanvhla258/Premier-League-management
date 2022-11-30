@@ -3,7 +3,7 @@
     background-color:  #BABFF0;
     padding: 8px 10px;
     max-height: 120px;
-    margin: 5px 10px;
+    margin: 15px 10px;
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
@@ -35,12 +35,14 @@
 .MatchInfoHeader span{
     width: 27%;
     text-align: center;
+    font-size: 0.95rem;
+
 }
 
 .Time{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin:8px 0
 }
 .Stadium{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
