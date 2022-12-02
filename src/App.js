@@ -7,6 +7,7 @@ import Home from "../src/Component/Home/Home.js";
 import { BrowserRouter, Routes, Route, Link, Switch } from "react-router-dom";
 import HomeNavbar from "./Component/Home/HomeNavBar/HomeNavBar";
 import StandingPage from "./Component/StandingPage/StandingPage";
+import MatchSchedulePage from "./Component/MatchSchedulePage/MatchSchedulePage";
 function App() {
   return (
     // Rounting app
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/StandingPage" element={<StandingPage />} />
+        <Route path="/MatchSchedulePage" element={<MatchSchedulePage />} />
       </Routes>
     </BrowserRouter>
   );

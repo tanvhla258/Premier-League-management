@@ -8,6 +8,7 @@
     justify-content: space-between;
     border-radius: 10px;
     padding: 10px;
+    max-width: 550px;
 }
 .TeamLogo{
     width: 60px;

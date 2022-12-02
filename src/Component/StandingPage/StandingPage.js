@@ -3,7 +3,7 @@ import React from "react";
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
 import NavLink from "../NavLink/NavLink";
-import Standing from "../Table/Stading/Stading";
+import Standing from "../Table/Standing/Standing";
 import "./StandingPage.css";
 import StandingPageNavBar from "./StadningPageNavBar/StandingPageNavBar";
 import inkImg from "../../img/ink.png";
@@ -13,7 +13,7 @@ import PlayerBG2 from "../../img/van dijk.png";
 function StandingPage(props) {
   return (
     <div className="StandingPage">
-      <StandingPageNavBar />
+      <StandingPageNavBar Logo="Standing" />
       <div className="StangdingPageContent">
         <div className="StadingLeft">
           <div className="ink">

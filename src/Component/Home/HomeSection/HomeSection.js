@@ -1,9 +1,10 @@
 import React from "react";
 import "./HomeSection.css";
 import Logo from "../../Logo/Logo";
-import Stading from "../../Table/Stading/Stading";
+import Standing from "../../Table/Standing/Standing";
 import MatchSchedule from "../../Table/MatchSchedule/MatchSchedule";
 import Button from "../../Button/Button";
+import NavLink from "../../NavLink/NavLink.js";
 function HomeSection() {
   return (
     <div className="HomeSection">
@@ -17,15 +18,17 @@ function HomeSection() {
           style={{ marginLeft: 0 }}
         >
           <div className="HomeSectionNavWrapper">
-            <Button>Match List</Button>
+            <Button>
+              <NavLink href={"./MatchSchedulePage"}>Match Schedule</NavLink>
+            </Button>
             <Button>Match Result</Button>
           </div>
         </div>
         <div className="HomeSectionItem">
-          <Stading></Stading>
+          <Standing></Standing>
         </div>
         <div className="HomeSectionItem">
-          <MatchSchedule></MatchSchedule>
+          <MatchSchedule headerContent="Today match"></MatchSchedule>
         </div>
       </div>
     </div>

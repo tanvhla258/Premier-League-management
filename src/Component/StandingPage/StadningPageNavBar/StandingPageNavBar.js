@@ -8,7 +8,7 @@ import "./StandingPageNavBar.css";
 function StandingPageNavBar(props) {
   return (
     <div className="StandingPageNavBar">
-      <Logo value="Standing" />
+      <Logo value={props.Logo} />
       <div className="menu">
         <Button>{<NavLink href="./">Home</NavLink>}</Button>
         <AccGreeting greet="Hi" acc="Tan"></AccGreeting>
