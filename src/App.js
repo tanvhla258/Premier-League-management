@@ -9,6 +9,7 @@ import HomeNavbar from "./Component/Home/HomeNavBar/HomeNavBar";
 import StandingPage from "./Component/StandingPage/StandingPage";
 function App() {
   return (
+    // Rounting app
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
