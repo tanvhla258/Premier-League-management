@@ -3,3 +3,45 @@
     width: 100%;
     background-image:linear-gradient(90deg, rgba(122, 58, 187, 0.6) 0%,rgba(122, 58, 187, 0.1) 100%);
 }
+.StangdingPageContent{
+    margin: 40px 20px;
+    display:  flex;
+    justify-content: space-between;
+}
+.StadingLeft{
+    position: relative;
+}
+.ink{
+    width: 500px;
+    height: 500px;
+    opacity: 0.3;
+    position: absolute;
+    transform: translate(-60px,-20px);
+
+
+}
+.StandingPlayerBG1{
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    transform: translate(0,100px);
+}
+
+.StandingPlayerBG2{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    transform: translate(0,20px);
+
+}
+
+
+.StadingLeft img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.StandingRight{
+    width: 60%;
+    margin-right:40px ;
+}
