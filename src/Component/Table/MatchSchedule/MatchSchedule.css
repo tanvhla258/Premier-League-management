@@ -4,9 +4,9 @@
 
 .MatchScheduleContent{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     background-color: white;
+    flex-wrap: wrap;
 
 }
 

@@ -11,8 +11,8 @@ function HomeNavBar() {
     <div className="HomeNavbar">
       <Logo value="Home" />
       <div className="menu">
-        <NavLink href="./TeamManagement">Team management</NavLink>
-        <NavLink href="./TopScore">Top Score</NavLink>
+        <NavLink href="./TeamPage">Team management</NavLink>
+        <NavLink href="./TopScorePage">Top Score</NavLink>
         <NavLink href="./StandingPage">Standing</NavLink>
         <Button>Log in</Button>
       </div>

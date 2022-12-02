@@ -12,6 +12,7 @@ function MatchSchedule(props) {
       <div className="MatchScheduleContent">
         <Match />
         <Match />
+        <Match />
       </div>
     </div>
   );
