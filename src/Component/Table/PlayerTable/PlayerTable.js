@@ -20,13 +20,28 @@ function PlayerTable(props) {
       </div>
       <div className="PlayerTableContent">
         <div className="PlayerItem">
-          <Player name="Bruno Fernandes" age="80" country="Portugal" />
+          <Player
+            type="TeamPlayer"
+            name="Bruno Fernandes"
+            age="80"
+            country="Portugal"
+          />
         </div>
         <div className="PlayerItem">
-          <Player name="Bruno Fernandes" age="80" country="Portugal" />
+          <Player
+            type="TeamPlayer"
+            name="Bruno Fernandes"
+            age="80"
+            country="Portugal"
+          />
         </div>
         <div className="PlayerItem">
-          <Player name="Bruno Fernandes" age="80" country="Portugal" />
+          <Player
+            type="TeamPlayer"
+            name="Bruno Fernandes"
+            age="80"
+            country="Portugal"
+          />
         </div>
       </div>
     </div>

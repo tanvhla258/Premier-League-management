@@ -9,6 +9,7 @@ import HomeNavbar from "./Component/Home/HomeNavBar/HomeNavBar";
 import StandingPage from "./Component/StandingPage/StandingPage";
 import MatchSchedulePage from "./Component/MatchSchedulePage/MatchSchedulePage";
 import TeamPage from "./Component/TeamPage/TeamPage";
+import TopScorePage from "./Component/TopScorePage/TopScorePage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/StandingPage" element={<StandingPage />} />
         <Route path="/MatchSchedulePage" element={<MatchSchedulePage />} />
         <Route path="/TeamPage" element={<TeamPage />} />
+        <Route path="/TopScorePage" element={<TopScorePage />} />
       </Routes>
     </BrowserRouter>
   );
