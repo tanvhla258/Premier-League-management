@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useRef, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import "./HomeSection.css";
 import Logo from "../../Logo/Logo";
 import Standing from "../../Table/Standing/Standing";
 import MatchSchedule from "../../Table/MatchSchedule/MatchSchedule";
 import Button from "../../Button/Button";
 import NavLink from "../../NavLink/NavLink.js";
+
 function HomeSection() {
+  let navigate = useNavigate();
+
+  const ScheduleClick = useCallback(
+    () => navigate("/MatchSchedulePage", { replace: true }),
+    [navigate]
+  );
+  const StandingClick = useCallback(
+    () => navigate("/StandingPage", { replace: true }),
+    [navigate]
+  );
   return (
     <div className="HomeSection">
       <div className="HomeSectionHeader">
@@ -26,10 +38,17 @@ function HomeSection() {
             </Button>
           </div>
         </div>
-        <div className="HomeSectionItem">
+        <div
+          className="HomeSectionItem HomeSectionStanding
+        "
+          onClick={StandingClick}
+        >
           <Standing></Standing>
         </div>
-        <div className="HomeSectionItem HomeSectionSchedule">
+        <div
+          className="HomeSectionItem HomeSectionSchedule"
+          onClick={ScheduleClick}
+        >
           <MatchSchedule headerContent="Today match"></MatchSchedule>
         </div>
       </div>

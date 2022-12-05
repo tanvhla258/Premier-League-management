@@ -5,7 +5,9 @@
     position: relative;
 
 }
-
+.HomeSectionItem:hover{
+    cursor: pointer;
+}
 .HomeSectionHeader{
     padding: 20px 16px;
 }

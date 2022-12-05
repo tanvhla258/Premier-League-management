@@ -24,6 +24,18 @@
 .HomeMain_left{
     align-self: center;
 }
-
-
+.HomeIntro_button{
+    color:white;
+    background-color: rgba(122, 58, 187, 1) ;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+}
+.HomeIntro_button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 0.2px white;
+}
+.HomeMain2{
+    height: 600px;
+}
 
