@@ -38,4 +38,11 @@
 .HomeMain2{
     height: 600px;
 }
-
+.HomeFooter{
+    color : white;
+    background-color: #222;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    min-height: 200px;
+}

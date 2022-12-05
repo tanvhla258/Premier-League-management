@@ -2,9 +2,13 @@
     width: 10%;
     text-align: center;
 }
+.StandingTeam:nth-child(even){
+    background-color: #BABFF0;
+}
 
 .StandingTeamName{
     width: 40%;
+    text-align: left;
 }
 .StandingContent{
     background-color: white;
@@ -27,4 +31,7 @@
 
 .Standing{
     width: 100%;
+}
+.StandingPTS{
+    color :red
 }

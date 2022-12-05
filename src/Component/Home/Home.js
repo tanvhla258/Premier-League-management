@@ -37,7 +37,23 @@ function Home() {
         <HomeSection />
       </div>
 
-      <footer>CNPM</footer>
+      <footer className="HomeFooter">
+        <div className="AboutUs">
+          <span>Đội ngũ team CNPM</span>
+          <p className="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non culpa
+            est quod perferendis iusto rem voluptatem quas nulla porro error
+          </p>
+        </div>
+        <div className="Contact">
+          <span>Đội ngũ team CNPM</span>
+          <p className="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non culpa
+            est quod perferendis iusto rem voluptatem quas nulla porro error
+          </p>
+        </div>
+        <div className="QuickLinks"></div>
+      </footer>
     </div>
   );
 }

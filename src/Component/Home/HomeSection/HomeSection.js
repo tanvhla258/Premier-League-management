@@ -6,6 +6,7 @@ import Standing from "../../Table/Standing/Standing";
 import MatchSchedule from "../../Table/MatchSchedule/MatchSchedule";
 import Button from "../../Button/Button";
 import NavLink from "../../NavLink/NavLink.js";
+import TeamList from "../../Data/TeamListData";
 
 function HomeSection() {
   let navigate = useNavigate();
@@ -43,7 +44,7 @@ function HomeSection() {
         "
           onClick={StandingClick}
         >
-          <Standing></Standing>
+          <Standing Team={TeamList}></Standing>
         </div>
         <div
           className="HomeSectionItem HomeSectionSchedule"

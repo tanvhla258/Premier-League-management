@@ -9,6 +9,7 @@ import StandingPageNavBar from "./StadningPageNavBar/StandingPageNavBar";
 import inkImg from "../../img/ink.png";
 import PlayerBG1 from "../../img/kevin2.png";
 import PlayerBG2 from "../../img/van dijk.png";
+import TeamList from "../Data/TeamListData";
 
 function StandingPage(props) {
   return (
@@ -28,7 +29,7 @@ function StandingPage(props) {
           </div>
         </div>
         <div className="StandingRight">
-          <Standing></Standing>
+          <Standing Team={TeamList}></Standing>
         </div>
       </div>
     </div>
