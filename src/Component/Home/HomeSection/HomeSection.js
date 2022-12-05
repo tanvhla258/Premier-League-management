@@ -21,13 +21,15 @@ function HomeSection() {
             <Button>
               <NavLink href={"./MatchSchedulePage"}>Match Schedule</NavLink>
             </Button>
-            <Button>Match Result</Button>
+            <Button>
+              <NavLink href={"./MatchResultPage"}>Match Result</NavLink>
+            </Button>
           </div>
         </div>
         <div className="HomeSectionItem">
           <Standing></Standing>
         </div>
-        <div className="HomeSectionItem">
+        <div className="HomeSectionItem HomeSectionSchedule">
           <MatchSchedule headerContent="Today match"></MatchSchedule>
         </div>
       </div>

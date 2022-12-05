@@ -11,10 +11,15 @@ function MatchSchedulePage(props) {
   return (
     <div className="MatchSchedulePage">
       <StandingPageNavBar Logo="Schedule" />
-      <MatchSchedule
-        round={`Round ${props.roundNum}`}
-        addImg={<img style={{ width: "30px", height: "30px" }} src={add}></img>}
-      />
+
+      <div className="MatchScheduleTable">
+        <MatchSchedule
+          round={`Round ${props.roundNum}`}
+          addImg={
+            <img style={{ width: "30px", height: "30px" }} src={add}></img>
+          }
+        />
+      </div>
     </div>
   );
 }

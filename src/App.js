@@ -10,6 +10,7 @@ import StandingPage from "./Component/StandingPage/StandingPage";
 import MatchSchedulePage from "./Component/MatchSchedulePage/MatchSchedulePage";
 import TeamPage from "./Component/TeamPage/TeamPage";
 import TopScorePage from "./Component/TopScorePage/TopScorePage";
+import MatchResultPage from "./Component/MatchResultPage/MatchResultPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/MatchSchedulePage" element={<MatchSchedulePage />} />
         <Route path="/TeamPage" element={<TeamPage />} />
         <Route path="/TopScorePage" element={<TopScorePage />} />
+        <Route path="/MatchResultPage" element={<MatchResultPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,29 @@
+.MatchResultPage{
+    height: 800px;
+    width: 100%;
+    background-image:linear-gradient(180deg, rgba(122, 58, 187, 0.6) 0%,rgba(122, 58, 187, 0.1) 100%);
+}
+.MatchResultHeader{
+    background-color: rgba(122, 58, 187, 1);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0px 16px;
+}
+.MatchResultContent{
+    padding: 20px;
+    background-color: white;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.MatchResultTable{
+    margin :0 auto ;
+    width:90%
+}

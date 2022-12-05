@@ -1,0 +1,39 @@
+.Result .TeamLogoImg{
+    width: 100%;
+    height: 100%;   
+    object-fit: contain;
+}
+
+.Result .TeamLogo{
+    width: 40px;
+    height: 40px;
+    margin: 0 12px 0 0;
+
+}
+.MatchResult{
+    background-color: #BABFF0;
+    display: flex;
+    justify-content: space-between;
+    min-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+}
+.Team1,.Team2{
+    display:  flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.MatchTime{
+    margin: auto 0;
+    padding-left: 50px  ;
+    border-left: 1px solid rgba(122, 58, 187, 1);
+}
+.MatchResultTeamInfo{
+    display: flex;
+    align-items: center;
+}
+.point{
+    margin: 0 0 0 40px;
+}
