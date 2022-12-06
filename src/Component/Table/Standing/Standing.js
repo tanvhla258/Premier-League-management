@@ -4,6 +4,25 @@ import "../Table.css";
 import TeamList from "../../Data/TeamListData";
 
 function Standing(props) {
+  let [currentPage, setCurrentPage] = useState(0);
+  const [TeamPerPage] = useState(9);
+  const maxPage = Math.floor(props.Team.length / TeamPerPage);
+
+  let startItem = currentPage * TeamPerPage;
+  let endItem = startItem + TeamPerPage;
+
+  let renderTeamList = props.Team.slice(startItem, endItem);
+
+  console.log(renderTeamList);
+  function nextClick() {
+    return currentPage < maxPage
+      ? setCurrentPage(currentPage + 1)
+      : currentPage;
+  }
+  function prevClick() {
+    return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
+  }
+
   return (
     <div className="Standing">
       <div className="StandingHeader TableHeader">
@@ -16,7 +35,7 @@ function Standing(props) {
         <div className="StandingTag">PTS</div>
       </div>
       <div className="StandingContent">
-        {props.Team?.map((team) => {
+        {renderTeamList.map((team) => {
           return (
             <div key={team.p} className="StandingTeam">
               <div className="StandingTag">{team.p}</div>

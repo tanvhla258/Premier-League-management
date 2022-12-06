@@ -3,6 +3,23 @@
     background-clip: text;
     color: transparent;
     font-size: 3.5rem;
+    animation: 8s linear infinite titleAni;
+
+}
+@keyframes titleAni {
+    0% {background:linear-gradient(to top, #BABFF0 0%, #fff 100%);background-clip: text;}
+    25% {background:linear-gradient(to top, #d6baf0 0%, #fff 100%);background-clip: text;transform: scale(101%);}
+    50% {background:linear-gradient(to top, #f0baca 0%, #fff 100%);background-clip: text; transform: scale(102%)}
+    75% {background:linear-gradient(to top, #f0e8ba 0%, #fff 100%);background-clip: text;transform: scale(101%)}
+    100% {background:linear-gradient(to top, #baf0d9 0%, #fff 100%);background-clip: text;transform: scale(100%)}
+
+
+
+
+    /* 50% {background:linear-gradient(to top, #BABFF0 50%, #fff 50%);background-clip: text;}
+    75% {background:linear-gradient(to top, #BABFF0 75%, #fff 250%);background-clip: text;}
+
+    100%  { background:linear-gradient(to top, #BABFF0 100%, #fff 0%);background-clip: text;} */
 }
 .subtitle{
     color: white;

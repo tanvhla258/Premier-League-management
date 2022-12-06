@@ -10,6 +10,7 @@ import Logo from "../Logo/Logo";
 import HomeIntro from "./HomeIntro/HomeIntro";
 import AccGreeting from "../AccGreeting/AccGreeting";
 import Button from "../Button/Button";
+import ReactPaginate from "react-paginate";
 function Home() {
   const HomeSectionRef = useRef();
 
