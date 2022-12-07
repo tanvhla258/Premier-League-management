@@ -45,5 +45,15 @@
         color: rgba(122, 58, 187, 1);
         font-size: 1.4rem;
 }
-
+.ControlBtn{
+        text-align: center;
+}
+.fai{
+        margin: 0px 40px;
+        padding-top: 10px  ;
+    }
+.fai:hover{
+        opacity: 0.6;
+        cursor: pointer;
+}
 
