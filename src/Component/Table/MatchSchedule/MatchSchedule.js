@@ -41,23 +41,23 @@ function MatchSchedule(props) {
         </div>
       </div>
     );
-  } else
-    return (
-      <div className="MatchSchedule">
-        <div className="MatchScheduleHeader TableHeader">
-          <div className="HeaderRound">{props?.round}</div>
-          <div className="HeaderContent">{props.headerContent}</div>
-          <div className="HeaderAdd">{props?.addImg}</div>
-        </div>
-        <div className="MatchScheduleContent">
-          <div className="MatchScheduleContentMain">
-            <Match />
-            <Match />
-            <Match />
-          </div>
+  }
+  return (
+    <div className="MatchSchedule">
+      <div className="MatchScheduleHeader TableHeader">
+        <div className="HeaderRound">{props?.round}</div>
+        <div className="HeaderContent">{props.headerContent}</div>
+        <div className="HeaderAdd">{props?.addImg}</div>
+      </div>
+      <div className="MatchScheduleContent disableBtn">
+        <div className="MatchScheduleContentMain ">
+          <Match />
+          <Match />
+          <Match />
         </div>
       </div>
-    );
+    </div>
+  );
 }
 
 export default MatchSchedule;

@@ -14,6 +14,7 @@ function MatchSchedulePage(props) {
 
       <div className="MatchScheduleTable">
         <MatchSchedule
+          disableBtn="0"
           round={`Round ${props.roundNum}`}
           addImg={
             <img style={{ width: "30px", height: "30px" }} src={add}></img>

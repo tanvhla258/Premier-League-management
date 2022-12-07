@@ -13,6 +13,9 @@ import TeamData from "../Data/TeamData";
 function TeamPage(props) {
   return (
     <div className="TeamPage">
+      <div className="Modal"></div>
+      <div className="ModalForm"></div>
+
       <StandingPageNavBar Logo="Team Management" />
       <div className="TeamPageContent">
         <div className="TeamPageLogo">
