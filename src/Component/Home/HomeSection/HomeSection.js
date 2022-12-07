@@ -50,7 +50,10 @@ function HomeSection() {
           className="HomeSectionItem HomeSectionSchedule"
           onClick={ScheduleClick}
         >
-          <MatchSchedule headerContent="Today match"></MatchSchedule>
+          <MatchSchedule
+            disableBtn="1"
+            headerContent="Today match"
+          ></MatchSchedule>
         </div>
       </div>
     </div>

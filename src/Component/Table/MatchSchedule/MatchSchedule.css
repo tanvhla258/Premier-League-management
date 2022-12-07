@@ -1,11 +1,14 @@
 .MatchSchedule{
     width: 100%;
 }
-
 .MatchScheduleContent{
+    background-color: white;
+    padding-bottom: 10px;
+    height: 470px;
+}
+.MatchScheduleContentMain{
     display: flex;
     justify-content: center;
-    background-color: white;
     flex-wrap: wrap;
 
 }
@@ -16,4 +19,8 @@
     padding: 8px 12px;
     align-items: center;
     justify-content: space-between;
+}
+
+.hidden {
+    display: none;
 }
