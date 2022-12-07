@@ -25,7 +25,29 @@ function TeamPage(props) {
       <div
         className="ModalForm"
         style={{ display: DisplayPopUp ? "block" : "none" }}
-      ></div>
+      >
+        <div className="ModalFormHeader">Hãy nhập thông tin</div>
+        <div className="ModalFormContent">
+          <form className="addPlayerForm" action="addPlayer">
+            <div className="inputItem">
+              <label htmlFor="playername">Name</label>
+
+              <input type="text" name="playername" id="playername" />
+            </div>
+            <div className="inputItem">
+              <label htmlFor="age">Age</label>
+
+              <input type="text" name="age" id="age" />
+            </div>
+
+            <div className="inputItem">
+              <label htmlFor="country">Country</label>
+
+              <input type="text" name="playername" id="country" />
+            </div>
+          </form>
+        </div>
+      </div>
 
       <StandingPageNavBar Logo="Team Management" />
       <div className="TeamPageContent">
