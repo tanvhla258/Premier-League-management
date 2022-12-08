@@ -687,24 +687,113 @@ INSERT giai_dau (ID_Giai_Dau,Ten_GD,Ngay_Bat_Dau,Ngay_Ket_Thuc) VALUES (3, 'prem
 select * from giai_dau;
 
 -- BANG XEP HANG
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,1,27,5,6,86,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,2,21,11,6,74,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,3,20,9,9,69,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,4,19,10,9,67,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,5,20,6,12,66,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,6,19,8,11,65,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,7,18,8,12,62,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,8,18,7,13,62,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,9,18,5,15,61,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,10,17,8,17,59,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,11,16,7,17,55,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,12,12,9,18,45,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,13,12,9,19,45,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,14,12,8,18,44,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,15,12,7,19,43,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,16,9,14,15,41,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,17,10,9,19,39,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,18,5,13,20,28,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,19,5,11,22,26,'102','1');
-INSERT giai_dau (ID_BXH,Hang,Thang,Hoa,Thua,Hieu_So,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,20,7,2,29,23,'102','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,1,27,5,6,86,'102','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,2,21,11,6,74,'101','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,3,20,9,9,69,'103','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,4,19,10,9,67,'104','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,5,20,6,12,66,'105','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,6,19,8,11,65,'106','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,7,18,8,12,62,'107','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,8,18,7,13,62,'108','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,9,18,5,15,61,'109','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,10,17,8,17,59,'110','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,11,16,7,17,55,'111','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,12,12,9,18,45,'112','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,13,12,9,19,45,'113','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,14,12,8,18,44,'114','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,15,12,7,19,43,'115','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,16,9,14,15,41,'116','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,17,10,9,19,39,'117','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,18,5,13,20,28,'118','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,19,5,11,22,26,'119','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,20,7,2,29,23,'120','1');
 
+select * from bang_xep_hang;
+-- TRAN DAU 
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (1, 112, 111, 1, '5-0',1,'2020-09-14 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (2, 120, 109, 1, '0-5', 1,'2020-09-16 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (3, 119, 113, 1, '1-1', 1,'2020-09-18 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (4, 108, 107, 1, '3-0', 1,'2020-09-20 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (5, 110, 115, 1, '1-0', 1,'2020-09-22 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (6, 104, 117, 1, '0-0', 1,'2020-09-24 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (7, 116, 105, 1, '2-1', 1,'2020-09-26 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (8, 118, 103, 1, '0-2', 1,'2020-09-28 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (9, 102, 114, 1,'3-2', 1,'2020-09-30 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (10, 106, 101, 1, '1-0', 1,'2020-10-4 20:00:00');
+
+select * from tran_dau;
+
+-- KET QUA TRAN DAU 
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Fulham','Norwich City',1,112,111,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Queens Park Rangers','Swansea City',2,120, 109,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Reading','Stoke City',3,119, 113,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('West Bromwich Albion','Liverpool',4,108, 107,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('West Ham United','Aston Villa',5, 110, 115,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Arsenal','Sunderland',6,104, 117,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Newcastle United','Tottenham Hotspur',7,116, 105,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Wigan Athletic','Chelsea',8,118, 103,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Manchester City','Southampton',9,102, 114,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Everton','Manchester United',10,106, 101,1);
+select * from ket_qua_tran_dau;
+
+-- GHI BAN 
+INSERT ghi_ban ( ID_Ghi_Ban,Thoi_diem,LOAI_BAN_THANG_ID_Loai_Ban_Thang,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau) VALUES (1, 1, 112, 50, 1100, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (2, 1, 112, 48, 1106, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (3, 1, 112, 72, 1100, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (4, 1, 112, 64, 1106, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (5, 1, 112, 52, 1089, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (6, 2, 109, 7, 1358, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (7, 2, 109, 37, 1358, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (8, 2, 109, 48, 1357, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (9, 2, 109, 37, 1357, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (10, 2, 109, 21, 1350, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (11, 3, 119, 87, 1266, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (12, 3, 113, 62, 1299, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (13, 4, 108, 83, 1408, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (14, 4, 108, 89, 1408, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (15, 4, 108, 75, 1408, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (16, 5, 110, 20, 1416, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (17, 7, 116, 71, 1184, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (18, 7, 116, 18, 1175, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (19, 7, 105, 24, 1382, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (20, 8, 103, 4, 1068, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (21, 8, 103, 21, 1057, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (22, 9, 102, 29, 1134, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (23, 9, 102, 82, 1133, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (24, 9, 102, 56, 1133, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (25, 9, 114, 79, 1279, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (26, 9, 114, 13, 1294, NULL);
+INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (27, 10, 106, 23, 1072, NULL);
+
+select * from ghi_ban;
+
+-- LOAI BAN THANG
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 1,'A');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 2,'A');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 3,'A');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 4,'A');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 5,'A');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 6,'A');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 7,'A');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 8,'A');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 9,'A');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 10,'B');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 11,'B');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 12,'B');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 13,'B');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 14,'B');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 15,'B');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 16,'B');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 17,'B');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 18,'B');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 19,'B');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 20,'C');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 21,'C');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 22,'C');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 23,'C');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 24,'C');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 25,'C');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 26,'C');
+INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 27,'C');
+
+select * from loai_ban_thang;
