@@ -5,22 +5,6 @@ function Player(props) {
   if (props.type == "TeamPlayer")
     return (
       <div className="Player">
-        {/* <div className="HomeLogo TeamLogo">
-        <img src={logo1}></img>
-      </div>
-      <div className="PlayerInfo">
-        <div>
-          <span>{props.home}</span>
-          <span>VS</span>
-          <span>{props.away}</span>
-        </div>
-        <div className="Time">{props.time}</div>
-        <div className="stadium">{props.stadium}</div>
-      </div>
-      <div className="HomeLogo TeamLogo">
-        <img src={logo1}></img>
-      </div> */}
-
         <div className="PlayerAva">
           <img className="PlayerAvaImg" src={logo}></img>
         </div>

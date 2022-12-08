@@ -23,21 +23,18 @@ function TeamPage(props) {
     const data = new FormData(formHtml);
     const props = Object.fromEntries(data);
 
-    //addPlayerFromUser(newPlayer);
-    setTeamDataRender(() => {
-      console.log("Add");
-      const newPlayer = (
-        <Player
-          type="TeamPlayer"
-          name={props.playername}
-          country={props.country}
-          age={props.age}
-        />
-      );
-      TeamDataRender.players.push(newPlayer);
-      return TeamDataRender;
-    });
-
+    const newPlayer = (
+      <Player
+        type="TeamPlayer"
+        name={props.playername}
+        country={props.country}
+        age={props.age}
+      />
+    );
+    TeamDataRender.players.push(newPlayer);
+    setTeamDataRender(TeamDataRender);
+    console.log(TeamDataRender.players[TeamDataRender.players.length - 1]);
+    TeamData.players.push(newPlayer);
     setDisplayPopUp(0);
   }
   function CancelForm(e) {
@@ -51,44 +48,45 @@ function TeamPage(props) {
       <div
         className="Modal"
         style={{ display: DisplayPopUp ? "block" : "none" }}
-      ></div>
-      <div
-        className="ModalForm"
-        style={{ display: DisplayPopUp ? "block" : "none" }}
       >
-        <div className="ModalFormHeader">Player infomation</div>
-        <div className="ModalFormContent">
-          <form
-            id="addPlayerId"
-            className="addPlayerForm"
-            action="addPlayer"
-            onSubmit={SubmitForm}
-          >
-            <div className="inputItem">
-              <label htmlFor="playername">Name</label>
+        <div
+          className="ModalForm"
+          style={{ display: DisplayPopUp ? "block" : "none" }}
+        >
+          <div className="ModalFormHeader">Player infomation</div>
+          <div className="ModalFormContent">
+            <form
+              id="addPlayerId"
+              className="addPlayerForm"
+              action="addPlayer"
+              onSubmit={SubmitForm}
+            >
+              <div className="inputItem">
+                <label htmlFor="playername">Name</label>
 
-              <input type="text" name="playername" id="playername" />
-            </div>
-            <div className="inputItem">
-              <label htmlFor="age">Age</label>
-
-              <input type="text" name="age" id="age" />
-            </div>
-
-            <div className="inputItem">
-              <label htmlFor="country">Country</label>
-
-              <input type="text" name="country" id="country" />
-            </div>
-            <div className="formBtn">
-              <div className="submit">
-                <button onClick={SubmitForm}>Submit</button>
+                <input type="text" name="playername" id="playername" />
               </div>
-              <div className="cancel">
-                <button onClick={CancelForm}>Cancel</button>
+              <div className="inputItem">
+                <label htmlFor="age">Age</label>
+
+                <input type="text" name="age" id="age" />
               </div>
-            </div>
-          </form>
+
+              <div className="inputItem">
+                <label htmlFor="country">Country</label>
+
+                <input type="text" name="country" id="country" />
+              </div>
+              <div className="formBtn">
+                <div className="submit">
+                  <button onClick={SubmitForm}>Submit</button>
+                </div>
+                <div className="cancel">
+                  <button onClick={CancelForm}>Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
 

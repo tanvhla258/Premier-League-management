@@ -8,7 +8,6 @@ import {
   faCaretLeft,
   faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
-import TeamData from "../../Data/TeamData";
 function PlayerTable(props) {
   let [currentPage, setCurrentPage] = useState(0);
   const [TeamPerPage] = useState(4);
