@@ -51,7 +51,7 @@ function HomeSection() {
           onClick={ScheduleClick}
         >
           <MatchSchedule
-            disableBtn="1"
+            disableBtn={true}
             headerContent="Today match"
           ></MatchSchedule>
         </div>

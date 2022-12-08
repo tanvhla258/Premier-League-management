@@ -34,10 +34,6 @@ function MatchResultPage(props) {
       <div className="MatchResultTable">
         <div className="MatchResultHeader">
           <div className="Round">Round: {props.round}2</div>
-
-          <div className="add">
-            <img src={add}></img>
-          </div>
         </div>
         <div className="MatchResultContent">
           <div className="MatchResultContent">

@@ -33,13 +33,20 @@ function TeamPage(props) {
     );
     TeamDataRender.players.push(newPlayer);
     setTeamDataRender(TeamDataRender);
-    console.log(TeamDataRender.players[TeamDataRender.players.length - 1]);
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach((element) => {
+      element.value = "";
+    });
     TeamData.players.push(newPlayer);
     setDisplayPopUp(0);
   }
   function CancelForm(e) {
     e.preventDefault();
-
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach((element) => {
+      element.value = "";
+    });
+    console.log(inputs);
     setDisplayPopUp(0);
   }
 
@@ -93,10 +100,14 @@ function TeamPage(props) {
       <StandingPageNavBar Logo="Team Management" />
       <div className="TeamPageContent">
         <div className="TeamPageLogo">
-          <img onClick={popUp} className="TeamLogoImg" src={teamLogo}></img>
+          <img className="TeamLogoImg" src={teamLogo}></img>
         </div>
         <div className="TeamPageList">
-          <PlayerTable name="Manchester United" TeamData={TeamDataRender} />
+          <PlayerTable
+            popUp={popUp}
+            name="Manchester United"
+            TeamData={TeamDataRender}
+          />
         </div>
       </div>
     </div>

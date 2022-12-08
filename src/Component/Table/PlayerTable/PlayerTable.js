@@ -7,7 +7,9 @@ import {
   faS,
   faCaretLeft,
   faCaretRight,
+  faAdd,
 } from "@fortawesome/free-solid-svg-icons";
+import TeamPage from "../../TeamPage/TeamPage";
 function PlayerTable(props) {
   let [currentPage, setCurrentPage] = useState(0);
   const [TeamPerPage] = useState(4);
@@ -25,6 +27,9 @@ function PlayerTable(props) {
   function prevClick() {
     return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
   }
+  function addPLayer(f) {
+    f();
+  }
   return (
     <div className="PlayerTable">
       <div className="PlayerTableHeader">
@@ -37,7 +42,11 @@ function PlayerTable(props) {
           Foreign Players:{props.foreignPlayers}
         </div>
         <div className="add">
-          <img src={add}></img>
+          <FontAwesomeIcon
+            className="addIcon"
+            icon={faAdd}
+            onClick={props.popUp}
+          />
         </div>
       </div>
       <div className="PlayerTableContent">
