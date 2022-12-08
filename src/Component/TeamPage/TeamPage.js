@@ -8,12 +8,42 @@ import add from "../../img/plus.png";
 import Player from "../Table/Player/Player";
 import PlayerTable from "../Table/PlayerTable/PlayerTable";
 import teamLogo from "../../img/mulogo.png";
-import TeamData from "../Data/TeamData";
+import { TeamData, addPlayerFromUser } from "../Data/TeamData";
 
 function TeamPage(props) {
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
+  const [TeamDataRender, setTeamDataRender] = useState(TeamData);
   function popUp() {
     setDisplayPopUp(1);
+  }
+  function SubmitForm(e) {
+    e.preventDefault();
+
+    const formHtml = document.querySelector("#addPlayerId");
+    const data = new FormData(formHtml);
+    const props = Object.fromEntries(data);
+
+    //addPlayerFromUser(newPlayer);
+    setTeamDataRender(() => {
+      console.log("Add");
+      const newPlayer = (
+        <Player
+          type="TeamPlayer"
+          name={props.playername}
+          country={props.country}
+          age={props.age}
+        />
+      );
+      TeamDataRender.players.push(newPlayer);
+      return TeamDataRender;
+    });
+
+    setDisplayPopUp(0);
+  }
+  function CancelForm(e) {
+    e.preventDefault();
+
+    setDisplayPopUp(0);
   }
 
   return (
@@ -26,9 +56,14 @@ function TeamPage(props) {
         className="ModalForm"
         style={{ display: DisplayPopUp ? "block" : "none" }}
       >
-        <div className="ModalFormHeader">Hãy nhập thông tin</div>
+        <div className="ModalFormHeader">Player infomation</div>
         <div className="ModalFormContent">
-          <form className="addPlayerForm" action="addPlayer">
+          <form
+            id="addPlayerId"
+            className="addPlayerForm"
+            action="addPlayer"
+            onSubmit={SubmitForm}
+          >
             <div className="inputItem">
               <label htmlFor="playername">Name</label>
 
@@ -43,7 +78,15 @@ function TeamPage(props) {
             <div className="inputItem">
               <label htmlFor="country">Country</label>
 
-              <input type="text" name="playername" id="country" />
+              <input type="text" name="country" id="country" />
+            </div>
+            <div className="formBtn">
+              <div className="submit">
+                <button onClick={SubmitForm}>Submit</button>
+              </div>
+              <div className="cancel">
+                <button onClick={CancelForm}>Cancel</button>
+              </div>
             </div>
           </form>
         </div>
@@ -55,7 +98,7 @@ function TeamPage(props) {
           <img onClick={popUp} className="TeamLogoImg" src={teamLogo}></img>
         </div>
         <div className="TeamPageList">
-          <PlayerTable name="Manchester United" TeamData={TeamData} />
+          <PlayerTable name="Manchester United" TeamData={TeamDataRender} />
         </div>
       </div>
     </div>

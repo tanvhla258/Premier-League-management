@@ -1,4 +1,4 @@
-const TeamData = {
+let TeamData = {
   name: "Manchester United",
   stadium: "Old Trafford",
   players: [
@@ -53,4 +53,8 @@ const TeamData = {
   ],
 };
 
-export default TeamData;
+const addPlayerFromUser = function (player) {
+  TeamData.players.push(player);
+};
+
+export { TeamData, addPlayerFromUser };

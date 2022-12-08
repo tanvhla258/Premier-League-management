@@ -10,11 +10,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import TeamData from "../../Data/TeamData";
 function PlayerTable(props) {
-  console.log(props.TeamData.players);
   let [currentPage, setCurrentPage] = useState(0);
   const [TeamPerPage] = useState(4);
   let maxPage = Math.floor((props.TeamData.players?.length - 1) / TeamPerPage);
-  console.log(maxPage);
   let startItem = currentPage * TeamPerPage;
   let endItem = startItem + TeamPerPage;
 
