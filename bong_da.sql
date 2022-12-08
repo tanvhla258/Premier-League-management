@@ -24,7 +24,7 @@ USE `bong_da` ;
 -- Table `bong_da`.`DOI_BONG`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`DOI_BONG` (
-  `ID_Doi_Bong` CHAR(10) NOT NULL,
+  `ID_Doi_Bong` INT NOT NULL auto_increment,
   `Ten_DB` VARCHAR(60) NULL,
   `San_Nha` VARCHAR(60) NULL,
   `Logo` VARBINARY(100) NULL,
@@ -36,7 +36,7 @@ ENGINE = InnoDB;
 -- Table `bong_da`.`GIAI_DAU`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`GIAI_DAU` (
-  `ID_Giai_Dau` CHAR(10) NOT NULL,
+  `ID_Giai_Dau` INT NOT NULL auto_increment,
   `Ten_GD` VARCHAR(60) NULL,
   `Ngay_Bat_Dau` DATE NULL,
   `Ngay_Ket_Thuc` DATE NULL,
@@ -48,7 +48,7 @@ ENGINE = InnoDB;
 -- Table `bong_da`.`LOAI_BAN_THANG`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`LOAI_BAN_THANG` (
-  `ID_Loai_Ban_Thang` CHAR(10) NOT NULL,
+  `ID_Loai_Ban_Thang` INT NOT NULL auto_increment,
   `Ten_LBT` VARCHAR(60) NULL,
   PRIMARY KEY (`ID_Loai_Ban_Thang`))
 ENGINE = InnoDB;
@@ -58,12 +58,12 @@ ENGINE = InnoDB;
 -- Table `bong_da`.`TRAN_DAU`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`TRAN_DAU` (
-  `ID_Tran_Dau` CHAR(10) NOT NULL,
+  `ID_Tran_Dau` INT NOT NULL auto_increment,
   `Ti_So` VARCHAR(5) NULL,
   `Vong_Dau` INT NULL,
-  `DOI_BONG_ID_Doi_Bong_1` CHAR(10) NOT NULL,
-  `DOI_BONG_ID_Doi_Bong_2` CHAR(10) NOT NULL,
-  `GIAI_DAU_ID_Giai_Dau` CHAR(10) NOT NULL,
+  `DOI_BONG_ID_Doi_Bong_1` INT NOT NULL ,
+  `DOI_BONG_ID_Doi_Bong_2` INT NOT NULL ,
+  `GIAI_DAU_ID_Giai_Dau` INT NOT NULL ,
   `Lich_Thi_Dau` DATETIME NULL,
   PRIMARY KEY (`ID_Tran_Dau`, `DOI_BONG_ID_Doi_Bong_1`, `DOI_BONG_ID_Doi_Bong_2`, `GIAI_DAU_ID_Giai_Dau`),
   INDEX `fk_TRAN_DAU_DOI_BONG1_idx` (`DOI_BONG_ID_Doi_Bong_1` ASC) VISIBLE,
@@ -93,10 +93,10 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `bong_da`.`KET_QUA_TRAN_DAU` (
   `Ten_Doi_Thang` VARCHAR(60) NULL,
   `Ten_Doi_Thua` VARCHAR(60) NULL,
-  `TRAN_DAU_ID_Tran_Dau` CHAR(10) NOT NULL,
-  `TRAN_DAU_DOI_BONG_ID_Doi_Bong_1` CHAR(10) NOT NULL,
-  `TRAN_DAU_DOI_BONG_ID_Doi_Bong_2` CHAR(10) NOT NULL,
-  `TRAN_DAU_GIAI_DAU_ID_Giai_Dau` CHAR(10) NOT NULL,
+  `TRAN_DAU_ID_Tran_Dau` INT NOT NULL,
+  `TRAN_DAU_DOI_BONG_ID_Doi_Bong_1` INT NOT NULL ,
+  `TRAN_DAU_DOI_BONG_ID_Doi_Bong_2` INT NOT NULL ,
+  `TRAN_DAU_GIAI_DAU_ID_Giai_Dau` INT NOT NULL ,
   INDEX `fk_KET_QUA_TRAN_DAU_TRAN_DAU1_idx` (`TRAN_DAU_ID_Tran_Dau` ASC, `TRAN_DAU_DOI_BONG_ID_Doi_Bong_1` ASC, `TRAN_DAU_DOI_BONG_ID_Doi_Bong_2` ASC, `TRAN_DAU_GIAI_DAU_ID_Giai_Dau` ASC) VISIBLE,
   PRIMARY KEY (`TRAN_DAU_ID_Tran_Dau`),
   CONSTRAINT `fk_KET_QUA_TRAN_DAU_TRAN_DAU1`
@@ -111,10 +111,11 @@ ENGINE = InnoDB;
 -- Table `bong_da`.`GHI_BAN`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`GHI_BAN` (
-  `ID_Ghi_Ban` CHAR(10) NOT NULL,
-  `Thoi_Diem` DATETIME NULL,
-  `LOAI_BAN_THANG_ID_Loai_Ban_Thang` CHAR(10) NOT NULL,
-  `KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau` CHAR(10) NOT NULL,
+  `ID_Ghi_Ban` INT NOT NULL auto_increment,
+  `Thoi_Diem` INT NULL,
+  `ID_Cau_Thu` INT NULL,
+  `LOAI_BAN_THANG_ID_Loai_Ban_Thang` INT NOT NULL ,
+  `KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau` INT NOT NULL ,
   PRIMARY KEY (`ID_Ghi_Ban`, `LOAI_BAN_THANG_ID_Loai_Ban_Thang`, `KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau`),
   INDEX `fk_GHI_BAN_LOAI_BAN_THANG1_idx` (`LOAI_BAN_THANG_ID_Loai_Ban_Thang` ASC) VISIBLE,
   INDEX `fk_GHI_BAN_KET_QUA_TRAN_DAU1_idx` (`KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau` ASC) VISIBLE,
@@ -135,14 +136,14 @@ ENGINE = InnoDB;
 -- Table `bong_da`.`BANG_XEP_HANG`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`BANG_XEP_HANG` (
-  `ID_BXH` CHAR(10) NOT NULL,
+  `ID_BXH` INT NOT NULL auto_increment,
   `Hang` INT NULL,
   `Thang` INT NULL,
   `Hoa` INT NULL,
   `Thua` INT NULL,
   `Tong_Diem` INT NULL,
-  `DOI_BONG_ID_Doi_Bong` CHAR(10) NOT NULL,
-  `GIAI_DAU_ID_Giai_Dau` CHAR(10) NOT NULL,
+  `DOI_BONG_ID_Doi_Bong` INT NOT NULL ,
+  `GIAI_DAU_ID_Giai_Dau` INT NOT NULL ,
   PRIMARY KEY (`ID_BXH`, `DOI_BONG_ID_Doi_Bong`, `GIAI_DAU_ID_Giai_Dau`),
   INDEX `fk_BANG_XEP_HANG_DOI_BONG1_idx` (`DOI_BONG_ID_Doi_Bong` ASC) VISIBLE,
   INDEX `fk_BANG_XEP_HANG_GIAI_DAU1_idx` (`GIAI_DAU_ID_Giai_Dau` ASC) VISIBLE,
@@ -163,11 +164,11 @@ ENGINE = InnoDB;
 -- Table `bong_da`.`CAU_THU`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`CAU_THU` (
-  `ID_Cau_Thu` CHAR(10) NOT NULL,
+  `ID_Cau_Thu` INT NOT NULL auto_increment,
   `Ten_CT` VARCHAR(60) NULL,
   `Loai_CT` VARCHAR(60) NULL,
   `Ghi_Chu` VARCHAR(60) NULL,
-  `DOI_BONG_ID_Doi_Bong` CHAR(10) NOT NULL,
+  `DOI_BONG_ID_Doi_Bong` INT NOT NULL ,
   PRIMARY KEY (`ID_Cau_Thu`, `DOI_BONG_ID_Doi_Bong`),
   INDEX `fk_CAU_THU_DOI_BONG_idx` (`DOI_BONG_ID_Doi_Bong` ASC) VISIBLE,
   CONSTRAINT `fk_CAU_THU_DOI_BONG`
@@ -182,11 +183,11 @@ ENGINE = InnoDB;
 -- Table `bong_da`.`USER`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`USER` (
-  `ID_User` CHAR(10) NOT NULL,
+  `ID_User` INT NOT NULL auto_increment,
   `Password` VARCHAR(30) NULL,
   `Email` VARCHAR(60) NULL,
   `Ten_User` VARCHAR(60) NULL,
-  `Ngay_Sinh` DATETIME NULL,
+  `Ngay_Sinh` DATE NULL,
   `Phone` INT NULL,
   PRIMARY KEY (`ID_User`))
 ENGINE = InnoDB;
@@ -737,33 +738,33 @@ INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DA
 select * from ket_qua_tran_dau;
 
 -- GHI BAN 
-INSERT ghi_ban ( ID_Ghi_Ban,Thoi_diem,LOAI_BAN_THANG_ID_Loai_Ban_Thang,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau) VALUES (1, 1, 112, 50, 1100, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (2, 1, 112, 48, 1106, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (3, 1, 112, 72, 1100, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (4, 1, 112, 64, 1106, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (5, 1, 112, 52, 1089, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (6, 2, 109, 7, 1358, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (7, 2, 109, 37, 1358, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (8, 2, 109, 48, 1357, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (9, 2, 109, 37, 1357, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (10, 2, 109, 21, 1350, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (11, 3, 119, 87, 1266, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (12, 3, 113, 62, 1299, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (13, 4, 108, 83, 1408, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (14, 4, 108, 89, 1408, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (15, 4, 108, 75, 1408, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (16, 5, 110, 20, 1416, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (17, 7, 116, 71, 1184, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (18, 7, 116, 18, 1175, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (19, 7, 105, 24, 1382, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (20, 8, 103, 4, 1068, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (21, 8, 103, 21, 1057, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (22, 9, 102, 29, 1134, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (23, 9, 102, 82, 1133, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (24, 9, 102, 56, 1133, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (25, 9, 114, 79, 1279, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (26, 9, 114, 13, 1294, NULL);
-INSERT MATCH_GOALS (GoalID, MatchID, ClubID, TimeOfGoal, PlayerID, IsOwnGoal) VALUES (27, 10, 106, 23, 1072, NULL);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (1, 1, 50, 1100,1);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (2, 1, 48, 1106,2);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (3, 1, 72, 1100,3 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (4, 1, 64, 1106,4);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (5, 1, 52, 1089, 5);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (6, 2,  7, 1358, 6);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (7, 2, 37, 1358, 7);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (8, 2, 48, 1357, 8);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (9, 2, 37, 1357, 9);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (10, 2, 21, 1350, 10);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (11, 3, 87, 1266,11 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (12, 3, 62, 1299,12 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (13, 4, 83, 1408,13 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (14, 4, 89, 1408,14 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (15, 4, 75, 1408,15 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (16, 5, 20, 1416,16 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (17, 7, 71, 1184,17 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (18, 7, 18, 1175,18 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (19, 7, 24, 1382,19 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (20, 8, 4, 1068,20 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (21, 8, 21, 1057,21 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (22, 9, 29, 1134,22 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (23, 9, 82, 1133,23 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (24, 9, 56, 1133,24 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (25, 9, 79, 1279,25 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (26, 9, 13, 1294,26 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (27, 10, 23, 1072,27 );
 
 select * from ghi_ban;
 
