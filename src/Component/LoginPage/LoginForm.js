@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
+
 function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
+
   function swtichReg() {
     setFormType("Register");
   }
@@ -31,7 +33,7 @@ function LoginForm(props) {
         className="loginBlock"
         style={{ display: FormType == "Login" ? "block" : "none" }}
       >
-        <form className="login-form">
+        <form className="login-form" onSubmit={props.Homeback}>
           <input type="text" placeholder="username" />
           <input type="password" placeholder="password" />
           <button>login</button>

@@ -2,7 +2,7 @@
 //linear-gradient(90deg, rgba(122, 58, 187, 0.7) 0%,rgba(122, 58, 187, 0.1) 100%"
 //rgba(122, 58, 187, 1)
 //#BABFF0
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Home.css";
 import HomeNavBar from "./HomeNavBar/HomeNavBar";
 import HomeSection from "./HomeSection/HomeSection.js";
@@ -11,9 +11,15 @@ import HomeIntro from "./HomeIntro/HomeIntro";
 import AccGreeting from "../AccGreeting/AccGreeting";
 import Button from "../Button/Button";
 import ReactPaginate from "react-paginate";
-function Home() {
-  const HomeSectionRef = useRef();
+import { useLocation } from "react-router-dom";
 
+function Home(props) {
+  //const [isLog, setisLog] = useState(false);
+  let isLog = false;
+  const state = useLocation();
+  console.log(state);
+  isLog = { state };
+  const HomeSectionRef = useRef();
   function handleScrollClick() {
     HomeSectionRef.current.scrollIntoView({ behavior: "smooth" });
     console.log("scroll");
@@ -21,7 +27,7 @@ function Home() {
   return (
     <div className="Home">
       <div className="HomeBG">
-        <HomeNavBar />
+        <HomeNavBar isLog={isLog} />
         <div className="HomeMain">
           <div className="HomeMain_left">
             <HomeIntro />
