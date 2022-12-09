@@ -9,8 +9,23 @@ import {
   faAdd,
 } from "@fortawesome/free-solid-svg-icons";
 function MatchSchedule(props) {
-  function nextClick() {}
-  function prevClick() {}
+  console.log(props.MatchSchedule);
+  let [currentPage, setCurrentPage] = useState(0);
+  const [MatchPerPage] = useState(4);
+  let maxPage = Math.floor((props.MatchSchedule?.length - 1) / MatchPerPage);
+  let startItem = currentPage * MatchPerPage;
+  let endItem = startItem + MatchPerPage;
+
+  let renderMatchScheduleList = props.MatchSchedule?.slice(startItem, endItem);
+
+  function nextClick() {
+    return currentPage < maxPage
+      ? setCurrentPage(currentPage + 1)
+      : currentPage;
+  }
+  function prevClick() {
+    return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
+  }
   return (
     <div className="MatchSchedule">
       <div
@@ -34,13 +49,24 @@ function MatchSchedule(props) {
       </div>
       <div className="MatchScheduleContent">
         <div className="MatchScheduleContentMain">
-          <Match />
-          <Match />
-          <Match />
+          {renderMatchScheduleList.map((p) => {
+            return (
+              <Match
+                home={p.home}
+                away={p.away}
+                time={p.time}
+                date={p.date}
+                stadium={p.stadium}
+              />
+            );
+          })}
         </div>
         <div
           className="ControlBtn"
-          style={{ display: props.disableBtn ? "none" : "block" }}
+          style={{
+            display: props.disableBtn ? "none" : "block",
+            marginTop: "40px",
+          }}
         >
           <FontAwesomeIcon
             className="fai"

@@ -25,13 +25,14 @@ function Match(props) {
       </div>
       <div className="MatchInfo">
         <div className="MatchInfoHeader">
-          <span className="MatchInfoTeam">Tottenham</span>
+          <span className="MatchInfoTeam">{props.home}</span>
           <span className="VS">VS</span>
-          <span className="MatchInfoTeam">Manchester City</span>
+          <span className="MatchInfoTeam">{props.away}</span>
         </div>
-        <div className="Time">19:00 22/12/2023</div>
-        <div className="Stadium">Tottenham Hostpur Stadium</div>
+        <div className="MatchTime">{`${props.time} ${props.date}`}</div>
+        <div className="MatchStadium">{props.stadium}</div>
       </div>
+
       <div className="TeamLogo">
         <img className="TeamLogoImg" src={logo1}></img>
       </div>

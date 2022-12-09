@@ -1,4 +1,4 @@
-const TeamList = [
+let TeamList = [
   {
     name: "Manchester city",
     p: "1",

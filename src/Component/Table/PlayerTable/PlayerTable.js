@@ -27,9 +27,7 @@ function PlayerTable(props) {
   function prevClick() {
     return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
   }
-  function addPLayer(f) {
-    f();
-  }
+
   return (
     <div className="PlayerTable">
       <div className="PlayerTableHeader">

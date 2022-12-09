@@ -23,22 +23,22 @@ function TeamPage(props) {
     const data = new FormData(formHtml);
     const props = Object.fromEntries(data);
 
-    const newPlayer = (
-      <Player
-        type="TeamPlayer"
-        name={props.playername}
-        country={props.country}
-        age={props.age}
-      />
-    );
-    TeamDataRender.players.push(newPlayer);
+    const newPlayer = {
+      type: "TeamPlayer",
+      name: props.playername,
+      country: props.country,
+      age: props.age,
+    };
+    TeamDataRender.players = [...TeamDataRender.players, newPlayer];
     setTeamDataRender(TeamDataRender);
     const inputs = document.querySelectorAll("input");
     inputs.forEach((element) => {
       element.value = "";
     });
-    TeamData.players.push(newPlayer);
+    TeamData.players = [...TeamDataRender.players];
     setDisplayPopUp(0);
+    console.log(TeamData.players);
+    console.log(TeamDataRender.players);
   }
   function CancelForm(e) {
     e.preventDefault();

@@ -6,6 +6,7 @@ import NavLink from "../NavLink/NavLink";
 import MatchSchedule from "../Table/MatchSchedule/MatchSchedule";
 import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
 import add from "../../img/plus.png";
+import { MatchScheduleData } from "../Data/MatchScheduleData";
 
 function MatchSchedulePage(props) {
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
@@ -106,7 +107,7 @@ function MatchSchedulePage(props) {
 
       <div className="MatchScheduleTable">
         <MatchSchedule
-          popUp={popUp}
+          MatchSchedule={MatchScheduleData}
           disableBtn={false}
           round={`Round ${props.roundNum}`}
           addImg={

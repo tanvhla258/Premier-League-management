@@ -1,4 +1,4 @@
-export const TopScoreData = [
+export let TopScoreData = [
   { name: "Erling Haaland", score: 20, rank: 1 },
   { name: "Son Heumin", score: 18, rank: 2 },
   { name: "Quang Tan", score: 12, rank: 3 },
