@@ -10,32 +10,33 @@ import { MatchScheduleData } from "../Data/MatchScheduleData";
 
 function MatchSchedulePage(props) {
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
-  const [TeamDataRender, setTeamDataRender] = useState("");
+  let [MatchScheduleDataRender, setMatchScheduleDataRender] =
+    useState(MatchScheduleData);
   function popUp() {
     setDisplayPopUp(1);
   }
   function SubmitForm(e) {
     e.preventDefault();
 
-    const formHtml = document.querySelector("#addPlayerId");
+    const formHtml = document.querySelector("#addSchedule");
     const data = new FormData(formHtml);
-    const props = Object.fromEntries(data);
-
-    // const newPlayer = (
-    //   <Player
-    //     type="TeamPlayer"
-    //     name={props.playername}
-    //     country={props.country}
-    //     age={props.age}
-    //   />
-    // );
-    // TeamDataRender.players.push(newPlayer);
-    // setTeamDataRender(TeamDataRender);
+    const dataObject = Object.fromEntries(data);
+    console.log(dataObject);
+    const newMatch = {
+      home: dataObject.HomeTeam,
+      away: dataObject.AwayTeam,
+      time: dataObject.MatchTime,
+      date: dataObject.MatchDay,
+      stadium: dataObject.Stadium,
+    };
+    console.log(newMatch);
+    MatchScheduleDataRender = [...MatchScheduleDataRender, newMatch];
+    setMatchScheduleDataRender(MatchScheduleDataRender);
     const inputs = document.querySelectorAll("input");
     inputs.forEach((element) => {
       element.value = "";
     });
-    //TeamData.players.push(newPlayer);
+    // MatchScheduleData = [...MatchScheduleDataRender];
     setDisplayPopUp(0);
   }
   function CancelForm(e) {
@@ -47,6 +48,7 @@ function MatchSchedulePage(props) {
     console.log(inputs);
     setDisplayPopUp(0);
   }
+
   return (
     <div className="MatchSchedulePage">
       <div
@@ -62,7 +64,7 @@ function MatchSchedulePage(props) {
             <form
               id="addSchedule"
               className="formModel"
-              action="addPlayer"
+              action="addSchedule"
               onSubmit={SubmitForm}
             >
               <div className="inputItem">
@@ -107,12 +109,10 @@ function MatchSchedulePage(props) {
 
       <div className="MatchScheduleTable">
         <MatchSchedule
-          MatchSchedule={MatchScheduleData}
+          popUp={popUp}
+          MatchSchedule={MatchScheduleDataRender}
           disableBtn={false}
           round={`Round ${props.roundNum}`}
-          addImg={
-            <img style={{ width: "30px", height: "30px" }} src={add}></img>
-          }
         />
       </div>
     </div>

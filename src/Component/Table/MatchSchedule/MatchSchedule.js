@@ -9,7 +9,6 @@ import {
   faAdd,
 } from "@fortawesome/free-solid-svg-icons";
 function MatchSchedule(props) {
-  console.log(props.MatchSchedule);
   let [currentPage, setCurrentPage] = useState(0);
   const [MatchPerPage] = useState(4);
   let maxPage = Math.floor((props.MatchSchedule?.length - 1) / MatchPerPage);
@@ -49,7 +48,7 @@ function MatchSchedule(props) {
       </div>
       <div className="MatchScheduleContent">
         <div className="MatchScheduleContentMain">
-          {renderMatchScheduleList.map((p) => {
+          {renderMatchScheduleList?.map((p) => {
             return (
               <Match
                 home={p.home}
