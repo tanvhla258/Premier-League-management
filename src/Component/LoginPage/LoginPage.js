@@ -8,14 +8,14 @@ import NavLink from "../NavLink/NavLink";
 function LoginPage(props) {
   let navigate = useNavigate();
 
-  const Homeback = useCallback(
+  const LogInSucessfully = useCallback(
     () => navigate("/", { replace: true, state: { isLog: true } }),
     [navigate]
   );
 
   return (
     <div className="LoginPage">
-      <LoginForm Homeback={Homeback} />
+      <LoginForm Homeback={LogInSucessfully} />
       <div style={{ margin: "10px" }}>
         <Button>
           <NavLink href="./">Back</NavLink>

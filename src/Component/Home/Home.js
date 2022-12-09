@@ -2,7 +2,7 @@
 //linear-gradient(90deg, rgba(122, 58, 187, 0.7) 0%,rgba(122, 58, 187, 0.1) 100%"
 //rgba(122, 58, 187, 1)
 //#BABFF0
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useParams, useEffect } from "react";
 import "./Home.css";
 import HomeNavBar from "./HomeNavBar/HomeNavBar";
 import HomeSection from "./HomeSection/HomeSection.js";
@@ -11,15 +11,16 @@ import HomeIntro from "./HomeIntro/HomeIntro";
 import AccGreeting from "../AccGreeting/AccGreeting";
 import Button from "../Button/Button";
 import ReactPaginate from "react-paginate";
-import { useLocation } from "react-router-dom";
+import { Route, useLocation, useNavigate } from "react-router-dom";
 
 function Home(props) {
-  //const [isLog, setisLog] = useState(false);
-  let isLog = false;
-  const state = useLocation();
-  console.log(state);
-  isLog = { state };
+  const [isLog, setisLog] = useState(false);
+  if (isLog === !useLocation().state?.isLog) {
+    setisLog(!isLog);
+  }
+  //console.log(nav.useParams());
   const HomeSectionRef = useRef();
+  console.log(isLog);
   function handleScrollClick() {
     HomeSectionRef.current.scrollIntoView({ behavior: "smooth" });
     console.log("scroll");
@@ -35,7 +36,10 @@ function Home(props) {
               My tournament
             </button>
           </div>
-          <div className="HomeMain_right">
+          <div
+            style={{ display: isLog ? "block" : "none" }}
+            className="HomeMain_right"
+          >
             <AccGreeting greet="Welcome back" acc="name" />
           </div>
         </div>
