@@ -35,7 +35,7 @@
     left: 50%;
     transform: translate(-50%,-50%);
 }
-.addPlayerForm{
+.formModel{
     display: flex;
     flex-direction: column;
 }
@@ -43,7 +43,9 @@
     background-color: rgba(122, 58, 187, 1);
     height: 20%;
     color: white;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 .ModalFormContent{

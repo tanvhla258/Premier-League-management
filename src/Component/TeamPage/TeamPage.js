@@ -64,7 +64,7 @@ function TeamPage(props) {
           <div className="ModalFormContent">
             <form
               id="addPlayerId"
-              className="addPlayerForm"
+              className="formModel"
               action="addPlayer"
               onSubmit={SubmitForm}
             >
