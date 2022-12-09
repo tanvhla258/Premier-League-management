@@ -14,7 +14,9 @@ function HomeNavBar() {
         <NavLink href="./TeamPage">Team management</NavLink>
         <NavLink href="./TopScorePage">Top Score</NavLink>
         <NavLink href="./StandingPage">Standing</NavLink>
-        <Button>Log in</Button>
+        <Button>
+          <NavLink href="./LoginPage">Log in</NavLink>
+        </Button>
       </div>
     </div>
   );

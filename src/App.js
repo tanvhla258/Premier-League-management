@@ -11,6 +11,7 @@ import MatchSchedulePage from "./Component/MatchSchedulePage/MatchSchedulePage";
 import TeamPage from "./Component/TeamPage/TeamPage";
 import TopScorePage from "./Component/TopScorePage/TopScorePage";
 import MatchResultPage from "./Component/MatchResultPage/MatchResultPage";
+import LoginPage from "./Component/LoginPage/LoginPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/TeamPage" element={<TeamPage />} />
         <Route path="/TopScorePage" element={<TopScorePage />} />
         <Route path="/MatchResultPage" element={<MatchResultPage />} />
+        <Route path="/LoginPage" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );
