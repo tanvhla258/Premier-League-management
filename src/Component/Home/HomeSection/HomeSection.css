@@ -5,6 +5,9 @@
     position: relative;
 
 }
+.HomeMain2{
+    height: 100%;
+}
 .HomeSectionItem:hover{
     cursor: pointer;
 }
@@ -20,7 +23,7 @@
     margin: 0 20px;
 }
 .HomeSectionNav{
-    width: 10%;
+    width: 110px;
 }
 
 .HomeSectionNavWrapper button{
@@ -48,4 +51,23 @@
 
 .HomeSectionSchedule{
     padding: 0 5px;
+}
+.HomeSectionTable{
+    display: flex;
+    justify-content: center;
+}
+@media screen and  (max-width:1200px){
+    .HomeSectionTable{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .HomeSectionStanding,.HomeSectionSchedule{
+        width: 700px;
+        margin: 0 0 10px 80px;
+    }
+    
+    .HomeMain2{
+        height: 180vh;
+    }
 }

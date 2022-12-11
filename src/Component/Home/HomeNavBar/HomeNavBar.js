@@ -13,11 +13,11 @@ import Home from "../Home";
 import NavLink from "../../NavLink/NavLink";
 
 function HomeNavBar(props) {
-  const Navnavigate = useNavigate();
-  const LogOutSucessfully = useCallback(
-    () => Navnavigate("/", { replace: true, state: { isLog: false } }),
-    [Navnavigate]
-  );
+  // const Navnavigate = useNavigate();
+  // const LogOutSucessfully = useCallback(
+  //   () => Navnavigate("/", { replace: true, state: { isLog: false } }),
+  //   [Navnavigate]
+  // );
 
   return (
     <div className="HomeNavbar">
@@ -32,10 +32,7 @@ function HomeNavBar(props) {
               <NavLink href="./LoginPage">Log in</NavLink>
             </Button>
           </div>
-          <div
-            onClick={LogOutSucessfully}
-            style={{ display: props.isLog ? "block" : "none" }}
-          >
+          <div style={{ display: props.isLog ? "block" : "none" }}>
             <Button>
               <NavLink href="./">Log out</NavLink>
             </Button>

@@ -4,14 +4,14 @@ export let MatchScheduleData = [
     away: "Manchester City",
     stadium: "Old Traffold",
     time: "19:00",
-    date: "22/12/2023",
+    date: "10/12/2022",
   },
   {
     home: "Westham",
     away: "Brighton",
     stadium: "Old Traffold",
     time: "19:00",
-    date: "22/12/2023",
+    date: "23/12/2023",
   },
   {
     home: "Quang Tan",
