@@ -45,3 +45,9 @@
     width: 60%;
     margin-right:40px ;
 }
+
+@media screen and (max-width:768px) {
+    .StadingLeft{
+        display: none;
+    }
+}

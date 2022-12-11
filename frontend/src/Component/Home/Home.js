@@ -15,6 +15,7 @@ import { Route, useLocation, useNavigate } from "react-router-dom";
 
 function Home(props) {
   const [isLog, setisLog] = useState(false);
+  const [data, setData] = useState([]);
   if (isLog === !useLocation().state?.isLog) {
     setisLog(!isLog);
   }
@@ -25,6 +26,13 @@ function Home(props) {
     HomeSectionRef.current.scrollIntoView({ behavior: "smooth" });
     console.log("scroll");
   }
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/users")
+      .then((response) => response.json())
+      // 4. Setting *dogImage* to the image url that we received from the response above
+      .then((data) => setData(data.message));
+  }, []);
   return (
     <div className="Home">
       <div className="HomeBG">
