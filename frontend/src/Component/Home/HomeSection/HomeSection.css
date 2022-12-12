@@ -1,0 +1,73 @@
+.HomeSection{
+    background-image:linear-gradient(90deg, rgba(122, 58, 187, 0.6) 0%,rgba(122, 58, 187, 0.1) 100%);
+    height:  100%;
+    opacity: 1;
+    position: relative;
+
+}
+.HomeMain2{
+    height: 100%;
+}
+.HomeSectionItem:hover{
+    cursor: pointer;
+}
+.HomeSectionHeader{
+    padding: 20px 16px;
+}
+.HomeSectionWrapper{
+    display: flex;
+}
+
+.HomeSectionItem{
+    width: 40%;
+    margin: 0 20px;
+}
+.HomeSectionNav{
+    width: 110px;
+}
+
+.HomeSectionNavWrapper button{
+    border-radius: 5px;
+    margin: 20px;
+    margin-left: 0;
+    text-align: start;
+    padding: 10px 5px;
+}
+.HomeSectionNavWrapper NavLink{
+    font-size: 0.5rem;
+}
+
+.HomeSectionNavWrapepr{
+    width: 100%;
+    height: 30%;
+    padding: 20px 5px;
+}
+.HomeSectionNavWrapper{
+    background: linear-gradient(to top, #BABFF0 0%, #fff 100%); 
+    border-radius: 10px;
+
+    
+}
+
+.HomeSectionSchedule{
+    padding: 0 5px;
+}
+.HomeSectionTable{
+    display: flex;
+    justify-content: center;
+}
+@media screen and  (max-width:1200px){
+    .HomeSectionTable{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .HomeSectionStanding,.HomeSectionSchedule{
+        width: 700px;
+        margin: 0 0 10px 80px;
+    }
+    
+    .HomeMain2{
+        height: 180vh;
+    }
+}

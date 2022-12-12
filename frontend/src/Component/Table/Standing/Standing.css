@@ -1,0 +1,38 @@
+.StandingTag{
+    width: 10%;
+    text-align: center;
+}
+.StandingTeam:nth-child(even){
+    background-color: #BABFF0;
+}
+
+.StandingTeamName{
+    width: 40%;
+    text-align: left;
+}
+.StandingContent{
+    background-color: white;
+    min-height: 400px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.StandingTeam{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px 0;
+}
+
+.StandingHeader{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 8px 0;
+
+}
+
+.Standing{
+    width: 100%;
+}
+.StandingPTS{
+    color :red
+}
+.StandingContent::-webkit-scrollbar { width: 0 !important }

@@ -1,0 +1,57 @@
+
+.PlayerTableHeader{
+    background-color: rgba(122, 58, 187, 1);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0px 16px;
+}
+.PlayerTableContent{
+    padding: 20px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.PlayerTableContentMain{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
+}
+.PlayerItem{
+    margin: 12px;
+}
+.TeamName{
+    font-size: 1.2rem;
+}
+.add{
+    margin: 0 40px 0 0;
+    background-color: rgba(13, 172, 13,1);
+    border-radius: 50%;
+}
+.addIcon{
+    color:white;
+    padding: 6px 8px;
+    width: 24px;
+    height: 24px;
+}
+
+.addIcon:hover{
+    cursor: pointer;
+}
+.add:hover{
+    background-color: rgba(13, 172, 13,0.8);
+
+}
+
+.fai:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
