@@ -3,7 +3,7 @@
     "username": "root",
     "password": "123",
     "database": "qlbd",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
