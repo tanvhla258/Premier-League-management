@@ -20,6 +20,9 @@ function HomeNavBar(props) {
   );
   const logOut = () => {
     localStorage.setItem("isLog", 0);
+    localStorage.setItem("user", undefined);
+    localStorage.setItem("pass", undefined);
+
     LogOutSucessfully();
   };
 

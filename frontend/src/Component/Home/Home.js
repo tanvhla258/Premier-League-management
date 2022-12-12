@@ -14,18 +14,14 @@ import ReactPaginate from "react-paginate";
 import { Route, useLocation, useNavigate } from "react-router-dom";
 
 function Home(props) {
-  //console.log(nav.useParams());
   const HomeSectionRef = useRef();
   function handleScrollClick() {
     HomeSectionRef.current.scrollIntoView({ behavior: "smooth" });
     console.log("scroll");
   }
   // useEffect(() => {
-  //   fetch("http://localhost:5000/api/users")
-  //     .then((response) => response.json())
-  //     // 4. Setting *dogImage* to the image url that we received from the response above
-  //     .then((data) => setData(data.message));
-  // }, []);
+  //   localStorage.setItem("isLog", 0);
+  // }, [localStorage.getItem("isLog")]);
 
   return (
     <div className="Home">
@@ -44,7 +40,10 @@ function Home(props) {
             }}
             className="HomeMain_right"
           >
-            <AccGreeting greet="Welcome back" acc="name" />
+            <AccGreeting
+              greet="Welcome back"
+              acc={`${localStorage.getItem("user")}`}
+            />
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@
     box-sizing: border-box;
     font-size: 14px;
   }
-  .form button {
+  .loginBtn {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -79,5 +79,14 @@
     color: #EF3B3A;
   }
   .createacc{
-    margin-left: 10px;
+    text-decoration: none;
+    color: white;
   }
+ 
+ .loginBtn:hover{
+    background-color:rgba(122, 58, 187, 1);
+    
+ }
+ .regBtn{
+  margin: 0 auto;
+ }
