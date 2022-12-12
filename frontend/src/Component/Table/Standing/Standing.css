@@ -35,3 +35,4 @@
 .StandingPTS{
     color :red
 }
+.StandingContent::-webkit-scrollbar { width: 0 !important }

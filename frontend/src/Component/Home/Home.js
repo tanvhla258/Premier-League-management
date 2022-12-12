@@ -40,7 +40,7 @@ function Home(props) {
           </div>
           <div
             style={{
-              display: localStorage.getItem("isLog") == 0 ? "block" : "none",
+              display: localStorage.getItem("isLog") == 0 ? "none" : "block",
             }}
             className="HomeMain_right"
           >

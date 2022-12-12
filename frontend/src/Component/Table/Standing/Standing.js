@@ -4,24 +4,7 @@ import "../Table.css";
 import TeamList from "../../Data/TeamListData";
 
 function Standing(props) {
-  let [currentPage, setCurrentPage] = useState(0);
-  const [TeamPerPage] = useState(9);
-  const maxPage = Math.floor(props.Team.length / TeamPerPage);
-
-  let startItem = currentPage * TeamPerPage;
-  let endItem = startItem + TeamPerPage;
-
-  let renderTeamList = props.Team.slice(startItem, endItem);
-
-  console.log(renderTeamList);
-  function nextClick() {
-    return currentPage < maxPage
-      ? setCurrentPage(currentPage + 1)
-      : currentPage;
-  }
-  function prevClick() {
-    return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
-  }
+  let renderTeamList = props.Team;
 
   return (
     <div className="Standing">
@@ -34,7 +17,14 @@ function Standing(props) {
         <div className="StandingTag">L</div>
         <div className="StandingTag">PTS</div>
       </div>
-      <div className="StandingContent">
+      <div
+        className="StandingContent"
+        style={{
+          maxHeight: "320px",
+          overflowY: "scroll",
+          scrollbarWidth: "none",
+        }}
+      >
         {renderTeamList.map((team) => {
           return (
             <div key={team.p} className="StandingTeam">
