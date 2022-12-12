@@ -8,10 +8,7 @@ import NavLink from "../NavLink/NavLink";
 function LoginPage(props) {
   let navigate = useNavigate();
 
-  const LogInSucessfully = useCallback(
-    () => navigate("/", { replace: true, state: { isLog: true } }),
-    [navigate]
-  );
+  const LogInSucessfully = () => localStorage.setItem("isLog", 1);
 
   return (
     <div className="LoginPage">

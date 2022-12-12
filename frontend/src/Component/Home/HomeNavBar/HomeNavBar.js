@@ -13,11 +13,15 @@ import Home from "../Home";
 import NavLink from "../../NavLink/NavLink";
 
 function HomeNavBar(props) {
-  // const Navnavigate = useNavigate();
-  // const LogOutSucessfully = useCallback(
-  //   () => Navnavigate("/", { replace: true, state: { isLog: false } }),
-  //   [Navnavigate]
-  // );
+  const Navnavigate = useNavigate();
+  const LogOutSucessfully = useCallback(
+    () => Navnavigate("/", { replace: true }),
+    [Navnavigate]
+  );
+  const logOut = () => {
+    localStorage.setItem("isLog", 0);
+    LogOutSucessfully();
+  };
 
   return (
     <div className="HomeNavbar">
@@ -27,12 +31,21 @@ function HomeNavBar(props) {
         <NavLink href="./TopScorePage">Top Score</NavLink>
         <NavLink href="./StandingPage">Standing</NavLink>
         <div>
-          <div style={{ display: props.isLog ? "none" : "block" }}>
+          <div
+            style={{
+              display: localStorage.getItem("isLog") == 0 ? "block" : "none",
+            }}
+          >
             <Button>
               <NavLink href="./LoginPage">Log in</NavLink>
             </Button>
           </div>
-          <div style={{ display: props.isLog ? "block" : "none" }}>
+          <div
+            style={{
+              display: localStorage.getItem("isLog") == 0 ? "none" : "block",
+            }}
+            onClick={logOut}
+          >
             <Button>
               <NavLink href="./">Log out</NavLink>
             </Button>

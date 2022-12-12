@@ -7,20 +7,28 @@ import Logo from "../../Logo/Logo";
 import AccGreeting from "../../AccGreeting/AccGreeting";
 import "./StandingPageNavBar.css";
 function StandingPageNavBar(props) {
-  const Navnavigate = useNavigate();
-  const LogOutSucessfully = useCallback(
-    () => Navnavigate("/", { replace: true, state: { isLog: false } }),
-    [Navnavigate]
-  );
+  const Navnavigate2 = useNavigate();
+  const LogOutSucessfully = useCallback(() => {
+    localStorage.setItem("isLog", 0);
+    return Navnavigate2("/", { replace: true }), [Navnavigate2];
+  });
   return (
     <div className="StandingPageNavBar">
       <Logo value={props.Logo} />
       <div className="menu">
         <Button>{<NavLink href="./">Home</NavLink>}</Button>
-        <AccGreeting greet="Hi" acc="Tan"></AccGreeting>
+        <div
+          style={{
+            display: localStorage.getItem("isLog") == 0 ? "none" : "block",
+          }}
+        >
+          <AccGreeting greet="Hi" acc="Tan"></AccGreeting>
+        </div>
         <div
           onClick={LogOutSucessfully}
-          style={{ display: props.isLog ? "block" : "none" }}
+          style={{
+            display: localStorage.getItem("isLog") == 0 ? "none" : "block",
+          }}
         >
           <Button>
             <NavLink href="./">Log out</NavLink>
