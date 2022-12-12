@@ -10,6 +10,7 @@ function LoginForm(props) {
 
     localStorage.setItem("user", user.value);
     localStorage.setItem("pass", pass.value);
+    localStorage.setItem("isLog", 1);
   };
   const storeFormDataReg = function () {
     const userReg = document.querySelector(".userReg");
@@ -50,8 +51,8 @@ function LoginForm(props) {
         style={{ display: FormType == "Login" ? "block" : "none" }}
       >
         <form className="login-form" onSubmit={props.Homeback}>
-          <input className="userReg" type="text" placeholder="username" />
-          <input className="passReg" type="password" placeholder="password" />
+          <input className="userLogin" type="text" placeholder="username" />
+          <input className="passLogin" type="password" placeholder="password" />
           <button onClick={storeFormData} className="loginBtn">
             <a className="createacc" href={"/"}>
               login

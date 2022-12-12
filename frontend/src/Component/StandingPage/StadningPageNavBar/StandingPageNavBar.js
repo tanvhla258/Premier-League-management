@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../Button/Button";
@@ -8,8 +8,15 @@ import AccGreeting from "../../AccGreeting/AccGreeting";
 import "./StandingPageNavBar.css";
 function StandingPageNavBar(props) {
   const Navnavigate2 = useNavigate();
+  const [pagelog, setpagelog] = useState(false);
+  useEffect(() => {
+    setpagelog(!pagelog);
+  }, [pagelog]);
   const LogOutSucessfully = useCallback(() => {
     localStorage.setItem("isLog", 0);
+    localStorage.setItem("user", undefined);
+    localStorage.setItem("pass", undefined);
+
     return Navnavigate2("/", { replace: true }), [Navnavigate2];
   });
   return (

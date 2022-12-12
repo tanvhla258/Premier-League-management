@@ -24,6 +24,7 @@ function HomeNavBar(props) {
     localStorage.setItem("pass", undefined);
 
     LogOutSucessfully();
+    props.displayWelcome();
   };
 
   return (

@@ -19,14 +19,15 @@ function Home(props) {
     HomeSectionRef.current.scrollIntoView({ behavior: "smooth" });
     console.log("scroll");
   }
-  // useEffect(() => {
-  //   localStorage.setItem("isLog", 0);
-  // }, [localStorage.getItem("isLog")]);
+  const displayWelcome = () => {
+    document.querySelector(".HomeMain_right").style.display = "none";
+  };
+  const [Homelog, setHomelog] = useState(false);
 
   return (
     <div className="Home">
       <div className="HomeBG">
-        <HomeNavBar />
+        <HomeNavBar displayWelcome={displayWelcome} />
         <div className="HomeMain">
           <div className="HomeMain_left">
             <HomeIntro />
