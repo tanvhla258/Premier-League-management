@@ -1,9 +1,9 @@
 const express = require("express");
 const path = require("path");
-
 const colors = require("colors");
 const { readdirSync } = require("fs");
 const cors = require("cors");
+const db = require("./models");
 require("dotenv").config();
 //const { errorHandler } = require('./middleware/errorMiddleware')
 const port = process.env.PORT || 5000;
@@ -12,7 +12,6 @@ app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
@@ -28,6 +27,9 @@ app.use("/api/users", require("./routes/user.r"));
 // app.use('/api/goals', require('./routes/goal.r'))
 
 //app.use(errorHandler)
-app.listen(process.env.PORT, () => {
-  console.log(`http://localhost:${process.env.PORT}`);
+
+db.sequelize.sync().then(() => {
+  app.listen(process.env.PORT, () => {
+    console.log(`http://localhost:${process.env.PORT}`);
+  });
 });
