@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=Hl7diL7SFw8&list=PLpPqplz6dKxUaZ630TY1BFIo5nP-_x-nL
+
+https://viblo.asia/p/tim-hieu-va-su-dung-sequelize-va-sequelize-cli-jvElaRY65kw
+
+https://sequelize.org/docs/v6/core-concepts/model-querying-basics/

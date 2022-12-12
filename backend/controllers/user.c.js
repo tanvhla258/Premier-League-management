@@ -1,16 +1,20 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const userM = require("../models/Users");
+const userM = require("../models/user.m");
+const { Users } = require("../models");
 const saltRounds = 10;
 
 exports.getAll = async (req, res, next) => {
-  res.json({ mssg: "GET ALL USER" });
+  const listOfUsers = await Users.findAll();
+  res.json(listOfUsers);
 };
 exports.getOne = async (req, res, next) => {
   res.json({ mssg: "GET ONE USER" });
 };
 exports.PostOne = async (req, res, next) => {
-  res.json({ mssg: "POST USER" });
+  const user = req.body;
+  await Users.create(user);
+  res.json(user);
 };
 exports.DeleteOne = async (req, res, next) => {
   res.json({ mss: "DELETE USER" });
