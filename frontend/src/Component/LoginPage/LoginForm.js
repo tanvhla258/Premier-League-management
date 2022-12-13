@@ -36,6 +36,8 @@ function LoginForm(props) {
           <input className="userReg" type="text" placeholder="name" />
           <input className="passReg" type="password" placeholder="password" />
           <input type="text" placeholder="email address" />
+          <input type="date" id="birthday" name="birthday" />
+          <input className="phoneReg" type="text" placeholder="number phone" />
           <button className="regBtn" onClick={storeFormDataReg}>
             <a className="createacc" href={"/"}>
               Create
