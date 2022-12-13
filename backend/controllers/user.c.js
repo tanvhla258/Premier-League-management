@@ -5,8 +5,8 @@ const { Users } = require("../models");
 const saltRounds = 10;
 
 exports.getAll = async (req, res, next) => {
-  const listOfUsers = await Users.findAll();
-  res.json(listOfUsers);
+  // const listOfUsers = await Users.findAll();
+  // res.json(listOfUsers);
 };
 exports.getOne = async (req, res, next) => {
   res.json({ mssg: "GET ONE USER" });

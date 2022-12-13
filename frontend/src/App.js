@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ReactDOM } from "react";
+import axios from "axios";
 import "./App.css";
 import "./index.css";
 import "../src/Component/Home/Home.js";
@@ -14,8 +15,14 @@ import MatchResultPage from "./Component/MatchResultPage/MatchResultPage";
 import LoginPage from "./Component/LoginPage/LoginPage";
 
 function App() {
+  const [listOfUsers, setListOfUsers] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:3123/api/users").then((respone) => {
+      setListOfUsers(respone.data);
+    });
+  }, []);
   return (
-    // Rounting app
+    //Rounting app
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,6 +34,17 @@ function App() {
         <Route path="/LoginPage" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
+    // <div className="App">
+    //   {listOfUsers.map((value, key) => {
+    //     return (
+    //       <div className="user">
+    //         <div className="title">{value.id}</div>
+    //         <div className="body">{value.firstName}</div>
+    //         <div className="footer">{value.lastName}</div>
+    //       </div>
+    //     );
+    //   })}
+    // </div>
   );
 }
 

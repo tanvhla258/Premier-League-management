@@ -6,7 +6,6 @@ const cors = require("cors");
 const db = require("./models");
 require("dotenv").config();
 //const { errorHandler } = require('./middleware/errorMiddleware')
-const port = process.env.PORT || 5000;
 
 app = express();
 app.use(express.json());

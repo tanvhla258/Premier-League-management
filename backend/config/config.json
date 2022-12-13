@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "123",
-    "database": "qlbd",
+    "database": "bong_da",
     "host": "localhost",
     "dialect": "mysql"
   },
