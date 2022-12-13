@@ -41,32 +41,14 @@ function LoginForm(props) {
         style={{ display: FormType == "Login" ? "none" : "block" }}
       >
         <form className="register-form">
-          <input
-            autocomplete="off"
-            className="userReg"
-            type="text"
-            placeholder="name"
-            name="name"
-          />
-          <input
-            autocomplete="off"
-            className="passReg"
-            type="password"
-            placeholder="password"
-            name="password"
-          />
-          <input
-            autocomplete="off"
-            className="emailReg"
-            type="text"
-            placeholder="email address"
-            name="email"
-          />
-          <button type="submit" className="regBtn" onSubmit={storeFormDataReg}>
-            {/* <a className="createacc" href={"/"}>
+          <input className="userReg" type="text" placeholder="name" />
+          <input className="passReg" type="password" placeholder="password" />
+          <input type="text" placeholder="email address" />
+          <button className="regBtn" onClick={storeFormDataReg}>
+            <a className="createacc" href={"/"}>
               Create
-            </a> */}
-            Create
+            </a>{" "}
+            */} Create
           </button>
           <p onClick={switchLog} className="message">
             Already registered?{" "}
