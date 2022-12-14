@@ -8,7 +8,6 @@ const passport = require("passport");
 router.post("/register", userC.Register);
 router.post("/login", userC.Login);
 
-//router.post("/login", passport.authenticate("local"), userC.Login);
 router.get("/", userC.getAll);
 router.get("/:id", userC.getOne);
 router.delete("/:id", userC.DeleteOne);

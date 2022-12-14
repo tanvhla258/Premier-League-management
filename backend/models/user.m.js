@@ -11,7 +11,7 @@ module.exports = {
   },
   getUserByName: async (name) => {
     const u = await db.load(`select * from user where Ten_User='${name}'`);
-
+    console.log(u);
     return u;
   },
   addUser: (user) => {

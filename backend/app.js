@@ -8,7 +8,6 @@ app = express();
 require("dotenv").config();
 //const { errorHandler } = require('./middleware/errorMiddleware')
 require("./config/session")(app);
-require("./config/passport")(app);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

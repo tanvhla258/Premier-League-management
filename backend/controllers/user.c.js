@@ -1,23 +1,24 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const userM = require("../models/user.m");
-const passport = require("../config/passport");
 
 //const { Users } = require("../models");
 const saltRounds = 10;
 
 exports.Login = async (req, res, next) => {
-  if (req.isAuthenticated()) {
-    // req.session.isAuthenticated = true;
-    // req.session.authUser = req.body.Ten_User;
-    // req.session.Ten_User = req.body.Ten_User;
-    console.log("OK");
-  } else {
-    console.log("NOT OK");
-  }
+  const username = req.body.Ten_User;
+  const password = req.body.Password;
+  const userDatabase = await userM.getUserByName(username);
+  bcrypt.compare(password, userDatabase.Password, function (err, result) {
+    console.log("CORRECT");
+  });
 };
 exports.Register = async (req, res, next) => {
-  const user = req.body;
+  const passwordHased = await bcrypt.hash(req.body.Password, saltRounds);
+  const user = {
+    Ten_User: req.body.Ten_User,
+    Password: passwordHased,
+  };
   return await userM.addUser(user);
 };
 exports.getAll = async (req, res, next) => {

@@ -184,7 +184,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`USER` (
   `ID_User` INT NOT NULL auto_increment,
-  `Password` VARCHAR(30) NULL,
+  `Password` VARCHAR(255) NULL,
   `Email` VARCHAR(60) NULL,
   `Ten_User` VARCHAR(60) NULL,
   `Ngay_Sinh` DATE NULL,
