@@ -3,6 +3,8 @@
         "host": "localhost",
         "user": "root",
         "database": "bong_da",
-        "password": "123"
+        "password": "123",  
+        "connectionLimit": 50
+
     }
 }

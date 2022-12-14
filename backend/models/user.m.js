@@ -2,15 +2,8 @@ const db = require("../config/db");
 
 module.exports = {
   getAllUser: async () => {
-    const users = db.load(
-      "select * from user",
-      function (rows) {
-        console.log(rows);
-      },
-      function (error) {
-        console.log(error);
-      }
-    );
+    const users = await db.load("select * from user");
+    console.log(users);
     return users;
   },
   getUser: async (id) => {
