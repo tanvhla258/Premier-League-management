@@ -4,18 +4,18 @@ const userM = require("../models/user.m");
 //const { Users } = require("../models");
 const saltRounds = 10;
 
-exports.getAll = async (req, res, next) => {
-  await userM.getAllUser();
-};
-exports.getOne = async (req, res, next) => {
-  await userM.getUser(2);
-};
 exports.Login = async (req, res, next) => {};
 exports.Register = async (req, res, next) => {
   const user = req.body;
-
-  await userM.addUser(user);
+  return await userM.addUser(user);
 };
+exports.getAll = async (req, res, next) => {
+  return await userM.getAllUser();
+};
+exports.getOne = async (req, res, next) => {
+  return await userM.getUserById(2);
+};
+
 exports.DeleteOne = async (req, res, next) => {
   res.json({ mss: "DELETE USER" });
 };

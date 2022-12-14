@@ -1,54 +1,28 @@
 const db = require("../config/db");
-
+const table_name = "user";
 module.exports = {
   getAllUser: async () => {
     const users = await db.load("select * from user");
     console.log(users);
     return users;
   },
-  getUser: async (id) => {
-    const user = db.load(
-      `select * from user where ID_User=${id}`,
-      function (rows) {
-        console.log(rows);
-      },
-      function (error) {
-        console.log(error.sqlMessage);
-      }
-    );
+  getUserById: async (id) => {
+    const user = await db.load(`select * from user where ID_User=${id}`);
     return user;
   },
-
-  // test lay ID
-  // const users=await getUser(1)
-  // console.log(users)
-
-  addUser: (user) => {
-    const result = connection.query(
-      `
-    INSERT INTO user SET ?
-    `,
-      user,
-      function (error, results, fields) {
-        if (error) throw error;
-        // Neat!
-      }
-    );
-    console.log(result); // INSERT INTO posts SET `id` = 1, `title` = 'Hello MySQL'
+  getUserByName: async (name) => {
+    const user = await db.load(`select * from user where ID_User=${name}`);
+    return user;
   },
-  // findOne: (user) => {
-  //   connection.execute(
-  //     "SELECT * FROM `table` WHERE `name` = ? AND `age` > ?",
-  //     ["Rick C-137", 53],
-  //     function (err, results, fields) {
-  //       console.log(results); // results contains rows returned by server
-  //       console.log(fields); // fields contains extra meta data about results, if available
-
-  //       // If you execute same statement again, it will be picked from a LRU cache
-  //       // which will save query preparation time and give better performance
-  //     }
-  //   );
-  // },
+  addUser: (user) => {
+    return db.add(table_name, user);
+  },
+  deleteUser: (user) => {
+    return db.delete(table_name, "ID_User", user);
+  },
+  updateUser: (user) => {
+    return db.update(table_name, "ID_User", user);
+  },
 };
 
 //test insert ID

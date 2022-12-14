@@ -39,7 +39,7 @@ function LoginForm(props) {
       Phone: phoneReg.value,
     };
     //console.log(user);
-
+    //axious.post();
     axios.post("http://localhost:3123/api/users/register", user);
   };
   function switchReg() {
