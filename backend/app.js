@@ -3,7 +3,6 @@ const path = require("path");
 const colors = require("colors");
 const { readdirSync } = require("fs");
 const cors = require("cors");
-const db = require("./models");
 require("dotenv").config();
 //const { errorHandler } = require('./middleware/errorMiddleware')
 
@@ -27,8 +26,6 @@ app.use("/api/users", require("./routes/user.r"));
 
 //app.use(errorHandler)
 
-db.sequelize.sync().then(() => {
-  app.listen(process.env.PORT, () => {
-    console.log(`http://localhost:${process.env.PORT}`);
-  });
+app.listen(process.env.PORT, () => {
+  console.log(`http://localhost:${process.env.PORT}`);
 });

@@ -15,12 +15,12 @@ import MatchResultPage from "./Component/MatchResultPage/MatchResultPage";
 import LoginPage from "./Component/LoginPage/LoginPage";
 
 function App() {
-  const [listOfUsers, setListOfUsers] = useState([]);
-  useEffect(() => {
-    axios.get("http://localhost:3123/api/users").then((respone) => {
-      setListOfUsers(respone.data);
-    });
-  }, []);
+  // const [listOfUsers, setListOfUsers] = useState([]);
+  // useEffect(() => {
+  //   axios.get("http://localhost:3123/api/users").then((respone) => {
+  //     setListOfUsers(respone.data);
+  //   });
+  // }, []);
   return (
     //Rounting app
     <BrowserRouter>

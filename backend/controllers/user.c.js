@@ -1,19 +1,21 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const userM = require("../models/user.m");
-const { Users } = require("../models");
+//const { Users } = require("../models");
+const db = require("../config/db");
 const saltRounds = 10;
 
 exports.getAll = async (req, res, next) => {
-  // const listOfUsers = await Users.findAll();
-  // res.json(listOfUsers);
+  const listOfUsers = await Users.findAll();
+  res.json(listOfUsers);
 };
 exports.getOne = async (req, res, next) => {
   res.json({ mssg: "GET ONE USER" });
 };
 exports.PostOne = async (req, res, next) => {
   const user = req.body;
-  await Users.create(user);
+  console.log(user);
+  await db.createUser(user);
   res.json(user);
 };
 exports.DeleteOne = async (req, res, next) => {
