@@ -1,6 +1,10 @@
 const db = require("../config/db");
 
 module.exports = {
+  getAllUser: async () => {
+    const users = db.load("select * from user");
+    return users;
+  },
   getUser: async (id_users) => {
     const [rows] = await connection.query(
       `

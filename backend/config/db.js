@@ -1,16 +1,15 @@
 const mysql = require("mysql2");
+const config = require("../config/default.json");
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  database: "bong_da",
-  password: "123",
-});
+module.exports = {
+  load: function (sql) {
+    const connection = mysql.createConnection(config.mysql);
+    connection.connect();
+    connection.query(sql, function (error, results, fields) {
+      if (error) throw error;
+      console.log(results);
 
-connection.connect();
-const sql = "SELECT 1+1 AS solution";
-connection.query(sql, function (error, results, fields) {
-  if (error) throw error;
-  console.log("The solution is :", results[0].solution);
-  connection.end();
-});
+      connection.end();
+    });
+  },
+};
