@@ -48,7 +48,6 @@ function LoginForm(props) {
             <a className="createacc" href={"/"}>
               Create
             </a>{" "}
-            */} Create
           </button>
           <p onClick={switchLog} className="message">
             Already registered?{" "}
@@ -59,19 +58,19 @@ function LoginForm(props) {
         className="loginBlock"
         style={{ display: FormType == "Login" ? "block" : "none" }}
       >
-        <form className="login-form" onSubmit={props.Homeback}>
-          <input className="userLogin" type="text" placeholder="username" />
-          <input className="passLogin" type="password" placeholder="password" />
-          <button onClick={storeFormData} className="loginBtn">
+        <form className="register-form">
+          <input className="userReg" type="text" placeholder="name" />
+          <input className="passReg" type="password" placeholder="password" />
+          <input type="text" placeholder="email address" />
+          <input type="date" id="birthday" name="birthday" />
+          <input className="phoneReg" type="text" placeholder="number phone" />
+          <button className="regBtn" onClick={storeFormDataReg}>
             <a className="createacc" href={"/"}>
-              login
+              Create
             </a>
           </button>
-          <p className="message">
-            Not registered?{" "}
-            <a onClick={switchReg} className="createacc" href="#">
-              Create an account
-            </a>
+          <p onClick={switchLog} className="message">
+            Already registered?{" "}
           </p>
         </form>
       </div>
