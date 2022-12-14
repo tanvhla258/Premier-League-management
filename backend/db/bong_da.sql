@@ -188,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`USER` (
   `Email` VARCHAR(60) NULL,
   `Ten_User` VARCHAR(60) NULL,
   `Ngay_Sinh` DATE NULL,
-  `Phone` INT NULL,
+  `Phone` varchar(20) NULL,
   PRIMARY KEY (`ID_User`))
 ENGINE = InnoDB;
 
@@ -198,6 +198,30 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- ------------------------------------------------------------------------------------
+
+-- DOI BONG
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (101, 'Manchester United', 'Old Trafford',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (102, 'Manchester City', 'Etihad Stadium',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (103, 'Chelsea', 'Stamford Bridge',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (104, 'Arsenal', 'Emirates Stadium',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (105, 'Tottenham Hotspur', 'White Hart Lane',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (106, 'Everton', 'Goodison Park',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (107, 'Liverpool', 'Anfield',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (108, 'West Bromwich Albion', 'The Hawthorns',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (109, 'Swansea City', 'The Liberty Stadium',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (110, 'West Ham United', 'Upton Park',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (111, 'Norwich City', 'Carrow Road',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (112, 'Fulham', 'Craven Cottage',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (113, 'Stoke City', 'Britannia Stadium',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (114, 'Southampton', 'St. Mary''s Stadium',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (115, 'Aston Villa', 'Villa Park',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (116, 'Newcastle United', 'St James'' Park',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (117, 'Sunderland', 'Stadium of Light',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (118, 'Wigan Athletic', 'DW Stadium',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (119, 'Reading', 'Madejski Stadium',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (120, 'Queens Park Rangers', 'Loftus Road',' ');
+
+
 -- CAU THU
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong) VALUES ('1001', 'Andrey Arshavin', 'TN', '101');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong) VALUES (1002, 'Mikel Arteta','TN', 104 );
@@ -658,27 +682,6 @@ INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong) VALUES (1451,
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong) VALUES (1452, 'Ronnie Stam','TN', 118);
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong) VALUES (1453, 'Ben Watson.', 'TN',118);
 
--- DOI BONG
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (101, 'Manchester United', 'Old Trafford',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (102, 'Manchester City', 'Etihad Stadium',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (103, 'Chelsea', 'Stamford Bridge',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (104, 'Arsenal', 'Emirates Stadium',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (105, 'Tottenham Hotspur', 'White Hart Lane',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (106, 'Everton', 'Goodison Park',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (107, 'Liverpool', 'Anfield',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (108, 'West Bromwich Albion', 'The Hawthorns',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (109, 'Swansea City', 'The Liberty Stadium',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (110, 'West Ham United', 'Upton Park',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (111, 'Norwich City', 'Carrow Road',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (112, 'Fulham', 'Craven Cottage',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (113, 'Stoke City', 'Britannia Stadium',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (114, 'Southampton', 'St. Mary''s Stadium',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (115, 'Aston Villa', 'Villa Park',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (116, 'Newcastle United', 'St James'' Park',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (117, 'Sunderland', 'Stadium of Light',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (118, 'Wigan Athletic', 'DW Stadium',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (119, 'Reading', 'Madejski Stadium',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (120, 'Queens Park Rangers', 'Loftus Road',' ');
 
 -- GIAI DAU 
 INSERT giai_dau (ID_Giai_Dau,Ten_GD,Ngay_Bat_Dau,Ngay_Ket_Thuc) VALUES (1, 'premier league season 2020/21', '2020-09-12','2021-05-23');
@@ -737,36 +740,6 @@ INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DA
 INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Everton','Manchester United',10,106, 101,1);
 select * from ket_qua_tran_dau;
 
--- GHI BAN 
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (1, 1, 50, 1100,1);
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (2, 1, 48, 1106,2);
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (3, 1, 72, 1100,3 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (4, 1, 64, 1106,4);
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (5, 1, 52, 1089, 5);
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (6, 2,  7, 1358, 6);
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (7, 2, 37, 1358, 7);
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (8, 2, 48, 1357, 8);
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (9, 2, 37, 1357, 9);
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (10, 2, 21, 1350, 10);
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (11, 3, 87, 1266,11 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (12, 3, 62, 1299,12 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (13, 4, 83, 1408,13 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (14, 4, 89, 1408,14 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (15, 4, 75, 1408,15 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (16, 5, 20, 1416,16 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (17, 7, 71, 1184,17 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (18, 7, 18, 1175,18 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (19, 7, 24, 1382,19 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (20, 8, 4, 1068,20 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (21, 8, 21, 1057,21 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (22, 9, 29, 1134,22 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (23, 9, 82, 1133,23 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (24, 9, 56, 1133,24 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (25, 9, 79, 1279,25 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (26, 9, 13, 1294,26 );
-INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (27, 10, 23, 1072,27 );
-
-select * from ghi_ban;
 
 -- LOAI BAN THANG
 INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 1,'A');
@@ -798,3 +771,39 @@ INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 26,'C');
 INSERT loai_ban_thang ( ID_Loai_Ban_Thang,Ten_LBT) VALUES ( 27,'C');
 
 select * from loai_ban_thang;
+-- GHI BAN 
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (1, 1, 50, 1100,1);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (2, 1, 48, 1106,2);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (3, 1, 72, 1100,3 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (4, 1, 64, 1106,4);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (5, 1, 52, 1089, 5);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (6, 2,  7, 1358, 6);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (7, 2, 37, 1358, 7);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (8, 2, 48, 1357, 8);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (9, 2, 37, 1357, 9);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (10, 2, 21, 1350, 10);
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (11, 3, 87, 1266,11 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (12, 3, 62, 1299,12 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (13, 4, 83, 1408,13 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (14, 4, 89, 1408,14 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (15, 4, 75, 1408,15 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (16, 5, 20, 1416,16 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (17, 7, 71, 1184,17 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (18, 7, 18, 1175,18 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (19, 7, 24, 1382,19 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (20, 8, 4, 1068,20 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (21, 8, 21, 1057,21 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (22, 9, 29, 1134,22 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (23, 9, 82, 1133,23 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (24, 9, 56, 1133,24 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (25, 9, 79, 1279,25 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (26, 9, 13, 1294,26 );
+INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_Cau_Thu,LOAI_BAN_THANG_ID_Loai_Ban_Thang) VALUES (27, 10, 23, 1072,27 );
+
+select * from ghi_ban;
+
+
+
+-- USER
+INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone) VALUES ( 1,'123','abc.gmail.com','Hoaiminh','2002-1-2','0123456789');
+INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone) VALUES ( 2,'321','xyz.gmail.com','Vietpham','2002-2-28','9758734931');
