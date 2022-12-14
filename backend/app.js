@@ -2,14 +2,25 @@ const express = require("express");
 const path = require("path");
 const colors = require("colors");
 const { readdirSync } = require("fs");
+const userM = require("./models/user.m");
 const cors = require("cors");
+app = express();
 require("dotenv").config();
 //const { errorHandler } = require('./middleware/errorMiddleware')
+require("./config/session")(app);
+require("./config/passport")(app);
 
-app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
+// app.use(async function (req, res, next) {
+//   if (req.session.isAuthenticated == null) {
+//     req.session.isAuthenticated = false;
+//   }
+//   res.locals.lcIsAuthenticated = req.session.isAuthenticated;
+//   res.locals.lcAuthUser = req.session.authUser;
+//   next();
+// });
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
@@ -25,7 +36,9 @@ app.use("/api/users", require("./routes/user.r"));
 // app.use('/api/goals', require('./routes/goal.r'))
 
 //app.use(errorHandler)
-
+app.use(function (req, res) {
+  res.end("404 NOT FOUND");
+});
 app.listen(process.env.PORT, () => {
   console.log(`http://localhost:${process.env.PORT}`);
 });

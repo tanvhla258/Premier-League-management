@@ -3,7 +3,6 @@ const table_name = "user";
 module.exports = {
   getAllUser: async () => {
     const users = await db.load("select * from user");
-    console.log(users);
     return users;
   },
   getUserById: async (id) => {
@@ -11,8 +10,9 @@ module.exports = {
     return user;
   },
   getUserByName: async (name) => {
-    const user = await db.load(`select * from user where ID_User=${name}`);
-    return user;
+    const u = await db.load(`select * from user where Ten_User='${name}'`);
+
+    return u;
   },
   addUser: (user) => {
     return db.add(table_name, user);

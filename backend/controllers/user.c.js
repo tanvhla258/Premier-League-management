@@ -1,26 +1,39 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const userM = require("../models/user.m");
+const passport = require("../config/passport");
+
 //const { Users } = require("../models");
 const saltRounds = 10;
 
-exports.Login = async (req, res, next) => {};
+exports.Login = async (req, res, next) => {
+  if (req.isAuthenticated()) {
+    // req.session.isAuthenticated = true;
+    // req.session.authUser = req.body.Ten_User;
+    // req.session.Ten_User = req.body.Ten_User;
+    console.log("OK");
+  } else {
+    console.log("NOT OK");
+  }
+};
 exports.Register = async (req, res, next) => {
   const user = req.body;
   return await userM.addUser(user);
 };
 exports.getAll = async (req, res, next) => {
-  return await userM.getAllUser();
+  return res.send(await userM.getAllUser());
 };
 exports.getOne = async (req, res, next) => {
   return await userM.getUserById(2);
 };
 
 exports.DeleteOne = async (req, res, next) => {
-  res.json({ mss: "DELETE USER" });
+  const user = req.body;
+  return await userM.deleteUser(user);
 };
 exports.UpdateOne = async (req, res, next) => {
-  res.json({ mss: "UPDATE USER" });
+  const user = req.body;
+  return await userM.u(user);
 };
 // exports.generateToken = (id) => {
 //   return jwt.sign({ id }, process.env.JWT_SECRET, {
