@@ -7,14 +7,18 @@ function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
 
   const storeFormData = function () {
-    const user = document.querySelector(".userLogin");
-    const pass = document.querySelector(".passLogin");
+    const userLog = document.querySelector(".userLogin");
+    const passLog = document.querySelector(".passLogin");
 
-    localStorage.setItem("user", user.value);
-    localStorage.setItem("pass", pass.value);
+    localStorage.setItem("user", userLog.value);
+    localStorage.setItem("pass", passLog.value);
     localStorage.setItem("isLog", 1);
+    const user = {
+      Ten_User: userLog.value,
+      Password: userLog.value,
+    };
   };
-  const storeFormDataReg = function (data) {
+  const storeFormDataReg = function () {
     const userReg = document.querySelector(".userReg");
     const passReg = document.querySelector(".passReg");
     const emailReg = document.querySelector(".emailReg");
@@ -35,11 +39,8 @@ function LoginForm(props) {
       Phone: phoneReg.value,
     };
     //console.log(user);
-    console.log(user);
-    axios.post("http://localhost:3123/api/users", user).then((respone) => {
-      // setListOfUsers(respone.data);
-      console.log("IT WORKED");
-    });
+
+    axios.post("http://localhost:3123/api/users/register", user);
   };
   function switchReg() {
     setFormType("Register");
@@ -90,8 +91,8 @@ function LoginForm(props) {
             </a> */}
             Create
           </button>
-          <p onClick={switchLog} className="message">
-            Already registered?{" "}
+          <p className="message">
+            Already registered? <a onClick={switchLog}>Login here</a>
           </p>
         </form>
       </div>
