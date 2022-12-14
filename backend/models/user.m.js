@@ -2,19 +2,28 @@ const db = require("../config/db");
 
 module.exports = {
   getAllUser: async () => {
-    const users = db.load("select * from user");
+    const users = db.load(
+      "select * from user",
+      function (rows) {
+        console.log(rows);
+      },
+      function (error) {
+        console.log(error);
+      }
+    );
     return users;
   },
-  getUser: async (id_users) => {
-    const [rows] = await connection.query(
-      `
-    SELECT * 
-    FROM user
-    WHERE ID_User = ?
-    `,
-      [id_users]
+  getUser: async (id) => {
+    const user = db.load(
+      `select * from user where ID_User=${id}`,
+      function (rows) {
+        console.log(rows);
+      },
+      function (error) {
+        console.log(error.sqlMessage);
+      }
     );
-    return rows[0];
+    return user;
   },
 
   // test lay ID
@@ -34,19 +43,19 @@ module.exports = {
     );
     console.log(result); // INSERT INTO posts SET `id` = 1, `title` = 'Hello MySQL'
   },
-  findOne: (user) => {
-    connection.execute(
-      "SELECT * FROM `table` WHERE `name` = ? AND `age` > ?",
-      ["Rick C-137", 53],
-      function (err, results, fields) {
-        console.log(results); // results contains rows returned by server
-        console.log(fields); // fields contains extra meta data about results, if available
+  // findOne: (user) => {
+  //   connection.execute(
+  //     "SELECT * FROM `table` WHERE `name` = ? AND `age` > ?",
+  //     ["Rick C-137", 53],
+  //     function (err, results, fields) {
+  //       console.log(results); // results contains rows returned by server
+  //       console.log(fields); // fields contains extra meta data about results, if available
 
-        // If you execute same statement again, it will be picked from a LRU cache
-        // which will save query preparation time and give better performance
-      }
-    );
-  },
+  //       // If you execute same statement again, it will be picked from a LRU cache
+  //       // which will save query preparation time and give better performance
+  //     }
+  //   );
+  // },
 };
 
 //test insert ID

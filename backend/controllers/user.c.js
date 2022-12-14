@@ -5,11 +5,10 @@ const userM = require("../models/user.m");
 const saltRounds = 10;
 
 exports.getAll = async (req, res, next) => {
-  const users = await userM.getAllUser();
-  res.json(users);
+  await userM.getAllUser();
 };
 exports.getOne = async (req, res, next) => {
-  res.json({ mssg: "GET ONE USER" });
+  await userM.getUser(2);
 };
 exports.Login = async (req, res, next) => {};
 exports.Register = async (req, res, next) => {
