@@ -16,8 +16,8 @@ module.exports = {
   addUser: (user) => {
     return db.add(table_name, user);
   },
-  deleteUser: (user) => {
-    return db.delete(table_name, "ID_User", user);
+  deleteUser: (id) => {
+    return db.delete(table_name, "ID_User", id);
   },
   updateUser: (user) => {
     return db.update(table_name, "ID_User", user);

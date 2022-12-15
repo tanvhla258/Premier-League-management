@@ -27,6 +27,7 @@ app.use((req, res, next) => {
 //routes
 
 app.use("/api/users", require("./routes/user.r"));
+app.use("/api/clubs", require("./routes/club.r"));
 // app.use('/api/goals', require('./routes/goal.r'))
 //app.use('/api / clubs', require('./routes/club.r'))
 // app.use('/api/players', require('./routes/player.r'))

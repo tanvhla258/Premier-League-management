@@ -68,7 +68,7 @@ function LeaguePage(props) {
                 <input type="text" name="teamname" id="teamname" />
               </div>
               <div className="inputItem">
-                <label htmlFor="stadium">stadium</label>
+                <label htmlFor="stadium">Stadium</label>
 
                 <input type="text" name="stadium" id="stadium" />
               </div>
