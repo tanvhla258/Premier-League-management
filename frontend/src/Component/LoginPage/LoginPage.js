@@ -8,7 +8,9 @@ import NavLink from "../NavLink/NavLink";
 function LoginPage(props) {
   let navigate = useNavigate();
 
-  const LogInSucessfully = () => localStorage.setItem("isLog", 1);
+  const LogInSucessfully = () => {
+    localStorage.setItem("isLog", 1);
+  };
 
   return (
     <div className="LoginPage">

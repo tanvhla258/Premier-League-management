@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./TeamPage.css";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
@@ -13,6 +13,18 @@ import { TeamData, addPlayerFromUser } from "../Data/TeamData";
 function TeamPage(props) {
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
   const [TeamDataRender, setTeamDataRender] = useState(TeamData);
+
+  useEffect(() => {
+    try {
+      const data = fetch("http://localhost:5000/api/users").then((res) =>
+        res.json()
+      );
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
   function popUp() {
     setDisplayPopUp(1);
   }

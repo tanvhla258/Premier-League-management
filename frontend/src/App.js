@@ -13,23 +13,24 @@ import TeamPage from "./Component/TeamPage/TeamPage";
 import TopScorePage from "./Component/TopScorePage/TopScorePage";
 import MatchResultPage from "./Component/MatchResultPage/MatchResultPage";
 import LoginPage from "./Component/LoginPage/LoginPage";
+import LeaguePage from "./Component/LeaguePage/LeaguePage";
 
 function App() {
-  const [listOfUsers, setListOfUsers] = useState([]);
-  useEffect(() => {
-    async function fectchListOfUsers() {
-      const url = "http://localhost:3123/api/users";
-      const respone = await fetch(url);
-      const responeJSON = await respone.json();
-      console.log({ responeJSON });
-      const { data } = responeJSON;
-      setListOfUsers(data);
-    }
-    // axios.get("http://localhost:3123/api/users").then((respone) => {
-    //   setListOfUsers(respone.data);
-    // },[]);
-    fectchListOfUsers();
-  }, []);
+  // const [listOfUsers, setListOfUsers] = useState([]);
+  // useEffect(() => {
+  //   async function fectchListOfUsers() {
+  //     const url = "http://localhost:3123/api/users";
+  //     const respone = await fetch(url);
+  //     const responeJSON = await respone.json();
+  //     console.log({ responeJSON });
+  //     const { data } = responeJSON;
+  //     setListOfUsers(data);
+  //   }
+  //   // axios.get("http://localhost:3123/api/users").then((respone) => {
+  //   //   setListOfUsers(respone.data);
+  //   // },[]);
+  //   fectchListOfUsers();
+  // }, []);
   return (
     //Rounting app
     <BrowserRouter>
@@ -41,6 +42,7 @@ function App() {
         <Route path="/TopScorePage" element={<TopScorePage />} />
         <Route path="/MatchResultPage" element={<MatchResultPage />} />
         <Route path="/LoginPage" element={<LoginPage />} />
+        <Route path="/LeaguePage" element={<LeaguePage />} />
       </Routes>
     </BrowserRouter>
     // <div className="App">

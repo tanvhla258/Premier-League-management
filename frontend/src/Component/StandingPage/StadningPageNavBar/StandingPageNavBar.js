@@ -9,9 +9,7 @@ import "./StandingPageNavBar.css";
 function StandingPageNavBar(props) {
   const Navnavigate2 = useNavigate();
   const [pagelog, setpagelog] = useState(false);
-  useEffect(() => {
-    setpagelog(!pagelog);
-  }, [pagelog]);
+
   const LogOutSucessfully = useCallback(() => {
     localStorage.setItem("isLog", 0);
     localStorage.setItem("user", undefined);

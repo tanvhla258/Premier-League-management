@@ -27,7 +27,7 @@ function HomeSection() {
   return (
     <div className="HomeSection">
       <div className="HomeSectionHeader">
-        <Logo value="Premier Leaguage"></Logo>
+        <Logo value="Premier League"></Logo>
       </div>
 
       <div className="HomeSectionWrapper">

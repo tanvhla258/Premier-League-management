@@ -1,0 +1,46 @@
+.LeaguePage{
+    height: 800px;
+    width: 100%;
+    background-image:linear-gradient(180deg, rgba(122, 58, 187, 0.6) 0%,rgba(122, 58, 187, 0.1) 100%);
+}
+.TeamAvaImg{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.TeamAva{
+    width: 100px;
+    height: 100px;
+    margin-right: 8px;
+}
+
+.Team{
+    background-color: #BABFF0;
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    max-width: 400px;
+    justify-content: space-between;
+    padding: 10px 16px;
+}
+
+.TeamInfo{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    margin-right: 8px;
+}
+
+
+.TeamTag{
+    margin-right: 12px;
+
+}
+
+.TeamInfoName{
+    margin-bottom: 14px;
+}
+.TeamInfoCountry{
+    margin-top: 14px;
+}

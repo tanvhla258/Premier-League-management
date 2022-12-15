@@ -5,7 +5,7 @@ import HomeSection from "../HomeSection/HomeSection";
 function HomeIntro() {
   return (
     <div className="HomeIntro">
-      <div className="title">Premier Leaguage</div>
+      <div className="title">Premier League</div>
       <div className="subtitle">Tournament mangement</div>
     </div>
   );
