@@ -4,6 +4,7 @@ const table_name = "doi_bong";
 module.exports = {
   getAllClubs: async () => {
     const clubs = await db.load(`select * from ${table_name}`);
+    console.log(clubs);
     return clubs;
   },
   addClub: async (club) => {

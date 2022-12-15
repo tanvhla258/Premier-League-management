@@ -20,9 +20,6 @@ exports.Login = async (req, res, next) => {
       return res.json(userDatabase);
     }
   }
-
-  res.status(201);
-  res.json(await userM.getUserByName(username));
 };
 exports.Register = async (req, res, next) => {
   const passwordHased = await bcrypt.hash(req.body.Password, saltRounds);

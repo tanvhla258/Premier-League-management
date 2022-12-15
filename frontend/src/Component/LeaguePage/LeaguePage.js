@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
 import "./LeaguePage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +12,19 @@ import logo from "../../img/mulogo.png";
 const LeagueData = [];
 function LeaguePage(props) {
   const LeagueData = [];
+  const [listOfUsers, setListOfUsers] = useState([]);
+  useEffect(() => {
+    async function fectchListOfUsers() {
+      const url = "http://localhost:3123/api/clubs";
+      const respone = await fetch(url);
+      const responeJSON = await respone.json();
+      console.log({ responeJSON });
+      const { data } = responeJSON;
+      setListOfUsers(data);
+    }
 
+    fectchListOfUsers();
+  }, []);
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
   const [LeagueDataRender, setLeagueDataRender] = useState(LeagueData);
   function popUp() {
