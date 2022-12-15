@@ -9,8 +9,9 @@ import Swal from "sweetalert2";
 function LoginPage(props) {
   let navigate = useNavigate();
 
-  const LogInSucessfully = () => {
+  const LogInSucessfully = useCallback(() => {
     localStorage.setItem("isLog", 1);
+
     Swal.fire(
       "Sign up successfully!",
       "Return back to signin page!",
@@ -20,7 +21,8 @@ function LoginPage(props) {
         window.location.href = "/";
       }
     });
-  };
+    return navigate("/", { replace: true }), [navigate];
+  });
 
   return (
     <div className="LoginPage">

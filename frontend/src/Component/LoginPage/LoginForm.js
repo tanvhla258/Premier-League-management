@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./LoginForm.css";
 import axios from "axios";
 
-import { Link } from "react-router-dom";
 function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
 
