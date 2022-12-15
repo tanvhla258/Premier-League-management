@@ -29,6 +29,7 @@ exports.Register = async (req, res, next) => {
     Email: req.body.Email,
     Ngay_Sinh: req.body.Ngay_Sinh,
     Phone: req.body.Phone,
+    Role: req.body.Role,
   };
   await userM.addUser(user);
   res.send("Register success");
