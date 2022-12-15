@@ -5,11 +5,21 @@ import { useNavigate } from "react-router-dom";
 
 import Button from "../Button/Button";
 import NavLink from "../NavLink/NavLink";
+import Swal from "sweetalert2";
 function LoginPage(props) {
   let navigate = useNavigate();
 
   const LogInSucessfully = () => {
     localStorage.setItem("isLog", 1);
+    Swal.fire(
+      "Sign up successfully!",
+      "Return back to signin page!",
+      "Success"
+    ).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/";
+      }
+    });
   };
 
   return (
