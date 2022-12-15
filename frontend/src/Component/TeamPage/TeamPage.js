@@ -9,20 +9,28 @@ import Player from "../Table/Player/Player";
 import PlayerTable from "../Table/PlayerTable/PlayerTable";
 import teamLogo from "../../img/mulogo.png";
 import { TeamData, addPlayerFromUser } from "../Data/TeamData";
+import axios from "axios";
 
 function TeamPage(props) {
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
   const [TeamDataRender, setTeamDataRender] = useState(TeamData);
-
+  const [listOfPlayers, setListOfPlayers] = useState([]);
   useEffect(() => {
-    try {
-      const data = fetch("http://localhost:5000/api/users").then((res) =>
-        res.json()
-      );
-      console.log(data);
-    } catch (e) {
-      console.log(e.message);
+    async function fectchListOfPlayers() {
+      try {
+        const url = "http://localhost:3123/api/clubs/101/players";
+        const respone = await fetch(url);
+        const responeJSON = await respone.json();
+        console.log({ responeJSON });
+        const { data } = responeJSON;
+
+        setListOfPlayers(data);
+      } catch (error) {
+        console.log("Fail", error.message);
+      }
     }
+
+    fectchListOfPlayers();
   }, []);
 
   function popUp() {
@@ -32,6 +40,7 @@ function TeamPage(props) {
     e.preventDefault();
 
     const formHtml = document.querySelector("#addPlayerId");
+
     const data = new FormData(formHtml);
     const props = Object.fromEntries(data);
 
@@ -41,6 +50,8 @@ function TeamPage(props) {
       country: props.country,
       age: props.age,
     };
+    axios.post("http://localhost:3123/api/clubs/101/players", newPlayer);
+
     TeamDataRender.players = [...TeamDataRender.players, newPlayer];
     setTeamDataRender(TeamDataRender);
     const inputs = document.querySelectorAll("input");
@@ -96,6 +107,15 @@ function TeamPage(props) {
 
                 <input type="text" name="country" id="country" />
               </div>
+              <div className="inputItem">
+                <label htmlFor="type">Type:</label>
+                <select name="country" id="type">
+                  <option value="domestic" selected>
+                    domestic
+                  </option>
+                  <option value="foreign">foreign</option>
+                </select>
+              </div>
               <div className="formBtn">
                 <div className="submit">
                   <button onClick={SubmitForm}>Submit</button>
@@ -119,6 +139,7 @@ function TeamPage(props) {
             popUp={popUp}
             name="Manchester United"
             TeamData={TeamDataRender}
+            //TeamData={listOfPlayers}
           />
         </div>
       </div>

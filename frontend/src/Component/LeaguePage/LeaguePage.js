@@ -12,18 +12,18 @@ import logo from "../../img/mulogo.png";
 const LeagueData = [];
 function LeaguePage(props) {
   const LeagueData = [];
-  const [listOfUsers, setListOfUsers] = useState([]);
+  const [listOfClubs, setListOfClubs] = useState([]);
   useEffect(() => {
-    async function fectchListOfUsers() {
+    async function fectchListOfClubs() {
       const url = "http://localhost:3123/api/clubs";
       const respone = await fetch(url);
       const responeJSON = await respone.json();
       console.log({ responeJSON });
       const { data } = responeJSON;
-      setListOfUsers(data);
+      setListOfClubs(data);
     }
 
-    fectchListOfUsers();
+    fectchListOfClubs();
   }, []);
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
   const [LeagueDataRender, setLeagueDataRender] = useState(LeagueData);
@@ -36,6 +36,7 @@ function LeaguePage(props) {
     const formHtml = document.querySelector("#addPlayerId");
     const data = new FormData(formHtml);
     const props = Object.fromEntries(data);
+
     const newLeague = "";
     LeagueDataRender = [...LeagueDataRender, newLeague];
     setLeagueDataRender(LeagueDataRender);

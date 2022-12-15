@@ -1,7 +1,8 @@
 const clubM = require("../models/club.m");
 
 exports.getClubs = async (req, res, next) => {
-  res.send(await clubM.getAllClubs());
+  const clubs = await clubM.getAllClubs();
+  res.json(clubs);
 };
 
 exports.createClub = async (req, res, next) => {
@@ -17,23 +18,33 @@ exports.updateAClub = async (req, res, next) => {
 };
 
 exports.deleteAClub = async (req, res, next) => {
-  const id = req.params["id"];
+  const id = req.params.id;
   await clubM.deleteClub(id);
   res.send("delete club success");
 };
 
 exports.getAClub = async (req, res, next) => {
-  const id = req.params["id"];
-  await clubM.getOneClub(id);
-  res.send("get one club");
+  const id = req.params.id;
+  const club = await clubM.getOneClub(id);
+  res.json(club);
 };
 
 exports.findAClub = async (req, res, next) => {
-  const club = req.body;
-  const existedClub = await searchClub(club);
+  // const club = req.body;
+  // const existedClub = await searchClub(club);
 };
-exports.getAllPlayersInClub = async (req, res, next) => {};
-exports.addPlayerToClub = async (req, res, next) => {};
+exports.getAllPlayersInClub = async (req, res, next) => {
+  const id = req.params.id;
+  //const club = await clubM.getOneClub(id);
+  const players = await clubM.getPlayers(id);
+  res.json(players);
+};
+exports.addPlayerToClub = async (req, res, next) => {
+  const id = req.params.id;
+
+  const newplayer = req.body;
+  console.log(newplayer);
+};
 exports.getOnePlayerInClub = async (req, res, next) => {};
 exports.updateOnePlayerInClub = async (req, res, next) => {};
 exports.deleteOnePlayerInClub = async (req, res, next) => {};

@@ -4,7 +4,6 @@ const table_name = "doi_bong";
 module.exports = {
   getAllClubs: async () => {
     const clubs = await db.load(`select * from ${table_name}`);
-    console.log(clubs);
     return clubs;
   },
   addClub: async (club) => {
@@ -17,8 +16,16 @@ module.exports = {
     return db.delete(table_name, "ID_Doi_Bong", id);
   },
   getOneClub: async (id) => {
-    const club = await db.load(`select * from user where ID_Doi_Bong=${id}`);
+    const club = await db.load(
+      `select * from ${table_name} where ID_Doi_Bong=${id}`
+    );
     return club;
   },
   searchClub: async (club) => {},
+  getPlayers: async (id) => {
+    const players = await db.load(
+      `select * from cau_thu where DOI_BONG_ID_Doi_Bong=${id}`
+    );
+    return players;
+  },
 };
