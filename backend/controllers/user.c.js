@@ -10,14 +10,14 @@ exports.Login = async (req, res, next) => {
   const password = req.body.Password;
   const userDatabase = await userM.getUserByName(username);
   if (userDatabase === null) {
-    console.log(null);
+    res.json({ error: "Invalid User" });
   }
   const compare = bcrypt.compareSync(password, userDatabase[0].Password);
   if (compare === false) {
-    console.log("WRONG");
+    res.json({ error: "Wrong password" });
     return;
   }
-  console.log("CORRECT");
+  res.json("Sign in success");
 };
 exports.Register = async (req, res, next) => {
   const passwordHased = await bcrypt.hash(req.body.Password, saltRounds);

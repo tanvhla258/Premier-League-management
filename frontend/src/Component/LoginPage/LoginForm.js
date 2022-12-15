@@ -15,8 +15,14 @@ function LoginForm(props) {
     localStorage.setItem("isLog", 1);
     const user = {
       Ten_User: userLog.value,
-      Password: userLog.value,
+      Password: passLog.value,
     };
+
+    axios
+      .post("http://localhost:3123/api/users/login", user)
+      .then((respone) => {
+        console.log(respone.data);
+      });
   };
   const storeFormDataReg = function () {
     const userReg = document.querySelector(".userReg");
@@ -39,7 +45,7 @@ function LoginForm(props) {
       Phone: phoneReg.value,
     };
     //console.log(user);
-    //axious.post();
+
     axios.post("http://localhost:3123/api/users/register", user);
   };
   function switchReg() {
@@ -73,12 +79,7 @@ function LoginForm(props) {
             placeholder="email address"
             name="email"
           />
-          <input
-            className="birthdayReg"
-            type="date"
-            id="birthday"
-            name="birthday"
-          />
+          <input className="birthdayReg" type="date" name="birthday" />
           <input
             className="phoneReg"
             type="text"
@@ -101,12 +102,20 @@ function LoginForm(props) {
         style={{ display: FormType === "Login" ? "block" : "none" }}
       >
         <form className="login-form" onSubmit={props.Homeback}>
-          <input className="userLogin" type="text" placeholder="username" />
-          <input className="passLogin" type="password" placeholder="password" />
+          <input
+            name="username"
+            className="userLogin"
+            type="text"
+            placeholder="username"
+          />
+          <input
+            name="password"
+            className="passLogin"
+            type="password"
+            placeholder="password"
+          />
           <button onClick={storeFormData} className="loginBtn">
-            <a className="createacc" href={"/"}>
-              login
-            </a>
+            Login
           </button>
           <p className="message">
             Not registered?{" "}
