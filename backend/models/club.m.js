@@ -31,4 +31,10 @@ module.exports = {
   addPlayer: async (player) => {
     return db.add("cau_thu", player);
   },
+  getOnePlayerInClub: async (id, idplayer) => {
+    const player = await db.load(
+      `select * from cau_thu where DOI_BONG_ID_Doi_Bong=${id} and ID_Cau_Thu=${idplayer} `
+    );
+    return player;
+  },
 };
