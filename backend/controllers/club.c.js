@@ -40,10 +40,12 @@ exports.getAllPlayersInClub = async (req, res, next) => {
   res.json(players);
 };
 exports.addPlayerToClub = async (req, res, next) => {
-  const id = req.params.id;
-
-  const newplayer = req.body;
-  console.log(newplayer);
+  const newplayer = {
+    Ten_CT: req.body.name,
+    Loai_CT: req.body.type,
+    DOI_BONG_ID_Doi_Bong: req.body.club,
+  };
+  await clubM.addPlayer(newplayer);
 };
 exports.getOnePlayerInClub = async (req, res, next) => {};
 exports.updateOnePlayerInClub = async (req, res, next) => {};

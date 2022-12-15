@@ -28,4 +28,7 @@ module.exports = {
     );
     return players;
   },
+  addPlayer: async (player) => {
+    return db.add("cau_thu", player);
+  },
 };

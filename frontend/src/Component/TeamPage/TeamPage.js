@@ -45,10 +45,11 @@ function TeamPage(props) {
     const props = Object.fromEntries(data);
 
     const newPlayer = {
-      type: "TeamPlayer",
+      type: props.type,
       name: props.playername,
       country: props.country,
       age: props.age,
+      club: 101,
     };
     axios.post("http://localhost:3123/api/clubs/101/players", newPlayer);
 
@@ -109,7 +110,7 @@ function TeamPage(props) {
               </div>
               <div className="inputItem">
                 <label htmlFor="type">Type:</label>
-                <select name="country" id="type">
+                <select name="type" id="type">
                   <option value="domestic" selected>
                     domestic
                   </option>
