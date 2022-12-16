@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`DOI_BONG` (
   `ID_Doi_Bong` INT NOT NULL auto_increment,
   `Ten_DB` VARCHAR(60) NOT NULL,
   `San_Nha` VARCHAR(60) NOT NULL,
-  `Logo` VARBINARY(100) NOT NULL,
+  `Logo` VARBINARY(100) NULL,
   PRIMARY KEY (`ID_Doi_Bong`))
 ENGINE = InnoDB;
 
@@ -163,6 +163,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`CAU_THU` (
   `ID_Cau_Thu` INT NOT NULL auto_increment,
   `Ten_CT` VARCHAR(60) NOT NULL,
   `Loai_CT` VARCHAR(60) NOT NULL,
+  `Ngay_Sinh_CT` DATE NULL,
   `Ghi_Chu` VARCHAR(60) NULL,
   `DOI_BONG_ID_Doi_Bong` INT NOT NULL ,
   PRIMARY KEY (`ID_Cau_Thu`, `DOI_BONG_ID_Doi_Bong`),
@@ -799,8 +800,8 @@ INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_C
 
 select * from ghi_ban;
 
-
-
 -- USER
 INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone,Role) VALUES ( 1,'123','abc.gmail.com','Hoaiminh','2002-1-2','0123456789','Quan ly');
 INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone,Role) VALUES ( 2,'321','xyz.gmail.com','Vietpham','2002-2-28','9758734931','Quan ly');
+
+SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = 'username')
