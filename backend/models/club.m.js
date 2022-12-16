@@ -12,7 +12,7 @@ module.exports = {
   updateClub: async (club) => {
     return db.update(table_name, "ID_Doi_Bong", club);
   },
-  deleteClub: async (club) => {
+  deleteClub: async (id) => {
     return db.delete(table_name, "ID_Doi_Bong", id);
   },
   getOneClub: async (id) => {
