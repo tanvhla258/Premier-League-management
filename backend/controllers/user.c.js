@@ -9,36 +9,49 @@ exports.Login = async (req, res, next) => {
   const username = req.body.Ten_User;
   const password = req.body.Password;
   const userDatabase = await userM.getUserByName(username);
-  if (userDatabase === null) {
-    res.json({ error: "Invalid User" });
+  //console.log(userDatabase);
+  if (userDatabase.length === 0) {
+    return res.send("Ivalid User");
+  } else {
+    const compare = bcrypt.compareSync(password, userDatabase[0].Password);
+    if (compare === false) {
+      return res.send("Wrong password");
+    } else {
+      return res.json(userDatabase);
+    }
   }
-  const compare = bcrypt.compareSync(password, userDatabase[0].Password);
-  if (compare === false) {
-    res.json({ error: "Wrong password" });
-    return;
-  }
-  res.json("Sign in success");
 };
 exports.Register = async (req, res, next) => {
   const passwordHased = await bcrypt.hash(req.body.Password, saltRounds);
   const user = {
     Ten_User: req.body.Ten_User,
     Password: passwordHased,
+    Email: req.body.Email,
+    Ngay_Sinh: req.body.Ngay_Sinh,
+    Phone: req.body.Phone,
+    Role: req.body.Role,
   };
-  return await userM.addUser(user);
+  await userM.addUser(user);
+  res.send("Register success");
 };
 exports.getAll = async (req, res, next) => {
-  return res.send(await userM.getAllUser());
+  res.send(await userM.getAllUser());
 };
 exports.getOne = async (req, res, next) => {
-  return await userM.getUserById(2);
+  const id = req.params["id"];
+  res.send(await userM.getUserById(id));
 };
 
 exports.DeleteOne = async (req, res, next) => {
-  const user = req.body;
-  return await userM.deleteUser(user);
+  const id = req.params["id"];
+  //const user = req.body;
+  await userM.deleteUser(id);
+  res.send("Deleted");
 };
 exports.UpdateOne = async (req, res, next) => {
+  const id = req.params["id"];
   const user = req.body;
-  return await userM.u(user);
+
+  await userM.updateUser(user);
+  res.send("Updated");
 };

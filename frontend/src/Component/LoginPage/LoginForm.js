@@ -29,12 +29,15 @@ function LoginForm(props) {
     const emailReg = document.querySelector(".emailReg");
     const birthdayReg = document.querySelector(".birthdayReg");
     const phoneReg = document.querySelector(".phoneReg");
+    const roleReg = document.querySelector("#role");
 
     localStorage.setItem("user", userReg.value);
     localStorage.setItem("pass", passReg.value);
     localStorage.setItem("email", emailReg.value);
     localStorage.setItem("birthday", birthdayReg.value);
     localStorage.setItem("phone", phoneReg.value);
+    localStorage.setItem("role", roleReg.value);
+
     localStorage.setItem("isLog", 1);
     const user = {
       Ten_User: userReg.value,
@@ -42,7 +45,9 @@ function LoginForm(props) {
       Email: emailReg.value,
       Ngay_Sinh: birthdayReg.value,
       Phone: phoneReg.value,
+      Role: roleReg.value,
     };
+
     //console.log(user);
 
     axios.post("http://localhost:3123/api/users/register", user);
@@ -85,6 +90,15 @@ function LoginForm(props) {
             placeholder="number phone"
             name="phone"
           />
+          <div className="roleReg">
+            <label for="role">Role:</label>
+            <select name="role" id="role">
+              <option value="guest" selected>
+                guest
+              </option>
+              <option value="admin">admin</option>
+            </select>
+          </div>
           <button className="regBtn" onClick={storeFormDataReg}>
             {/* <a className="createacc" href={"/"}>
               Create

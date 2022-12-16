@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
 import "./LeaguePage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +13,19 @@ import logo from "../../img/mulogo.png";
 const LeagueData = [];
 function LeaguePage(props) {
   const LeagueData = [];
+  const [listOfClubs, setListOfClubs] = useState([]);
+  useEffect(() => {
+    async function fectchListOfClubs() {
+      const url = "http://localhost:3123/api/clubs";
+      const respone = await fetch(url);
+      const responeJSON = await respone.json();
+      console.log({ responeJSON });
+      const { data } = responeJSON;
+      setListOfClubs(data);
+    }
 
+    fectchListOfClubs();
+  }, []);
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
   const [LeagueDataRender, setLeagueDataRender] = useState(LeagueData);
   function popUp() {
@@ -25,17 +37,9 @@ function LeaguePage(props) {
     const formHtml = document.querySelector("#addLeagueid");
     const data = new FormData(formHtml);
     const props = Object.fromEntries(data);
-    console.log(props);
-    const newLeague = {
-      name: props.teamname,
-      stadium: props.stadium,
-    };
-    // Send data
-    axios.post("http://localhost:5000/api/clubs", newLeague).then((respone) => {
-      console.log(respone.data);
-    });
-
-    //Clear input
+    const newLeague = "";
+    LeagueDataRender = [...LeagueDataRender, newLeague];
+    setLeagueDataRender(LeagueDataRender);
     const inputs = document.querySelectorAll("input");
     inputs.forEach((element) => {
       element.value = "";
@@ -71,7 +75,7 @@ function LeaguePage(props) {
                 <input type="text" name="teamname" id="teamname" />
               </div>
               <div className="inputItem">
-                <label htmlFor="stadium">stadium</label>
+                <label htmlFor="stadium">Stadium</label>
 
                 <input type="text" name="stadium" id="stadium" />
               </div>
