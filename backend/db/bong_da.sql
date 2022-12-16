@@ -804,4 +804,15 @@ select * from ghi_ban;
 INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone,Role) VALUES ( 1,'123','abc.gmail.com','Hoaiminh','2002-1-2','0123456789','Quan ly');
 INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone,Role) VALUES ( 2,'321','xyz.gmail.com','Vietpham','2002-2-28','9758734931','Quan ly');
 
-SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = 'username')
+-- insert neu Ten_User chua co trong bang
+INSERT INTO user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone,Role) 
+SELECT * FROM ( SELECT 3,'321','gher.gmail.com','VanA','2002-3-24','97584354931','Quan ly') AS tmp
+WHERE NOT EXISTS (
+  select Ten_User from user where Ten_User = 'VanA' and Email = 'gher.gmail.com'
+);
+	
+select * from user;
+
+-- bang xep hang theo thu tu tang dan 
+select * from bang_xep_hang
+order by Tong_Diem;
