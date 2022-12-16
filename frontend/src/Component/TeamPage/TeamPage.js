@@ -8,39 +8,26 @@ import add from "../../img/plus.png";
 import Player from "../Table/Player/Player";
 import PlayerTable from "../Table/PlayerTable/PlayerTable";
 import teamLogo from "../../img/mulogo.png";
-import { TeamData, addPlayerFromUser } from "../Data/TeamData";
 import axios from "axios";
 
 function TeamPage(props) {
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
-  const [TeamDataRender, setTeamDataRender] = useState(TeamData);
   const [listOfPlayers, setListOfPlayers] = useState([]);
-  // useEffect(() => {
-  //   try {
-  //     const data = fetch("http://localhost:5000/api/clubs").then((res) =>
-  //       res.json()
-  //     );
-  //     console.log(data);
-  //   } catch (e) {
-  //     console.log(e.message);
-  //   }
-  // });
-  //   async function fectchListOfPlayers() {
-  //     try {
-  //       const url = "http://localhost:3123/api/clubs/101/players";
-  //       const respone = await fetch(url);
-  //       const responeJSON = await respone.json();
-  //       console.log({ responeJSON });
-  //       const { data } = responeJSON;
+  useEffect(() => {
+    const fetchTeam = async () => {
+      try {
+        const data = await fetch(
+          "http://localhost:5000/api/clubs/101/players"
+        ).then((res) => res.json());
+        console.log(data);
+        setListOfPlayers([...data]);
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
 
-  //       setListOfPlayers(data);
-  //     } catch (error) {
-  //       console.log("Fail", error.message);
-  //     }
-  //   }
-
-  //   fectchListOfPlayers();
-  // }, []);
+    fetchTeam();
+  }, []);
 
   function popUp() {
     setDisplayPopUp(1);
@@ -48,30 +35,25 @@ function TeamPage(props) {
   function SubmitForm(e) {
     e.preventDefault();
 
-    const formHtml = document.querySelector("#addPlayerId");
+    // const formHtml = document.querySelector("#addPlayerId");
 
-    const data = new FormData(formHtml);
-    const props = Object.fromEntries(data);
+    // const data = new FormData(formHtml);
+    // const props = Object.fromEntries(data);
 
-    const newPlayer = {
-      type: props.type,
-      name: props.playername,
-      country: props.country,
-      age: props.age,
-      club: 101,
-    };
-    axios.post("http://localhost:3123/api/clubs/101/players", newPlayer);
+    // const newPlayer = {
+    //   type: props.type,
+    //   name: props.playername,
+    //   country: props.country,
+    //   age: props.age,
+    //   club: 101,
+    // };
+    // axios.post("http://localhost:3123/api/clubs/101/players", newPlayer);
 
-    TeamDataRender.players = [...TeamDataRender.players, newPlayer];
-    setTeamDataRender(TeamDataRender);
-    const inputs = document.querySelectorAll("input");
-    inputs.forEach((element) => {
-      element.value = "";
-    });
-    TeamData.players = [...TeamDataRender.players];
+    // const inputs = document.querySelectorAll("input");
+    // inputs.forEach((element) => {
+    //   element.value = "";
+    // });
     setDisplayPopUp(0);
-    console.log(TeamData.players);
-    console.log(TeamDataRender.players);
   }
   function CancelForm(e) {
     e.preventDefault();
@@ -79,7 +61,6 @@ function TeamPage(props) {
     inputs.forEach((element) => {
       element.value = "";
     });
-    console.log(inputs);
     setDisplayPopUp(0);
   }
 
@@ -148,7 +129,7 @@ function TeamPage(props) {
           <PlayerTable
             popUp={popUp}
             name="Manchester United"
-            TeamData={TeamDataRender}
+            TeamData={[...listOfPlayers]}
             //TeamData={listOfPlayers}
           />
         </div>

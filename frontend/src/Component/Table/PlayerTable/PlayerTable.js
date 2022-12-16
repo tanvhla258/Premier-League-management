@@ -9,15 +9,14 @@ import {
   faCaretRight,
   faAdd,
 } from "@fortawesome/free-solid-svg-icons";
-import TeamPage from "../../TeamPage/TeamPage";
 function PlayerTable(props) {
   let [currentPage, setCurrentPage] = useState(0);
   const [TeamPerPage] = useState(4);
-  let maxPage = Math.floor((props.TeamData.players?.length - 1) / TeamPerPage);
+  let maxPage = Math.floor((props.TeamData?.length - 1) / TeamPerPage);
   let startItem = currentPage * TeamPerPage;
   let endItem = startItem + TeamPerPage;
 
-  let renderPlayerList = props.TeamData.players?.slice(startItem, endItem);
+  let renderPlayerList = props.TeamData?.slice(startItem, endItem);
 
   function nextClick() {
     return currentPage < maxPage
@@ -51,10 +50,10 @@ function PlayerTable(props) {
         <div className="PlayerTableContentMain">
           {renderPlayerList?.map((p) => {
             return (
-              <div className="PlayerItem">
+              <div key={p.ID_CauThu} className="PlayerItem">
                 <Player
                   type="TeamPlayer"
-                  name={p.name}
+                  name={p.Ten_CT}
                   age={p.age}
                   country={p.country}
                 />

@@ -21,8 +21,11 @@ function LeaguePage(props) {
         const data = await fetch("http://localhost:5000/api/clubs").then(
           (res) => res.json()
         );
+        console.log(data);
         setListOfClubs([...data]);
-      } catch (e) {}
+      } catch (e) {
+        console.log(e.message);
+      }
     };
 
     fetchLeague();
@@ -54,15 +57,16 @@ function LeaguePage(props) {
     const data = new FormData(formHtml);
     const props = Object.fromEntries(data);
     const newTeam = {
-      name: props.teamname,
-      stadium: props.stadium,
+      Ten_DB: props.teamname,
+      San_Nha: props.stadium,
+      Id_Doi_Bong: "200",
     };
 
     const inputs = document.querySelectorAll("input");
     inputs.forEach((element) => {
       element.value = "";
     });
-    axios.post("http://localhost:5000/api/clubs", newTeam).then((respone) => {
+    axios.post("http://localhost:5000/api/clubs/", newTeam).then((respone) => {
       console.log(respone.data);
     });
     setDisplayPopUp(0);
