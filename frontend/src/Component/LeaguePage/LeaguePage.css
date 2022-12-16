@@ -20,9 +20,9 @@
     display: flex;
     align-items: center;
     border-radius: 16px;
-    max-width: 400px;
-    justify-content: space-between;
+    width: 500px;
     padding: 10px 16px;
+    margin: 8px
 }
 
 .TeamInfo{
@@ -35,7 +35,6 @@
 
 .TeamTag{
     margin-right: 12px;
-
 }
 
 .TeamInfoName{
@@ -43,4 +42,30 @@
 }
 .TeamInfoCountry{
     margin-top: 14px;
+}
+.TeamTableHeader{
+    background-color: rgba(122, 58, 187, 1);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0px 16px;
+}
+.TeamTableContent{
+    padding: 20px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.TeamTableContentMain{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+
 }

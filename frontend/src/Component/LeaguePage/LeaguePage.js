@@ -10,24 +10,40 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import logo from "../../img/mulogo.png";
-const LeagueData = [];
 function LeaguePage(props) {
-  const LeagueData = [];
   const [listOfClubs, setListOfClubs] = useState([]);
-  useEffect(() => {
-    async function fectchListOfClubs() {
-      const url = "http://localhost:3123/api/clubs";
-      const respone = await fetch(url);
-      const responeJSON = await respone.json();
-      console.log({ responeJSON });
-      const { data } = responeJSON;
-      setListOfClubs(data);
-    }
-
-    fectchListOfClubs();
-  }, []);
+  let [currentPage, setCurrentPage] = useState(0);
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
-  const [LeagueDataRender, setLeagueDataRender] = useState(LeagueData);
+
+  useEffect(() => {
+    const fetchLeague = async () => {
+      try {
+        const data = await fetch("http://localhost:5000/api/clubs").then(
+          (res) => res.json()
+        );
+        setListOfClubs([...data]);
+      } catch (e) {}
+    };
+
+    fetchLeague();
+  }, []);
+
+  let LeagueDataRender = [...listOfClubs];
+  const [TeamPerPage] = useState(4);
+  let maxPage = Math.floor((LeagueDataRender?.length - 1) / TeamPerPage);
+  let startItem = currentPage * TeamPerPage;
+  let endItem = startItem + TeamPerPage;
+
+  let renderTeamList = LeagueDataRender?.slice(startItem, endItem);
+  console.log(renderTeamList);
+  function nextClick() {
+    return currentPage < maxPage
+      ? setCurrentPage(currentPage + 1)
+      : currentPage;
+  }
+  function prevClick() {
+    return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
+  }
   function popUp() {
     setDisplayPopUp(1);
   }
@@ -37,12 +53,17 @@ function LeaguePage(props) {
     const formHtml = document.querySelector("#addLeagueid");
     const data = new FormData(formHtml);
     const props = Object.fromEntries(data);
-    const newLeague = "";
-    LeagueDataRender = [...LeagueDataRender, newLeague];
-    setLeagueDataRender(LeagueDataRender);
+    const newTeam = {
+      name: props.teamname,
+      stadium: props.stadium,
+    };
+
     const inputs = document.querySelectorAll("input");
     inputs.forEach((element) => {
       element.value = "";
+    });
+    axios.post("http://localhost:5000/api/clubs", newTeam).then((respone) => {
+      console.log(respone.data);
     });
     setDisplayPopUp(0);
   }
@@ -95,45 +116,37 @@ function LeaguePage(props) {
 
       <StandingPageNavBar Logo="League" />
       <div className="LeaguePageTable">
-        <div className="PlayerTableHeader">
-          <div className="TeamNums">Teams: {props.players} 20</div>
+        <div className="TeamTableHeader">
+          <div className="TeamNums">Teams: {listOfClubs.length} </div>
 
           <div className="add">
             <FontAwesomeIcon className="addIcon" icon={faAdd} onClick={popUp} />
           </div>
         </div>
-        <div className="PlayerTableContent">
-          <div className="PlayerTableContentMain">
-            {/* {renderPlayerList?.map((p) => {
+        <div className="TeamTableContent">
+          <div className="TeamTableContentMain">
+            {renderTeamList.map((t) => {
               return (
-                <div className="PlayerItem">
-                  <Player
-                    type="TeamPlayer"
-                    name={p.name}
-                    age={p.age}
-                    country={p.country}
-                  />
+                <div key={t.Id_Doi_Bong} className="Team">
+                  <div className="TeamAva">
+                    <img className="TeamAvaImg" src={logo}></img>
+                  </div>
+                  <div className="TeamInfo">
+                    <span className="PlayerInfoName">
+                      <span className="TeamTag">Name: {t.Ten_DB}</span>
+                      {props.name}
+                    </span>
+                    <span className="PlayerInfoStadium">
+                      <span className="TeamTag">Stadium: {t.San_Nha}</span>
+                      {props.age}
+                    </span>
+                  </div>
                 </div>
               );
-            })} */}
-            <div className="Team">
-              <div className="TeamAva">
-                <img className="TeamAvaImg" src={logo}></img>
-              </div>
-              <div className="TeamInfo">
-                <span className="PlayerInfoName">
-                  <span className="TeamTag">Manchester United</span>
-                  {props.name}
-                </span>
-                <span className="PlayerInfoStadium">
-                  <span className="TeamTag">Stadium: Old Traffold</span>
-                  {props.age}
-                </span>
-              </div>
-            </div>
+            })}
           </div>
 
-          {/* <div className="ControlBtn">
+          <div className="ControlBtn">
             <FontAwesomeIcon
               className="fai"
               icon={faCaretLeft}
@@ -146,7 +159,7 @@ function LeaguePage(props) {
               size="2x"
               onClick={nextClick}
             />
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

@@ -112,7 +112,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`BANG_XEP_HANG` (
   `ID_BXH` INT NOT NULL auto_increment,
-  `Hang` INT NOT NULL,
+  `Hang` INT NOT NULL,ID_Cau_ThuTen_CT
   `Thang` INT NOT NULL,
   `Hoa` INT NOT NULL,
   `Thua` INT NOT NULL,

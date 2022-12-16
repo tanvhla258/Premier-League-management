@@ -15,16 +15,16 @@ function TeamPage(props) {
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
   const [TeamDataRender, setTeamDataRender] = useState(TeamData);
   const [listOfPlayers, setListOfPlayers] = useState([]);
-  useEffect(() => {
-    try {
-      const data = fetch("http://localhost:5000/clubs/").then((res) =>
-        res.json()
-      );
-      console.log(data);
-    } catch (e) {
-      console.log(e.message);
-    }
-  });
+  // useEffect(() => {
+  //   try {
+  //     const data = fetch("http://localhost:5000/api/clubs").then((res) =>
+  //       res.json()
+  //     );
+  //     console.log(data);
+  //   } catch (e) {
+  //     console.log(e.message);
+  //   }
+  // });
   //   async function fectchListOfPlayers() {
   //     try {
   //       const url = "http://localhost:3123/api/clubs/101/players";
