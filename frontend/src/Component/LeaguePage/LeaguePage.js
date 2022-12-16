@@ -59,7 +59,8 @@ function LeaguePage(props) {
     const newTeam = {
       Ten_DB: props.teamname,
       San_Nha: props.stadium,
-      Id_Doi_Bong: "200",
+      Id_Doi_Bong: props.TeamId,
+      Logo: " ",
     };
 
     const inputs = document.querySelectorAll("input");
@@ -80,6 +81,18 @@ function LeaguePage(props) {
     console.log(inputs);
     setDisplayPopUp(0);
   }
+  // useEffect(function () {
+  //   const handlingClickTeam = function (e) {
+  //     const tableContainer = document.querySelector(".TeamTableContentMain");
+  //     tableContainer.addEventListener("click", function (e) {
+  //       if (e.target.closest(".Team")) {
+  //         const teamChose = e.target.closest(".Team");
+  //         console.log(teamChose);
+  //       }
+  //     });
+  //   };
+  //   const windowEv = window.addEventListener("click", handlingClickTeam);
+  // }, []);
 
   return (
     <div className="LeaguePage">
@@ -94,6 +107,11 @@ function LeaguePage(props) {
           <div className="ModalFormHeader">Team infomation</div>
           <div className="ModalFormContent">
             <form id="addLeagueid" className="formModel" onSubmit={SubmitForm}>
+              <div className="inputItem">
+                <label htmlFor="TeamId">TeamId</label>
+
+                <input type="text" name="TeamId" id="TeamId" />
+              </div>
               <div className="inputItem">
                 <label htmlFor="teamname">Name</label>
 
