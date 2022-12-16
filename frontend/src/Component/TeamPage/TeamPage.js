@@ -16,7 +16,7 @@ function TeamPage(props) {
 
   useEffect(() => {
     try {
-      const data = fetch("http://localhost:5000/api/users").then((res) =>
+      const data = fetch("http://localhost:5000/clubs/").then((res) =>
         res.json()
       );
       console.log(data);

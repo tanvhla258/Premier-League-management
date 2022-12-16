@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import LoginForm from "./LoginForm";
 import "./LoginPage.css";
 import { useNavigate } from "react-router-dom";
@@ -6,9 +6,24 @@ import { useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import NavLink from "../NavLink/NavLink";
 import Swal from "sweetalert2";
+import axios from "axios";
 function LoginPage(props) {
   let navigate = useNavigate();
-
+  const [listOfUsers, setListOfUsers] = useState([]);
+  // useEffect(() => {
+  //   async function fectchListOfUsers() {
+  //     const url = "http://localhost:5000/api/users";
+  //     const respone = await fetch(url);
+  //     const responeJSON = await respone.json();
+  //     console.log({ responeJSON });
+  //     const { data } = responeJSON;
+  //     setListOfUsers(data);
+  //   }
+  //   axios.get("http://localhost:3123/api/users").then((respone) => {
+  //     setListOfUsers(respone.data);
+  //   }, []);
+  //   fectchListOfUsers();
+  // }, []);
   const LogInSucessfully = useCallback(() => {
     localStorage.setItem("isLog", 1);
 

@@ -16,21 +16,6 @@ import LoginPage from "./Component/LoginPage/LoginPage";
 import LeaguePage from "./Component/LeaguePage/LeaguePage";
 
 function App() {
-  // const [listOfUsers, setListOfUsers] = useState([]);
-  // useEffect(() => {
-  //   async function fectchListOfUsers() {
-  //     const url = "http://localhost:3123/api/users";
-  //     const respone = await fetch(url);
-  //     const responeJSON = await respone.json();
-  //     console.log({ responeJSON });
-  //     const { data } = responeJSON;
-  //     setListOfUsers(data);
-  //   }
-  //   // axios.get("http://localhost:3123/api/users").then((respone) => {
-  //   //   setListOfUsers(respone.data);
-  //   // },[]);
-  //   fectchListOfUsers();
-  // }, []);
   return (
     //Rounting app
     <BrowserRouter>

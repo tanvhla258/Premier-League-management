@@ -8,6 +8,7 @@ import {
   faCaretRight,
   faAdd,
 } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 import logo from "../../img/mulogo.png";
 const LeagueData = [];
 function LeaguePage(props) {
@@ -21,17 +22,24 @@ function LeaguePage(props) {
   function SubmitForm(e) {
     e.preventDefault();
 
-    const formHtml = document.querySelector("#addPlayerId");
+    const formHtml = document.querySelector("#addLeagueid");
     const data = new FormData(formHtml);
     const props = Object.fromEntries(data);
-    const newLeague = "";
-    LeagueDataRender = [...LeagueDataRender, newLeague];
-    setLeagueDataRender(LeagueDataRender);
+    console.log(props);
+    const newLeague = {
+      name: props.teamname,
+      stadium: props.stadium,
+    };
+    // Send data
+    axios.post("http://localhost:5000/api/clubs", newLeague).then((respone) => {
+      console.log(respone.data);
+    });
+
+    //Clear input
     const inputs = document.querySelectorAll("input");
     inputs.forEach((element) => {
       element.value = "";
     });
-    LeagueData = [...LeagueDataRender];
     setDisplayPopUp(0);
   }
   function CancelForm(e) {
@@ -54,14 +62,9 @@ function LeaguePage(props) {
           className="ModalForm"
           style={{ display: DisplayPopUp ? "block" : "none" }}
         >
-          <div className="ModalFormHeader">Player infomation</div>
+          <div className="ModalFormHeader">Team infomation</div>
           <div className="ModalFormContent">
-            <form
-              id="addPlayerId"
-              className="formModel"
-              action="addPlayer"
-              onSubmit={SubmitForm}
-            >
+            <form id="addLeagueid" className="formModel" onSubmit={SubmitForm}>
               <div className="inputItem">
                 <label htmlFor="teamname">Name</label>
 
