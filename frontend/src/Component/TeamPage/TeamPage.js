@@ -4,12 +4,10 @@ import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import NavLink from "../NavLink/NavLink";
 import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
-import add from "../../img/plus.png";
 import Player from "../Table/Player/Player";
 import PlayerTable from "../Table/PlayerTable/PlayerTable";
 import teamLogo from "../../img/mulogo.png";
 import axios from "axios";
-import { faHandsHoldingChild } from "@fortawesome/free-solid-svg-icons";
 
 function TeamPage(props) {
   const [DisplayPopUp, setDisplayPopUp] = useState(0);

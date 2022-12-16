@@ -27,11 +27,7 @@ function LoginPage(props) {
   const LogInSucessfully = useCallback(() => {
     localStorage.setItem("isLog", 1);
 
-    Swal.fire(
-      "Sign up successfully!",
-      "Return back to signin page!",
-      "Success"
-    ).then((result) => {
+    Swal.fire("Sign in successfully!", "", "Success").then((result) => {
       if (result.isConfirmed) {
         window.location.href = "/";
       }

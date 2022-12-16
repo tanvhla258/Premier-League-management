@@ -8,6 +8,7 @@ import {
   faCaretLeft,
   faCaretRight,
   faAdd,
+  faMinus,
 } from "@fortawesome/free-solid-svg-icons";
 function PlayerTable(props) {
   let [currentPage, setCurrentPage] = useState(0);
@@ -56,12 +57,21 @@ function PlayerTable(props) {
           Foreign Players:
           {props.PlayersData.filter((p) => p.Loai_CT !== "TN").length}
         </div>
-        <div className="add">
-          <FontAwesomeIcon
-            className="addIcon"
-            icon={faAdd}
-            onClick={props.popUp}
-          />
+        <div className="headerBtn">
+          <div className="add">
+            <FontAwesomeIcon
+              className="addIcon"
+              icon={faAdd}
+              onClick={props.popUp}
+            />
+          </div>
+          <div className="minus">
+            <FontAwesomeIcon
+              className="minusIcon"
+              icon={faMinus}
+              onClick={props.popUp}
+            />
+          </div>
         </div>
       </div>
       <div className="PlayerTableContent">

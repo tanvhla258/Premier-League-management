@@ -23,7 +23,6 @@
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-
 }
 .PlayerItem{
     margin: 12px;
@@ -36,6 +35,11 @@
     background-color: rgba(13, 172, 13,1);
     border-radius: 50%;
 }
+.minus{
+    margin: 0 40px 0 0;
+    background-color: rgba(226, 39, 26,1);
+    border-radius: 50%;
+}
 .addIcon{
     color:white;
     padding: 6px 8px;
@@ -43,15 +47,26 @@
     height: 24px;
 }
 
-.addIcon:hover{
+.addIcon:hover,.minusIcon:hover{
     cursor: pointer;
+}
+.headerBtn{
+    display: flex;
+    justify-content: center;
 }
 .add:hover{
     background-color: rgba(13, 172, 13,0.8);
-
 }
-
+.minus:hover{
+    background-color: rgba(226, 39, 26,0.8);
+}
 .fai:hover{
     opacity: 0.6;
     cursor: pointer;
+}
+.minusIcon{
+    color:white;
+    padding: 6px 8px;
+    width: 24px;
+    height: 24px;
 }
