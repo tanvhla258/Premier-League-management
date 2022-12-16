@@ -12,11 +12,11 @@ import {
 function PlayerTable(props) {
   let [currentPage, setCurrentPage] = useState(0);
   const [TeamPerPage] = useState(4);
-  let maxPage = Math.floor((props.TeamData?.length - 1) / TeamPerPage);
+  let maxPage = Math.floor((props.PlayersData?.length - 1) / TeamPerPage);
   let startItem = currentPage * TeamPerPage;
   let endItem = startItem + TeamPerPage;
 
-  let renderPlayerList = props.TeamData?.slice(startItem, endItem);
+  let renderPlayerList = props.PlayersData?.slice(startItem, endItem);
 
   function nextClick() {
     return currentPage < maxPage
@@ -26,17 +26,35 @@ function PlayerTable(props) {
   function prevClick() {
     return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
   }
+  function chooseTeam(e) {
+    console.log(e.target.value);
+    props.handlingId(e.target.value);
+  }
 
   return (
     <div className="PlayerTable">
       <div className="PlayerTableHeader">
         <div className="TeamName">
-          <span className="btn down"></span>
-          {props.name}
+          <span className="btn down">
+            <select
+              onChange={(e) => {
+                console.log(e);
+                return chooseTeam(e);
+              }}
+              name="selectTeam"
+              id="selectTeam"
+            >
+              {props.TeamList.map((team) => {
+                console.log(team.ID_Doi_Bong);
+                return <option value={team.ID_Doi_Bong}>{team.Ten_DB}</option>;
+              })}
+            </select>
+          </span>
         </div>
-        <div className="TeamPlayers">Players: {props.players}</div>
+        <div className="TeamPlayers">Players: {props.PlayersData.length}</div>
         <div className="TeamForeignPlayers">
-          Foreign Players:{props.foreignPlayers}
+          Foreign Players:
+          {props.PlayersData.filter((p) => p.Loai_CT !== "TN").length}
         </div>
         <div className="add">
           <FontAwesomeIcon
@@ -51,12 +69,7 @@ function PlayerTable(props) {
           {renderPlayerList?.map((p) => {
             return (
               <div key={p.ID_CauThu} className="PlayerItem">
-                <Player
-                  type="TeamPlayer"
-                  name={p.Ten_CT}
-                  age={p.age}
-                  country={p.country}
-                />
+                <Player type="TeamPlayer" name={p.Ten_CT} country={p.Loai_CT} />
               </div>
             );
           })}

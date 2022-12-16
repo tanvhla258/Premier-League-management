@@ -9,25 +9,41 @@ import Player from "../Table/Player/Player";
 import PlayerTable from "../Table/PlayerTable/PlayerTable";
 import teamLogo from "../../img/mulogo.png";
 import axios from "axios";
+import { faHandsHoldingChild } from "@fortawesome/free-solid-svg-icons";
 
 function TeamPage(props) {
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
   const [listOfPlayers, setListOfPlayers] = useState([]);
+  const [TeamInfo, setTeamInfo] = useState([]);
+  const [TeamListData, setTeamList] = useState([]);
+
+  const [isLoading, setLoading] = useState(true);
+
+  const [teamId, setteamId] = useState(102);
+
   useEffect(() => {
     const fetchTeam = async () => {
       try {
-        const data = await fetch(
-          "http://localhost:5000/api/clubs/101/players"
+        const PlayerData = await fetch(
+          `http://localhost:5000/api/clubs/${teamId}/players`
         ).then((res) => res.json());
-        console.log(data);
-        setListOfPlayers([...data]);
+        const TeamData = await fetch(
+          `http://localhost:5000/api/clubs/${teamId}`
+        ).then((res) => res.json());
+        const TeamListData = await fetch(
+          `http://localhost:5000/api/clubs/`
+        ).then((res) => res.json());
+        setListOfPlayers([...PlayerData]);
+        setTeamInfo([...TeamData]);
+        setTeamList([...TeamListData]);
+        setLoading(false);
       } catch (e) {
         console.log(e.message);
       }
     };
 
     fetchTeam();
-  }, []);
+  }, [teamId]);
 
   function popUp() {
     setDisplayPopUp(1);
@@ -63,7 +79,9 @@ function TeamPage(props) {
     });
     setDisplayPopUp(0);
   }
-
+  function handlingId(id) {
+    setteamId(id);
+  }
   return (
     <div className="TeamPage">
       <div
@@ -126,12 +144,18 @@ function TeamPage(props) {
           <img className="TeamLogoImg" src={teamLogo}></img>
         </div>
         <div className="TeamPageList">
-          <PlayerTable
-            popUp={popUp}
-            name="Manchester United"
-            TeamData={[...listOfPlayers]}
-            //TeamData={listOfPlayers}
-          />
+          {isLoading ? (
+            "Loading..."
+          ) : (
+            <PlayerTable
+              popUp={popUp}
+              TeamData={[...TeamInfo]}
+              PlayersData={[...listOfPlayers]}
+              TeamList={[...TeamListData]}
+              handlingId={handlingId}
+              //TeamData={listOfPlayers}
+            />
+          )}
         </div>
       </div>
     </div>

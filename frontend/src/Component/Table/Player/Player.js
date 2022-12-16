@@ -4,7 +4,7 @@ import "./Player.css";
 function Player(props) {
   if (props.type == "TeamPlayer")
     return (
-      <div className="Player">
+      <div className="Player" style={{ width: "450px" }}>
         <div className="PlayerAva">
           <img className="PlayerAvaImg" src={logo}></img>
         </div>
@@ -13,13 +13,10 @@ function Player(props) {
             <span className="PlayerTag">Name</span>
             {props.name}
           </span>
-          <span className="PlayerInfoAge">
-            <span className="PlayerTag">Age</span>
-            {props.age}
-          </span>
+
           <span className="PlayerInfoCountry">
-            <span className="PlayerTag">Country</span>
-            {props.country}
+            <span className="PlayerTag">Type</span>
+            {props.country === "TN" ? "Domestic" : "Foreign "}
           </span>
         </div>
       </div>

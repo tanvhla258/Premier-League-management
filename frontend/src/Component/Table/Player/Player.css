@@ -15,7 +15,7 @@
     align-items: center;
     border-radius: 16px;
     max-width: 400px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 10px 16px;
 }
 
@@ -38,4 +38,7 @@
 }
 .PlayerInfoCountry{
     margin-top: 14px;
+}
+#selectTeam{
+    background-color: #BABFF0;
 }
