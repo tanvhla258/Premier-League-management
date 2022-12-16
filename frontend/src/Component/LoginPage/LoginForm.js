@@ -8,19 +8,25 @@ function LoginForm(props) {
   const storeFormData = function () {
     const userLog = document.querySelector(".userLogin");
     const passLog = document.querySelector(".passLogin");
-
-    localStorage.setItem("user", userLog.value);
-    localStorage.setItem("pass", passLog.value);
-    localStorage.setItem("isLog", 1);
     const user = {
       Ten_User: userLog.value,
       Password: passLog.value,
     };
-
     axios
-      .post("http://localhost:5000/api/users/login", user)
+      .post("http://localhost:3123/api/users/login", user)
       .then((respone) => {
-        console.log(respone.data);
+        if (
+          respone.data === "Wrong password" ||
+          respone.data === "Ivalid User"
+        ) {
+          localStorage.setItem("isLog", 0);
+          console.log("NOT OK");
+        } else {
+          localStorage.setItem("user", respone.data[0].Ten_User);
+          localStorage.setItem("pass", respone.data[0].Password);
+          localStorage.setItem("isLog", 1);
+          console.log("OK");
+        }
       });
   };
   const storeFormDataReg = function () {

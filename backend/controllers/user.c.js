@@ -17,7 +17,7 @@ exports.Login = async (req, res, next) => {
     if (compare === false) {
       return res.send("Wrong password");
     } else {
-      return res.json(userDatabase);
+      return res.send(userDatabase);
     }
   }
 };
@@ -35,6 +35,12 @@ exports.Register = async (req, res, next) => {
   res.send("Register success");
 };
 exports.getAll = async (req, res, next) => {
+  // let conditions = [
+  //   { name: { $regex: ".*" + "name" + ".*" } },
+  //   { stadium: { $regex: ".*" + "stadium" + ".*" } },
+  // ];
+  // console.log(conditions);
+  // console.log($HEllo);
   res.send(await userM.getAllUser());
 };
 exports.getOne = async (req, res, next) => {
