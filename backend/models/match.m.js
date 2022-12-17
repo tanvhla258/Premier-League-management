@@ -21,8 +21,8 @@ module.exports = {
         return db.delete(table_name, "ID_Tran_Dau", id)
     },
     getIdByName: async (name) => {
-        const id = await db.load(`select ID_Doi_Bong from doi_bong where Ten_DB ='${name}'`)
-        return id;
+        const result = await db.load(`select ID_Doi_Bong ,San_Nha  from doi_bong where Ten_DB ='${name}'`)
+        return result;
     }
 
 }

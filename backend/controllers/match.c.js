@@ -14,7 +14,7 @@ exports.createAMatch = async (req, res, next) => {
     const match = {
         DOI_BONG_ID_Doi_Bong_1: home[0].ID_Doi_Bong,
         DOI_BONG_ID_Doi_Bong_2: away[0].ID_Doi_Bong,
-        San: req.body.stadium,
+        San: home[0].San_Nha,
         Lich_Thi_Dau: datetime,
         Vong_Dau: 1,
         GIAI_DAU_ID_Giai_Dau: 1
