@@ -817,3 +817,14 @@ select * from user;
 -- bang xep hang theo thu tu tang dan 
 select * from bang_xep_hang
 order by Tong_Diem;
+
+-- tim id doi bong khi co ten doi bong
+
+select ID_Doi_Bong
+from doi_bong
+where Ten_DB = 'Fulham'
+
+
+
+
+
