@@ -50,11 +50,10 @@ function TeamPage(props) {
   function SubmitForm(e) {
     e.preventDefault();
 
+    // lấy dữ liệu từ form trả về cho backend
     const formHtml = document.querySelector("#addPlayerId");
-
     const data = new FormData(formHtml);
     const props = Object.fromEntries(data);
-
     const newPlayer = {
       type: props.type,
       name: props.playername,

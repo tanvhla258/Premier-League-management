@@ -7,6 +7,7 @@ exports.getClubs = async (req, res, next) => {
 
 exports.createClub = async (req, res, next) => {
   const club = req.body;
+  //console.log(club)
   await clubM.addClub(club);
   res.send("create club success");
 };

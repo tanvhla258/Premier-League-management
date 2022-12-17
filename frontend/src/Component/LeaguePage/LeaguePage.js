@@ -59,7 +59,7 @@ function LeaguePage(props) {
     const newTeam = {
       Ten_DB: props.teamname,
       San_Nha: props.stadium,
-      Id_Doi_Bong: props.TeamId,
+
       Logo: " ",
     };
 
@@ -107,11 +107,12 @@ function LeaguePage(props) {
           <div className="ModalFormHeader">Team infomation</div>
           <div className="ModalFormContent">
             <form id="addLeagueid" className="formModel" onSubmit={SubmitForm}>
-              <div className="inputItem">
+              {/* id của đội bóng tự tăng ko cần nhập */}
+              {/* <div className="inputItem">
                 <label htmlFor="TeamId">TeamId</label>
 
                 <input type="text" name="TeamId" id="TeamId" />
-              </div>
+              </div> */}
               <div className="inputItem">
                 <label htmlFor="teamname">Name</label>
 
