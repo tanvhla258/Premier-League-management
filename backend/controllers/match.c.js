@@ -20,7 +20,6 @@ exports.createAMatch = async (req, res, next) => {
         GIAI_DAU_ID_Giai_Dau: 1
 
     };
-    console.log(match)
     await matchM.addMatch(match);
     res.send("create match success")
 
