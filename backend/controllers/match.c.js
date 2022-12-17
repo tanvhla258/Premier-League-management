@@ -1,13 +1,28 @@
 const matchM = require("../models/match.m")
+const moment = require("moment");
+
 exports.getAllMatches = async (req, res, next) => {
-    const matchs = await matchM.getAllMatches();
-    res.json(matchs)
+    const matches = await matchM.getAllMatches();
+    res.json(matches)
 }
 exports.createAMatch = async (req, res, next) => {
-    const match = req.body;
+    const datetime = req.body.date + " " + req.body.time;
+    const home = await matchM.getIdByName(req.body.home)
+    const away = await matchM.getIdByName(req.body.away)
+
+
+    const match = {
+        DOI_BONG_ID_Doi_Bong_1: home[0].ID_Doi_Bong,
+        DOI_BONG_ID_Doi_Bong_2: away[0].ID_Doi_Bong,
+        San: req.body.stadium,
+        Lich_Thi_Dau: datetime,
+        Vong_Dau: 1,
+        GIAI_DAU_ID_Giai_Dau: 1
+
+    };
     console.log(match)
-    // await matchM.addMatch(match);
-    // res.send("create match success")
+    await matchM.addMatch(match);
+    res.send("create match success")
 
 }
 

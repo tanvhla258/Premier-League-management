@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./TopScorePage.css";
 import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
 import PlayerTable from "../Table/PlayerTable/PlayerTable";
@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { TopScoreData } from "../Data/TopScoreData";
 function TopScorePage(props) {
+
   let [currentPage, setCurrentPage] = useState(0);
   const [PlayerPerPage] = useState(3);
   let maxPage = Math.floor((TopScoreData.length - 1) / PlayerPerPage);

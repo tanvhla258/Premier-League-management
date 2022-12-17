@@ -5,6 +5,7 @@ module.exports = {
     getAllMatches: async () => {
         return await db.load(`select * from ${table_name}`)
 
+
     },
     addMatch: async (match) => {
         return db.add(table_name, match);
@@ -18,6 +19,10 @@ module.exports = {
     },
     deleteMatch: async (id) => {
         return db.delete(table_name, "ID_Tran_Dau", id)
+    },
+    getIdByName: async (name) => {
+        const id = await db.load(`select ID_Doi_Bong from doi_bong where Ten_DB ='${name}'`)
+        return id;
     }
 
 }
