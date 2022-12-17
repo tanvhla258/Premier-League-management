@@ -48,10 +48,9 @@ function MatchSchedulePage(props) {
       date: dataObject.MatchDay,
       stadium: dataObject.Stadium,
     };
-    axios.post("http://localhost:5000/api/matchs/", newMatch).then((respone) => {
+    axios.post("http://localhost:5000/api/matches/", newMatch).then((respone) => {
       console.log(respone.data);
     });
-    console.log(newMatch);
     MatchScheduleDataRender = [...MatchScheduleDataRender, newMatch];
     setMatchScheduleDataRender(MatchScheduleDataRender);
     const inputs = document.querySelectorAll("input");

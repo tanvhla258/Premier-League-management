@@ -1,13 +1,13 @@
 const matchM = require("../models/match.m")
 exports.getAllMatches = async (req, res, next) => {
     const matchs = await matchM.getAllMatches();
-    console.log(matchs)
     res.json(matchs)
 }
 exports.createAMatch = async (req, res, next) => {
     const match = req.body;
-    await matchM.addMatch(match);
-    res.send("create match success")
+    console.log(match)
+    // await matchM.addMatch(match);
+    // res.send("create match success")
 
 }
 

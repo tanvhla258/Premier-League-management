@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
@@ -12,6 +13,22 @@ import PlayerBG2 from "../../img/van dijk.png";
 import TeamList from "../Data/TeamListData";
 
 function StandingPage(props) {
+  const [listOfRank, setListOfRank] = useState([]);
+  useEffect(() => {
+    const fetchRank = async () => {
+      try {
+        const data = await fetch("http://localhost:5000/api/rank").then(
+          (res) => res.json()
+        );
+        console.log(data);
+        setListOfRank([...data]);
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
+
+    fetchRank();
+  }, []);
   return (
     <div className="StandingPage">
       <StandingPageNavBar Logo="Standing" />
