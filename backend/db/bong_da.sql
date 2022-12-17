@@ -55,7 +55,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`TRAN_DAU` (
   `ID_Tran_Dau` INT NOT NULL auto_increment,
-  `Ti_So` VARCHAR(5) NOT NULL,
   `Vong_Dau` INT NOT NULL,
   `DOI_BONG_ID_Doi_Bong_1` INT NOT NULL ,
   `DOI_BONG_ID_Doi_Bong_2` INT NOT NULL ,
@@ -89,6 +88,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `bong_da`.`KET_QUA_TRAN_DAU` (
   `Ten_Doi_Thang` VARCHAR(60) NOT NULL,
   `Ten_Doi_Thua` VARCHAR(60) NOT NULL,
+    `Ti_So` VARCHAR(5) NOT NULL,
   `TRAN_DAU_ID_Tran_Dau` INT NOT NULL,
   `TRAN_DAU_DOI_BONG_ID_Doi_Bong_1` INT NOT NULL ,
   `TRAN_DAU_DOI_BONG_ID_Doi_Bong_2` INT NOT NULL ,
@@ -712,30 +712,30 @@ INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,
 
 select * from bang_xep_hang;
 -- TRAN DAU 
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (1, 112, 111, 1, '5-0',1,'2020-09-14 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (2, 120, 109, 1, '0-5', 1,'2020-09-16 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (3, 119, 113, 1, '1-1', 1,'2020-09-18 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (4, 108, 107, 1, '3-0', 1,'2020-09-20 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (5, 110, 115, 1, '1-0', 1,'2020-09-22 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (6, 104, 117, 1, '0-0', 1,'2020-09-24 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (7, 116, 105, 1, '2-1', 1,'2020-09-26 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (8, 118, 103, 1, '0-2', 1,'2020-09-28 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (9, 102, 114, 1,'3-2', 1,'2020-09-30 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,Ti_So,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (10, 106, 101, 1, '1-0', 1,'2020-10-4 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (1, 112, 111, 1,1,'2020-09-14 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (2, 120, 109, 1, 1,'2020-09-16 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (3, 119, 113, 1, 1,'2020-09-18 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (4, 108, 107, 1, 1,'2020-09-20 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (5, 110, 115, 1, 1,'2020-09-22 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (6, 104, 117, 1, 1,'2020-09-24 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (7, 116, 105, 1, 1,'2020-09-26 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (8, 118, 103, 1, 1,'2020-09-28 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (9, 102, 114, 1, 1,'2020-09-30 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (10, 106, 101, 1, 1,'2020-10-4 20:00:00');
 
 select * from tran_dau;
 
 -- KET QUA TRAN DAU 
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Fulham','Norwich City',1,112,111,1);
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Queens Park Rangers','Swansea City',2,120, 109,1);
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Reading','Stoke City',3,119, 113,1);
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('West Bromwich Albion','Liverpool',4,108, 107,1);
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('West Ham United','Aston Villa',5, 110, 115,1);
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Arsenal','Sunderland',6,104, 117,1);
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Newcastle United','Tottenham Hotspur',7,116, 105,1);
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Wigan Athletic','Chelsea',8,118, 103,1);
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Manchester City','Southampton',9,102, 114,1);
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Everton','Manchester United',10,106, 101,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Fulham','Norwich City', '5-0',1,112,111,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Queens Park Rangers','Swansea City', '0-5',2,120, 109,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Reading','Stoke City' ,'1-1',3,119, 113,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('West Bromwich Albion','Liverpool','3-0',4,108, 107,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('West Ham United','Aston Villa', '1-0',5, 110, 115,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Arsenal','Sunderland', '0-0',6,104, 117,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Newcastle United','Tottenham Hotspur', '2-1',7,116, 105,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Wigan Athletic','Chelsea', '0-2',8,118, 103,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Manchester City','Southampton', '3-2',9,102, 114,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Everton','Manchester United','1-0',10,106, 101,1);
 select * from ket_qua_tran_dau;
 
 
