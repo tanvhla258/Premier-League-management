@@ -16,4 +16,10 @@ order by Tong_Diem;
 
 select ID_Doi_Bong
 from doi_bong
+where Ten_DB = 'Fulham';
+
+
+-- tim id,San_Nha doi bong khi co ten doi bong
+select ID_Doi_Bong,San_Nha
+from doi_bong
 where Ten_DB = 'Fulham'
