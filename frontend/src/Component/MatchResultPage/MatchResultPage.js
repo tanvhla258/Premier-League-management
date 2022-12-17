@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
 import "./MatchResultPage.css";
+import axios from "axios";
+
 import add from "../../img/plus.png";
 import MatchResult from "../Table/MatchResult/MatchResult";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,7 +21,22 @@ function MatchResultPage(props) {
   // let endItem = startItem + PlayerPerPage;
 
   // let renderPlayerList = TopScoreData?.slice(startItem, endItem);
+  const [listOfMatchResult, setListOfMatchResult] = useState([]);
+  useEffect(() => {
+    const fetchMatchResult = async () => {
+      try {
+        const data = await fetch("http://localhost:5000/api/matchResult").then(
+          (res) => res.json()
+        );
+        console.log(data);
+        setListOfMatchResult([...data]);
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
 
+    fetchMatchResult();
+  }, []);
   function nextClick() {
     // return currentPage < maxPage
     //   ? setCurrentPage(currentPage + 1)
