@@ -33,6 +33,7 @@ function TeamPage(props) {
         ).then((res) => res.json());
         setListOfPlayers([...PlayerData]);
         setTeamInfo([...TeamData]);
+        console.log(setTeamInfo)
         setTeamList([...TeamListData]);
         setLoading(false);
       } catch (e) {
@@ -49,19 +50,20 @@ function TeamPage(props) {
   function SubmitForm(e) {
     e.preventDefault();
 
-    // const formHtml = document.querySelector("#addPlayerId");
+    const formHtml = document.querySelector("#addPlayerId");
 
-    // const data = new FormData(formHtml);
-    // const props = Object.fromEntries(data);
+    const data = new FormData(formHtml);
+    const props = Object.fromEntries(data);
 
-    // const newPlayer = {
-    //   type: props.type,
-    //   name: props.playername,
-    //   country: props.country,
-    //   age: props.age,
-    //   club: 101,
-    // };
-    // axios.post("http://localhost:3123/api/clubs/101/players", newPlayer);
+    const newPlayer = {
+      type: props.type,
+      name: props.playername,
+      country: props.country,
+      birthday: props.birthday,
+      club: teamId,
+    };
+
+    axios.post(`http://localhost:5000/api/clubs/${newPlayer.club}/players`, newPlayer);
 
     // const inputs = document.querySelectorAll("input");
     // inputs.forEach((element) => {
@@ -104,9 +106,9 @@ function TeamPage(props) {
                 <input type="text" name="playername" id="playername" />
               </div>
               <div className="inputItem">
-                <label htmlFor="age">Age</label>
+                <label htmlFor="birthday">Birhtday</label>
 
-                <input type="text" name="age" id="age" />
+                <input type="date" name="birthday" id="birthday" />
               </div>
 
               <div className="inputItem">
@@ -151,7 +153,7 @@ function TeamPage(props) {
               PlayersData={[...listOfPlayers]}
               TeamList={[...TeamListData]}
               handlingId={handlingId}
-              //TeamData={listOfPlayers}
+            //TeamData={listOfPlayers}
             />
           )}
         </div>

@@ -44,7 +44,9 @@ exports.addPlayerToClub = async (req, res, next) => {
     Ten_CT: req.body.name,
     Loai_CT: req.body.type,
     DOI_BONG_ID_Doi_Bong: req.body.club,
+    Ngay_Sinh_CT: req.body.birthday
   };
+  console.log(newplayer)
   await clubM.addPlayer(newplayer);
 };
 exports.getOnePlayerInClub = async (req, res, next) => {
@@ -54,6 +56,6 @@ exports.getOnePlayerInClub = async (req, res, next) => {
   console.log(one_player_in_club);
   res.json(one_player_in_club);
 };
-exports.updateOnePlayerInClub = async (req, res, next) => {};
-exports.deleteOnePlayerInClub = async (req, res, next) => {};
-exports.searchOnePlayerInCLub = async (req, res, next) => {};
+exports.updateOnePlayerInClub = async (req, res, next) => { };
+exports.deleteOnePlayerInClub = async (req, res, next) => { };
+exports.searchOnePlayerInCLub = async (req, res, next) => { };

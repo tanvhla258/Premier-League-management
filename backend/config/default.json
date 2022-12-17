@@ -1,10 +1,9 @@
 {
-    "mysql":{
+    "mysql": {
         "host": "localhost",
         "user": "root",
         "database": "bong_da",
-        "password": "123",  
+        "password": "123456789",
         "connectionLimit": 50
-
     }
 }
