@@ -33,7 +33,7 @@ app.use("/api/rank", require("./routes/rank.r"));
 // app.use('/api/goals', require('./routes/goal.r'))
 // app.use('/api/players', require('./routes/player.r'))
 // app.use('/api/rankings', require('./routes/ranking.r'))
-// app.use('/api/matches', require('./routes/match.r'))
+app.use('/api/matches', require('./routes/match.r'))
 // app.use('/api/goals', require('./routes/goal.r'))
 
 //app.use(errorHandler)

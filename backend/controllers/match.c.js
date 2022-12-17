@@ -1,7 +1,7 @@
-const { response } = require("express");
 const matchM = require("../models/match.m")
-exports.getAllMatchs = async (req, res, next) => {
-    const matchs = await matchM.getAllMatchs();
+exports.getAllMatches = async (req, res, next) => {
+    const matchs = await matchM.getAllMatches();
+    console.log(matchs)
     res.json(matchs)
 }
 exports.createAMatch = async (req, res, next) => {

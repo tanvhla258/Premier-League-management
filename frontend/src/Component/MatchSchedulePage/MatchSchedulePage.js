@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MatchSchedulePage.css";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 import NavLink from "../NavLink/NavLink";
 import MatchSchedule from "../Table/MatchSchedule/MatchSchedule";
 import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
@@ -9,9 +11,26 @@ import add from "../../img/plus.png";
 import { MatchScheduleData } from "../Data/MatchScheduleData";
 
 function MatchSchedulePage(props) {
+  const [listOfMatches, setListOfMatches] = useState([]);
+
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
   let [MatchScheduleDataRender, setMatchScheduleDataRender] =
     useState(MatchScheduleData);
+  useEffect(() => {
+    const fetchMatch = async () => {
+      try {
+        const data = await fetch("http://localhost:5000/api/matches").then(
+          (res) => res.json()
+        );
+        console.log(data);
+        setListOfMatches([...data]);
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
+
+    fetchMatch();
+  }, []);
   function popUp() {
     setDisplayPopUp(1);
   }
@@ -29,6 +48,9 @@ function MatchSchedulePage(props) {
       date: dataObject.MatchDay,
       stadium: dataObject.Stadium,
     };
+    axios.post("http://localhost:5000/api/matchs/", newMatch).then((respone) => {
+      console.log(respone.data);
+    });
     console.log(newMatch);
     MatchScheduleDataRender = [...MatchScheduleDataRender, newMatch];
     setMatchScheduleDataRender(MatchScheduleDataRender);
