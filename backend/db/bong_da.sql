@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`TRAN_DAU` (
   `Vong_Dau` INT NOT NULL,
   `DOI_BONG_ID_Doi_Bong_1` INT NOT NULL ,
   `DOI_BONG_ID_Doi_Bong_2` INT NOT NULL ,
+  `San` VARCHAR(60) NOT NULL,
   `GIAI_DAU_ID_Giai_Dau` INT NOT NULL ,
   `Lich_Thi_Dau` DATETIME NOT NULL,
   PRIMARY KEY (`ID_Tran_Dau`, `DOI_BONG_ID_Doi_Bong_1`, `DOI_BONG_ID_Doi_Bong_2`, `GIAI_DAU_ID_Giai_Dau`),
@@ -712,16 +713,16 @@ INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,
 
 select * from bang_xep_hang;
 -- TRAN DAU 
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (1, 112, 111, 1,1,'2020-09-14 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (2, 120, 109, 1, 1,'2020-09-16 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (3, 119, 113, 1, 1,'2020-09-18 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (4, 108, 107, 1, 1,'2020-09-20 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (5, 110, 115, 1, 1,'2020-09-22 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (6, 104, 117, 1, 1,'2020-09-24 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (7, 116, 105, 1, 1,'2020-09-26 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (8, 118, 103, 1, 1,'2020-09-28 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (9, 102, 114, 1, 1,'2020-09-30 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,Lich_Thi_Dau) VALUES (10, 106, 101, 1, 1,'2020-10-4 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (1, 112, 111, 1,1, 'Craven Cottage','2020-09-14 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (2, 120, 109, 1, 1, 'Loftus Road','2020-09-16 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (3, 119, 113, 1, 1, 'Madejski Stadium','2020-09-18 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (4, 108, 107, 1, 1, 'The Hawthorns','2020-09-20 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (5, 110, 115, 1, 1, 'Upton Park','2020-09-22 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (6, 104, 117, 1, 1, 'Emirates Stadium','2020-09-24 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (7, 116, 105, 1, 1, 'St James'' Park','2020-09-26 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (8, 118, 103, 1, 1, 'DW Stadium','2020-09-28 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (9, 102, 114, 1, 1, 'Etihad Stadium','2020-09-30 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (10, 106, 101, 1, 1, 'Goodison Park','2020-10-4 20:00:00');
 
 select * from tran_dau;
 
