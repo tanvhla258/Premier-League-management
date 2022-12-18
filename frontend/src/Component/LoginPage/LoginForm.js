@@ -31,6 +31,7 @@ function LoginForm(props) {
   };
   const storeFormDataReg = function () {
     const userReg = document.querySelector(".userReg");
+    console.log(document.querySelector(".userReg"));
     const passReg = document.querySelector(".passReg");
     const emailReg = document.querySelector(".emailReg");
     const birthdayReg = document.querySelector(".birthdayReg");
@@ -49,7 +50,7 @@ function LoginForm(props) {
       Ngay_Sinh: birthdayReg.value,
       Phone: phoneReg.value,
     };
-    //console.log(user);
+    console.log(user);
 
     axios.post("http://localhost:3123/api/users/register", user);
   };
@@ -59,6 +60,10 @@ function LoginForm(props) {
   function switchLog() {
     setFormType("Login");
   }
+  function switchLog() {
+    setFormType("Login");
+  }
+
   return (
     <div className="form">
       <div
@@ -67,31 +72,47 @@ function LoginForm(props) {
       >
         <form className="register-form">
           <input
+            required
             className="userReg"
             type="text"
-            placeholder="name"
+            placeholder="username"
             name="username"
           />
           <input
+            required
             className="passReg"
             type="password"
             placeholder="password"
             name="password"
           />
           <input
+            required
             className="emailReg"
             type="text"
             placeholder="email address"
             name="email"
+            id="em"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            title="Invalid email"
           />
-          <input className="birthdayReg" type="date" name="birthday" />
+          {/* <div id="message">
+            <p id="letter" class="invalid">Email hợp lệ</p>
+          </div> */}
+          <input required className="birthdayReg" type="date" name="birthday" />
           <input
+            required
             className="phoneReg"
             type="text"
-            placeholder="number phone"
+            placeholder="phone number"
             name="phone"
+            pattern="[10-11]{1}[0-9]{9}" 
+            title="Phone number with 10-11 and remaing 9 digit with 0-9"
           />
-          <button className="regBtn" onClick={storeFormDataReg}>
+          <select id="option" name="list" form="form">
+            <option value="Guest">Guest</option>
+            <option value="Admin">Admin</option>
+          </select>
+          <br/><br/><button className="regBtn" onClick={storeFormDataReg}>
             {/* <a className="createacc" href={"/"}>
               Create
             </a> */}
@@ -107,13 +128,13 @@ function LoginForm(props) {
         style={{ display: FormType === "Login" ? "block" : "none" }}
       >
         <form className="login-form" onSubmit={props.Homeback}>
-          <input
+          <input required
             name="username"
             className="userLogin"
             type="text"
             placeholder="username"
           />
-          <input
+          <input required
             name="password"
             className="passLogin"
             type="password"
