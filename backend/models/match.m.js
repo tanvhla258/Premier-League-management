@@ -30,9 +30,8 @@ module.exports = {
   },
   checkExistMatch: async (home, away) => {
     const exist = await db.load(
-      `select exists (select 1 from tran_dau where DOI_BONG_ID_Doi_BONG_1 =${away} and DOI_BONG_ID_Doi_BONG_2 =${home}) as exist`
+      `select exists (select 1 from ${table_name} where DOI_BONG_ID_Doi_BONG_1 =${away} and DOI_BONG_ID_Doi_BONG_2 =${home}) as exist`
     );
-    console.log(exist);
     return exist;
   },
 };

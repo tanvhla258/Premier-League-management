@@ -13,6 +13,13 @@ module.exports = {
     const u = await db.load(`select * from user where Ten_User='${name}'`);
     return u;
   },
+  checkExist: async (username, mail) => {
+    const exist = await db.load(`SELECT EXISTS( 
+  select 1 from ${table_name} where Ten_User = '${username}' and Email = '${mail}'
+  ) as exist;
+`);
+    return exist;
+  },
   addUser: (user) => {
     return db.add(table_name, user);
   },

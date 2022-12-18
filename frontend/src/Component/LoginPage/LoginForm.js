@@ -50,9 +50,18 @@ function LoginForm(props) {
       Ngay_Sinh: birthdayReg.value,
       Phone: phoneReg.value,
     };
-    console.log(user);
 
-    axios.post("http://localhost:5000/api/users/register", user);
+    axios
+      .post("http://localhost:5000/api/users/register", user)
+      .then((respone) => {
+        if (respone.data === "Username or Email has exist.Choose another") {
+          localStorage.setItem("isLog", 0);
+          console.log("NOT OK");
+        } else if (respone.data === "Register success") {
+          localStorage.setItem("isLog", 1);
+          console.log("OK");
+        }
+      });
   };
   function switchReg() {
     setFormType("Register");

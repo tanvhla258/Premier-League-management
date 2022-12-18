@@ -22,17 +22,25 @@ exports.Login = async (req, res, next) => {
   }
 };
 exports.Register = async (req, res, next) => {
-  const passwordHased = await bcrypt.hash(req.body.Password, saltRounds);
-  const user = {
-    Ten_User: req.body.Ten_User,
-    Password: passwordHased,
-    Email: req.body.Email,
-    Ngay_Sinh: req.body.Ngay_Sinh,
-    Phone: req.body.Phone,
-    Role: req.body.Role,
-  };
-  await userM.addUser(user);
-  res.send("Register success");
+  const existAccount = await userM.checkExist(
+    req.body.Ten_User,
+    req.body.Email
+  );
+
+  if (existAccount[0].exist === 1) {
+    const passwordHased = await bcrypt.hash(req.body.Password, saltRounds);
+    const user = {
+      Ten_User: req.body.Ten_User,
+      Password: passwordHased,
+      Email: req.body.Email,
+      Ngay_Sinh: req.body.Ngay_Sinh,
+      Phone: req.body.Phone,
+    };
+    await userM.addUser(user);
+    res.send("Register success");
+  } else if (existAccount[0].exist === 0) {
+    res.send("Username or Email has exist.Choose another");
+  }
 };
 exports.getAll = async (req, res, next) => {
   // let conditions = [
