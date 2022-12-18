@@ -27,7 +27,7 @@ exports.Register = async (req, res, next) => {
     req.body.Email
   );
 
-  if (existAccount[0].exist === 1) {
+  if (existAccount[0].exist === 0) {
     const passwordHased = await bcrypt.hash(req.body.Password, saltRounds);
     const user = {
       Ten_User: req.body.Ten_User,
@@ -38,7 +38,7 @@ exports.Register = async (req, res, next) => {
     };
     await userM.addUser(user);
     res.send("Register success");
-  } else if (existAccount[0].exist === 0) {
+  } else if (existAccount[0].exist === 1) {
     res.send("Username or Email has exist.Choose another");
   }
 };

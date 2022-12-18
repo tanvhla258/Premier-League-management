@@ -15,7 +15,7 @@ module.exports = {
   },
   checkExist: async (username, mail) => {
     const exist = await db.load(`SELECT EXISTS( 
-  select 1 from ${table_name} where Ten_User = '${username}' and Email = '${mail}'
+  select 1 from ${table_name} where Ten_User = '${username}' or Email = '${mail}'
   ) as exist;
 `);
     return exist;
