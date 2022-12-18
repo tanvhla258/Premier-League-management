@@ -8,7 +8,7 @@ WHERE NOT EXISTS (
 );
 
 SELECT EXISTS( 
-  select Ten_User from user where Ten_User = 'VanA' and Email = 'gher.gmail.com'
+  select 1 from user where Ten_User = 'VanA' and Email = 'gher.gmail.com'
   ) as temp;
 
 select * from user;
