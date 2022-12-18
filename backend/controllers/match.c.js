@@ -17,10 +17,8 @@ exports.createAMatch = async (req, res, next) => {
 
   if (existMatch[0].exist === 0) {
     vongdau = 1;
-    console.log("1");
   } else if (existMatch[0].exist === 1) {
     vongdau = 2;
-    console.log("2");
   }
   const match = {
     DOI_BONG_ID_Doi_Bong_1: home[0].ID_Doi_Bong,

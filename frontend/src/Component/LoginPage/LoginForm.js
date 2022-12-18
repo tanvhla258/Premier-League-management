@@ -13,7 +13,7 @@ function LoginForm(props) {
       Password: passLog.value,
     };
     axios
-      .post("http://localhost:3123/api/users/login", user)
+      .post("http://localhost:5000/api/users/login", user)
       .then((respone) => {
         if (
           respone.data === "Wrong password" ||
@@ -52,7 +52,7 @@ function LoginForm(props) {
     };
     console.log(user);
 
-    axios.post("http://localhost:3123/api/users/register", user);
+    axios.post("http://localhost:5000/api/users/register", user);
   };
   function switchReg() {
     setFormType("Register");
@@ -105,14 +105,13 @@ function LoginForm(props) {
             type="text"
             placeholder="phone number"
             name="phone"
-            pattern="[10-11]{1}[0-9]{9}" 
+            pattern="[10-11]{1}[0-9]{9}"
             title="Phone number with 10-11 and remaing 9 digit with 0-9"
           />
-          <select id="option" name="list" form="form">
-            <option value="Guest">Guest</option>
-            <option value="Admin">Admin</option>
-          </select>
-          <br/><br/><button className="regBtn" onClick={storeFormDataReg}>
+          {/*   */}
+          <br />
+          <br />
+          <button className="regBtn" onClick={storeFormDataReg}>
             {/* <a className="createacc" href={"/"}>
               Create
             </a> */}
@@ -128,13 +127,15 @@ function LoginForm(props) {
         style={{ display: FormType === "Login" ? "block" : "none" }}
       >
         <form className="login-form" onSubmit={props.Homeback}>
-          <input required
+          <input
+            required
             name="username"
             className="userLogin"
             type="text"
             placeholder="username"
           />
-          <input required
+          <input
+            required
             name="password"
             className="passLogin"
             type="password"

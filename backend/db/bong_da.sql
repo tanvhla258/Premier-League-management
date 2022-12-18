@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`USER` (
   `Ten_User` VARCHAR(60) NOT NULL,
   `Ngay_Sinh` DATE NOT NULL,
   `Phone` varchar(20) NOT NULL,
-  `Role` varchar(60) NOT NULL,
+  
   PRIMARY KEY (`ID_User`))
 ENGINE = InnoDB;
 
