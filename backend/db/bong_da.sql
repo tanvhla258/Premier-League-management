@@ -801,9 +801,7 @@ INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_C
 
 select * from ghi_ban;
 
--- USER
-INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone,Role) VALUES ( 1,'123','abc.gmail.com','Hoaiminh','2002-1-2','0123456789','Quan ly');
-INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone,Role) VALUES ( 2,'321','xyz.gmail.com','Vietpham','2002-2-28','9758734931','Quan ly');
+
 
 
 
