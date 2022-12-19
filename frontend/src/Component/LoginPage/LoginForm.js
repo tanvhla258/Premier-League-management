@@ -52,7 +52,7 @@ function LoginForm(props) {
     };
     console.log(user);
 
-    axios.post("http://localhost:3123/api/users/register", user);
+    axios.post("http://localhost:5000/api/users/register", user);
   };
   function switchReg() {
     setFormType("Register");
@@ -112,7 +112,7 @@ function LoginForm(props) {
             <option value="Guest">Guest</option>
             <option value="Admin">Admin</option>
           </select>
-          <br/><br/><button className="regBtn" onClick={storeFormDataReg}>
+          <br/><br/><button cla ssName="regBtn" onClick={storeFormDataReg}>
             {/* <a className="createacc" href={"/"}>
               Create
             </a> */}

@@ -47,8 +47,12 @@ function TeamPage(props) {
   function popUp() {
     setDisplayPopUp(1);
   }
-  function SubmitForm(e) {
-    e.preventDefault();
+  // function SubmitForm(e) {
+  const SubmitForm = function (e) {
+
+    
+
+    //e.preventDefault();
 
     // lấy dữ liệu từ form trả về cho backend
     const formHtml = document.querySelector("#addPlayerId");
@@ -68,7 +72,7 @@ function TeamPage(props) {
     // inputs.forEach((element) => {
     //   element.value = "";
     // });
-    setDisplayPopUp(0);
+    //setDisplayPopUp(0);
   }
   function CancelForm(e) {
     e.preventDefault();
@@ -81,8 +85,31 @@ function TeamPage(props) {
   function handlingId(id) {
     setteamId(id);
   }
+  
+  // function Date() {
+  //   var birthday = document.getElementById("birthday").value; // Don't get Date yet...
+  //     var regexVar = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/; // add anchors; use literal
+  //     var regexVarTest = regexVar.test(birthday); // pass the string, not the Date
+  //     var userBirthDate = new Date(birthday.replace(regexVar, "$3-$2-$1")); // Use YYYY-MM-DD format
+  //     var todayYear = (new Date()).getFullYear(); // Always use FullYear!!
+  //     var cutOff19 = new Date(); // should be a Date
+  //     cutOff19.setFullYear(todayYear - 16); // ...
+  //     var cutOff95 = new Date();
+  //     cutOff95.setFullYear(todayYear - 40);
+  //     if (!regexVarTest) { // Test this before the other tests
+  //       alert("enter date of birth as dd/mm/yyyy")
+  //     } else if (isNaN(userBirthDate)) {
+  //       alert("date of birth is invalid")
+  //     } else if (userBirthDate > cutOff19) {
+  //       alert("you have to be older than 16")
+  //     } else if (userBirthDate < cutOff95) {
+  //       alert("you have to be younger than 40")
+  //     } else {
+  //       alert("")
+  //     }
+  // }
   return (
-    <div className="TeamPage">
+    <div className="">
       <div
         className="Modal"
         style={{ display: DisplayPopUp ? "block" : "none" }}
@@ -94,26 +121,26 @@ function TeamPage(props) {
           <div className="ModalFormHeader">Player infomation</div>
           <div className="ModalFormContent">
             <form
-              id="addPlayerId"
-              className="formModel"
-              action="addPlayer"
-              onSubmit={SubmitForm}
+             id="addPlayerId"
+             className="formModel"
+             action="addPlayer"
+            onSubmit={SubmitForm}
             >
               <div className="inputItem">
-                <label htmlFor="playername">Name</label>
+                <label required htmlFor="playername">Name</label>
 
-                <input type="text" name="playername" id="playername" />
+                <input required  type="text" name="playername" id="playername"  />
               </div>
               <div className="inputItem">
                 <label htmlFor="birthday">Birhtday</label>
 
-                <input type="date" name="birthday" id="birthday" />
+                <input required type="text" name="birthday" id="birthday"  pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" oninput={Date()}/>
               </div>
 
               <div className="inputItem">
                 <label htmlFor="country">Country</label>
 
-                <input type="text" name="country" id="country" />
+                <input required type="text" name="country" id="country" />
               </div>
               <div className="inputItem">
                 <label htmlFor="type">Type:</label>
@@ -126,17 +153,16 @@ function TeamPage(props) {
               </div>
               <div className="formBtn">
                 <div className="submit">
-                  <button onClick={SubmitForm}>Submit</button>
+                  <button onClick={SubmitForm} >Submit</button>
                 </div>
                 <div className="cancel">
-                  <button onClick={CancelForm}>Cancel</button>
+                  <button type="submit" onClick={CancelForm}>Cancel</button>
                 </div>
               </div>
             </form>
           </div>
         </div>
       </div>
-
       <StandingPageNavBar Logo="Team Management" />
       <div className="TeamPageContent">
         <div className="TeamPageLogo">
