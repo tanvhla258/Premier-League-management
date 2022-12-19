@@ -166,6 +166,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`CAU_THU` (
   `Loai_CT` VARCHAR(60) NOT NULL,
   `Ngay_Sinh_CT` DATE NULL,
   `Ghi_Chu` VARCHAR(60) NULL,
+  `Tong_Ban_Thang` INT NULL DEFAULT 0,
   `DOI_BONG_ID_Doi_Bong` INT NOT NULL ,
   PRIMARY KEY (`ID_Cau_Thu`, `DOI_BONG_ID_Doi_Bong`),
   INDEX `fk_CAU_THU_DOI_BONG_idx` (`DOI_BONG_ID_Doi_Bong` ASC) VISIBLE,
@@ -187,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`USER` (
   `Ten_User` VARCHAR(60) NOT NULL,
   `Ngay_Sinh` DATE NOT NULL,
   `Phone` varchar(20) NOT NULL,
-  `Role` varchar(60) NOT NULL,
+  
   PRIMARY KEY (`ID_User`))
 ENGINE = InnoDB;
 
@@ -802,8 +803,8 @@ INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,ID_C
 select * from ghi_ban;
 
 -- USER
-INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone,Role) VALUES ( 1,'123','abc.gmail.com','Hoaiminh','2002-1-2','0123456789','Quan ly');
-INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone,Role) VALUES ( 2,'321','xyz.gmail.com','Vietpham','2002-2-28','9758734931','Quan ly');
+INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone) VALUES ( 1,'123','abc.gmail.com','Hoaiminh','2002-1-2','0123456789');
+INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone) VALUES ( 2,'321','xyz.gmail.com','Vietpham','2002-2-28','9758734931');
 
 
 
