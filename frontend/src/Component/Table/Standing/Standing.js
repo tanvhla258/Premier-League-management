@@ -5,7 +5,6 @@ import TeamList from "../../Data/TeamListData";
 
 function Standing(props) {
   const renderRanking = props.rankData;
-  console.log(renderRanking);
 
   return (
     <div className="Standing">
@@ -30,9 +29,7 @@ function Standing(props) {
           return (
             <div key={team.p} className="StandingTeam">
               <div className="StandingTag">{team.Hang}</div>
-              <div className="StandingTag StandingTeamName">
-                {team.DOI_BONG_ID_Doi_Bong}
-              </div>
+              <div className="StandingTag StandingTeamName">{team.Ten_DB}</div>
               <div className="StandingTag">
                 {team.Thang + team.Hoa + team.Thua}
               </div>

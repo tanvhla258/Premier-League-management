@@ -53,7 +53,7 @@ function MatchSchedule(props) {
               <Match
                 home={p.home}
                 away={p.away}
-                time={p.time}
+                time={p.Lich_Thi_Dau}
                 date={p.date}
                 stadium={p.stadium}
               />

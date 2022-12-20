@@ -14,15 +14,30 @@ function MatchSchedulePage(props) {
   const [listOfMatches, setListOfMatches] = useState([]);
 
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
-  let [MatchScheduleDataRender, setMatchScheduleDataRender] =
-    useState(MatchScheduleData);
+
   useEffect(() => {
     const fetchMatch = async () => {
       try {
         const data = await fetch("http://localhost:5000/api/matches").then(
           (res) => res.json()
         );
-        console.log(data);
+        const teamData = await fetch("http://localhost:5000/api/clubs").then(
+          (res) => res.json()
+        );
+
+        // const getTeamName = async function (e) {
+        //   const doibong1 = await fetch(
+        //     `http://localhost:5000/api/clubs/${e.DOI_BONG_ID_Doi_Bong_1}`
+        //   ).then((res) => res.json());
+        //   const doibong2 = await fetch(
+        //     `http://localhost:5000/api/clubs/${e.DOI_BONG_ID_Doi_Bong_2}`
+        //   ).then((res) => res.json());
+        //   newData = {
+        //     doibong2: doibong2[0].Ten_DB,
+        //     doibong1: doibong1[0].Ten_DB,
+        //   };
+        // };
+
         setListOfMatches([...data]);
       } catch (e) {
         console.log(e.message);
@@ -48,11 +63,11 @@ function MatchSchedulePage(props) {
       date: dataObject.MatchDay,
       stadium: dataObject.Stadium,
     };
-    axios.post("http://localhost:5000/api/matches/", newMatch).then((respone) => {
-      console.log(respone.data);
-    });
-    MatchScheduleDataRender = [...MatchScheduleDataRender, newMatch];
-    setMatchScheduleDataRender(MatchScheduleDataRender);
+    axios
+      .post("http://localhost:5000/api/matches/", newMatch)
+      .then((respone) => {
+        console.log(respone.data);
+      });
     const inputs = document.querySelectorAll("input");
     inputs.forEach((element) => {
       element.value = "";
@@ -131,7 +146,7 @@ function MatchSchedulePage(props) {
       <div className="MatchScheduleTable">
         <MatchSchedule
           popUp={popUp}
-          MatchSchedule={MatchScheduleDataRender}
+          MatchSchedule={[...listOfMatches]}
           disableBtn={false}
           round={`Round ${props.roundNum}`}
         />

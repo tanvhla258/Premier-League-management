@@ -22,11 +22,26 @@ function StandingPage(props) {
         const data = await fetch("http://localhost:5000/api/rank").then((res) =>
           res.json()
         );
-        console.log(data);
-        data.sort(function (rankA, rankB) {
+
+        //find team name
+        const teamData = await fetch("http://localhost:5000/api/clubs").then(
+          (res) => res.json()
+        );
+        teamData.sort(function (A, B) {
+          return A.ID_Doi_Bong - B.ID_Doi_Bong;
+        });
+        data.sort(function (A, B) {
+          return A.DOI_BONG_ID_Doi_Bong - B.DOI_BONG_ID_Doi_Bong;
+        });
+        const newData = data.map((element, i) => {
+          return { ...data[i], ...teamData[i] };
+        });
+        newData.sort(function (rankA, rankB) {
           return rankA.Hang - rankB.Hang;
         });
-        setListOfRank([...data]);
+
+        console.log(newData);
+        setListOfRank([...newData]);
       } catch (e) {
         console.log(e.message);
       }

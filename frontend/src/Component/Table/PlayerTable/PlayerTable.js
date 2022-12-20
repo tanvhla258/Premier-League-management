@@ -28,7 +28,6 @@ function PlayerTable(props) {
     return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
   }
   function chooseTeam(e) {
-    console.log(e.target.value);
     props.handlingId(e.target.value);
   }
 
@@ -39,7 +38,6 @@ function PlayerTable(props) {
           <span className="btn down">
             <select
               onChange={(e) => {
-                console.log(e);
                 return chooseTeam(e);
               }}
               name="selectTeam"

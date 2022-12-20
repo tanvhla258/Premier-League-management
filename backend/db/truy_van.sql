@@ -51,21 +51,21 @@ WHERE EXISTS (
   where DOI_BONG_ID_Doi_Bong_1 = 106 and DOI_BONG_ID_Doi_Bong_2 = 101
 );
 -- cach 3
-SELECT EXISTS(  select 1
-  from tran_dau
-  where DOI_BONG_ID_Doi_Bong_1 = 106 and DOI_BONG_ID_Doi_Bong_2 = 104) as temp;
+-- SELECT EXISTS(  select 1
+--   from tran_dau
+--   where DOI_BONG_ID_Doi_Bong_1 = 106 and DOI_BONG_ID_Doi_Bong_2 = 104) as temp;
   
-  -- truy van so cau thu nuoc ngoai trong 1 doi bong
+--   -- truy van so cau thu nuoc ngoai trong 1 doi bong
 
-select count(*) as So_Cau_Thu_Nuoc_Ngoai
-from cau_thu
-where DOI_BONG_ID_Doi_Bong = 101 and Loai_CT = 'NN';
+-- -- select count(*) as So_Cau_Thu_Nuoc_Ngoai
+-- -- from cau_thu
+-- -- where DOI_BONG_ID_Doi_Bong = 101 and Loai_CT = 'NN';
   
--- truy van tong so ban thang cau cau thu 
-select count(*) AS So_Ban_Thang
-from ghi_ban
-where CAU_THU_ID_Cau_thu = 1100
-group by CAU_THU_ID_Cau_thu;
+-- -- -- truy van tong so ban thang cau cau thu 
+-- -- select count(*) AS So_Ban_Thang
+-- -- from ghi_ban
+-- -- where CAU_THU_ID_Cau_thu = 1100
+-- -- group by CAU_THU_ID_Cau_thu;
 
 
 
