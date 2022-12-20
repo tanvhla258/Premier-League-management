@@ -21,9 +21,6 @@ function MatchSchedulePage(props) {
         const data = await fetch("http://localhost:5000/api/matches").then(
           (res) => res.json()
         );
-        const teamData = await fetch("http://localhost:5000/api/clubs").then(
-          (res) => res.json()
-        );
 
         // const getTeamName = async function (e) {
         //   const doibong1 = await fetch(
@@ -37,7 +34,7 @@ function MatchSchedulePage(props) {
         //     doibong1: doibong1[0].Ten_DB,
         //   };
         // };
-
+        console.log(data);
         setListOfMatches([...data]);
       } catch (e) {
         console.log(e.message);

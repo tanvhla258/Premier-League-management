@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
 import axios from "axios";
-import va from"./variable.js";
+import va from "./variable.js";
 function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
   const [result, setResult] = useState(null);
+
   
   // const storeFormData = function () {
   //   const userLog = document.querySelector(".userLogin");
@@ -32,6 +33,34 @@ function LoginForm(props) {
   //       }
   //     });
   // };
+
+
+  const storeFormData = function () {
+    const userLog = document.querySelector(".userLogin");
+    const passLog = document.querySelector(".passLogin");
+    const user = {
+      Ten_User: userLog.value,
+      Password: passLog.value,
+    };
+    axios
+      .post("http://localhost:5000/api/users/login", user)
+      .then((respone) => {
+        if (
+          respone.data === "Wrong password" ||
+          respone.data === "Ivalid User"
+        ) {
+          localStorage.setItem("isLog", 0);
+          console.log("NOT OK");
+          va.abc = "asdasd";
+        } else {
+          localStorage.setItem("user", respone.data[0].Ten_User);
+          localStorage.setItem("pass", respone.data[0].Password);
+          localStorage.setItem("isLog", 1);
+          console.log("OK");
+        }
+      });
+  };
+
   const storeFormDataReg = function () {
     const userReg = document.querySelector(".userReg");
     console.log(document.querySelector(".userReg"));
@@ -54,9 +83,6 @@ function LoginForm(props) {
       Phone: phoneReg.value,
     };
 
-
-    axios.post("http://localhost:5000/api/users/register", user);
-
     axios
       .post("http://localhost:5000/api/users/register", user)
       .then((respone) => {
@@ -68,7 +94,6 @@ function LoginForm(props) {
           console.log("OK");
         }
       });
-
   };
   function switchReg() {
     setFormType("Register");
@@ -126,7 +151,6 @@ function LoginForm(props) {
           />
 
           <button className="regBtn" onClick={storeFormDataReg}>
-
             {/* <a className="createacc" href={"/"}>
               Create
             </a> */}
@@ -172,4 +196,3 @@ function LoginForm(props) {
 }
 
 export default LoginForm;
-
