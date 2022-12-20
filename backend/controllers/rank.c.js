@@ -16,6 +16,5 @@ exports.getRank = async (req, res, next) => {
       GIAI_DAU_ID_Giai_Dau: rank[i].GIAI_DAU_ID_Giai_Dau,
     };
   }
-  console.log(matchesByName);
   res.send(matchesByName);
 };
