@@ -14,7 +14,7 @@ import TeamList from "../Data/TeamListData";
 
 function StandingPage(props) {
   const [listOfRank, setListOfRank] = useState([]);
-  const [isLoanding, setisLoading] = useState(false);
+  const [isLoading, setisLoading] = useState(false);
 
   useEffect(() => {
     const fetchRank = async () => {
@@ -51,7 +51,7 @@ function StandingPage(props) {
           </div>
         </div>
         <div className="StandingRight">
-          {isLoanding ? (
+          {isLoading ? (
             "Loading..."
           ) : (
             <Standing rankData={[...listOfRank]} Team={TeamList}></Standing>
