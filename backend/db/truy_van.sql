@@ -65,7 +65,11 @@ where DOI_BONG_ID_Doi_Bong = 101 and Loai_CT = 'NN';
 select count(*) AS So_Ban_Thang
 from ghi_ban
 where CAU_THU_ID_Cau_thu = 1100
-group by CAU_THU_ID_Cau_thu
+group by CAU_THU_ID_Cau_thu;
+
+
+
+
 
 
 
