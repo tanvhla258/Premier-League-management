@@ -6,31 +6,32 @@ function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
   const [result, setResult] = useState(null);
   
-  const storeFormData = function () {
-    const userLog = document.querySelector(".userLogin");
-    const passLog = document.querySelector(".passLogin");
-    const user = {
-      Ten_User: userLog.value,
-      Password: passLog.value,
-    };
-    axios
-      .post("http://localhost:5000/api/users/login", user)
-      .then((respone) => {
-        if (
-          respone.data === "Wrong password" ||
-          respone.data === "Ivalid User"
-        ) {
-          localStorage.setItem("isLog", 0);
-          console.log("NOT OK");
-          va.abc = "asdasd"          
-        } else {
-          localStorage.setItem("user", respone.data[0].Ten_User);
-          localStorage.setItem("pass", respone.data[0].Password);
-          localStorage.setItem("isLog", 1);
-          console.log("OK");
-        }
-      });
-  };
+  // const storeFormData = function () {
+  //   const userLog = document.querySelector(".userLogin");
+  //   const passLog = document.querySelector(".passLogin");
+  //   const user = {
+  //     Ten_User: userLog.value,
+  //     Password: passLog.value,
+  //   };
+  //   axios
+  //     .post("http://localhost:5000/api/users/login", user)
+  //     .then((respone) => {
+  //       if (
+  //         respone.data === "Wrong password" ||
+  //         respone.data === "Ivalid User"
+  //       ) {
+  //         localStorage.setItem("isLog", 0);
+  //         console.log("NOT OK");
+  //         va.abc = "NOT OK"          
+  //       } else {
+  //         localStorage.setItem("user", respone.data[0].Ten_User);
+  //         localStorage.setItem("pass", respone.data[0].Password);
+  //         localStorage.setItem("isLog", 1);
+  //         console.log("OK");
+  //         va.abc = "OK" 
+  //       }
+  //     });
+  // };
   const storeFormDataReg = function () {
     const userReg = document.querySelector(".userReg");
     console.log(document.querySelector(".userReg"));
@@ -124,12 +125,6 @@ function LoginForm(props) {
             title="Phone number with 10-11 and remaing 9 digit with 0-9"
           />
 
-          <select id="option" name="list" form="form">
-            <option value="Guest">Guest</option>
-            <option value="Admin">Admin</option>
-          </select>
-          <br />
-          <br />
           <button className="regBtn" onClick={storeFormDataReg}>
 
             {/* <a className="createacc" href={"/"}>
@@ -146,7 +141,7 @@ function LoginForm(props) {
         className="loginBlock"
         style={{ display: FormType === "Login" ? "block" : "none" }}
       >
-        <form className="login-form" onSubmit={props.Homeback}>
+        <form className="login-form"  onSubmit={props.Homeback}>
           <input
             required
             name="username"
@@ -161,7 +156,7 @@ function LoginForm(props) {
             type="password"
             placeholder="password"
           />
-          <button onClick={storeFormData} className="loginBtn">
+          <button className="loginBtn">
             Login
           </button>
           <p className="message">

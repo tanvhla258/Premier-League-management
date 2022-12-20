@@ -29,23 +29,54 @@ function LoginPage(props) {
   const LogInSucessfully = useCallback(() => {
     localStorage.setItem("isLog", 1);
 
-    
-    // if(LoginForm.result == "Wrong password or username")
-    // {
-    //   console.log("asdas")
-    // }
-    
-    Swal.fire("Sign in successfully!", "", "Success").then((result) => {
-      console.log(va.abc);
-      if (result.isConfirmed) {
-        window.location.href = "/";
-        
-      }
-    });
-    
-    return navigate("/", { replace: true }), [navigate];
+    const userLog = document.querySelector(".userLogin");
+    const passLog = document.querySelector(".passLogin");
+    const user = {
+      Ten_User: userLog.value,
+      Password: passLog.value,
+    };
+    axios
+      .post("http://localhost:5000/api/users/login", user)
+      .then((respone) => {
+        if (
+          respone.data === "Wrong password" ||
+          respone.data === "Ivalid User"
+        ) {
+          localStorage.setItem("isLog", 0);
+          console.log("NOT OK");
+          va.abc = "NOT OK"
+            Swal.fire("Wrong password or username!!!", "", "Success").then((result) => {
 
-    
+              if (result.isConfirmed) {
+                window.alert('Succesfully Updated');
+                window.location.href = "/LoginPage";
+                
+              }
+            });
+
+            //return navigate("/LoginPage", { replace: true }), [navigate];
+        } else {
+          localStorage.setItem("user", respone.data[0].Ten_User);
+          localStorage.setItem("pass", respone.data[0].Password);
+          localStorage.setItem("isLog", 1);
+          console.log("OK");
+          va.abc = "OK"
+          Swal.fire("Sign in successfully!", "", "Success").then((result) => {
+
+            if (result.isConfirmed) {
+              window.location.href = "/";
+
+            }
+          });
+
+          return navigate("/", { replace: true }), [navigate];
+        }
+      });
+
+
+    console.log(va.abc);
+
+
   });
 
   return (
