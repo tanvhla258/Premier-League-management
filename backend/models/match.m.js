@@ -21,6 +21,12 @@ module.exports = {
   deleteMatch: async (id) => {
     return db.delete(table_name, "ID_Tran_Dau", id);
   },
+  getNameByID: async (club) => {
+    const result = await db.load(
+      `select Ten_DB from doi_bong where ID_Doi_Bong =${club}`
+    );
+    return result;
+  },
   getIdByName: async (name) => {
     const result = await db.load(
       `select ID_Doi_Bong ,San_Nha  from doi_bong where Ten_DB ='${name}'`
