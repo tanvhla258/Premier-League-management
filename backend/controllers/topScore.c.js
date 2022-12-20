@@ -16,6 +16,6 @@ exports.getAllTopScore = async (req, res, next) => {
       So_Ban_Thang: score[i].So_Ban_Thang,
     };
   }
-  console.log(topscore);
+
   res.send(topscore);
 };
