@@ -1,4 +1,5 @@
 const clubM = require("../models/club.m");
+const moment = require("moment");
 
 exports.getClubs = async (req, res, next) => {
   const clubs = await clubM.getAllClubs();
@@ -41,14 +42,20 @@ exports.getAllPlayersInClub = async (req, res, next) => {
   res.json(players);
 };
 exports.addPlayerToClub = async (req, res, next) => {
+  var type = "";
+  if (req.body.type === "domestic") {
+    type = "TN";
+  } else if (req.body.type === "foreign") {
+    type = "NN";
+  }
   const newplayer = {
     Ten_CT: req.body.name,
-    Loai_CT: req.body.type,
+    Loai_CT: type,
     DOI_BONG_ID_Doi_Bong: req.body.club,
-    Ngay_Sinh_CT: req.body.birthday
+    Ngay_Sinh_CT: req.body.birthday,
   };
-  console.log(newplayer)
-  await clubM.addPlayer(newplayer);
+  const result = await clubM.addPlayer(newplayer);
+  res.send(result);
 };
 exports.getOnePlayerInClub = async (req, res, next) => {
   const id = req.params.id;
@@ -57,6 +64,6 @@ exports.getOnePlayerInClub = async (req, res, next) => {
   console.log(one_player_in_club);
   res.json(one_player_in_club);
 };
-exports.updateOnePlayerInClub = async (req, res, next) => { };
-exports.deleteOnePlayerInClub = async (req, res, next) => { };
-exports.searchOnePlayerInCLub = async (req, res, next) => { };
+exports.updateOnePlayerInClub = async (req, res, next) => {};
+exports.deleteOnePlayerInClub = async (req, res, next) => {};
+exports.searchOnePlayerInCLub = async (req, res, next) => {};

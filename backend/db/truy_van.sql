@@ -71,6 +71,10 @@ group by CAU_THU_ID_Cau_thu;
 
 
 
+--tra ve so ban thang cua tung cau thu
+select CAU_THU_ID_Cau_Thu, count(*) AS So_Ban_Thang
+from ghi_ban
+group by CAU_THU_ID_Cau_thu
 
 
 

@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomeSection.css";
 import Logo from "../../Logo/Logo";
@@ -10,10 +10,10 @@ import TeamList from "../../Data/TeamListData";
 
 import { MatchScheduleData } from "../../Data/MatchScheduleData";
 function HomeSection() {
-  let MatchScheduleDataRender = MatchScheduleData.filter((p) => {
-    return p.date === "22/12/2023";
-  });
-  console.log("MatchData:", MatchScheduleDataRender);
+  const [listOfRank, setListOfRank] = useState([]);
+  const [listOfMatch, setListOfMatch] = useState([]);
+
+  const [isLoading, setisLoading] = useState(true);
   let navigate = useNavigate();
 
   const ScheduleClick = useCallback(
@@ -24,6 +24,32 @@ function HomeSection() {
     () => navigate("/StandingPage", { replace: true }),
     [navigate]
   );
+
+  useEffect(() => {
+    const fetchSectionData = async () => {
+      try {
+        const data = await fetch("http://localhost:5000/api/rank").then((res) =>
+          res.json()
+        );
+        data.sort(function (rankA, rankB) {
+          return rankA.Hang - rankB.Hang;
+        });
+
+        const data2 = await fetch("http://localhost:5000/api/matches").then(
+          (res) => res.json()
+        );
+        console.log(data, data2);
+        setListOfRank([...data]);
+        setListOfMatch([...data2]);
+        setisLoading(false);
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
+
+    fetchSectionData();
+  }, []);
+
   return (
     <div className="HomeSection">
       <div className="HomeSectionHeader">
@@ -44,25 +70,29 @@ function HomeSection() {
             </Button>
           </div>
         </div>
-        <div className="HomeSectionTable">
-          <div
-            className="HomeSectionItem HomeSectionStanding
+        {isLoading ? (
+          "Loading.."
+        ) : (
+          <div className="HomeSectionTable">
+            <div
+              className="HomeSectionItem HomeSectionStanding
         "
-            onClick={StandingClick}
-          >
-            <Standing Team={TeamList}></Standing>
+              onClick={StandingClick}
+            >
+              <Standing rankData={[...listOfRank]} Team={TeamList}></Standing>
+            </div>
+            <div
+              className="HomeSectionItem HomeSectionSchedule"
+              onClick={ScheduleClick}
+            >
+              <MatchSchedule
+                MatchSchedule={[...listOfMatch]}
+                disableBtn={true}
+                headerContent="Today match"
+              ></MatchSchedule>
+            </div>
           </div>
-          <div
-            className="HomeSectionItem HomeSectionSchedule"
-            onClick={ScheduleClick}
-          >
-            <MatchSchedule
-              MatchSchedule={MatchScheduleDataRender}
-              disableBtn={true}
-              headerContent="Today match"
-            ></MatchSchedule>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -46,7 +46,6 @@ function PlayerTable(props) {
               id="selectTeam"
             >
               {props.TeamList.map((team) => {
-                console.log(team.ID_Doi_Bong);
                 return <option value={team.ID_Doi_Bong}>{team.Ten_DB}</option>;
               })}
             </select>
