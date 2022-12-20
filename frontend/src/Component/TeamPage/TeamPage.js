@@ -72,7 +72,7 @@ function TeamPage(props) {
     // inputs.forEach((element) => {
     //   element.value = "";
     // });
-    setDisplayPopUp(0);
+    //setDisplayPopUp(0);
   };
   function CancelForm(e) {
     e.preventDefault();
@@ -127,13 +127,23 @@ function TeamPage(props) {
               onSubmit={SubmitForm}
             >
               <div className="inputItem">
-                <label htmlFor="playername">Name</label>
-                <input type="text" name="playername" id="playername" />
+                <label required htmlFor="playername">
+                  Name
+                </label>
+
+                <input required type="text" name="playername" id="playername" />
               </div>
               <div className="inputItem">
                 <label htmlFor="birthday">Birhtday</label>
 
-                <input type="date" name="birthday" id="birthday" />
+                <input
+                  required
+                  type="text"
+                  name="birthday"
+                  id="birthday"
+                  pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"
+                  oninput={Date()}
+                />
               </div>
 
               <div className="inputItem">
@@ -154,7 +164,9 @@ function TeamPage(props) {
                   <button onClick={SubmitForm}>Submit</button>
                 </div>
                 <div className="cancel">
-                  <button onClick={CancelForm}>Cancel</button>
+                  <button type="submit" onClick={CancelForm}>
+                    Cancel
+                  </button>
                 </div>
               </div>
             </form>
@@ -176,7 +188,6 @@ function TeamPage(props) {
               PlayersData={[...listOfPlayers]}
               TeamList={[...TeamListData]}
               handlingId={handlingId}
-              //TeamData={listOfPlayers}
               //TeamData={listOfPlayers}
             />
           )}
