@@ -4,14 +4,25 @@ const colors = require("colors");
 const { readdirSync } = require("fs");
 const userM = require("./models/user.m");
 const cors = require("cors");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 app = express();
 require("dotenv").config();
 //const { errorHandler } = require('./middleware/errorMiddleware')
 require("./config/session")(app);
-
+require("./config/passport")(app);
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
+
 // app.use(async function (req, res, next) {
 //   if (req.session.isAuthenticated == null) {
 //     req.session.isAuthenticated = false;

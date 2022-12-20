@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./LoginForm.css";
 import axios from "axios";
 import va from "./variable.js";
 function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
   const [result, setResult] = useState(null);
+  axios.defaults.withCredentials = true;
 
-  
   // const storeFormData = function () {
   //   const userLog = document.querySelector(".userLogin");
   //   const passLog = document.querySelector(".passLogin");
@@ -23,17 +23,16 @@ function LoginForm(props) {
   //       ) {
   //         localStorage.setItem("isLog", 0);
   //         console.log("NOT OK");
-  //         va.abc = "NOT OK"          
+  //         va.abc = "NOT OK"
   //       } else {
   //         localStorage.setItem("user", respone.data[0].Ten_User);
   //         localStorage.setItem("pass", respone.data[0].Password);
   //         localStorage.setItem("isLog", 1);
   //         console.log("OK");
-  //         va.abc = "OK" 
+  //         va.abc = "OK"
   //       }
   //     });
   // };
-
 
   const storeFormData = function () {
     const userLog = document.querySelector(".userLogin");
@@ -104,7 +103,16 @@ function LoginForm(props) {
   function switchLog() {
     setFormType("Login");
   }
-
+  //cookie
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/users/login").then((respone) => {
+      if (respone.data.loggedIn === true) {
+        console.log(respone.data.user[0].Ten_User);
+      } else {
+        console.log("ERROR");
+      }
+    });
+  });
   return (
     <div className="form">
       <div
@@ -118,6 +126,7 @@ function LoginForm(props) {
             type="text"
             placeholder="username"
             name="username"
+            autoComplete="off"
           />
           <input
             required
@@ -125,6 +134,7 @@ function LoginForm(props) {
             type="password"
             placeholder="password"
             name="password"
+            autoComplete="off"
           />
           <input
             required
@@ -135,6 +145,7 @@ function LoginForm(props) {
             id="em"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             title="Invalid email"
+            autoComplete="off"
           />
           {/* <div id="message">
             <p id="letter" class="invalid">Email hợp lệ</p>
@@ -148,6 +159,7 @@ function LoginForm(props) {
             name="phone"
             pattern="[10-11]{1}[0-9]{9}"
             title="Phone number with 10-11 and remaing 9 digit with 0-9"
+            autoComplete="off"
           />
 
           <button className="regBtn" onClick={storeFormDataReg}>
@@ -165,13 +177,14 @@ function LoginForm(props) {
         className="loginBlock"
         style={{ display: FormType === "Login" ? "block" : "none" }}
       >
-        <form className="login-form"  onSubmit={props.Homeback}>
+        <form className="login-form" onSubmit={props.Homeback}>
           <input
             required
             name="username"
             className="userLogin"
             type="text"
             placeholder="username"
+            autoComplete="off"
           />
           <input
             required
@@ -179,10 +192,9 @@ function LoginForm(props) {
             className="passLogin"
             type="password"
             placeholder="password"
+            autoComplete="off"
           />
-          <button className="loginBtn">
-            Login
-          </button>
+          <button className="loginBtn">Login</button>
           <p className="message">
             Not registered?{" "}
             <a onClick={switchReg} className="createacc" href="#">
