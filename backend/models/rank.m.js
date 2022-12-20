@@ -4,4 +4,10 @@ module.exports = {
   getAllRank: async () => {
     return db.load(`select * from ${table_name} order by Hang asc`);
   },
+  getNameByID: async (club) => {
+    const result = await db.load(
+      `select Ten_DB from doi_bong where ID_Doi_Bong =${club}`
+    );
+    return result;
+  },
 };

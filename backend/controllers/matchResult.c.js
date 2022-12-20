@@ -2,6 +2,7 @@ const matchResultM = require("../models/matchResult.m");
 
 exports.getAllMatchResult = async (req, res, next) => {
   const matchResult = await matchResultM.getAllMatchResult();
+  console.log(matchResult);
   res.send(matchResult);
 };
 
