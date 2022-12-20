@@ -50,7 +50,7 @@ WHERE EXISTS (
   from tran_dau
   where DOI_BONG_ID_Doi_Bong_1 = 106 and DOI_BONG_ID_Doi_Bong_2 = 101
 );
--- cach 3
+-- cach 3 
 -- SELECT EXISTS(  select 1
 --   from tran_dau
 --   where DOI_BONG_ID_Doi_Bong_1 = 106 and DOI_BONG_ID_Doi_Bong_2 = 104) as temp;

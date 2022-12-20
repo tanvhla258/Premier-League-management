@@ -17,6 +17,14 @@ function MatchSchedule(props) {
 
   let renderMatchScheduleList = props.MatchSchedule?.slice(startItem, endItem);
 
+  const renderMatchScheduleListWithDate = renderMatchScheduleList?.map((m) => {
+    const date = new Date(m.Lich_Thi_Dau);
+    const getHour = date.toTimeString().slice(0, 8);
+    const getDate = date.toDateString();
+
+    return { ...m, time: getHour, date: getDate };
+  });
+  console.log(renderMatchScheduleListWithDate);
   function nextClick() {
     return currentPage < maxPage
       ? setCurrentPage(currentPage + 1)
@@ -33,7 +41,9 @@ function MatchSchedule(props) {
           justifyContent: props.disableBtn ? "center" : "space-between",
         }}
       >
-        <div className="HeaderRound">{props?.round}</div>
+        <div className="HeaderRound">
+          Round {renderMatchScheduleList[0]?.Vong_Dau}
+        </div>
         <div className="HeaderContent">{props.headerContent}</div>
         <div
           className="add"
@@ -48,12 +58,12 @@ function MatchSchedule(props) {
       </div>
       <div className="MatchScheduleContent">
         <div className="MatchScheduleContentMain">
-          {renderMatchScheduleList?.map((p) => {
+          {renderMatchScheduleListWithDate?.map((p) => {
             return (
               <Match
-                home={p.home}
-                away={p.away}
-                time={p.Lich_Thi_Dau}
+                home={p.Ten_DB_1}
+                away={p.Ten_DB_2}
+                time={p.time}
                 date={p.date}
                 stadium={p.stadium}
               />
