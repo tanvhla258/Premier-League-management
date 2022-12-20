@@ -72,9 +72,10 @@ WHERE EXISTS (
 
 
 --tra ve so ban thang cua tung cau thu
-select CAU_THU_ID_Cau_Thu, count(*) AS So_Ban_Thang
+select CAU_THU_ID_Cau_Thu,CAU_THU_DOI_BONG_ID_Doi_Bong, count(*) AS So_Ban_Thang
 from ghi_ban
-group by CAU_THU_ID_Cau_thu
+group by CAU_THU_ID_Cau_thu,CAU_THU_DOI_BONG_ID_Doi_Bong
+order by So_Ban_Thang desc
 
 
 

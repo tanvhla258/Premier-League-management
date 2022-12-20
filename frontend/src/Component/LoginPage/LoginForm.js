@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
 import axios from "axios";
-import va from"./variable.js";
+import va from "./variable.js";
 function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
   const [result, setResult] = useState(null);
-  
+
   const storeFormData = function () {
     const userLog = document.querySelector(".userLogin");
     const passLog = document.querySelector(".passLogin");
@@ -22,7 +22,7 @@ function LoginForm(props) {
         ) {
           localStorage.setItem("isLog", 0);
           console.log("NOT OK");
-          va.abc = "asdasd"          
+          va.abc = "asdasd";
         } else {
           localStorage.setItem("user", respone.data[0].Ten_User);
           localStorage.setItem("pass", respone.data[0].Password);
@@ -53,9 +53,6 @@ function LoginForm(props) {
       Phone: phoneReg.value,
     };
 
-
-    axios.post("http://localhost:5000/api/users/register", user);
-
     axios
       .post("http://localhost:5000/api/users/register", user)
       .then((respone) => {
@@ -67,7 +64,6 @@ function LoginForm(props) {
           console.log("OK");
         }
       });
-
   };
   function switchReg() {
     setFormType("Register");
@@ -131,7 +127,6 @@ function LoginForm(props) {
           <br />
           <br />
           <button className="regBtn" onClick={storeFormDataReg}>
-
             {/* <a className="createacc" href={"/"}>
               Create
             </a> */}
@@ -177,4 +172,3 @@ function LoginForm(props) {
 }
 
 export default LoginForm;
-
