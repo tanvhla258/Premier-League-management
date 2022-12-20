@@ -89,6 +89,7 @@ exports.Login = async (req, res, next) => {
     if (compare === false) {
       return res.send("Wrong password");
     } else {
+      console.log(userDatabase)
       return res.send(userDatabase);
     }
   }
