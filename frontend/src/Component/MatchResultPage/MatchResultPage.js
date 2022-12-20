@@ -13,15 +13,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function MatchResultPage(props) {
-  // let [currentPage, setCurrentPage] = useState(0);
-  // const [PlayerPerPage] = useState(3);
-  // let maxPage = Math.floor((TopScoreData?.length - 1) / PlayerPerPage);
-  // console.log(maxPage);
-  // let startItem = currentPage * PlayerPerPage;
-  // let endItem = startItem + PlayerPerPage;
-
-  // let renderPlayerList = TopScoreData?.slice(startItem, endItem);
   const [listOfMatchResult, setListOfMatchResult] = useState([]);
+
+  let resultData = [...listOfMatchResult];
+  let [currentPage, setCurrentPage] = useState(0);
+  const [PlayerPerPage] = useState(3);
+  let maxPage = Math.floor((resultData?.length - 1) / PlayerPerPage);
+  console.log(maxPage);
+  let startItem = currentPage * PlayerPerPage;
+  let endItem = startItem + PlayerPerPage;
+
+  let renderResultList = resultData?.slice(startItem, endItem);
   useEffect(() => {
     const fetchMatchResult = async () => {
       try {
@@ -38,12 +40,12 @@ function MatchResultPage(props) {
     fetchMatchResult();
   }, []);
   function nextClick() {
-    // return currentPage < maxPage
-    //   ? setCurrentPage(currentPage + 1)
-    //   : currentPage;
+    return currentPage < maxPage
+      ? setCurrentPage(currentPage + 1)
+      : currentPage;
   }
   function prevClick() {
-    // return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
+    return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
   }
   return (
     <div className="MatchResultPage">
@@ -54,30 +56,18 @@ function MatchResultPage(props) {
         </div>
         <div className="MatchResultContent">
           <div className="MatchResultContent">
-            <MatchResult
-              team1="Man United"
-              team2="New Castle"
-              point1="3"
-              point2="2"
-              time="19:00"
-              day="Nov 9"
-            />
-            <MatchResult
-              team1="Man United"
-              team2="New Castle"
-              point1="3"
-              point2="2"
-              time="19:00"
-              day="Nov 9"
-            />
-            <MatchResult
-              team1="Man United"
-              team2="New Castle"
-              point1="3"
-              point2="2"
-              time="19:00"
-              day="Nov 9"
-            />
+            {renderResultList?.map((r) => {
+              return (
+                <MatchResult
+                  team1={r.Ten_Doi_Thang}
+                  team2={r.Ten_Doi_Thua}
+                  point1={r.Ti_So[0]}
+                  point2={r.Ti_So[2]}
+                  time="19:00"
+                  day="Nov 9"
+                />
+              );
+            })}
           </div>
           <div className="ControlBtn">
             <FontAwesomeIcon

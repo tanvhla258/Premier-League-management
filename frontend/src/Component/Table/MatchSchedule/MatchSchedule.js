@@ -41,9 +41,6 @@ function MatchSchedule(props) {
           justifyContent: props.disableBtn ? "center" : "space-between",
         }}
       >
-        <div className="HeaderRound">
-          Round {renderMatchScheduleList[0]?.Vong_Dau}
-        </div>
         <div className="HeaderContent">{props.headerContent}</div>
         <div
           className="add"

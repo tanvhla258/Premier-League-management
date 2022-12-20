@@ -9,8 +9,12 @@ import {
   faCaretLeft,
   faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
-import { TopScoreData } from "../Data/TopScoreData";
 function TopScorePage(props) {
+  const [listOfTopScore, setListOfTopScore] = useState([]);
+  let TopScoreData = listOfTopScore?.map((ts, i) => {
+    return { rank: i + 1, ...ts };
+  });
+  console.log(TopScoreData);
   let [currentPage, setCurrentPage] = useState(0);
   const [PlayerPerPage] = useState(3);
   let maxPage = Math.floor((TopScoreData.length - 1) / PlayerPerPage);
@@ -19,14 +23,12 @@ function TopScorePage(props) {
   let endItem = startItem + PlayerPerPage;
 
   let renderPlayerList = TopScoreData?.slice(startItem, endItem);
-  const [listOfTopScore, setListOfTopScore] = useState([]);
   useEffect(() => {
     const fetchTopScore = async () => {
       try {
         const data = await fetch("http://localhost:5000/api/topScore").then(
           (res) => res.json()
         );
-        console.log(data);
         setListOfTopScore([...data]);
       } catch (e) {
         console.log(e.message);
@@ -53,17 +55,17 @@ function TopScorePage(props) {
         </div>
         <div className="TopScoreContent">
           <div className="TopScoreContentMain">
-            {renderPlayerList?.map((p) => {
+            {renderPlayerList?.map((p, index) => {
               return (
                 <div className="TopScoreItem">
                   <div className="TopScoreRank">{p.rank}</div>
                   <Player
                     type="TopScorePlayer"
-                    name={p.name}
-                    teamName="ManUnited"
+                    name={p.Ten_CT}
+                    teamName={p.Ten_DB}
                   />
 
-                  <div className="TopScorePoint">{p.score}</div>
+                  <div className="TopScorePoint">{p.So_Ban_Thang}</div>
                 </div>
               );
             })}
