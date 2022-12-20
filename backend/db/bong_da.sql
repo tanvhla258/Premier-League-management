@@ -193,7 +193,7 @@ ENGINE = InnoDB;
 -- Table `bong_da`.`USER`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `bong_da`.`USER` (
-  `ID_User` INT NOT NULL,
+  `ID_User` INT NOT NULL auto_increment,
   `Password` VARCHAR(255) NOT NULL,
   `Email` VARCHAR(60) NOT NULL,
   `Ten_User` VARCHAR(60) NOT NULL,
