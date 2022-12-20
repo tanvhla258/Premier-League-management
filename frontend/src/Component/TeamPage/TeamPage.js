@@ -33,7 +33,7 @@ function TeamPage(props) {
         ).then((res) => res.json());
         setListOfPlayers([...PlayerData]);
         setTeamInfo([...TeamData]);
-        console.log(setTeamInfo)
+        console.log(setTeamInfo);
         setTeamList([...TeamListData]);
         setLoading(false);
       } catch (e) {
@@ -49,10 +49,7 @@ function TeamPage(props) {
   }
   // function SubmitForm(e) {
   const SubmitForm = function (e) {
-
-    
-
-    //e.preventDefault();
+    e.preventDefault();
 
     // lấy dữ liệu từ form trả về cho backend
     const formHtml = document.querySelector("#addPlayerId");
@@ -66,14 +63,17 @@ function TeamPage(props) {
       club: teamId,
     };
 
-    axios.post(`http://localhost:5000/api/clubs/${newPlayer.club}/players`, newPlayer);
+    axios.post(
+      `http://localhost:5000/api/clubs/${newPlayer.club}/players`,
+      newPlayer
+    );
 
     // const inputs = document.querySelectorAll("input");
     // inputs.forEach((element) => {
     //   element.value = "";
     // });
-    //setDisplayPopUp(0);
-  }
+    setDisplayPopUp(0);
+  };
   function CancelForm(e) {
     e.preventDefault();
     const inputs = document.querySelectorAll("input");
@@ -85,7 +85,7 @@ function TeamPage(props) {
   function handlingId(id) {
     setteamId(id);
   }
-  
+
   // function Date() {
   //   var birthday = document.getElementById("birthday").value; // Don't get Date yet...
   //     var regexVar = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/; // add anchors; use literal
@@ -109,7 +109,7 @@ function TeamPage(props) {
   //     }
   // }
   return (
-    <div className="">
+    <div className="TeamPage">
       <div
         className="Modal"
         style={{ display: DisplayPopUp ? "block" : "none" }}
@@ -121,26 +121,24 @@ function TeamPage(props) {
           <div className="ModalFormHeader">Player infomation</div>
           <div className="ModalFormContent">
             <form
-             id="addPlayerId"
-             className="formModel"
-             action="addPlayer"
-            onSubmit={SubmitForm}
+              id="addPlayerId"
+              className="formModel"
+              action="addPlayer"
+              onSubmit={SubmitForm}
             >
               <div className="inputItem">
-                <label required htmlFor="playername">Name</label>
-
-                <input required  type="text" name="playername" id="playername"  />
+                <label htmlFor="playername">Name</label>
+                <input type="text" name="playername" id="playername" />
               </div>
               <div className="inputItem">
                 <label htmlFor="birthday">Birhtday</label>
 
-                <input required type="text" name="birthday" id="birthday"  pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" oninput={Date()}/>
+                <input type="date" name="birthday" id="birthday" />
               </div>
 
               <div className="inputItem">
                 <label htmlFor="country">Country</label>
-
-                <input required type="text" name="country" id="country" />
+                <input type="text" name="country" id="country" />
               </div>
               <div className="inputItem">
                 <label htmlFor="type">Type:</label>
@@ -153,10 +151,10 @@ function TeamPage(props) {
               </div>
               <div className="formBtn">
                 <div className="submit">
-                  <button onClick={SubmitForm} >Submit</button>
+                  <button onClick={SubmitForm}>Submit</button>
                 </div>
                 <div className="cancel">
-                  <button type="submit" onClick={CancelForm}>Cancel</button>
+                  <button onClick={CancelForm}>Cancel</button>
                 </div>
               </div>
             </form>
@@ -178,7 +176,8 @@ function TeamPage(props) {
               PlayersData={[...listOfPlayers]}
               TeamList={[...TeamListData]}
               handlingId={handlingId}
-            //TeamData={listOfPlayers}
+              //TeamData={listOfPlayers}
+              //TeamData={listOfPlayers}
             />
           )}
         </div>
@@ -186,5 +185,4 @@ function TeamPage(props) {
     </div>
   );
 }
-
 export default TeamPage;
