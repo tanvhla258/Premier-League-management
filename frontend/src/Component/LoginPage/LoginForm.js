@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
 import axios from "axios";
-
+import va from"./variable.js";
 function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
-
+  const [result, setResult] = useState(null);
+  
   const storeFormData = function () {
     const userLog = document.querySelector(".userLogin");
     const passLog = document.querySelector(".passLogin");
@@ -21,6 +22,7 @@ function LoginForm(props) {
         ) {
           localStorage.setItem("isLog", 0);
           console.log("NOT OK");
+          va.abc = "asdasd"          
         } else {
           localStorage.setItem("user", respone.data[0].Ten_User);
           localStorage.setItem("pass", respone.data[0].Password);
@@ -175,3 +177,4 @@ function LoginForm(props) {
 }
 
 export default LoginForm;
+

@@ -7,6 +7,8 @@ import Button from "../Button/Button";
 import NavLink from "../NavLink/NavLink";
 import Swal from "sweetalert2";
 import axios from "axios";
+import va from "./variable"
+//import s from './LoginForm';
 function LoginPage(props) {
   let navigate = useNavigate();
   const [listOfUsers, setListOfUsers] = useState([]);
@@ -27,12 +29,23 @@ function LoginPage(props) {
   const LogInSucessfully = useCallback(() => {
     localStorage.setItem("isLog", 1);
 
+    
+    // if(LoginForm.result == "Wrong password or username")
+    // {
+    //   console.log("asdas")
+    // }
+    
     Swal.fire("Sign in successfully!", "", "Success").then((result) => {
+      console.log(va.abc);
       if (result.isConfirmed) {
         window.location.href = "/";
+        
       }
     });
+    
     return navigate("/", { replace: true }), [navigate];
+
+    
   });
 
   return (
@@ -48,3 +61,4 @@ function LoginPage(props) {
 }
 
 export default LoginPage;
+
