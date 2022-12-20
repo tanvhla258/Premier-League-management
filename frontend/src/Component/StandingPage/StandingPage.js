@@ -14,13 +14,18 @@ import TeamList from "../Data/TeamListData";
 
 function StandingPage(props) {
   const [listOfRank, setListOfRank] = useState([]);
+  const [isLoanding, setisLoading] = useState(false);
+
   useEffect(() => {
     const fetchRank = async () => {
       try {
-        const data = await fetch("http://localhost:5000/api/rank").then(
-          (res) => res.json()
+        const data = await fetch("http://localhost:5000/api/rank").then((res) =>
+          res.json()
         );
         console.log(data);
+        data.sort(function (rankA, rankB) {
+          return rankA.Hang - rankB.Hang;
+        });
         setListOfRank([...data]);
       } catch (e) {
         console.log(e.message);
@@ -46,7 +51,11 @@ function StandingPage(props) {
           </div>
         </div>
         <div className="StandingRight">
-          <Standing Team={TeamList}></Standing>
+          {isLoanding ? (
+            "Loading..."
+          ) : (
+            <Standing rankData={[...listOfRank]} Team={TeamList}></Standing>
+          )}
         </div>
       </div>
     </div>
