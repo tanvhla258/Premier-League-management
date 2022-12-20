@@ -703,25 +703,25 @@ select * from giai_dau;
 
 -- BANG XEP HANG
 INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,1,27,5,6,86,'102','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,2,21,11,6,74,'101','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,3,20,9,9,69,'103','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,4,19,10,9,67,'104','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,5,20,6,12,66,'105','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,6,19,8,11,65,'106','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,7,18,8,12,62,'107','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,8,18,7,13,62,'108','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,9,18,5,15,61,'109','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,10,17,8,17,59,'110','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,11,16,7,17,55,'111','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,12,12,9,18,45,'112','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,13,12,9,19,45,'113','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,14,12,8,18,44,'114','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,15,12,7,19,43,'115','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,16,9,14,15,41,'116','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,17,10,9,19,39,'117','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,18,5,13,20,28,'118','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,19,5,11,22,26,'119','1');
-INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (1,20,7,2,29,23,'120','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (2,2,21,11,6,74,'101','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (3,3,20,9,9,69,'103','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (4,4,19,10,9,67,'104','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (5,5,20,6,12,66,'105','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (6,6,19,8,11,65,'106','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (7,7,18,8,12,62,'107','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (8,8,18,7,13,62,'108','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (9,9,18,5,15,61,'109','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (10,10,17,8,17,59,'110','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (11,11,16,7,17,55,'111','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (12,12,12,9,18,45,'112','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (13,13,12,9,19,45,'113','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (14,14,12,8,18,44,'114','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (15,15,12,7,19,43,'115','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (16,16,9,14,15,41,'116','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (17,17,10,9,19,39,'117','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (18,18,5,13,20,28,'118','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (19,19,5,11,22,26,'119','1');
+INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,GIAI_DAU_ID_Giai_Dau) VALUES (20,20,7,2,29,23,'120','1');
 
 select * from bang_xep_hang;
 -- TRAN DAU 
