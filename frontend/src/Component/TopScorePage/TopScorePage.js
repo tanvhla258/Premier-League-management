@@ -11,7 +11,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { TopScoreData } from "../Data/TopScoreData";
 function TopScorePage(props) {
-
   let [currentPage, setCurrentPage] = useState(0);
   const [PlayerPerPage] = useState(3);
   let maxPage = Math.floor((TopScoreData.length - 1) / PlayerPerPage);
@@ -20,7 +19,22 @@ function TopScorePage(props) {
   let endItem = startItem + PlayerPerPage;
 
   let renderPlayerList = TopScoreData?.slice(startItem, endItem);
+  const [listOfTopScore, setListOfTopScore] = useState([]);
+  useEffect(() => {
+    const fetchTopScore = async () => {
+      try {
+        const data = await fetch("http://localhost:5000/api/topScore").then(
+          (res) => res.json()
+        );
+        console.log(data);
+        setListOfTopScore([...data]);
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
 
+    fetchTopScore();
+  }, []);
   function nextClick() {
     return currentPage < maxPage
       ? setCurrentPage(currentPage + 1)

@@ -33,6 +33,7 @@ function TeamPage(props) {
         ).then((res) => res.json());
         setListOfPlayers([...PlayerData]);
         setTeamInfo([...TeamData]);
+        console.log(setTeamInfo);
         setTeamList([...TeamListData]);
         setLoading(false);
       } catch (e) {
@@ -67,11 +68,11 @@ function TeamPage(props) {
       newPlayer
     );
 
-    const inputs = document.querySelectorAll("input");
-    inputs.forEach((element) => {
-      element.value = "";
-    });
-    setDisplayPopUp(0);
+    // const inputs = document.querySelectorAll("input");
+    // inputs.forEach((element) => {
+    //   element.value = "";
+    // });
+    //setDisplayPopUp(0);
   };
   function CancelForm(e) {
     e.preventDefault();
@@ -137,17 +138,17 @@ function TeamPage(props) {
 
                 <input
                   required
-                  type="date"
+                  type="text"
                   name="birthday"
                   id="birthday"
+                  pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"
                   oninput={Date()}
                 />
               </div>
 
               <div className="inputItem">
                 <label htmlFor="country">Country</label>
-
-                <input required type="text" name="country" id="country" />
+                <input type="text" name="country" id="country" />
               </div>
               <div className="inputItem">
                 <label htmlFor="type">Type:</label>
@@ -195,5 +196,4 @@ function TeamPage(props) {
     </div>
   );
 }
-
 export default TeamPage;
