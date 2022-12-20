@@ -21,5 +21,11 @@ module.exports = {
   deletePlayer: async (id) => {
     return db.delete(table_name, "ID_Cau_Thu", id);
   },
-  searchPlayer: async (player) => {},
+  searchPlayer: async (keyword) => {
+    keyword = "%" + keyword + "%";
+    const rs = await db.load(`select * from ${table_name} where 
+    LOWER (Ten_CT) like LOWER('${keyword}')`);
+
+    return rs;
+  },
 };

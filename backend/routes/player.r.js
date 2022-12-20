@@ -8,5 +8,5 @@ router
   .get(playerC.getAPlayer)
   .put(playerC.updatePlayer)
   .delete(playerC.deletePlayer);
-router.route("/search").post(playerC.findPlayer);
+router.route("/search/:keyword").get(playerC.searchPlayer);
 module.exports = router;

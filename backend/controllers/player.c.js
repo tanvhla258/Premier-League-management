@@ -23,8 +23,13 @@ exports.deletePlayer = async (req, res, next) => {
   await playerM.deletePlayer(id);
   res.send("delete player success");
 };
-exports.findPlayer = async (req, res, next) => {
-  const player = req.body;
-  const result = await searchPlayer(player);
-  res.send(result);
+exports.searchPlayer = async (req, res, next) => {
+  const keyword = req.params.keyword;
+  const player = await playerM.searchPlayer(keyword);
+  if (player.length === 0) {
+    res.send("Empty");
+  } else {
+    console.log(player);
+    res.send(player);
+  }
 };
