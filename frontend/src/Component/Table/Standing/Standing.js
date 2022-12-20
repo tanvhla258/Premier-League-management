@@ -4,7 +4,8 @@ import "../Table.css";
 import TeamList from "../../Data/TeamListData";
 
 function Standing(props) {
-  let renderTeamList = props.Team;
+  const renderRanking = props.rankData;
+  console.log(renderRanking);
 
   return (
     <div className="Standing">
@@ -25,17 +26,21 @@ function Standing(props) {
           scrollbarWidth: "none",
         }}
       >
-        {renderTeamList.map((team) => {
+        {renderRanking.map((team) => {
           return (
             <div key={team.p} className="StandingTeam">
-              <div className="StandingTag">{team.p}</div>
-              <div className="StandingTag StandingTeamName">{team.name}</div>
-              <div className="StandingTag">{team.wp}</div>
-              <div className="StandingTag">{team.w}</div>
-              <div className="StandingTag">{team.d}</div>
-              <div className="StandingTag">{team.l}</div>
+              <div className="StandingTag">{team.Hang}</div>
+              <div className="StandingTag StandingTeamName">
+                {team.DOI_BONG_ID_Doi_Bong}
+              </div>
+              <div className="StandingTag">
+                {team.Thang + team.Hoa + team.Thua}
+              </div>
+              <div className="StandingTag">{team.Thang}</div>
+              <div className="StandingTag">{team.Hoa}</div>
+              <div className="StandingTag">{team.Thua}</div>
               <div className="StandingTag StandingPTS">
-                {Number(team.w * 3) + Number(team.d)}
+                {Number(team.Thang * 3) + Number(team.Hoa)}
               </div>
             </div>
           );
