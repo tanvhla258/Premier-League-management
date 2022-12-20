@@ -17,7 +17,7 @@ exports.Login = async (req, res, next) => {
     if (compare === false) {
       return res.send("Wrong password");
     } else {
-      console.log(userDatabase)
+      console.log(userDatabase);
       return res.send(userDatabase);
     }
   }
@@ -44,29 +44,22 @@ exports.Register = async (req, res, next) => {
   }
 };
 exports.getAll = async (req, res, next) => {
-  // let conditions = [
-  //   { name: { $regex: ".*" + "name" + ".*" } },
-  //   { stadium: { $regex: ".*" + "stadium" + ".*" } },
-  // ];
-  // console.log(conditions);
-  // console.log($HEllo);
   res.send(await userM.getAllUser());
 };
-exports.getOne = async (req, res, next) => {
-  const id = req.params["id"];
-  res.send(await userM.getUserById(id));
-};
+// exports.getOne = async (req, res, next) => {
+//   const id = req.params.id;
+//   res.send(await userM.getUserById(id));
+// };
+// exports.DeleteOne = async (req, res, next) => {
+//   const id = req.params.id;
+//   //const user = req.body;
+//   await userM.deleteUser(id);
+//   res.send("Deleted");
+// };
+// exports.UpdateOne = async (req, res, next) => {
+//   const id = req.params.id;
+//   const user = req.body;
 
-exports.DeleteOne = async (req, res, next) => {
-  const id = req.params["id"];
-  //const user = req.body;
-  await userM.deleteUser(id);
-  res.send("Deleted");
-};
-exports.UpdateOne = async (req, res, next) => {
-  const id = req.params["id"];
-  const user = req.body;
-
-  await userM.updateUser(user);
-  res.send("Updated");
-};
+//   await userM.updateUser(user);
+//   res.send("Updated");
+// };

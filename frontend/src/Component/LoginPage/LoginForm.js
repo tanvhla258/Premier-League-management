@@ -5,7 +5,6 @@ import va from "./variable.js";
 function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
   const [result, setResult] = useState(null);
-  axios.defaults.withCredentials = true;
 
   // const storeFormData = function () {
   //   const userLog = document.querySelector(".userLogin");
@@ -103,16 +102,7 @@ function LoginForm(props) {
   function switchLog() {
     setFormType("Login");
   }
-  //cookie
-  useEffect(() => {
-    axios.get("http://localhost:5000/api/users/login").then((respone) => {
-      if (respone.data.loggedIn === true) {
-        console.log(respone.data.user[0].Ten_User);
-      } else {
-        console.log("ERROR");
-      }
-    });
-  });
+
   return (
     <div className="form">
       <div
