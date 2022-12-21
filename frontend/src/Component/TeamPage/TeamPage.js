@@ -33,7 +33,6 @@ function TeamPage(props) {
         ).then((res) => res.json());
         setListOfPlayers([...PlayerData]);
         setTeamInfo([...TeamData]);
-        console.log(setTeamInfo);
         setTeamList([...TeamListData]);
         setLoading(false);
       } catch (e) {
@@ -85,7 +84,17 @@ function TeamPage(props) {
   function handlingId(id) {
     setteamId(id);
   }
-
+  function handlePlayerClick() {
+    const teamContainer = document.querySelector(".TeamPageContent");
+    teamContainer.addEventListener("click", function (e) {
+      if (e.target.closest(".Player")) {
+        const player = e.target;
+        const playerName = player.closest(".PlayerInfoName");
+        const playerType = player.closest(".PlayerInfoCountry");
+        console.log(playerName, playerType);
+      }
+    });
+  }
   // function Date() {
   //   var birthday = document.getElementById("birthday").value; // Don't get Date yet...
   //     var regexVar = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/; // add anchors; use literal
@@ -174,7 +183,7 @@ function TeamPage(props) {
         </div>
       </div>
       <StandingPageNavBar Logo="Team Management" />
-      <div className="TeamPageContent">
+      <div className="TeamPageContent" onClick={handlePlayerClick}>
         <div className="TeamPageLogo">
           <img className="TeamLogoImg" src={teamLogo}></img>
         </div>
