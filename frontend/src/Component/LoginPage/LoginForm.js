@@ -4,8 +4,9 @@ import axios from "axios";
 import va from "./variable.js";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+let switchLG = "Login";
 function LoginForm(props) {
-  const [FormType, setFormType] = useState("Login");
+  const [FormType, setFormType] = useState(switchLG);
   let navigate = useNavigate();
 
   // const storeFormData = function () {
@@ -60,35 +61,29 @@ function LoginForm(props) {
     axios
       .post("http://localhost:5000/api/users/register", user)
       .then((respone) => {
-        if (respone.data === "Username or Email already exists") {
+        if (respone.data === "Username or Email has exist.Choose another") {
           localStorage.setItem("isLog", 0);
           console.log("NOT OK");
-          Swal.fire("Username or Email already exists", "", "Success").then(
-            (result) => {
-              if (result.isConfirmed) {
-                window.location.href = "/LoginPage";
-                //window.alert = "/LoginPage";
-              }
-            }
-          );
-
+          switchLG = "Register";
+          Swal.fire("Username or Email has exist.Choose another");
           //return navigate("/LoginPage", { replace: true }), [navigate];
           return navigate("/LoginPage");
         } else if (respone.data === "Register success") {
           localStorage.setItem("isLog", 1);
           console.log("OK");
+          switchLG = "Login";
+          return navigate("/LoginPage");
         }
       });
     return navigate("/a");
   };
   function switchReg() {
     setFormType("Register");
+    switchLG = "Register";
   }
   function switchLog() {
     setFormType("Login");
-  }
-  function switchLog() {
-    setFormType("Login");
+    switchLG = "Login";
   }
 
   return (
@@ -104,7 +99,7 @@ function LoginForm(props) {
             type="text"
             placeholder="username"
             name="username"
-            autoComplete="off"
+            //autoComplete="off"
           />
           <input
             required
@@ -112,7 +107,7 @@ function LoginForm(props) {
             type="password"
             placeholder="password"
             name="password"
-            autoComplete="off"
+            //autoComplete="off"
           />
           <input
             required
@@ -123,7 +118,8 @@ function LoginForm(props) {
             id="em"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             title="Invalid email"
-            autoComplete="off"
+
+            //autoComplete="off"
           />
           {/* <div id="message">
             <p id="letter" class="invalid">Email hợp lệ</p>
@@ -137,7 +133,7 @@ function LoginForm(props) {
             name="phone"
             pattern="[10-11]{1}[0-9]{9}"
             title="Phone number with 10-11 and remaing 9 digit with 0-9"
-            autoComplete="off"
+            //autoComplete="off"
           />
 
           <button className="regBtn">
