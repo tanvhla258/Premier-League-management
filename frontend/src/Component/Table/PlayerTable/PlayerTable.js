@@ -75,8 +75,14 @@ function PlayerTable(props) {
         <div className="PlayerTableContentMain">
           {renderPlayerList?.map((p) => {
             return (
-              <div key={p.ID_CauThu} className="PlayerItem">
-                <Player type="TeamPlayer" name={p.Ten_CT} country={p.Loai_CT} />
+              <div key={p.ID_Cau_Thu} className="PlayerItem">
+                <Player
+                  key={p.ID_Cau_Thu}
+                  playerId={p.ID_Cau_Thu}
+                  type="TeamPlayer"
+                  name={p.Ten_CT}
+                  country={p.Loai_CT}
+                />
               </div>
             );
           })}

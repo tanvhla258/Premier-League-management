@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./TeamPage.css";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import NavLink from "../NavLink/NavLink";
 import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
 import Player from "../Table/Player/Player";
@@ -10,6 +10,14 @@ import teamLogo from "../../img/mulogo.png";
 import axios from "axios";
 
 function TeamPage(props) {
+  const TeamNavigate = useNavigate();
+  const gotoEditTeam = (info) =>
+    TeamNavigate({
+      pathname: "./EditPlayer",
+      // state: { id: info.id, name: info.name },
+      state: { id: 2 },
+      search: `?id=${info.id}`,
+    });
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
   const [listOfPlayers, setListOfPlayers] = useState([]);
   const [TeamInfo, setTeamInfo] = useState([]);
@@ -85,14 +93,15 @@ function TeamPage(props) {
     setteamId(id);
   }
   function handlePlayerClick() {
-    const teamContainer = document.querySelector(".TeamPageContent");
+    const teamContainer = document.querySelector(".PlayerTableContentMain");
     teamContainer.addEventListener("click", function (e) {
-      if (e.target.closest(".Player")) {
-        const player = e.target;
-        const playerName = player.closest(".PlayerInfoName");
-        const playerType = player.closest(".PlayerInfoCountry");
-        console.log(playerName, playerType);
-      }
+      const player = e.target.closest(".Player");
+      const playerName = player.querySelector(".PlayerTagName");
+      const playerType = player.querySelector(".PlayerTagType");
+      gotoEditTeam({
+        id: player.getAttribute("playerId"),
+        name: player.getAttribute("name"),
+      });
     });
   }
   // function Date() {
