@@ -27,8 +27,9 @@
 }
 .MatchResultTime{
     margin: auto 0;
-    padding-left: 50px  ;
+    padding-left: 20px  ;
     border-left: 1px solid rgba(122, 58, 187, 1);
+    margin-left: 20px;
 }
 .MatchResultTeamInfo{
     display: flex;

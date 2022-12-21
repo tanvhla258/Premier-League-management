@@ -27,7 +27,7 @@ function MatchResult(props) {
           <div className="point">{props.point2}</div>
         </div>
       </div>
-      <div className="MatchReultTime">
+      <div className="MatchResultTime">
         <div>{props.time}</div>
         <div>{props.day}</div>
       </div>

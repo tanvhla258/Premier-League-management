@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 function MatchSchedule(props) {
   let [currentPage, setCurrentPage] = useState(0);
-  const [MatchPerPage] = useState(4);
+  const [MatchPerPage] = useState(3);
   let maxPage = Math.floor((props.MatchSchedule?.length - 1) / MatchPerPage);
   let startItem = currentPage * MatchPerPage;
   let endItem = startItem + MatchPerPage;
@@ -19,8 +19,8 @@ function MatchSchedule(props) {
 
   const renderMatchScheduleListWithDate = renderMatchScheduleList?.map((m) => {
     const date = new Date(m.Lich_Thi_Dau);
-    const getHour = date.toTimeString().slice(0, 8);
-    const getDate = date.toDateString();
+    const getHour = date.toTimeString().slice(0, 5);
+    const getDate = date.toDateString().slice(4);
 
     return { ...m, time: getHour, date: getDate };
   });
@@ -62,7 +62,7 @@ function MatchSchedule(props) {
                 away={p.Ten_DB_2}
                 time={p.time}
                 date={p.date}
-                stadium={p.stadium}
+                stadium={p.San}
               />
             );
           })}

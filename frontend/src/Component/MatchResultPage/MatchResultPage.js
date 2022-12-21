@@ -47,6 +47,13 @@ function MatchResultPage(props) {
   function prevClick() {
     return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
   }
+  const renderResultListWithDate = renderResultList?.map((m) => {
+    const date = new Date(m.Ngay_gio);
+    const getHour = date.toTimeString().slice(0, 5);
+    const getDate = date.toDateString().slice(4);
+
+    return { ...m, time: getHour, date: getDate };
+  });
   return (
     <div className="MatchResultPage">
       <StandingPageNavBar Logo="Match Result" />
@@ -56,15 +63,15 @@ function MatchResultPage(props) {
         </div>
         <div className="MatchResultContent">
           <div className="MatchResultContent">
-            {renderResultList?.map((r) => {
+            {renderResultListWithDate?.map((r) => {
               return (
                 <MatchResult
                   team1={r.Ten_Doi_Thang}
                   team2={r.Ten_Doi_Thua}
                   point1={r.Ti_So[0]}
                   point2={r.Ti_So[2]}
-                  time="19:00"
-                  day="Nov 9"
+                  time={r.time}
+                  day={r.date}
                 />
               );
             })}
