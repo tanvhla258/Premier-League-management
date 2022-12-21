@@ -13,6 +13,7 @@ require("./config/session")(app);
 require("./config/passport")(app);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // app.use(async function (req, res, next) {
 //   if (req.session.isAuthenticated == null) {
