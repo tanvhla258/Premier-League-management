@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./LoginForm.css";
 import axios from "axios";
 import va from "./variable.js";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
-
+  let navigate = useNavigate();
 
   // const storeFormData = function () {
   //   const userLog = document.querySelector(".userLogin");
@@ -61,12 +63,23 @@ function LoginForm(props) {
         if (respone.data === "Username or Email has exist.Choose another") {
           localStorage.setItem("isLog", 0);
           console.log("NOT OK");
-          alert("Username or Email has exist.Choose another")
+          Swal.fire("Username or Email has exist.Choose another", "", "Success").then((result) => {
+
+            if (result.isConfirmed) {
+               window.location.href = "/LoginPage";
+                  //window.alert = "/LoginPage";
+                  
+             }
+           });
+
+          //return navigate("/LoginPage", { replace: true }), [navigate];
+          return navigate("/LoginPage");
         } else if (respone.data === "Register success") {
           localStorage.setItem("isLog", 1);
           console.log("OK");
         }
       });
+      return navigate("/a");
   };
   function switchReg() {
     setFormType("Register");
@@ -82,7 +95,7 @@ function LoginForm(props) {
     <div className="form">
       <div
         className="regBlock"
-        style={{ display: FormType === "Login" ? "none" : "block" }}
+        style={{ display: FormType === "Login" ? "none" : "" }}
       >
         <form className="register-form" onSubmit={storeFormDataReg}>
           <input
