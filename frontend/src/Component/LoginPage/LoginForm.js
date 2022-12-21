@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./LoginForm.css";
 import axios from "axios";
 import va from "./variable.js";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 function LoginForm(props) {
   const [FormType, setFormType] = useState("Login");
-  const [result, setResult] = useState(null);
+  let navigate = useNavigate();
 
   // const storeFormData = function () {
   //   const userLog = document.querySelector(".userLogin");
@@ -32,32 +34,6 @@ function LoginForm(props) {
   //       }
   //     });
   // };
-
-  const storeFormData = function () {
-    const userLog = document.querySelector(".userLogin");
-    const passLog = document.querySelector(".passLogin");
-    const user = {
-      Ten_User: userLog.value,
-      Password: passLog.value,
-    };
-    axios
-      .post("http://localhost:5000/api/users/login", user)
-      .then((respone) => {
-        if (
-          respone.data === "Wrong password" ||
-          respone.data === "Ivalid User"
-        ) {
-          localStorage.setItem("isLog", 0);
-          console.log("NOT OK");
-          va.abc = "asdasd";
-        } else {
-          localStorage.setItem("user", respone.data[0].Ten_User);
-          localStorage.setItem("pass", respone.data[0].Password);
-          localStorage.setItem("isLog", 1);
-          console.log("OK");
-        }
-      });
-  };
 
   const storeFormDataReg = function () {
     const userReg = document.querySelector(".userReg");
@@ -87,11 +63,23 @@ function LoginForm(props) {
         if (respone.data === "Username or Email has exist.Choose another") {
           localStorage.setItem("isLog", 0);
           console.log("NOT OK");
+          Swal.fire("Username or Email has exist.Choose another", "", "Success").then((result) => {
+
+            if (result.isConfirmed) {
+               window.location.href = "/LoginPage";
+                  //window.alert = "/LoginPage";
+                  
+             }
+           });
+
+          //return navigate("/LoginPage", { replace: true }), [navigate];
+          return navigate("/LoginPage");
         } else if (respone.data === "Register success") {
           localStorage.setItem("isLog", 1);
           console.log("OK");
         }
       });
+      return navigate("/a");
   };
   function switchReg() {
     setFormType("Register");
@@ -107,9 +95,9 @@ function LoginForm(props) {
     <div className="form">
       <div
         className="regBlock"
-        style={{ display: FormType === "Login" ? "none" : "block" }}
+        style={{ display: FormType === "Login" ? "none" : "" }}
       >
-        <form className="register-form">
+        <form className="register-form" onSubmit={storeFormDataReg}>
           <input
             required
             className="userReg"
@@ -135,6 +123,7 @@ function LoginForm(props) {
             id="em"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             title="Invalid email"
+            
             autoComplete="off"
           />
           {/* <div id="message">
@@ -152,7 +141,7 @@ function LoginForm(props) {
             autoComplete="off"
           />
 
-          <button className="regBtn" onClick={storeFormDataReg}>
+          <button className="regBtn" >
             {/* <a className="createacc" href={"/"}>
               Create
             </a> */}

@@ -41,7 +41,11 @@ function MatchSchedule(props) {
           justifyContent: props.disableBtn ? "center" : "space-between",
         }}
       >
-        <div className="HeaderContent">{props.headerContent}</div>
+        <div className="HeaderContent">
+          <div className="round">{props?.round}</div>
+          {props.headerContent}
+        </div>
+
         <div
           className="add"
           style={{ display: props.disableBtn ? "none" : "block" }}

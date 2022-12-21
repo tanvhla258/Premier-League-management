@@ -40,10 +40,6 @@ function LoginPage(props) {
     axios
       .post("http://localhost:5000/api/users/login", user)
       .then((respone) => {
-        console.log(user) 
-        console.log(user) 
-        console.log(user) 
-        console.log(user) 
         if (
           respone.data === "Wrong password" ||
           respone.data === "Ivalid User"
@@ -80,16 +76,8 @@ function LoginPage(props) {
   
         }
       });
-      // Swal.fire("Sign in successfully!", "", "Success").then((result) => {
-
-      //   if (result.isConfirmed) {
-      //     window.location.href = "/";
-
-      //   }
-      // });
 
      return navigate("/a")
-     //return navigate("/")
 
 
 
