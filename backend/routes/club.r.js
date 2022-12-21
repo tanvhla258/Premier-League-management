@@ -6,7 +6,7 @@ const { post } = require("./user.r");
 router.route("/").get(clubC.getClubs).post(clubC.createClub);
 
 router
-  .route("/:id")
+  .route("/:clubId")
   .get(clubC.getAClub)
   .delete(clubC.deleteAClub)
   .put(clubC.updateAClub);
@@ -14,16 +14,16 @@ router
 router.post("/search", clubC.findAClub);
 
 router
-  .route("/:id/players")
+  .route("/:clubId/players")
   .get(clubC.getAllPlayersInClub)
   .post(clubC.addPlayerToClub);
 
 router
-  .route("/:id/players/:playerId")
+  .route("/:clubId/players/:playerId")
   .get(clubC.getOnePlayerInClub)
   .put(clubC.updateOnePlayerInClub)
   .delete(clubC.deleteOnePlayerInClub);
 
-router.post("/:id/players/search", clubC.searchOnePlayerInCLub);
+router.post("/:clubId/players/search", clubC.searchOnePlayerInCLub);
 
 module.exports = router;

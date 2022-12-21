@@ -60,17 +60,17 @@ function LoginForm(props) {
     axios
       .post("http://localhost:5000/api/users/register", user)
       .then((respone) => {
-        if (respone.data === "Username or Email has exist.Choose another") {
+        if (respone.data === "Username or Email already exists") {
           localStorage.setItem("isLog", 0);
           console.log("NOT OK");
-          Swal.fire("Username or Email has exist.Choose another", "", "Success").then((result) => {
-
-            if (result.isConfirmed) {
-               window.location.href = "/LoginPage";
-                  //window.alert = "/LoginPage";
-                  
-             }
-           });
+          Swal.fire("Username or Email already exists", "", "Success").then(
+            (result) => {
+              if (result.isConfirmed) {
+                window.location.href = "/LoginPage";
+                //window.alert = "/LoginPage";
+              }
+            }
+          );
 
           //return navigate("/LoginPage", { replace: true }), [navigate];
           return navigate("/LoginPage");
@@ -79,7 +79,7 @@ function LoginForm(props) {
           console.log("OK");
         }
       });
-      return navigate("/a");
+    return navigate("/a");
   };
   function switchReg() {
     setFormType("Register");
@@ -123,7 +123,6 @@ function LoginForm(props) {
             id="em"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             title="Invalid email"
-            
             autoComplete="off"
           />
           {/* <div id="message">
@@ -141,7 +140,7 @@ function LoginForm(props) {
             autoComplete="off"
           />
 
-          <button className="regBtn" >
+          <button className="regBtn">
             {/* <a className="createacc" href={"/"}>
               Create
             </a> */}

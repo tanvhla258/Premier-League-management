@@ -27,17 +27,9 @@ module.exports = {
     });
   },
 
-  update: (tableName, idField, entity) => {
+  update: (tableName, entity, condition) => {
     return new Promise((resolve, reject) => {
-      // if (entity[idField]) {
-      // const id = entity[idField];
-      // delete entity[idField];
-      const condition = pick(entity, [idField]);
-      entity = omit(entity, [idField]);
-
-      // var sql = `update ${tableName} set ? where ${idField} = ?`;
-      var sql = `update ${tableName} set ? where ?`;
-      // connection.query(sql, [entity, id], (error, results, fields) => {
+      const sql = `update ${tableName} set ? where ?`;
       pool.query(sql, [entity, condition], (error, results, fields) => {
         if (error) {
           reject(error);

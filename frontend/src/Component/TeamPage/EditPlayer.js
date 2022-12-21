@@ -31,14 +31,16 @@ function EditPlayer(props) {
     if (props.playername === "" || props.birthday === "") return;
 
     const updatePlayer = {
+      id: playerid,
       type: props.type,
       name: props.playername,
       country: props.country,
       birthday: props.birthday,
       club: TeamPageData.state.teamid,
     };
+    console.log(updatePlayer);
     axios.put(
-      `http://localhost:5000/api/${TeamPageData.state.teamid}/players/${playerid}`,
+      `http://localhost:5000/api/clubs/${TeamPageData.state.teamid}/players/${playerid}`,
       updatePlayer
     );
   }
