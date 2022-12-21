@@ -46,4 +46,11 @@ module.exports = {
 
     return updated_player;
   },
+  deletePlayer: async (id) => {
+    const condition = {
+      ID_Cau_Thu: id,
+    };
+
+    return await db.delete("cau_thu", condition);
+  },
 };

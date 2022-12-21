@@ -41,10 +41,10 @@ module.exports = {
     });
   },
 
-  delete: (tableName, idField, id) => {
+  delete: (tableName, condition) => {
     return new Promise((resolve, reject) => {
-      var sql = `delete from ${tableName} where ${idField} = ?`;
-      pool.query(sql, id, (error, results, fields) => {
+      var sql = `delete from ${tableName} where  ? `;
+      pool.query(sql, condition, (error, results) => {
         if (error) {
           reject(error);
         } else {

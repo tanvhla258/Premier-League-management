@@ -85,5 +85,7 @@ exports.updateOnePlayerInClub = async (req, res, next) => {
     res.send("Nothing new");
   }
 };
-exports.deleteOnePlayerInClub = async (req, res, next) => {};
+exports.deleteOnePlayerInClub = async (req, res, next) => {
+  await clubM.deletePlayer(req.body.id);
+};
 exports.searchOnePlayerInCLub = async (req, res, next) => {};
