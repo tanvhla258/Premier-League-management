@@ -40,7 +40,7 @@ exports.Register = async (req, res, next) => {
     await userM.addUser(user);
     res.send("Register success");
   } else if (existAccount[0].exist === 1) {
-    res.send("Username or Email already exists");
+    res.send("Username or Email has exist.Choose another");
   }
 };
 exports.getAll = async (req, res, next) => {
