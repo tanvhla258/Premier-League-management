@@ -12,11 +12,8 @@ import axios from "axios";
 function TeamPage(props) {
   const TeamNavigate = useNavigate();
   const gotoEditTeam = (info) =>
-    TeamNavigate({
-      pathname: "./EditPlayer",
-      // state: { id: info.id, name: info.name },
-      state: { id: 2 },
-      search: `?id=${info.id}`,
+    TeamNavigate(`./EditPlayer/?id=${info.id}`, {
+      state: { teamid: teamId },
     });
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
   const [listOfPlayers, setListOfPlayers] = useState([]);
@@ -75,11 +72,11 @@ function TeamPage(props) {
       newPlayer
     );
 
-    // const inputs = document.querySelectorAll("input");
-    // inputs.forEach((element) => {
-    //   element.value = "";
-    // });
-    //setDisplayPopUp(0);
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach((element) => {
+      element.value = "";
+    });
+    setDisplayPopUp(0);
   };
   function CancelForm(e) {
     e.preventDefault();
@@ -156,7 +153,7 @@ function TeamPage(props) {
 
                 <input
                   required
-                  type="text"
+                  type="date"
                   name="birthday"
                   id="birthday"
                   pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"
