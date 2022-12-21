@@ -14,6 +14,7 @@ function MatchSchedulePage(props) {
   const [listOfMatches, setListOfMatches] = useState([]);
 
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
+  const [TeamListData, setTeamList] = useState([]);
 
   useEffect(() => {
     const fetchMatch = async () => {
@@ -21,21 +22,13 @@ function MatchSchedulePage(props) {
         const data = await fetch("http://localhost:5000/api/matches").then(
           (res) => res.json()
         );
-
-        // const getTeamName = async function (e) {
-        //   const doibong1 = await fetch(
-        //     `http://localhost:5000/api/clubs/${e.DOI_BONG_ID_Doi_Bong_1}`
-        //   ).then((res) => res.json());
-        //   const doibong2 = await fetch(
-        //     `http://localhost:5000/api/clubs/${e.DOI_BONG_ID_Doi_Bong_2}`
-        //   ).then((res) => res.json());
-        //   newData = {
-        //     doibong2: doibong2[0].Ten_DB,
-        //     doibong1: doibong1[0].Ten_DB,
-        //   };
-        // };
+        const TeamListDataFetch = await fetch(
+          `http://localhost:5000/api/clubs/`
+        ).then((res) => res.json());
         console.log(data);
         setListOfMatches([...data]);
+        setTeamList([...TeamListDataFetch]);
+        console.log(TeamListData);
       } catch (e) {
         console.log(e.message);
       }
@@ -101,19 +94,26 @@ function MatchSchedulePage(props) {
               onSubmit={SubmitForm}
             >
               <div className="inputItem">
-                <label htmlFor="HomeTeam">Home Team</label>
+                <label htmlFor="selectHomeTeam">Home Team</label>
 
-                <input type="text" name="HomeTeam" id="HomeTeam" />
+                <select name="selectHomeTeam" id="selectHomeTeam">
+                  {TeamListData.map((team) => {
+                    return (
+                      <option value={team.ID_Doi_Bong}>{team.Ten_DB}</option>
+                    );
+                  })}
+                </select>
               </div>
               <div className="inputItem">
-                <label htmlFor="AwayTeam">Away Team</label>
+                <label htmlFor="selectAwayTeam">Away Team</label>
 
-                <input type="text" name="AwayTeam" id="AwayTeam" />
-              </div>
-              <div className="inputItem">
-                <label htmlFor="Stadium">Stadium</label>
-
-                <input type="text" name="Stadium" id="Stadium" />
+                <select name="selectAwayTeam" id="selectAwayTeam">
+                  {TeamListData.map((team) => {
+                    return (
+                      <option value={team.ID_Doi_Bong}>{team.Ten_DB}</option>
+                    );
+                  })}
+                </select>
               </div>
 
               <div className="inputItem ">
@@ -145,7 +145,8 @@ function MatchSchedulePage(props) {
           popUp={popUp}
           MatchSchedule={[...listOfMatches]}
           disableBtn={false}
-          round={`Round ${props.roundNum}`}
+          round={`Round ${listOfMatches[0]?.Vong_Dau}`}
+          TeamData={[...TeamListData]}
         />
       </div>
     </div>
