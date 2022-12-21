@@ -4,26 +4,36 @@ import "./Player.css";
 function Player(props) {
   if (props.type == "TeamPlayer")
     return (
-      <div className="Player" style={{ width: "450px" }}>
+      <div
+        playerId={props.playerId}
+        className="Player"
+        style={{ width: "450px" }}
+      >
         <div className="PlayerAva">
           <img className="PlayerAvaImg" src={logo}></img>
         </div>
         <div className="PlayerInfo">
           <span className="PlayerInfoName">
             <span className="PlayerTag">Name</span>
-            {props.name}
+            <span className="PlayerTagName">{props.name}</span>
           </span>
 
           <span className="PlayerInfoCountry">
             <span className="PlayerTag">Type</span>
-            {props.country === "TN" ? "Domestic" : "Foreign "}
+            <span className="PlayerTagType">
+              {props.country === "TN" ? "Domestic" : "Foreign "}
+            </span>
           </span>
         </div>
       </div>
     );
   else
     return (
-      <div className="Player" style={{ maxWidth: "450px", height: "130px" }}>
+      <div
+        playerId={props.playerId}
+        className="Player"
+        style={{ maxWidth: "450px", height: "130px" }}
+      >
         <div className="PlayerAva">
           <img className="PlayerAvaImg" src={logo}></img>
         </div>
