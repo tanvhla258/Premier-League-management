@@ -25,6 +25,6 @@ var upload = multer({ storage: storage, fileFilter: isImage });
 
 // router.get("/upload", techC.Upload);
 // router.post("/upload", upload.single("imgUpload"), techC.Upload);
-router.get("/upload", techC.Upload);
-router.post("/upload", upload.single("imgUpload"), techC.Upload);
+// router.get("/upload", techC.Upload);
+// router.post("/upload", upload.single("imgUpload"), techC.Upload);
 module.exports = router;

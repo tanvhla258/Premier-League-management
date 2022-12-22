@@ -25,9 +25,9 @@ function TopScorePage(props) {
   useEffect(() => {
     const fetchTopScore = async () => {
       try {
-        const data = await fetch("http://localhost:5000/api/topScore").then(
-          (res) => res.json()
-        );
+        const data = await fetch(
+          "http://localhost:5000/api/topScore/topGoal"
+        ).then((res) => res.json());
         setListOfTopScore([...data]);
       } catch (e) {
         console.log(e.message);
