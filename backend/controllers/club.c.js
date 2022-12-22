@@ -41,8 +41,8 @@ exports.deleteAClub = async (req, res, next) => {
     await clubM.updatePlayer(deleteClubOfPlayer[i]);
   }
 
-  // await clubM.deleteClub(id);
-  // res.send("delete club success");
+  await clubM.deleteClub(id);
+  res.send("delete club success");
 };
 
 exports.getAClub = async (req, res, next) => {

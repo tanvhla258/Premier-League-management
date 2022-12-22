@@ -21,6 +21,34 @@ module.exports = {
     const conditionOfClub = {
       ID_Doi_Bong: id,
     };
+    const conditionOfRank = {
+      DOI_BONG_ID_Doi_Bong: id,
+    };
+    const conditionOfMatchHomeTeam = {
+      DOI_BONG_ID_Doi_Bong_1: id,
+    };
+    const conditionOfMatchAwayTeam = {
+      DOI_BONG_ID_Doi_Bong_2: id,
+    };
+    const conditionOfResultHomeTeam = {
+      TRAN_DAU_DOI_BONG_ID_Doi_Bong_1: id,
+    };
+    const conditionOfResultAwayTeam = {
+      TRAN_DAU_DOI_BONG_ID_Doi_Bong_2: id,
+    };
+    await db.delete("bang_xep_hang", conditionOfRank);
+    try {
+      await db.delete("ket_qua_tran_dau", conditionOfResultHomeTeam);
+      await db.delete("ket_qua_tran_dau", conditionOfResultAwayTeam);
+    } catch (e) {
+      console.log(e);
+    }
+    try {
+      await db.delete("tran_dau", conditionOfMatchHomeTeam);
+      await db.delete("tran_dau", conditionOfMatchAwayTeam);
+    } catch (e) {
+      console.log(e);
+    }
 
     return await db.delete(table_name, conditionOfClub);
   },
@@ -47,15 +75,24 @@ module.exports = {
     return player;
   },
   updatePlayer: async (player) => {
-    const condition = {
+    const conditionForScoreTable = {
+      CAU_THU_ID_Cau_Thu: player.ID_Cau_Thu,
+    };
+    const playerInScoreTable = {
+      CAU_THU_DOI_BONG_ID_Doi_Bong: player.DOI_BONG_ID_Doi_Bong,
+    };
+    const update_score_table = await db.delete(
+      "ghi_ban",
+
+      conditionForScoreTable
+    );
+    ///////////////////////////////////////////
+    const conditionForPlayerTable = {
       ID_Cau_Thu: player.ID_Cau_Thu,
     };
+    await db.update("cau_thu", player, conditionForPlayerTable);
+
     delete player.ID_Cau_Thu;
-    const update_player_table = await db.update("cau_thu", player, condition);
-    const update_score_table = await db.update("ghi_ban", player, condition);
-    console.log(update_player_table);
-    console.log(update_score_table);
-    return updated_player;
   },
   deletePlayer: async (id) => {
     const condition = {
