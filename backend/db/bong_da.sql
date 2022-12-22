@@ -528,12 +528,12 @@ INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) 
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1291, 'Jay Rodriguez','NN', 114,'1996-2-15');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1292, 'Morgan Schneiderlin','NN', 114,'1996-2-15');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1293, 'Daniel Seaborne','NN', 114,'1996-2-15');
-INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1294, 'Maya Yoshida.','NN', 114,'1996-2-15');
-INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1295, 'Charlie Adam','NN', 113,'1996-2-15');
+INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1294, 'Maya Yoshida.','NN', 114,'1996-4-15');
+INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1295, 'Charlie Adam','NN', 113,'1996-7-15');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1296, 'Asmir Begovic','NN', 113,'1996-2-15');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1297, 'Geoff Cameron','NN', 113,'1996-2-15');
-INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1298, 'Peter Crouch','NN', 113,'1996-2-15');
-INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1299, 'Rory Delap','NN', 113,'1996-2-15');
+INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1298, 'Peter Crouch','NN', 113,'1999-2-15');
+INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1299, 'Rory Delap','NN', 113,'1990-2-15');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1300, 'Maurice Edu', 'NN',113,'1996-2-15');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1301, 'Matthew Etherington','NN', 113,'1996-2-15');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1302, 'Robert Huth','NN', 113,'1996-3-17');
@@ -592,7 +592,7 @@ INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) 
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1353, 'Luke Moore','NN', 109,'1996-4-28');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1354, 'Curtis Obeng','NN', 109,'1996-4-28');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1355, 'Wayne Routledge','NN', 109,'1996-4-28');
-INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1356, 'Etey Shechter','NN', 109,'1996-4-28');
+INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1356, 'Etey Shechter','NN', 109,'1999-4-28');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1357, 'Alan Tate','NN', 109,'1996-4-28');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1358, 'Neil Taylor','NN', 109,'1996-4-28');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1359, 'Gerhard Tremmel','NN', 109,'1996-4-28');

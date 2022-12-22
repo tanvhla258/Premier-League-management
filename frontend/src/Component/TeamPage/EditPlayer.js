@@ -14,6 +14,9 @@ function EditPlayer(props) {
         const data = await fetch(
           `http://localhost:5000/api/players/${playerid}`
         ).then((res) => res.json());
+        console.log(data[0]);
+        let birthday = new Date(data[0].Ngay_Sinh_CT);
+        data[0].Ngay_Sinh_CT = birthday.toLocaleDateString("en-CA");
         setPlayer(data[0]);
       };
       fetchPlayer();
@@ -111,7 +114,13 @@ function EditPlayer(props) {
           </div>
           <div className="inputItem">
             <label htmlFor="birthday">Birthday</label>
-            <input required type="date" name="birthday" id="birthday" />
+            <input
+              required
+              type="date"
+              name="birthday"
+              id="birthday"
+              defaultValue={Player.Ngay_Sinh_CT}
+            />
           </div>
 
           <div className="inputItem">

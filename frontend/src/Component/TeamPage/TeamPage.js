@@ -8,6 +8,7 @@ import Player from "../Table/Player/Player";
 import PlayerTable from "../Table/PlayerTable/PlayerTable";
 import teamLogo from "../../img/mulogo.png";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function TeamPage(props) {
   const PlayerNavigate = useNavigate();
@@ -67,10 +68,20 @@ function TeamPage(props) {
       club: teamId,
     };
 
-    axios.post(
-      `http://localhost:5000/api/clubs/${newPlayer.club}/players`,
-      newPlayer
-    );
+    try {
+      axios.post(
+        `http://localhost:5000/api/clubs/${newPlayer.club}/players`,
+        newPlayer
+      );
+      //Thong bao update thanh cong
+      Swal.fire("Create successfully!", "OK").then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/TeamPage";
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
 
     const inputs = document.querySelectorAll("input");
     inputs.forEach((element) => {
@@ -93,8 +104,6 @@ function TeamPage(props) {
     const teamContainer = document.querySelector(".PlayerTableContentMain");
     teamContainer.addEventListener("click", function (e) {
       const player = e.target.closest(".Player");
-      const playerName = player.querySelector(".PlayerTagName");
-      const playerType = player.querySelector(".PlayerTagType");
       gotoEditPlayer({
         id: player.getAttribute("playerId"),
         name: player.getAttribute("name"),
