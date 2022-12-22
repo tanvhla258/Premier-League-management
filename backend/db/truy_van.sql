@@ -80,7 +80,7 @@ update cau_thu
 set DOI_BONG_ID_Doi_Bong = 0
 where ID_Cau_Thu = 1001;
 
-select * from cau_thu where ID_Cau_Thu = 1001
+select * from cau_thu where ID_Cau_Thu = 1001;
 
-
+select * from doi_bong;
 

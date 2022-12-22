@@ -211,6 +211,7 @@ ENGINE = InnoDB;
 -- ------------------------------------------------------------------------------------
 
 -- DOI BONG
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES ('0', '', '',' ');
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (101, 'Manchester United', 'Old Trafford',' ');
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (102, 'Manchester City', 'Etihad Stadium',' ');
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (103, 'Chelsea', 'Stamford Bridge',' ');
@@ -231,7 +232,7 @@ INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (117, 'Sunderland', 'St
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (118, 'Wigan Athletic', 'DW Stadium',' ');
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (119, 'Reading', 'Madejski Stadium',' ');
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (120, 'Queens Park Rangers', 'Loftus Road',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (0, '', '',' ');
+
 
 
 -- CAU THU
