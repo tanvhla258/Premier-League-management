@@ -69,13 +69,18 @@ WHERE EXISTS (
 
 
 
-
-
---tra ve so ban thang cua tung cau thu
+-- tra ve so ban thang cua tung cau thu
 select CAU_THU_ID_Cau_Thu,CAU_THU_DOI_BONG_ID_Doi_Bong, count(*) AS So_Ban_Thang
 from ghi_ban
 group by CAU_THU_ID_Cau_thu,CAU_THU_DOI_BONG_ID_Doi_Bong
-order by So_Ban_Thang desc
+order by So_Ban_Thang desc;
+
+-- update id doi_bong cua table cau_thu =0
+update cau_thu
+set DOI_BONG_ID_Doi_Bong = 0
+where ID_Cau_Thu = 1001;
+
+select * from cau_thu where ID_Cau_Thu = 1001
 
 
 
