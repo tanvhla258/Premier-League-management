@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`DOI_BONG` (
   `ID_Doi_Bong` INT NOT NULL auto_increment,
   `Ten_DB` VARCHAR(60) NOT NULL,
   `San_Nha` VARCHAR(60) NOT NULL,
-  `Logo` VARBINARY(100) NULL,
+  `Logo` VARCHAR(100) NULL,
   PRIMARY KEY (`ID_Doi_Bong`))
 ENGINE = InnoDB;
 

@@ -104,7 +104,6 @@ function TeamPage(props) {
     const teamContainer = document.querySelector(".PlayerTableContentMain");
     teamContainer.addEventListener("click", function (e) {
       const player = e.target.closest(".Player");
-      player.classList.add('.objHover')
       gotoEditPlayer({
         id: player.getAttribute("playerId"),
         name: player.getAttribute("name"),
@@ -146,6 +145,10 @@ function TeamPage(props) {
               <div className="inputItem">
                 <label htmlFor="country">Country</label>
                 <input type="text" name="country" id="country" />
+              </div>
+              <div className="inputItem">
+                <label htmlFor="PlayerImg">PlayerImg</label>
+                <input type="file" name="PlayerImg" id="PlayerImg" />
               </div>
               <div className="inputItem">
                 <label htmlFor="type">Type:</label>
