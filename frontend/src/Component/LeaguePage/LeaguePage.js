@@ -10,7 +10,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import logo from "../../img/mulogo.png";
+import { useNavigate, useParams } from "react-router-dom";
+
 function LeaguePage(props) {
+  const TeamNavigate = useNavigate();
+
+  const gotoEditTeam = (info) =>
+    TeamNavigate(`./EditTeam/?id=${info.id}`, {
+      state: {},
+    });
   const [listOfClubs, setListOfClubs] = useState([]);
   let [currentPage, setCurrentPage] = useState(0);
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
@@ -81,18 +89,16 @@ function LeaguePage(props) {
     console.log(inputs);
     setDisplayPopUp(0);
   }
-  // useEffect(function () {
-  //   const handlingClickTeam = function (e) {
-  //     const tableContainer = document.querySelector(".TeamTableContentMain");
-  //     tableContainer.addEventListener("click", function (e) {
-  //       if (e.target.closest(".Team")) {
-  //         const teamChose = e.target.closest(".Team");
-  //         console.log(teamChose);
-  //       }
-  //     });
-  //   };
-  //   const windowEv = window.addEventListener("click", handlingClickTeam);
-  // }, []);
+  function handleTeamClick() {
+    const teamContainer = document.querySelector(".TeamTableContentMain");
+    teamContainer.addEventListener("click", function (e) {
+      const team = e.target.closest(".Team");
+      console.log(team);
+      gotoEditTeam({
+        id: team.getAttribute("teamid"),
+      });
+    });
+  }
 
   return (
     <div className="LeaguePage">
@@ -146,22 +152,26 @@ function LeaguePage(props) {
             <FontAwesomeIcon className="addIcon" icon={faAdd} onClick={popUp} />
           </div>
         </div>
-        <div className="TeamTableContent">
+        <div onClick={handleTeamClick} className="TeamTableContent">
           <div className="TeamTableContentMain">
             {renderTeamList.map((t) => {
               return (
-                <div key={t.Id_Doi_Bong} className="Team">
+                <div
+                  teamid={t.ID_Doi_Bong}
+                  key={t.ID_Doi_Bong}
+                  className="Team"
+                >
                   <div className="TeamAva">
                     <img className="TeamAvaImg" src={logo}></img>
                   </div>
                   <div className="TeamInfo">
-                    <span className="PlayerInfoName">
-                      <span className="TeamTag">Name: {t.Ten_DB}</span>
-                      {props.name}
+                    <span className="TeamInfoName">
+                      <span className="TeamTag">Name:</span>
+                      <span className="TeamTagName"> {t.Ten_DB}</span>
                     </span>
-                    <span className="PlayerInfoStadium">
-                      <span className="TeamTag">Stadium: {t.San_Nha}</span>
-                      {props.age}
+                    <span className="TeamInfoStadium">
+                      <span className="TeamTag">Stadium: </span>
+                      <span className="TeamTagStadium">{t.San_Nha}</span>
                     </span>
                   </div>
                 </div>

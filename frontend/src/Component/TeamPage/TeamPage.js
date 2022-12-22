@@ -10,9 +10,9 @@ import teamLogo from "../../img/mulogo.png";
 import axios from "axios";
 
 function TeamPage(props) {
-  const TeamNavigate = useNavigate();
-  const gotoEditTeam = (info) =>
-    TeamNavigate(`./EditPlayer/?id=${info.id}`, {
+  const PlayerNavigate = useNavigate();
+  const gotoEditPlayer = (info) =>
+    PlayerNavigate(`./EditPlayer/?id=${info.id}`, {
       state: { teamid: teamId },
     });
   const [DisplayPopUp, setDisplayPopUp] = useState(0);
@@ -95,7 +95,7 @@ function TeamPage(props) {
       const player = e.target.closest(".Player");
       const playerName = player.querySelector(".PlayerTagName");
       const playerType = player.querySelector(".PlayerTagType");
-      gotoEditTeam({
+      gotoEditPlayer({
         id: player.getAttribute("playerId"),
         name: player.getAttribute("name"),
       });
