@@ -84,4 +84,3 @@ where ID_Cau_Thu = 1100;
 select * from cau_thu where ID_Cau_Thu = 1100;
 
 
-
