@@ -110,9 +110,9 @@ function EditTeam() {
             <div className="Update">
               <button onClick={UpdateTeam}>Update</button>
             </div>
-            {/* <div className="Delete">
+            <div className="Delete">
               <button onClick={DeleteTeam}>Delete</button>
-            </div> */}
+            </div>
             <div className="Back">
               <button onClick={BackForm}>Back</button>
             </div>
