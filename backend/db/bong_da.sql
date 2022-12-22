@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`CAU_THU` (
   `Ghi_Chu` VARCHAR(60) NULL,
   `DOI_BONG_ID_Doi_Bong` INT NOT NULL,
   `Ngay_Sinh_CT` DATE NULL,
-  `Picture` VARCHAR(60) NULL,
+  `Picture` VARCHAR(1000) NULL,
   `Tong_Ban_Thang` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID_Cau_Thu`, `DOI_BONG_ID_Doi_Bong`),
   INDEX `fk_CAU_THU_DOI_BONG_idx` (`DOI_BONG_ID_Doi_Bong` ASC) VISIBLE,
