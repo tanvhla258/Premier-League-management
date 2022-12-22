@@ -22,7 +22,7 @@ router
   .route("/:clubId/players/:playerId")
   .get(clubC.getOnePlayerInClub)
   .put(clubC.updateOnePlayerInClub)
-  .delete(clubC.deleteOnePlayerInClub);
+  .post(clubC.deleteOnePlayerInClub);
 
 router.post("/:clubId/players/search", clubC.searchOnePlayerInCLub);
 

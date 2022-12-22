@@ -70,8 +70,9 @@ function EditPlayer(props) {
       // birthday: props.birthday,
       // club: TeamPageData.state.teamid,
     };
+
     try {
-      axios.delete(
+      axios.post(
         `http://localhost:5000/api/clubs/${TeamPageData.state.teamid}/players/${playerid}`,
         deletePlayer
       );
