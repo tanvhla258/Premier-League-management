@@ -76,11 +76,12 @@ group by CAU_THU_ID_Cau_thu,CAU_THU_DOI_BONG_ID_Doi_Bong
 order by So_Ban_Thang desc;
 
 -- update id doi_bong cua table cau_thu =0
+
 update cau_thu
-set DOI_BONG_ID_Doi_Bong = 0
-where ID_Cau_Thu = 1001;
+set DOI_BONG_ID_Doi_Bong = 1
+where ID_Cau_Thu = 1100;
 
-select * from cau_thu where ID_Cau_Thu = 1001;
+select * from cau_thu where ID_Cau_Thu = 1100;
 
-select * from doi_bong;
+
 
