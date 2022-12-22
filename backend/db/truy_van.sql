@@ -83,4 +83,25 @@ where ID_Cau_Thu = 1100;
 
 select * from cau_thu where ID_Cau_Thu = 1100;
 
+--set logo for clubs
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/a/a1/Man_Utd_FC_.svg/1200px-Man_Utd_FC_.svg.png"where ID_Doi_Bong=101;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/1/1d/Manchester_City_FC_logo.svg"where ID_Doi_Bong=102;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Chelsea_crest.svg/1200px-Chelsea_crest.svg.png"where ID_Doi_Bong=103;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png"where ID_Doi_Bong=104;
+update doi_bong set Logo ="https://cdne-totv8-prod.azureedge.net/media/40307/spurs-blue-compressed.png"where ID_Doi_Bong=105;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/7/7c/Everton_FC_logo.svg/1200px-Everton_FC_logo.svg.png"where ID_Doi_Bong=106;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png"where ID_Doi_Bong=107;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/West_Bromwich_Albion.svg/1200px-West_Bromwich_Albion.svg.png"where ID_Doi_Bong=108;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Swansea_City_AFC_logo.png/180px-Swansea_City_AFC_logo.png"where ID_Doi_Bong=109;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/b/b1/WestHam.png"where ID_Doi_Bong=110;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Norwich_City_FC_logo.svg/640px-Norwich_City_FC_logo.svg.png"where ID_Doi_Bong=111;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/8/8d/Fulham_FC.png"where ID_Doi_Bong=112;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Stoke_City_FC.svg/800px-Stoke_City_FC.svg.png"where ID_Doi_Bong=113;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/4/4b/356px-FC_Southampton.svg.png"where ID_Doi_Bong=114;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Aston_Villa_FC_crest_%282016%29.svg/1200px-Aston_Villa_FC_crest_%282016%29.svg.png"where ID_Doi_Bong=115;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/0/0d/Newcastle_United_FC.png"where ID_Doi_Bong=116;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/d/d7/Sunderland_AFC.gif"where ID_Doi_Bong=117;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/9/92/Wigan_Athletic.png"where ID_Doi_Bong=118;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/640px-Reading_FC.svg.png"where ID_Doi_Bong=119;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/3/31/Queens_Park_Rangers_crest.svg/1200px-Queens_Park_Rangers_crest.svg.png"where ID_Doi_Bong=120;
 

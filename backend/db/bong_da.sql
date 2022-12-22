@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`DOI_BONG` (
   `ID_Doi_Bong` INT NOT NULL auto_increment,
   `Ten_DB` VARCHAR(60) NOT NULL,
   `San_Nha` VARCHAR(60) NOT NULL,
-  `Logo` VARCHAR(100) NULL,
+  `Logo` VARCHAR(300) NULL,
   PRIMARY KEY (`ID_Doi_Bong`))
 ENGINE = InnoDB;
 
@@ -229,9 +229,29 @@ INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (115, 'Aston Villa', 'V
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (116, 'Newcastle United', 'St James'' Park',' ');
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (117, 'Sunderland', 'Stadium of Light',' ');
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (118, 'Wigan Athletic', 'DW Stadium',' ');
-INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (119, 'Reading', 'Madejski Stadium',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (119, 'Reading F.C', 'Madejski Stadium',' ');
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (120, 'Queens Park Rangers', 'Loftus Road',' ');
 
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/a/a1/Man_Utd_FC_.svg/1200px-Man_Utd_FC_.svg.png"where ID_Doi_Bong=101;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/1/1d/Manchester_City_FC_logo.svg"where ID_Doi_Bong=102;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Chelsea_crest.svg/1200px-Chelsea_crest.svg.png"where ID_Doi_Bong=103;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png"where ID_Doi_Bong=104;
+update doi_bong set Logo ="https://cdne-totv8-prod.azureedge.net/media/40307/spurs-blue-compressed.png"where ID_Doi_Bong=105;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/7/7c/Everton_FC_logo.svg/1200px-Everton_FC_logo.svg.png"where ID_Doi_Bong=106;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png"where ID_Doi_Bong=107;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/West_Bromwich_Albion.svg/1200px-West_Bromwich_Albion.svg.png"where ID_Doi_Bong=108;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Swansea_City_AFC_logo.png/180px-Swansea_City_AFC_logo.png"where ID_Doi_Bong=109;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/b/b1/WestHam.png"where ID_Doi_Bong=110;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Norwich_City_FC_logo.svg/640px-Norwich_City_FC_logo.svg.png"where ID_Doi_Bong=111;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/8/8d/Fulham_FC.png"where ID_Doi_Bong=112;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Stoke_City_FC.svg/800px-Stoke_City_FC.svg.png"where ID_Doi_Bong=113;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/4/4b/356px-FC_Southampton.svg.png"where ID_Doi_Bong=114;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Aston_Villa_FC_crest_%282016%29.svg/1200px-Aston_Villa_FC_crest_%282016%29.svg.png"where ID_Doi_Bong=115;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/0/0d/Newcastle_United_FC.png"where ID_Doi_Bong=116;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/d/d7/Sunderland_AFC.gif"where ID_Doi_Bong=117;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/9/92/Wigan_Athletic.png"where ID_Doi_Bong=118;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Reading_FC.svg/640px-Reading_FC.svg.png"where ID_Doi_Bong=119;
+update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/en/thumb/3/31/Queens_Park_Rangers_crest.svg/1200px-Queens_Park_Rangers_crest.svg.png"where ID_Doi_Bong=120;
 
 
 -- CAU THU
@@ -761,7 +781,7 @@ select * from tran_dau;
 -- KET QUA TRAN DAU 
 INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Fulham','Norwich City', '5-0',1,112,111,1);
 INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Queens Park Rangers','Swansea City', '0-5',2,120, 109,1);
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Reading','Stoke City' ,'1-1',3,119, 113,1);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Reading F.C','Stoke City' ,'1-1',3,119, 113,1);
 INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('West Bromwich Albion','Liverpool','3-0',4,108, 107,1);
 INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('West Ham United','Aston Villa', '1-0',5, 110, 115,1);
 INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ('Arsenal','Sunderland', '0-0',6,104, 117,1);
@@ -772,7 +792,7 @@ INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,T
 
 
 
-INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ( 'Chelsea','Reading', '4-2',11, 103, 119,2);
+INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ( 'Chelsea','Reading F.C', '4-2',11, 103, 119,2);
 INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES (  'Swansea City','West Ham United','3-0',12, 109, 110,2);
 INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES (  'Aston Villa','Everton','1-3',13, 115, 106,2);
 INSERT ket_qua_tran_dau (Ten_Doi_Thang,Ten_Doi_thua,Ti_So,TRAN_DAU_ID_Tran_Dau,TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,TRAN_DAU_DOI_BONG_ID_Doi_Bong_2,TRAN_DAU_GIAI_DAU_ID_Giai_Dau ) VALUES ( 'Manchester United','Fulham','3-2',14, 101, 112,2);
