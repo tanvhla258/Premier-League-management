@@ -80,7 +80,6 @@ function LoginPage(props) {
      return navigate("/a")
 
 
-
   });
 
   return (
