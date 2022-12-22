@@ -11,6 +11,7 @@ import {
 import axios from "axios";
 import logo from "../../img/mulogo.png";
 import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function LeaguePage(props) {
   const TeamNavigate = useNavigate();
@@ -75,9 +76,19 @@ function LeaguePage(props) {
     inputs.forEach((element) => {
       element.value = "";
     });
-    axios.post("http://localhost:5000/api/clubs/", newTeam).then((respone) => {
-      console.log(respone.data);
-    });
+    try {
+      axios
+        .post("http://localhost:5000/api/clubs/", newTeam)
+        .then((respone) => {
+          console.log(respone.data);
+        });
+      Swal.fire("Create successfully!", "OK").then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/LeaguePage";
+        }
+      });
+    } catch (e) {}
+
     setDisplayPopUp(0);
   }
   function CancelForm(e) {

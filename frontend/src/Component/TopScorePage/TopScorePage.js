@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./TopScorePage.css";
 import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
-import PlayerTable from "../Table/PlayerTable/PlayerTable";
 import Player from "../Table/Player/Player";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

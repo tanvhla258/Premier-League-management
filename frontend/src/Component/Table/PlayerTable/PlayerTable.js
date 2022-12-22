@@ -30,9 +30,7 @@ function PlayerTable(props) {
   function chooseTeam(e) {
     props.handlingId(e.target.value);
   }
-  function eleHover(e) {
-    e.target.style.background = "red";
-  }
+
   return (
     <div className="PlayerTable">
       <div className="PlayerTableHeader">
@@ -72,7 +70,6 @@ function PlayerTable(props) {
             return (
               <div key={p.ID_Cau_Thu} className="PlayerItem">
                 <Player
-                  onMouseOver={eleHover}
                   key={p.ID_Cau_Thu}
                   playerId={p.ID_Cau_Thu}
                   type="TeamPlayer"

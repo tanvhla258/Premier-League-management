@@ -9,7 +9,7 @@ import "./StandingPageNavBar.css";
 function StandingPageNavBar(props) {
   const Navnavigate2 = useNavigate();
   const [pagelog, setpagelog] = useState(false);
-
+  let userLocal = localStorage.getItem("user");
   const LogOutSucessfully = useCallback(() => {
     localStorage.setItem("isLog", 0);
     localStorage.setItem("user", undefined);
@@ -27,7 +27,7 @@ function StandingPageNavBar(props) {
             display: localStorage.getItem("isLog") == 0 ? "none" : "block",
           }}
         >
-          <AccGreeting greet="Hi" acc="Tan"></AccGreeting>
+          <AccGreeting greet="Hi" acc={userLocal}></AccGreeting>
         </div>
         <div
           onClick={LogOutSucessfully}
