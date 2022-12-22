@@ -8,7 +8,7 @@ router.route("/").get(clubC.getClubs).post(clubC.createClub);
 router
   .route("/:clubId")
   .get(clubC.getAClub)
-  .delete(clubC.deleteAClub)
+  .post(clubC.deleteAClub)
   .put(clubC.updateAClub);
 
 router.post("/search", clubC.findAClub);
