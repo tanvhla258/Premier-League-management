@@ -36,7 +36,7 @@ exports.deleteAClub = async (req, res, next) => {
   for (let i = 0; i < playerInClub.length; i++) {
     deleteClubOfPlayer[i] = {
       ID_Cau_Thu: playerInClub[i].ID_Cau_Thu,
-      DOI_BONG_ID_Doi_Bong: 102,
+      DOI_BONG_ID_Doi_Bong: 121,
     };
     await clubM.updatePlayer(deleteClubOfPlayer[i]);
   }

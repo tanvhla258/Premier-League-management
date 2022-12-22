@@ -51,8 +51,10 @@ module.exports = {
       ID_Cau_Thu: player.ID_Cau_Thu,
     };
     delete player.ID_Cau_Thu;
-    const updated_player = await db.update("cau_thu", player, condition);
-    console.log(updated_player);
+    const update_player_table = await db.update("cau_thu", player, condition);
+    const update_score_table = await db.update("ghi_ban", player, condition);
+    console.log(update_player_table);
+    console.log(update_score_table);
     return updated_player;
   },
   deletePlayer: async (id) => {
