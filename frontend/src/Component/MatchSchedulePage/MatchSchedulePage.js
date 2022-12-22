@@ -45,14 +45,20 @@ function MatchSchedulePage(props) {
     const formHtml = document.querySelector("#addSchedule");
     const data = new FormData(formHtml);
     const dataObject = Object.fromEntries(data);
-    console.log(dataObject);
+    let HomeSta;
+    TeamListData.forEach((team) => {
+      if (team.ID_Doi_Bong == dataObject.selectHomeTeam) HomeSta = team.San_Nha;
+    });
+
     const newMatch = {
-      home: dataObject.HomeTeam,
-      away: dataObject.AwayTeam,
+      home: dataObject.selectHomeTeam,
+      away: dataObject.selectAwayTeam,
       time: dataObject.MatchTime,
       date: dataObject.MatchDay,
-      stadium: dataObject.Stadium,
+      stadium: HomeSta,
     };
+    console.log(newMatch);
+
     axios
       .post("http://localhost:5000/api/matches/", newMatch)
       .then((respone) => {
@@ -123,7 +129,12 @@ function MatchSchedulePage(props) {
                 <label class="inputItemDate" htmlFor="MatchDay">
                   Day
                 </label>
-
+                <input
+                  style={{ display: "none" }}
+                  type="text"
+                  name="Stadium"
+                  id="Stadium"
+                />
                 <input type="Date" name="MatchDay" id="MatchDay" />
               </div>
               <div className="formBtn">

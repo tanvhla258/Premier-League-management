@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
+
 function EditPlayer(props) {
-  function SubmitForm() {}
-  function CancelForm() {}
   const TeamPageData = useLocation();
   let playerid = TeamPageData.search.slice(-4);
   console.log(TeamPageData);
@@ -39,15 +39,55 @@ function EditPlayer(props) {
       club: TeamPageData.state.teamid,
     };
     console.log(updatePlayer);
-    axios.put(
-      `http://localhost:5000/api/clubs/${TeamPageData.state.teamid}/players/${playerid}`,
-      updatePlayer
-    );
+    try {
+      axios.put(
+        `http://localhost:5000/api/clubs/${TeamPageData.state.teamid}/players/${playerid}`,
+        updatePlayer
+      );
+
+      //Thong bao update thanh cong
+      Swal.fire("Update successfully!", "OK").then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/TeamPage";
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
-  function DeletePlayer() {}
+  function DeletePlayer(e) {
+    e.preventDefault();
+    const formHtml = document.querySelector("#editPlayerid");
+    const data = new FormData(formHtml);
+    const props = Object.fromEntries(data);
+    console.log(props);
+
+    const deletePlayer = {
+      id: playerid,
+      // type: props.type,
+      // name: props.playername,
+      // country: props.country,
+      // birthday: props.birthday,
+      // club: TeamPageData.state.teamid,
+    };
+    try {
+      axios.delete(
+        `http://localhost:5000/api/clubs/${TeamPageData.state.teamid}/players/${playerid}`,
+        deletePlayer
+      );
+      //Thong bao update thanh cong
+      Swal.fire(`Player ${playerid} has deleted`, "OK").then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/TeamPage";
+        }
+      });
+    } catch (e) {
+      console.log(e.message);
+    }
+  }
   function BackForm(e) {
     e.preventDefault();
-    window.location.href = "/";
+    window.location.href = "/TeamPage";
   }
   return (
     <div className="EditPlayer">
@@ -69,14 +109,8 @@ function EditPlayer(props) {
             />
           </div>
           <div className="inputItem">
-            <label htmlFor="birthday">Birhtday</label>
-            <input
-              required
-              type="date"
-              name="birthday"
-              id="birthday"
-              pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"
-            />
+            <label htmlFor="birthday">Birthday</label>
+            <input required type="date" name="birthday" id="birthday" />
           </div>
 
           <div className="inputItem">
