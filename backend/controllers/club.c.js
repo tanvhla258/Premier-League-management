@@ -57,12 +57,29 @@ exports.findAClub = async (req, res, next) => {
 };
 exports.getAllPlayersInClub = async (req, res, next) => {
   const id = req.params.clubId;
+
   //const club = await clubM.getOneClub(id);
   const players = await clubM.getPlayers(id);
-  res.json(players);
+  var playersAndLogo = [];
+  for (let i = 0; i < players.length; i++) {
+    var logoClub = await clubM.getLogoByID(players[i].DOI_BONG_ID_Doi_Bong);
+    playersAndLogo[i] = {
+      ID_Cau_Thu: players[i].ID_Cau_Thu,
+      Ten_CT: players[i].Ten_CT,
+      Loai_CT: players[i].Loai_CT,
+      Ghi_Chu: null,
+      DOI_BONG_ID_Doi_Bong: players[i].DOI_BONG_ID_Doi_Bong,
+      Ngay_Sinh_CT: players[i].Ngay_Sinh_CT,
+      Tong_Ban_Thang: players[i].Tong_Ban_Thang,
+      Logo: logoClub[0].Logo,
+    };
+  }
+  console.log(playersAndLogo);
+  res.send(playersAndLogo);
 };
 exports.addPlayerToClub = async (req, res, next) => {
   var type = "";
+
   if (req.body.type === "domestic") {
     type = "TN";
   } else if (req.body.type === "foreign") {

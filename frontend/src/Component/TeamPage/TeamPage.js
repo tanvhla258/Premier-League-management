@@ -38,6 +38,7 @@ function TeamPage(props) {
           `http://localhost:5000/api/clubs/`
         ).then((res) => res.json());
         setListOfPlayers([...PlayerData]);
+
         setTeamInfo([...TeamData]);
         setTeamList([...TeamListData]);
         setLoading(false);

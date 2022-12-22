@@ -8,6 +8,11 @@ module.exports = {
     );
     return clubs;
   },
+  getLogoByID: async (id) => {
+    const logo = await db.load(`
+    select Logo from ${table_name} where ID_Doi_Bong=${id}`);
+    return logo;
+  },
   addClub: async (club) => {
     return db.add(table_name, club);
   },
