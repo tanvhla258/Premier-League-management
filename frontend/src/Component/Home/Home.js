@@ -53,7 +53,7 @@ function Home(props) {
       </div>
 
       <footer className="HomeFooter">
-        <div className="AboutUs">
+        {/* <div className="AboutUs">
           <span>Đội ngũ team CNPM</span>
           <p className="para">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non culpa
@@ -67,7 +67,73 @@ function Home(props) {
             est quod perferendis iusto rem voluptatem quas nulla porro error
           </p>
         </div>
-        <div className="QuickLinks"></div>
+        <div className="QuickLinks"></div> */}
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <footer class="footer-distributed">
+
+          <div class="footer-left">
+
+            <h3>Nhóm<span> 8</span></h3>
+            <h2>ĐỀ TÀI QUẢN LÝ GIẢI VÔ ĐỊCH BÓNG ĐÁ QUỐC GIA</h2>
+            <p class="footer-links">
+              <a href="#" class="link-1">Home</a>
+
+              <a href="#">Blog</a>
+
+              <a href="#">Pricing</a>
+
+              <a href="#">About</a>
+
+              <a href="#">Faq</a>
+
+              <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Company Name © 2022</p>
+          </div>
+
+          <div class="footer-center">
+
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p><span>Đại học Khoa Học Tự Nhiên</span> Thành phố Hồ Chí Minh</p>
+            </div>
+
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>0999988887</p>
+            </div>
+
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p><a href="mailto:support@company.com">support@football.com</a></p>
+            </div>
+
+          </div>
+
+          <div class="footer-right">
+
+            <p class="footer-company-about">
+              <span>Thành viên</span>
+              20120133 - Phạm Lê Hoài Minh <br/>
+              20120134 - Trần Nguyễn Khải Minh <br/>
+              20120155 - Biện Viết Phẩm <br/>
+              20120184 - Phạm Quang Tân <br/>
+            </p>
+
+            <div class="footer-icons">
+
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-github"></i></a>
+
+            </div>
+
+          </div>
+
+        </footer>
       </footer>
     </div>
   );
