@@ -10,7 +10,6 @@ import StandingPageNavBar from "./StadningPageNavBar/StandingPageNavBar";
 import inkImg from "../../img/ink.png";
 import PlayerBG1 from "../../img/kevin2.png";
 import PlayerBG2 from "../../img/van dijk.png";
-import TeamList from "../Data/TeamListData";
 
 function StandingPage(props) {
   const [listOfRank, setListOfRank] = useState([]);
@@ -69,7 +68,7 @@ function StandingPage(props) {
           {isLoading ? (
             "Loading..."
           ) : (
-            <Standing rankData={[...listOfRank]} Team={TeamList}></Standing>
+            <Standing rankData={[...listOfRank]}></Standing>
           )}
         </div>
       </div>

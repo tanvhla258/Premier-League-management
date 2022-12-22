@@ -1,10 +1,20 @@
 import React from "react";
 import logo from "../../../img/bruno.png";
 import "./Player.css";
+
 function Player(props) {
+  function eleOver(e) {
+    e.target.closest(".Player").style.boxShadow = "0 0 1px 1px #777";
+    e.target.closest(".Player").style.cursor = "pointer";
+  }
+  function eleLeave(e) {
+    e.target.closest(".Player").style.boxShadow = "none";
+  }
   if (props.type == "TeamPlayer")
     return (
       <div
+        onMouseOver={eleOver}
+        onMouseLeave={eleLeave}
         playerId={props.playerId}
         className="Player"
         style={{ width: "450px" }}

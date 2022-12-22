@@ -99,7 +99,13 @@ function LeaguePage(props) {
       });
     });
   }
-
+  function eleOver(e) {
+    e.target.closest(".Team").style.boxShadow = "0 0 1px 1px #777";
+    e.target.closest(".Team").style.cursor = "pointer";
+  }
+  function eleLeave(e) {
+    e.target.closest(".Team").style.boxShadow = "none";
+  }
   return (
     <div className="LeaguePage">
       <div
@@ -160,6 +166,8 @@ function LeaguePage(props) {
                   teamid={t.ID_Doi_Bong}
                   key={t.ID_Doi_Bong}
                   className="Team"
+                  onMouseOver={eleOver}
+                  onMouseLeave={eleLeave}
                 >
                   <div className="TeamAva">
                     <img className="TeamAvaImg" src={logo}></img>
