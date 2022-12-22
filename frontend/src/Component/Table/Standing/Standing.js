@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Standing.css";
 import "../Table.css";
-import TeamList from "../../Data/TeamListData";
 
 function Standing(props) {
   const renderRanking = props.rankData;

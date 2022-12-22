@@ -104,34 +104,14 @@ function TeamPage(props) {
     const teamContainer = document.querySelector(".PlayerTableContentMain");
     teamContainer.addEventListener("click", function (e) {
       const player = e.target.closest(".Player");
+      player.classList.add('.objHover')
       gotoEditPlayer({
         id: player.getAttribute("playerId"),
         name: player.getAttribute("name"),
       });
     });
   }
-  // function Date() {
-  //   var birthday = document.getElementById("birthday").value; // Don't get Date yet...
-  //     var regexVar = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/; // add anchors; use literal
-  //     var regexVarTest = regexVar.test(birthday); // pass the string, not the Date
-  //     var userBirthDate = new Date(birthday.replace(regexVar, "$3-$2-$1")); // Use YYYY-MM-DD format
-  //     var todayYear = (new Date()).getFullYear(); // Always use FullYear!!
-  //     var cutOff19 = new Date(); // should be a Date
-  //     cutOff19.setFullYear(todayYear - 16); // ...
-  //     var cutOff95 = new Date();
-  //     cutOff95.setFullYear(todayYear - 40);
-  //     if (!regexVarTest) { // Test this before the other tests
-  //       alert("enter date of birth as dd/mm/yyyy")
-  //     } else if (isNaN(userBirthDate)) {
-  //       alert("date of birth is invalid")
-  //     } else if (userBirthDate > cutOff19) {
-  //       alert("you have to be older than 16")
-  //     } else if (userBirthDate < cutOff95) {
-  //       alert("you have to be younger than 40")
-  //     } else {
-  //       alert("")
-  //     }
-  // }
+
   return (
     <div className="TeamPage">
       <div
@@ -160,14 +140,7 @@ function TeamPage(props) {
               <div className="inputItem">
                 <label htmlFor="birthday">Birhtday</label>
 
-                <input
-                  required
-                  type="date"
-                  name="birthday"
-                  id="birthday"
-                  pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"
-                  oninput={Date()}
-                />
+                <input required type="date" name="birthday" id="birthday" />
               </div>
 
               <div className="inputItem">

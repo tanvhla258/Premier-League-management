@@ -6,9 +6,7 @@ import Standing from "../../Table/Standing/Standing";
 import MatchSchedule from "../../Table/MatchSchedule/MatchSchedule";
 import Button from "../../Button/Button";
 import NavLink from "../../NavLink/NavLink.js";
-import TeamList from "../../Data/TeamListData";
 
-import { MatchScheduleData } from "../../Data/MatchScheduleData";
 function HomeSection() {
   const [listOfRank, setListOfRank] = useState([]);
   const [listOfMatch, setListOfMatch] = useState([]);
@@ -55,7 +53,15 @@ function HomeSection() {
           return rankA.Hang - rankB.Hang;
         });
         setListOfRank([...newData]);
-        setListOfMatch([...data2]);
+        console.log("Match", data2);
+
+        //Today match
+        const today = new Date().toLocaleDateString();
+        const todayMatch = data2.filter(
+          (m) => new Date(m.Lich_Thi_Dau).toLocaleDateString() === today
+        );
+        console.log(todayMatch);
+        setListOfMatch([...todayMatch]);
         setisLoading(false);
       } catch (e) {
         console.log(e.message);
@@ -94,7 +100,7 @@ function HomeSection() {
         "
               onClick={StandingClick}
             >
-              <Standing rankData={[...listOfRank]} Team={TeamList}></Standing>
+              <Standing rankData={[...listOfRank]}></Standing>
             </div>
             <div
               className="HomeSectionItem HomeSectionSchedule"

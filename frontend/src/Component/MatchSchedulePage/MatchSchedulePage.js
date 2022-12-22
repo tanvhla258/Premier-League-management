@@ -8,7 +8,7 @@ import NavLink from "../NavLink/NavLink";
 import MatchSchedule from "../Table/MatchSchedule/MatchSchedule";
 import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
 import add from "../../img/plus.png";
-import { MatchScheduleData } from "../Data/MatchScheduleData";
+import Swal from "sweetalert2";
 
 function MatchSchedulePage(props) {
   const [listOfMatches, setListOfMatches] = useState([]);
@@ -63,6 +63,11 @@ function MatchSchedulePage(props) {
       .post("http://localhost:5000/api/matches/", newMatch)
       .then((respone) => {
         console.log(respone.data);
+        Swal.fire("Create successfully!", "OK").then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "/MatchSchedulePage";
+          }
+        });
       });
     const inputs = document.querySelectorAll("input");
     inputs.forEach((element) => {

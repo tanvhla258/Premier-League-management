@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 function MatchSchedule(props) {
   let [currentPage, setCurrentPage] = useState(0);
-  const [MatchPerPage] = useState(3);
+  const [MatchPerPage] = useState(4);
   let maxPage = Math.floor((props.MatchSchedule?.length - 1) / MatchPerPage);
   let startItem = currentPage * MatchPerPage;
   let endItem = startItem + MatchPerPage;

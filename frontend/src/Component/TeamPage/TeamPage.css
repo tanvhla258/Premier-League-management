@@ -119,3 +119,8 @@ form input:focus{
 .inputItem input{
     padding: 2px;
 }
+
+.objHover{
+    box-shadow: 0 0 2px 2px #777;
+    cursor: pointer;
+}

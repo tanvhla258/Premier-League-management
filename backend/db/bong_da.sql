@@ -231,6 +231,7 @@ INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (117, 'Sunderland', 'St
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (118, 'Wigan Athletic', 'DW Stadium',' ');
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (119, 'Reading', 'Madejski Stadium',' ');
 INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (120, 'Queens Park Rangers', 'Loftus Road',' ');
+INSERT doi_bong (ID_Doi_Bong,Ten_DB,San_nha,Logo) VALUES (0, '', '',' ');
 
 
 -- CAU THU
@@ -956,10 +957,3 @@ select * from ghi_ban;
 -- USER
 INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone) VALUES ( 1,'123','abc.gmail.com','Hoaiminh','2002-1-2','0123456789');
 INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone) VALUES ( 2,'321','xyz.gmail.com','Vietpham','2002-2-28','9758734931');
-
-
-
-
-
-
-

@@ -4,8 +4,15 @@ import mu from "../../../img/mulogo.png";
 import nc from "../../../img/newCastle.png";
 
 function MatchResult(props) {
+  function eleOver(e) {
+    e.target.closest(".MatchResult").style.boxShadow = "0 0 1px 1px #777";
+    e.target.closest(".MatchResult").style.cursor = "pointer";
+  }
+  function eleLeave(e) {
+    e.target.closest(".MatchResult").style.boxShadow = "none";
+  }
   return (
-    <div className="MatchResult">
+    <div onMouseOver={eleOver} onMouseLeave={eleLeave} className="MatchResult">
       <div className="Result">
         <div className="Team1">
           <div className="MatchResultTeamInfo">
