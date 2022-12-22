@@ -27,27 +27,29 @@ exports.createAMatch = async (req, res, next) => {
   const datetime = req.body.date + " " + req.body.time;
   const home = await matchM.getIdByName(req.body.home);
   const away = await matchM.getIdByName(req.body.away);
+  console.log(req.body.home);
+  console.log(req.body.away);
 
-  const existMatch = await matchM.checkExistMatch(
-    home[0].ID_Doi_Bong,
-    away[0].ID_Doi_Bong
-  );
+  // const existMatch = await matchM.checkExistMatch(
+  //   home[0].ID_Doi_Bong,
+  //   away[0].ID_Doi_Bong
+  // );
 
-  if (existMatch[0].exist === 0) {
-    vongdau = 1;
-  } else if (existMatch[0].exist === 1) {
-    vongdau = 2;
-  }
-  const match = {
-    DOI_BONG_ID_Doi_Bong_1: home[0].ID_Doi_Bong,
-    DOI_BONG_ID_Doi_Bong_2: away[0].ID_Doi_Bong,
-    San: home[0].San_Nha,
-    Lich_Thi_Dau: datetime,
-    Vong_Dau: vongdau,
-    GIAI_DAU_ID_Giai_Dau: 1,
-  };
-  await matchM.addMatch(match);
-  res.send("create match success");
+  // if (existMatch[0].exist === 0) {
+  //   vongdau = 1;
+  // } else if (existMatch[0].exist === 1) {
+  //   vongdau = 2;
+  // }
+  // const match = {
+  //   DOI_BONG_ID_Doi_Bong_1: home[0].ID_Doi_Bong,
+  //   DOI_BONG_ID_Doi_Bong_2: away[0].ID_Doi_Bong,
+  //   San: home[0].San_Nha,
+  //   Lich_Thi_Dau: datetime,
+  //   Vong_Dau: vongdau,
+  //   GIAI_DAU_ID_Giai_Dau: 1,
+  // };
+  // await matchM.addMatch(match);
+  // res.send("create match success");
 };
 
 exports.getAMatch = async (req, res, next) => {

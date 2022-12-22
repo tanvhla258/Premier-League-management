@@ -53,6 +53,7 @@ function MatchSchedulePage(props) {
       date: dataObject.MatchDay,
       stadium: dataObject.Stadium,
     };
+    console.log(newMatch);
     axios
       .post("http://localhost:5000/api/matches/", newMatch)
       .then((respone) => {
