@@ -15,8 +15,17 @@ exports.createClub = async (req, res, next) => {
 
 exports.updateAClub = async (req, res, next) => {
   const club = req.body;
-  await clubM.updateClub(club);
-  res.send("update club success");
+  const updateClub = {
+    ID_Doi_Bong: req.body.id,
+    Ten_DB: req.body.name,
+    San_Nha: req.body.stadium,
+  };
+  const flag = await clubM.updateClub(updateClub);
+  if (flag === 1) {
+    res.send("Update successful");
+  } else if (flag === 0) {
+    res.send("Nothing new");
+  }
 };
 
 exports.deleteAClub = async (req, res, next) => {

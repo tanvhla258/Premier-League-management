@@ -10,7 +10,13 @@ module.exports = {
     return db.add(table_name, club);
   },
   updateClub: async (club) => {
-    return db.update(table_name, "ID_Doi_Bong", club);
+    const condition = {
+      ID_Doi_Bong: club.ID_Doi_Bong,
+    };
+    delete club.ID_Doi_Bong;
+    const result = await db.update(table_name, club, condition);
+    console.log(result);
+    return result;
   },
   deleteClub: async (id) => {
     return db.delete(table_name, "ID_Doi_Bong", id);
