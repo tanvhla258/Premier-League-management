@@ -40,6 +40,7 @@ app.use("/api/matchResult", require("./routes/matchResult.r"));
 app.use("/api/matches", require("./routes/match.r"));
 
 app.use("/api/topScore", require("./routes/topScore.r"));
+app.use("/api/tech", require("./routes/tech.r"));
 // app.use('/api/goals', require('./routes/goal.r'))
 
 //app.use(errorHandler)
