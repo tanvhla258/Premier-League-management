@@ -181,7 +181,8 @@ function LeaguePage(props) {
                   onMouseLeave={eleLeave}
                 >
                   <div className="TeamAva">
-                    <img className="TeamAvaImg" src={logo}></img>
+                    {/* <img className="TeamAvaImg" src={logo}></img> */}
+                    <img className="TeamAvaImg" src={t.Logo}></img>
                   </div>
                   <div className="TeamInfo">
                     <span className="TeamInfoName">
