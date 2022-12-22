@@ -31,7 +31,7 @@ module.exports = {
     const result = await db.load(
       `select ID_Doi_Bong ,San_Nha  from doi_bong where Ten_DB ='${name}'`
     );
-
+    console.log(result);
     return result;
   },
   checkExistMatch: async (home, away) => {
