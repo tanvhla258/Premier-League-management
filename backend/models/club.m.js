@@ -32,24 +32,36 @@ module.exports = {
     const conditionOfMatchAwayTeam = {
       DOI_BONG_ID_Doi_Bong_2: id,
     };
-    const conditionOfResultHomeTeam = {
-      TRAN_DAU_DOI_BONG_ID_Doi_Bong_1: id,
-    };
-    const conditionOfResultAwayTeam = {
-      TRAN_DAU_DOI_BONG_ID_Doi_Bong_2: id,
-    };
-    await db.delete("bang_xep_hang", conditionOfRank);
+
+    const idMatchResult = await db.load(
+      `select TRAN_DAU_ID_Tran_Dau from ket_qua_tran_dau where TRAN_DAU_DOI_BONG_ID_Doi_Bong_1=${id} or TRAN_DAU_DOI_BONG_ID_Doi_Bong_2=${id}`
+    );
+    const idGoal = [];
+    const idMatch = [];
+    for (let i = 0; i < idMatchResult.length; i++) {
+      idGoal[i] = {
+        KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau:
+          idMatchResult[i].TRAN_DAU_ID_Tran_Dau,
+      };
+      idMatch[i] = {
+        ID_Tran_Dau: idMatchResult[i].TRAN_DAU_ID_Tran_Dau,
+      };
+    }
+
     try {
-      await db.delete("ket_qua_tran_dau", conditionOfResultHomeTeam);
-      await db.delete("ket_qua_tran_dau", conditionOfResultAwayTeam);
+      await db.delete("bang_xep_hang", conditionOfRank);
     } catch (e) {
       console.log(e);
     }
-    try {
-      await db.delete("tran_dau", conditionOfMatchHomeTeam);
-      await db.delete("tran_dau", conditionOfMatchAwayTeam);
-    } catch (e) {
-      console.log(e);
+    for (let i = 0; i < idMatchResult.length; i++) {
+      try {
+        await db.delete("ghi_ban", idGoal[i]);
+        await db.delete("ket_qua_tran_dau", idMatchResult[i]);
+
+        await db.delete("tran_dau", idMatch[i]);
+      } catch (e) {
+        console.log(e);
+      }
     }
 
     return await db.delete(table_name, conditionOfClub);
@@ -77,21 +89,10 @@ module.exports = {
     return player;
   },
   updatePlayer: async (player) => {
-    const conditionForScoreTable = {
-      CAU_THU_ID_Cau_Thu: player.ID_Cau_Thu,
-    };
-
-    const update_score_table = await db.delete(
-      "ghi_ban",
-      conditionForScoreTable
-    );
-    ///////////////////////////////////////////
     const conditionForPlayerTable = {
       ID_Cau_Thu: player.ID_Cau_Thu,
     };
     await db.update("cau_thu", player, conditionForPlayerTable);
-
-    delete player.ID_Cau_Thu;
   },
   deletePlayer: async (id) => {
     const condition = {
