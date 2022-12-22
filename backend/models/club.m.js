@@ -15,11 +15,14 @@ module.exports = {
     };
     delete club.ID_Doi_Bong;
     const result = await db.update(table_name, club, condition);
-    console.log(result);
     return result;
   },
   deleteClub: async (id) => {
-    return db.delete(table_name, "ID_Doi_Bong", id);
+    const conditionOfClub = {
+      ID_Doi_Bong: id,
+    };
+
+    return await db.delete(table_name, conditionOfClub);
   },
   getOneClub: async (id) => {
     const club = await db.load(
@@ -49,7 +52,7 @@ module.exports = {
     };
     delete player.ID_Cau_Thu;
     const updated_player = await db.update("cau_thu", player, condition);
-
+    console.log(updated_player);
     return updated_player;
   },
   deletePlayer: async (id) => {

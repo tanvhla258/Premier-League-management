@@ -1,5 +1,6 @@
 const clubM = require("../models/club.m");
 const moment = require("moment");
+const db = require("../config/db");
 
 exports.getClubs = async (req, res, next) => {
   const clubs = await clubM.getAllClubs();
@@ -30,8 +31,18 @@ exports.updateAClub = async (req, res, next) => {
 
 exports.deleteAClub = async (req, res, next) => {
   const id = req.params.clubId;
-  await clubM.deleteClub(id);
-  res.send("delete club success");
+  const playerInClub = await clubM.getPlayers(id);
+  const deleteClubOfPlayer = [];
+  for (let i = 0; i < playerInClub.length; i++) {
+    deleteClubOfPlayer[i] = {
+      ID_Cau_Thu: playerInClub[i].ID_Cau_Thu,
+      DOI_BONG_ID_Doi_Bong: 102,
+    };
+    await clubM.updatePlayer(deleteClubOfPlayer[i]);
+  }
+
+  // await clubM.deleteClub(id);
+  // res.send("delete club success");
 };
 
 exports.getAClub = async (req, res, next) => {
