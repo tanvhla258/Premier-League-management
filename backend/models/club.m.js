@@ -3,7 +3,9 @@ const table_name = "doi_bong";
 
 module.exports = {
   getAllClubs: async () => {
-    const clubs = await db.load(`select * from ${table_name}`);
+    const clubs = await db.load(
+      `select * from ${table_name} order by ID_Doi_Bong desc`
+    );
     return clubs;
   },
   addClub: async (club) => {
@@ -78,12 +80,9 @@ module.exports = {
     const conditionForScoreTable = {
       CAU_THU_ID_Cau_Thu: player.ID_Cau_Thu,
     };
-    const playerInScoreTable = {
-      CAU_THU_DOI_BONG_ID_Doi_Bong: player.DOI_BONG_ID_Doi_Bong,
-    };
+
     const update_score_table = await db.delete(
       "ghi_ban",
-
       conditionForScoreTable
     );
     ///////////////////////////////////////////

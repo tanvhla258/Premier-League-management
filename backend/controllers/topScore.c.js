@@ -1,7 +1,7 @@
 const topScoreM = require("../models/topScore.m");
 
 exports.getAllTopScore = async (req, res, next) => {
-  const score = await topScoreM.getAllTopScore();
+  const score = await topScoreM.getAllTypeOfScore();
   var topscore = [];
   for (let i = 0; i < score.length; i++) {
     var clubName = await topScoreM.getClubNameByClubID(

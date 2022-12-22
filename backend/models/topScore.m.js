@@ -10,6 +10,12 @@ module.exports = {
     );
     return result;
   },
+  getAllTypeOfScore: async () => {
+    const result = await db.load(
+      `select * from ${table_name} join loai_ban_thang `
+    );
+    return result;
+  },
   getClubNameByClubID: async (id) => {
     const result = await db.load(
       `select Ten_DB from doi_bong where ID_Doi_Bong =${id}`
