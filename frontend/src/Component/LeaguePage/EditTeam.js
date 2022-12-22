@@ -13,7 +13,6 @@ function EditTeam() {
         const data = await fetch(
           `http://localhost:5000/api/clubs/${teamid}`
         ).then((res) => res.json());
-        console.log(data[0]);
         setTeam(data[0]);
       };
       fetchTeam();
@@ -32,18 +31,12 @@ function EditTeam() {
 
     const updateTeam = {
       id: teamid,
-      type: props.type,
-      name: props.playername,
-      country: props.country,
-      birthday: props.birthday,
-      club: LeaguePageData.state.teamid,
+      name: props.teamname,
+      stadium: props.stadium,
     };
     console.log(updateTeam);
     try {
-      axios.put(
-        `http://localhost:5000/api/clubs/${LeaguePageData.state.teamid}/players/${teamid}`,
-        updateTeam
-      );
+      axios.put(`http://localhost:5000/api/clubs/${teamid}`, updateTeam);
 
       //Thong bao update thanh cong
       Swal.fire("Update successfully!", "OK").then((result) => {
@@ -71,10 +64,7 @@ function EditTeam() {
       // club: TeamPageData.state.teamid,
     };
     try {
-      axios.delete(
-        `http://localhost:5000/api/clubs/${LeaguePageData.state.teamid}/players/${teamid}`,
-        deleteTeam
-      );
+      axios.post(`http://localhost:5000/api/clubs/${teamid}`, deleteTeam);
       //Thong bao update thanh cong
       Swal.fire(`Player ${teamid} has deleted`, "OK").then((result) => {
         if (result.isConfirmed) {
@@ -91,30 +81,43 @@ function EditTeam() {
   }
   return (
     <div className="EditTeam">
-      <form id="editTeamForm" className="formModel">
-        <div className="inputItem">
-          <label htmlFor="teamname">Name</label>
+      <div className="editForm">
+        <div className="editHeader">ID Team: {Team.ID_Doi_Bong}</div>
+        <form id="editTeamid" className="formModel">
+          <div className="inputItem">
+            <label htmlFor="teamname">Name</label>
 
-          <input type="text" name="teamname" id="teamname" />
-        </div>
-        <div className="inputItem">
-          <label htmlFor="stadium">Stadium</label>
+            <input
+              defaultValue={Team.Ten_DB}
+              type="text"
+              name="teamname"
+              id="teamname"
+            />
+          </div>
+          <div className="inputItem">
+            <label htmlFor="stadium">Stadium</label>
 
-          <input type="text" name="stadium" id="stadium" />
-        </div>
+            <input
+              defaultValue={Team.San_Nha}
+              type="text"
+              name="stadium"
+              id="stadium"
+            />
+          </div>
 
-        <div className="formBtn">
-          <div className="Update">
-            <button onClick={UpdateTeam}>Update</button>
+          <div className="formBtn">
+            <div className="Update">
+              <button onClick={UpdateTeam}>Update</button>
+            </div>
+            <div className="Delete">
+              <button onClick={DeleteTeam}>Delete</button>
+            </div>
+            <div className="Back">
+              <button onClick={BackForm}>Back</button>
+            </div>
           </div>
-          <div className="Delete">
-            <button onClick={DeleteTeam}>Delete</button>
-          </div>
-          <div className="Back">
-            <button onClick={BackForm}>Back</button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }
