@@ -118,6 +118,7 @@ CREATE TABLE IF NOT EXISTS `bong_da`.`CAU_THU` (
   `Ghi_Chu` VARCHAR(60) NULL,
   `DOI_BONG_ID_Doi_Bong` INT NOT NULL,
   `Ngay_Sinh_CT` DATE NULL,
+  `Picture` VARCHAR(60) NULL,
   `Tong_Ban_Thang` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID_Cau_Thu`, `DOI_BONG_ID_Doi_Bong`),
   INDEX `fk_CAU_THU_DOI_BONG_idx` (`DOI_BONG_ID_Doi_Bong` ASC) VISIBLE,
@@ -713,6 +714,8 @@ INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) 
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1451, 'Ivan Ramis','TN', 118,'1996-8-18');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1452, 'Ronnie Stam','TN', 118,'1996-8-18');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1453, 'Ben Watson.', 'TN',118,'1996-8-18');
+
+update cau_thu set Picture = "https://persona.rin.ru/eng/galery/14344.jpg"where ID_Cau_Thu = 1001;
 
 select * from cau_thu;
 
