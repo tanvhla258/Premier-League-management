@@ -25,20 +25,19 @@ function MatchResultPage(props) {
   let renderResultList = resultData?.slice(startItem, endItem);
 
   const gotoScorePage = (info) => {
-    console.log(info);
-    // return resultNavigate(`./ScorePage/?id=${info.id}`, {
-    //   state: {
-    //     team1: info.team1,
-    //     team2: info.team2,
-    //     point1: info.point1,
-    //     point2: info.point2,
-    //     time: info.time,
-    //     day: info.date,
-    //     logo1: info.logo1,
-    //     logo2: info.logo2,
-    //     playerScore: info.playerScore,
-    //   },
-    // });
+    return resultNavigate(`./ScorePage/?id=${info.TRAN_DAU_ID_Tran_Dau}`, {
+      state: {
+        team1: info.Ten_Doi_Thang,
+        team2: info.Ten_Doi_Thua,
+        point1: info.Ti_So[0],
+        point2: info.Ti_So[2],
+        time: info.time,
+        day: info.date,
+        logo1: info.Logo_Doi_Thang[0].Logo,
+        logo2: info.Logo_Doi_Thua[0].Logo,
+        playerScore: info.Player_Score,
+      },
+    });
   };
   useEffect(() => {
     const fetchMatchResult = async () => {
@@ -81,37 +80,8 @@ function MatchResultPage(props) {
       const teamChoose = renderResultListWithDate.filter(
         (r) => r.Ten_Doi_Thang === team1 && r.Ten_Doi_Thua === team2
       );
-      console.log(teamChoose);
-      // const team2 = MatchResult.querySelector(".MatchResultTeamInfo").innerText;
-      // const team1 = MatchResult.querySelector(".MatchResultTeamInfo").innerText;
-      // const team1 = MatchResult.querySelector(".MatchResultTeamInfo").innerText;
-      // const team1 = MatchResult.querySelector(".MatchResultTeamInfo").innerText;
-      // const team1 = MatchResult.querySelector(".MatchResultTeamInfo").innerText;
 
-      // const MatchResultData = {
-      //   id: MatchResult.getAttribute("id"),
-      //   team1: MatchResult.getAttribute("team1"),
-      //   team2: MatchResult.getAttribute("team2"),
-      //   point1: MatchResult.getAttribute("point1"),
-      //   point2: MatchResult.getAttribute("point2"),
-      //   time: MatchResult.getAttribute("time"),
-      //   day: MatchResult.getAttribute("day"),
-      //   logo1: MatchResult.getAttribute("logo1"),
-      //   logo2: MatchResult.getAttribute("logo2"),
-      //   playerScore: MatchResult.getAttribute("playerScore"),
-      // };
-      gotoScorePage({
-        id: MatchResult.getAttribute("key"),
-        team1: team1,
-        team2: team2,
-        point1: MatchResult.getAttribute("point1"),
-        point2: MatchResult.getAttribute("point2"),
-        time: MatchResult.getAttribute("time"),
-        day: MatchResult.getAttribute("day"),
-        logo1: MatchResult.getAttribute("logo1"),
-        logo2: MatchResult.getAttribute("logo2"),
-        playerScore: MatchResult.getAttribute("playerScore"),
-      });
+      gotoScorePage(teamChoose[0]);
     });
   }
   return (
