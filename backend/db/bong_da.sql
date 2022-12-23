@@ -969,6 +969,90 @@ update cau_thu set Picture = "https://cdn.resfu.com/img_data/players/big/24071.j
 
 
 
+-- 3 cau thu tiep theo 
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p37096.png"where ID_Cau_Thu = 1008;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/33481-1630525113.png?lm=1"where ID_Cau_Thu = 1009;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/44792-1647705303.jpg?lm=1"where ID_Cau_Thu = 1010;
+
+update cau_thu set Picture = "https://thesportinginfluencerblog.files.wordpress.com/2017/06/richard-dunne.jpg"where ID_Cau_Thu = 1030;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/25523-1523371802.jpg?lm=1"where ID_Cau_Thu = 1031;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p1822.png"where ID_Cau_Thu = 1032;
+
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/3163-1464162968.jpg?lm=1"where ID_Cau_Thu = 1055;
+update cau_thu set Picture = "https://e7.pngegg.com/pngimages/915/973/png-clipart-fernando-torres-fifa-16-fifa-14-fifa-10-fifa-15-others-miscellaneous-game-thumbnail.png"where ID_Cau_Thu = 1056;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p43670.png"where ID_Cau_Thu = 1057;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p8378.png"where ID_Cau_Thu = 1075;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/68390-1627488566.jpg?lm=1"where ID_Cau_Thu = 1076;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p6219.png"where ID_Cau_Thu = 1077;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p1869.png"where ID_Cau_Thu = 1094;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p15284.png"where ID_Cau_Thu = 1095;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/4277-1521307855.JPG?lm=1"where ID_Cau_Thu = 1096;
+
+update cau_thu set Picture = "https://i2-prod.liverpoolecho.co.uk/incoming/article3005312.ece/ALTERNATES/s615/alexander-doni-620-806254691.jpg"where ID_Cau_Thu = 1115;
+update cau_thu set Picture = "https://static.wikia.nocookie.net/liverpoolfc/images/c/cc/SDowning.jpg/revision/latest?cb=20130809161952"where ID_Cau_Thu = 1116;
+update cau_thu set Picture = "https://i.guim.co.uk/img/media/25824c1c4e82b85aee911cd2d911e2f39d81b942/0_231_2553_1531/master/2553.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f6c4cb646e586ea05bc018c81f31fcb9"where ID_Cau_Thu = 1117;
+
+update cau_thu set Picture = "https://static.bongda24h.vn/medias/standard/2015/7/5/samir-nasri-toi-tha-chet-cung-khong-quay-lai-arsenal.jpg"where ID_Cau_Thu = 1135;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/28396-1661268909.jpg?lm=1"where ID_Cau_Thu = 1136;
+update cau_thu set Picture = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/2017_Scott_Sinclair_%28cropped%29.jpg/640px-2017_Scott_Sinclair_%28cropped%29.jpg"where ID_Cau_Thu = 1137;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p43250.png"where ID_Cau_Thu = 1156;
+update cau_thu set Picture = "https://upload.wikimedia.org/wikipedia/commons/6/68/David_de_Gea_2017.jpg"where ID_Cau_Thu = 1157;
+update cau_thu set Picture = "https://static.bongda24h.vn/medias/original/2021/9/21/6_jonnyevans.jpg"where ID_Cau_Thu = 1158;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p42758.png"where ID_Cau_Thu = 1181;
+update cau_thu set Picture = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_3zTRcsG8iynXqdmq_A1u1rxHtJnhV6e_4GIrVP2d9g&s"where ID_Cau_Thu = 1182;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p19838.png"where ID_Cau_Thu = 1183;
+
+update cau_thu set Picture = "https://i2-prod.plymouthherald.co.uk/sport/football/article1854243.ece/ALTERNATES/s615/0_David-FoxJPG.jpg"where ID_Cau_Thu = 1203;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/23218-1447321513.jpg?lm=1"where ID_Cau_Thu = 1204;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p5741.png"where ID_Cau_Thu = 1205;
+
+update cau_thu set Picture = "https://nguoinoitieng.tv/images/nnt/30/0/wz6.jpg"where ID_Cau_Thu = 1228;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p1195.png"where ID_Cau_Thu = 1229;
+update cau_thu set Picture = "https://playersbio.com/wp-content/uploads/2022/01/Djibril-Cisse-.jpeg"where ID_Cau_Thu =1230;
+
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/46106-1646998479.jpg?lm=1"where ID_Cau_Thu = 1253;
+update cau_thu set Picture = "https://s.hs-data.com/bilder/spieler/gross/24542.jpg"where ID_Cau_Thu = 1254;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/69653-1596528340.jpg?lm=1"where ID_Cau_Thu = 1255;
+
+update cau_thu set Picture = "https://www.doverathletic.com/wp-content/uploads/2019/08/16-RYAN-DICKSON-222x300.jpg"where ID_Cau_Thu = 1278;
+update cau_thu set Picture = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWgmnQzwHfu4WgVDls2pGqRAJ-Doozom234hnX23hS&s"where ID_Cau_Thu = 1279;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/33829-1666690457.jpg?lm=1"where ID_Cau_Thu = 1280;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p2570.png"where ID_Cau_Thu = 1301;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p12413.png"where ID_Cau_Thu = 1302;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/35855-1589940954.png?lm=1"where ID_Cau_Thu = 1303;
+
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/s_16576_405_2009_1.jpg?lm=1"where ID_Cau_Thu = 1326;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p18953.png"where ID_Cau_Thu = 1327;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p28468.png"where ID_Cau_Thu = 1328;
+
+update cau_thu set Picture = "https://i2-prod.mirror.co.uk/incoming/article1594989.ece/ALTERNATES/s1200c/Danny%20Graham.jpg"where ID_Cau_Thu = 1347;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/46220-1515756050.jpg?lm=1"where ID_Cau_Thu = 1348;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p76542.png"where ID_Cau_Thu = 1349;
+
+update cau_thu set Picture = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQimXsvPo-ngLoU7BLaUb-0Jd8DkprLYefaU0J8i5hZ&s"where ID_Cau_Thu = 1369;
+update cau_thu set Picture = "https://upload.wikimedia.org/wikipedia/commons/7/7a/Jan_Vertonghen_Belgium.jpg"where ID_Cau_Thu = 1370;
+update cau_thu set Picture = "https://i.dailymail.co.uk/i/pix/2012/05/08/article-0-12514CA6000005DC-119_468x392.jpg"where ID_Cau_Thu = 1371;
+
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/13572-1580388679.jpg?lm=1g"where ID_Cau_Thu = 1394;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/18324-1464960485.jpg?lm=1"where ID_Cau_Thu = 1395;
+update cau_thu set Picture = "https://b.fssta.com/uploads/application/soccer/headshots/6749.vresize.350.350.medium.29.png"where ID_Cau_Thu = 1396;
+
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/70950-1547722322.jpg?lm=1"where ID_Cau_Thu = 1418;
+update cau_thu set Picture = "https://upload.wikimedia.org/wikipedia/commons/1/1f/AlouDiarra.JPG"where ID_Cau_Thu = 1419;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/s_52191_379_2013_04_09_1.jpg?lm=1"where ID_Cau_Thu = 1420;
+
+update cau_thu set Picture = "https://s.hs-data.com/bilder/spieler/gross/60638.jpg"where ID_Cau_Thu = 1440;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/59783-1636128893.JPG?lm=1"where ID_Cau_Thu = 1441;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/62240-1618676444.jpg?lm=1"where ID_Cau_Thu = 1442;
+
+
+
 select * from cau_thu;
 
 -- GIAI DAU 
