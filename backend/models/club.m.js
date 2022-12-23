@@ -13,6 +13,11 @@ module.exports = {
     select Logo from ${table_name} where ID_Doi_Bong=${id}`);
     return logo;
   },
+  getLogoByName: async (name) => {
+    const logo = await db.load(`
+    select Logo from ${table_name} where Ten_DB ='${name}'`);
+    return logo;
+  },
   addClub: async (club) => {
     return db.add(table_name, club);
   },

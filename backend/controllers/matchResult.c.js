@@ -1,9 +1,10 @@
 const matchResultM = require("../models/matchResult.m");
-
+const clubM = require("../models/club.m");
 exports.getAllMatchResult = async (req, res, next) => {
   const matchResult = await matchResultM.getAllMatchResult();
   var matchParticular = [];
   var playerScore = [];
+  var teamLogo = [];
 
   for (let i = 0; i < matchResult.length; i++) {
     var stadium = await matchResultM.getStadiumByHomeID(
@@ -15,10 +16,14 @@ exports.getAllMatchResult = async (req, res, next) => {
     var score = await matchResultM.getScore(
       matchResult[i].TRAN_DAU_ID_Tran_Dau
     );
+    var logo1 = await clubM.getLogoByName(matchResult[i].Ten_Doi_Thang);
+    var logo2 = await clubM.getLogoByName(matchResult[i].Ten_Doi_Thua);
 
     matchParticular[i] = {
       Ten_Doi_Thang: matchResult[i].Ten_Doi_Thang,
+      Logo_Doi_Thang: logo1,
       Ten_Doi_Thua: matchResult[i].Ten_Doi_Thua,
+      Logo_Doi_Thua: logo2,
       TRAN_DAU_ID_Tran_Dau: matchResult[i].TRAN_DAU_ID_Tran_Dau,
       Player_Score: score,
       TRAN_DAU_DOI_BONG_ID_Doi_Bong_1:
