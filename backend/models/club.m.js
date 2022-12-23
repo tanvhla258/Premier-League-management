@@ -4,7 +4,7 @@ const table_name = "doi_bong";
 module.exports = {
   getAllClubs: async () => {
     const clubs = await db.load(
-      `select * from ${table_name} order by ID_Doi_Bong desc`
+      `select * from ${table_name} where ID_Doi_Bong <> 1 order by ID_Doi_Bong desc`
     );
     return clubs;
   },
