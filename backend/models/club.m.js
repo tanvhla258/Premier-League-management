@@ -15,7 +15,7 @@ module.exports = {
   },
   getImageByID: async (clubid) => {
     const img = await db.load(`
-    select Picture from cau_thu where DOI_BONG_ID_Doi_Bong=${clubid} limit 6`);
+    select Picture from cau_thu where DOI_BONG_ID_Doi_Bong=${clubid} limit 9`);
     return img;
   },
   getLogoByName: async (name) => {
