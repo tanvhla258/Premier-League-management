@@ -1,5 +1,6 @@
 const matchM = require("../models/match.m");
 const moment = require("moment");
+const clubM = require("../models/club.m");
 
 exports.getAllMatches = async (req, res, next) => {
   const matches = await matchM.getAllMatches();
@@ -8,12 +9,16 @@ exports.getAllMatches = async (req, res, next) => {
   for (let i = 0; i < matches.length; i++) {
     var team1 = await matchM.getNameByID(matches[i].DOI_BONG_ID_Doi_Bong_1);
     var team2 = await matchM.getNameByID(matches[i].DOI_BONG_ID_Doi_Bong_2);
+    var logo1 = await clubM.getLogoByName(team1[0].Ten_DB);
+    var logo2 = await clubM.getLogoByName(team2[0].Ten_DB);
+
     matchesByName[i] = {
       DOI_BONG_ID_Doi_Bong_1: matches[i].DOI_BONG_ID_Doi_Bong_1,
       DOI_BONG_ID_Doi_Bong_2: matches[i].DOI_BONG_ID_Doi_Bong_2,
       Ten_DB_1: team1[0].Ten_DB,
       Ten_DB_2: team2[0].Ten_DB,
-
+      Logo_DB_1: logo1,
+      Logo_DB_2: logo2,
       San: matches[i].San,
       Lich_Thi_Dau: matches[i].Lich_Thi_Dau,
       Vong_Dau: matches[i].Vong_Dau,
