@@ -49,16 +49,13 @@ function EditMatch(props) {
     };
     console.log(updateMatch);
     try {
-      //   axios.put(
-      //     `http://localhost:5000/api/clubs/${TeamPageData.state.teamid}/players/${playerid}`,
-      //     updateMatch
-      //   );
-      //   //Thong bao update thanh cong
-      //   Swal.fire("Update successfully!", "OK").then((result) => {
-      //     if (result.isConfirmed) {
-      //       window.location.href = "/MatchSchedule";
-      //     }
-      //   });
+      axios.put(`http://localhost:5000/api/matches`, updateMatch);
+      //Thong bao update thanh cong
+      Swal.fire("Update successfully!", "OK").then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/MatchSchedule";
+        }
+      });
     } catch (e) {
       console.log(e);
     }
