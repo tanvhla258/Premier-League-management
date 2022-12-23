@@ -49,7 +49,10 @@ function EditMatch(props) {
     };
     console.log(updateMatch);
     try {
-      axios.put(`http://localhost:5000/api/matches`, updateMatch);
+      axios.put(
+        `http://localhost:5000/api/matches/${MatchScheduleData.ID_Tran_Dau}`,
+        updateMatch
+      );
       //Thong bao update thanh cong
       Swal.fire("Update successfully!", "OK").then((result) => {
         if (result.isConfirmed) {
