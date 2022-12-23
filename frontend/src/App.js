@@ -24,6 +24,7 @@ import LeaguePage from "./Component/LeaguePage/LeaguePage";
 import EditPlayer from "./Component/TeamPage/EditPlayer";
 import EditTeam from "./Component/LeaguePage/EditTeam";
 import ScorePage from "./Component/ScorePage/ScorePage";
+import EditMatch from "./Component/MatchSchedulePage/EditMatch";
 
 function App() {
   let { id } = useParams();
@@ -43,6 +44,7 @@ function App() {
 
         <Route path="/TeamPage/EditPlayer" element={<EditPlayer />} />
         <Route path="/LeaguePage/EditTeam" element={<EditTeam />} />
+        <Route path="/MatchSchedulePage/EditMatch" element={<EditMatch />} />
       </Routes>
     </BrowserRouter>
     // <div className="App">
