@@ -62,6 +62,7 @@ function TopScorePage(props) {
                     type="TopScorePlayer"
                     name={p.Ten_CT}
                     teamName={p.Ten_DB}
+                    logo={p.Image}
                   />
 
                   <div className="TopScorePoint">{p.So_Ban_Thang}</div>

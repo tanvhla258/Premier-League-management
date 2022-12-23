@@ -43,7 +43,7 @@ function PlayerTable(props) {
               name="selectTeam"
               id="selectTeam"
             >
-              {props.TeamList.map((team) => {
+              {props.TeamList?.map((team) => {
                 return <option value={team.ID_Doi_Bong}>{team.Ten_DB}</option>;
               })}
             </select>
@@ -52,7 +52,7 @@ function PlayerTable(props) {
         <div className="TeamPlayers">Players: {props.PlayersData.length}</div>
         <div className="TeamForeignPlayers">
           Foreign Players:
-          {props.PlayersData.filter((p) => p.Loai_CT !== "TN").length}
+          {props.PlayersData?.filter((p) => p.Loai_CT !== "TN").length}
         </div>
         <div className="headerBtn">
           <div className="add">
@@ -75,6 +75,7 @@ function PlayerTable(props) {
                   type="TeamPlayer"
                   name={p.Ten_CT}
                   country={p.Loai_CT}
+                  logo={p.ImagePlayer?.Picture}
                 />
               </div>
             );

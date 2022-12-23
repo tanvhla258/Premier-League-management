@@ -12,7 +12,7 @@ function Match(props) {
   return (
     <div onMouseOver={eleOver} onMouseLeave={eleLeave} className="Match">
       <div className="TeamLogo">
-        <img className="TeamLogoImg" src={logo1}></img>
+        <img className="TeamLogoImg" src={props.logo1}></img>
       </div>
       <div className="MatchInfo">
         <div className="MatchInfoHeader">
@@ -25,7 +25,7 @@ function Match(props) {
       </div>
 
       <div className="TeamLogo">
-        <img className="TeamLogoImg" src={logo1}></img>
+        <img className="TeamLogoImg" src={props.logo2}></img>
       </div>
     </div>
   );

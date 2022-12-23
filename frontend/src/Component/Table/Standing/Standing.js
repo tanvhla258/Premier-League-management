@@ -29,10 +29,10 @@ function Standing(props) {
             <div key={team.p} className="StandingTeam">
               <div className="StandingTag">{team.Hang}</div>
               <div className="StandingTag StandingTeamName">
-                {team.Ten_DB}
-                <span className="StangdingTeamLogo">
+                <div className="StandingTeamLogo">
                   <img src={team.Logo} alt="" />
-                </span>
+                </div>
+                {team.Ten_DB}
               </div>
               <div className="StandingTag">
                 {team.Thang + team.Hoa + team.Thua}

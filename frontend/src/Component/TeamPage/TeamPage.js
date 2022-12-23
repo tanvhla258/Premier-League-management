@@ -23,7 +23,7 @@ function TeamPage(props) {
 
   const [isLoading, setLoading] = useState(true);
 
-  const [teamId, setteamId] = useState(102);
+  const [teamId, setteamId] = useState(120);
 
   useEffect(() => {
     const fetchTeam = async () => {
@@ -31,12 +31,16 @@ function TeamPage(props) {
         const PlayerData = await fetch(
           `http://localhost:5000/api/clubs/${teamId}/players`
         ).then((res) => res.json());
+        console.log(PlayerData);
         const TeamData = await fetch(
           `http://localhost:5000/api/clubs/${teamId}`
         ).then((res) => res.json());
         const TeamListData = await fetch(
           `http://localhost:5000/api/clubs/`
         ).then((res) => res.json());
+
+        console.log(TeamData);
+
         setListOfPlayers([...PlayerData]);
 
         setTeamInfo([...TeamData]);
@@ -177,7 +181,7 @@ function TeamPage(props) {
       <StandingPageNavBar Logo="Team Management" />
       <div className="TeamPageContent" onClick={handlePlayerClick}>
         <div className="TeamPageLogo">
-          <img className="TeamLogoImg" src={teamLogo}></img>
+          <img className="TeamLogoImg" src={TeamInfo[0]?.Logo}></img>
         </div>
         <div className="TeamPageList">
           {isLoading ? (

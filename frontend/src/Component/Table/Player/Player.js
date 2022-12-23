@@ -20,7 +20,7 @@ function Player(props) {
         style={{ width: "450px" }}
       >
         <div className="PlayerAva">
-          <img className="PlayerAvaImg" src={logo}></img>
+          <img className="PlayerAvaImg" src={props.logo}></img>
         </div>
         <div className="PlayerInfo">
           <span className="PlayerInfoName">
@@ -44,8 +44,11 @@ function Player(props) {
         className="Player"
         style={{ maxWidth: "450px", height: "130px" }}
       >
-        <div className="PlayerAva">
-          <img className="PlayerAvaImg" src={logo}></img>
+        <div
+          style={{ width: "120px", height: "100px", marginRight: "10px" }}
+          className="PlayerAva"
+        >
+          <img className="PlayerAvaImg" src={props.logo}></img>
         </div>
         <div className="PlayerInfo">
           <span className="PlayerInfoName">

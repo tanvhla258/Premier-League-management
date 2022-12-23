@@ -8,8 +8,11 @@ import {
   faCaretLeft,
   faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router-dom";
 function ScorePage(props) {
   const [listOfTopScore, setListOfTopScore] = useState([]);
+  const matchResultInfo = useLocation();
+  console.log(matchResultInfo.state);
   let TopScoreData = listOfTopScore?.map((ts, i) => {
     return { rank: i + 1, ...ts };
   });

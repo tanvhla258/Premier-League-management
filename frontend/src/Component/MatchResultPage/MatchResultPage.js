@@ -19,16 +19,27 @@ function MatchResultPage(props) {
   let [currentPage, setCurrentPage] = useState(0);
   const [PlayerPerPage] = useState(3);
   let maxPage = Math.floor((resultData?.length - 1) / PlayerPerPage);
-  console.log(maxPage);
   let startItem = currentPage * PlayerPerPage;
   let endItem = startItem + PlayerPerPage;
 
   let renderResultList = resultData?.slice(startItem, endItem);
 
-  const gotoScorePage = (info) =>
-    resultNavigate(`./ScorePage/?id=${info.matchResultId}`, {
-      // state: { team1id: info.team1Id, team2id: info.team2Id },
-    });
+  const gotoScorePage = (info) => {
+    console.log(info);
+    // return resultNavigate(`./ScorePage/?id=${info.id}`, {
+    //   state: {
+    //     team1: info.team1,
+    //     team2: info.team2,
+    //     point1: info.point1,
+    //     point2: info.point2,
+    //     time: info.time,
+    //     day: info.date,
+    //     logo1: info.logo1,
+    //     logo2: info.logo2,
+    //     playerScore: info.playerScore,
+    //   },
+    // });
+  };
   useEffect(() => {
     const fetchMatchResult = async () => {
       try {
@@ -61,13 +72,35 @@ function MatchResultPage(props) {
   });
 
   function handleMatchResultClick() {
-    const teamContainer = document.querySelector(".MatchResultContent");
-    teamContainer.addEventListener("click", function (e) {
+    const matchContainer = document.querySelector(".MatchResultContent");
+    matchContainer?.addEventListener("click", function (e) {
       const MatchResult = e.target.closest(".MatchResult");
+
       console.log(MatchResult);
+
+      // const MatchResultData = {
+      //   id: MatchResult.getAttribute("id"),
+      //   team1: MatchResult.getAttribute("team1"),
+      //   team2: MatchResult.getAttribute("team2"),
+      //   point1: MatchResult.getAttribute("point1"),
+      //   point2: MatchResult.getAttribute("point2"),
+      //   time: MatchResult.getAttribute("time"),
+      //   day: MatchResult.getAttribute("day"),
+      //   logo1: MatchResult.getAttribute("logo1"),
+      //   logo2: MatchResult.getAttribute("logo2"),
+      //   playerScore: MatchResult.getAttribute("playerScore"),
+      // };
       gotoScorePage({
-        matchResultId: MatchResult.getAttribute("matchResultId"),
-        // team1Id: MatchResult.getAttribute("team1")
+        id: MatchResult.getAttribute("matchResultId"),
+        team1: MatchResult.getAttribute("team1"),
+        team2: MatchResult.getAttribute("team2"),
+        point1: MatchResult.getAttribute("point1"),
+        point2: MatchResult.getAttribute("point2"),
+        time: MatchResult.getAttribute("time"),
+        day: MatchResult.getAttribute("day"),
+        logo1: MatchResult.getAttribute("logo1"),
+        logo2: MatchResult.getAttribute("logo2"),
+        playerScore: MatchResult.getAttribute("playerScore"),
       });
     });
   }
@@ -78,11 +111,12 @@ function MatchResultPage(props) {
         <div className="MatchResultHeader">
           <div className="Round">Round: {props.round}2</div>
         </div>
-        <div className="MatchResultContent">
+        <div>
           <div onClick={handleMatchResultClick} className="MatchResultContent">
             {renderResultListWithDate?.map((r) => {
               return (
                 <MatchResult
+                  key={r.TRAN_DAU_ID_Tran_Dau}
                   matchResultId={r.TRAN_DAU_ID_Tran_Dau}
                   team1={r.Ten_Doi_Thang}
                   team2={r.Ten_Doi_Thua}
@@ -92,6 +126,7 @@ function MatchResultPage(props) {
                   day={r.date}
                   logo1={r.Logo_Doi_Thang[0].Logo}
                   logo2={r.Logo_Doi_Thua[0].Logo}
+                  playerScore={r.Player_Score}
                 />
               );
             })}

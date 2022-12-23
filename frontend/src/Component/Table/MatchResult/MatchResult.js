@@ -1,7 +1,5 @@
 import React from "react";
 import "./MatchResult.css";
-import mu from "../../../img/mulogo.png";
-import nc from "../../../img/newCastle.png";
 
 function MatchResult(props) {
   function eleOver(e) {

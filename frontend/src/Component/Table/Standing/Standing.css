@@ -9,6 +9,8 @@
 .StandingTeamName{
     width: 40%;
     text-align: left;
+    display: flex;
+    align-items: center;
 }
 .StandingContent{
     background-color: white;
@@ -28,11 +30,12 @@
     padding: 8px 0;
 
 }
-.StangdingTeamLogo{
-    width: 12px;
-    height: 10px;
+.StandingTeamLogo{
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
 }
-.StangdingTeamLogo img{
+.StandingTeamLogo img{
     width: 100%;
     height: 100%;
     object-fit: contain;

@@ -67,6 +67,8 @@ function MatchSchedule(props) {
                 time={p.time}
                 date={p.date}
                 stadium={p.San}
+                logo1={p.Logo_DB_1[0].Logo}
+                logo2={p.Logo_DB_2[0].Logo}
               />
             );
           })}
