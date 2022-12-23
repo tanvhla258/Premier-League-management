@@ -16,7 +16,11 @@ module.exports = {
     return match;
   },
   updateMatch: async (match) => {
-    return db.update(table_name, "ID_Doi_Bong", match);
+    const condition = {
+      ID_Tran_Dau: match.ID_Tran_Dau,
+    };
+    delete match.ID_Tran_Dau;
+    return db.update(table_name, match, condition);
   },
   deleteMatch: async (id) => {
     return db.delete(table_name, "ID_Tran_Dau", id);

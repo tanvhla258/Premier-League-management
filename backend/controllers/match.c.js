@@ -59,8 +59,15 @@ exports.getAMatch = async (req, res, next) => {
 
 exports.updateAMatch = async (req, res, next) => {
   const match = req.body;
-
-  res.json(await matchM.updateMatch(match));
+  const datetime = req.body.day + " " + req.body.time;
+  console.log(match);
+  const updateMatch = {
+    ID_Tran_Dau: req.body.ID_Tran_Dau,
+    DOI_BONG_ID_Doi_Bong_1: req.body.DOI_BONG_ID_Doi_Bong_1,
+    DOI_BONG_ID_Doi_Bong_2: req.body.DOI_BONG_ID_Doi_Bong_2,
+    Lich_Thi_Dau: datetime,
+  };
+  res.send(await matchM.updateMatch(updateMatch));
 };
 
 exports.deleteAMatch = async (req, res, next) => {
