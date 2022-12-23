@@ -62,6 +62,7 @@ function MatchSchedule(props) {
           {renderMatchScheduleListWithDate?.map((p) => {
             return (
               <Match
+                matchId={p.ID_Tran_Dau}
                 home={p.Ten_DB_1}
                 away={p.Ten_DB_2}
                 time={p.time}

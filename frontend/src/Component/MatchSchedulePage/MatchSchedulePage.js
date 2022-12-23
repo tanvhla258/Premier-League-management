@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./MatchSchedulePage.css";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import NavLink from "../NavLink/NavLink";
 import MatchSchedule from "../Table/MatchSchedule/MatchSchedule";
 import StandingPageNavBar from "../StandingPage/StandingPageNavBar/StandingPageNavBar";
-import add from "../../img/plus.png";
 import Swal from "sweetalert2";
 
 function MatchSchedulePage(props) {
@@ -37,7 +35,12 @@ function MatchSchedulePage(props) {
     fetchMatch();
   }, []);
 
-  function gotoEditMatch() {}
+  const MatchNavigate = useNavigate();
+  const gotoEditMatch = (info) =>
+    MatchNavigate(`./EditMatch/?id=${info.ID_Tran_Dau}`, {
+      state: { info },
+    });
+
   function popUp() {
     setDisplayPopUp(1);
   }
@@ -91,11 +94,13 @@ function MatchSchedulePage(props) {
     const teamContainer = document.querySelector(".MatchScheduleTable");
     teamContainer.addEventListener("click", function (e) {
       const match = e.target.closest(".Match");
-      console.log(match);
-      gotoEditMatch({
-        id: match.getAttribute("MatchId"),
-        name: match.getAttribute("name"),
-      });
+      const couple = match.querySelectorAll(".MatchInfoTeam");
+      const team1 = couple[0].innerText;
+      const team2 = couple[1].innerText;
+      const matchChoose = listOfMatches.filter(
+        (m) => m.Ten_DB_1 === team1 && m.Ten_DB_2 === team2
+      );
+      gotoEditMatch(matchChoose[0]);
     });
   }
 
