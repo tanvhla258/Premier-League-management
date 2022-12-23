@@ -715,10 +715,12 @@ INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) 
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1452, 'Ronnie Stam','TN', 118,'1996-8-18');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1453, 'Ben Watson.', 'TN',118,'1996-8-18');
 
---3 cau thu dau
+-- 3 cau thu dau
+
 update cau_thu set Picture = "https://persona.rin.ru/eng/galery/14344.jpg"where ID_Cau_Thu = 1001;
 
---3 cau thu tiep theo
+-- 3 cau thu tiep theo 
+
 SELECT * FROM bong_da.cau_thu;
 update cau_thu set Picture = "https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/124933.png"where ID_Cau_Thu = 1153;
 update cau_thu set Picture = "https://images.squarespace-cdn.com/content/v1/5a787f048c56a8f8f9e9798d/1548866428084-V1YTQNFTXMYO1NRM6XLP/Michael-Carrick-Carousel-11.jpg?format=1000w"where ID_Cau_Thu = 1154;
