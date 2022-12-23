@@ -10,9 +10,9 @@
 }
 
 .TeamAva{
-    width: 100px;
-    height: 100px;
-    margin-right: 8px;
+    width: 75px;
+    height: 75px;
+    margin-right: 30px;
 }
 
 .Team{
@@ -22,7 +22,8 @@
     border-radius: 16px;
     width: 500px;
     padding: 10px 16px;
-    margin: 8px
+    margin: 8px;
+    height: 120px
 }
 
 .TeamInfo{

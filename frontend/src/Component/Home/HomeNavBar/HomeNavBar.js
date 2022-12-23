@@ -32,10 +32,10 @@ function HomeNavBar(props) {
       <Logo value="Home" />
       <div className="menu">
         <NavLink href="./LeaguePage">League</NavLink>
-
         <NavLink href="./TeamPage">Team management</NavLink>
-        <NavLink href="./TopScorePage">Top Score</NavLink>
+        <NavLink href="./TopScorePage">Top Goal</NavLink>
         <NavLink href="./StandingPage">Standing</NavLink>
+        {/* <NavLink href="./ScorePage">Score</NavLink> */}
 
         <div>
           <div

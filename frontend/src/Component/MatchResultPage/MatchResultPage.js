@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
+import StandingPageNavBar from "../StandingPage/StandingPageNavBar/StandingPageNavBar";
 import "./MatchResultPage.css";
 import axios from "axios";
 
-import add from "../../img/plus.png";
 import MatchResult from "../Table/MatchResult/MatchResult";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 import {
   faS,
   faCaretLeft,
@@ -14,7 +14,7 @@ import {
 
 function MatchResultPage(props) {
   const [listOfMatchResult, setListOfMatchResult] = useState([]);
-
+  const resultNavigate = useNavigate();
   let resultData = [...listOfMatchResult];
   let [currentPage, setCurrentPage] = useState(0);
   const [PlayerPerPage] = useState(3);
@@ -24,6 +24,11 @@ function MatchResultPage(props) {
   let endItem = startItem + PlayerPerPage;
 
   let renderResultList = resultData?.slice(startItem, endItem);
+
+  const gotoScorePage = (info) =>
+    resultNavigate(`./ScorePage/?id=${info.matchResultId}`, {
+      // state: { team1id: info.team1Id, team2id: info.team2Id },
+    });
   useEffect(() => {
     const fetchMatchResult = async () => {
       try {
@@ -54,6 +59,18 @@ function MatchResultPage(props) {
 
     return { ...m, time: getHour, date: getDate };
   });
+
+  function handleMatchResultClick() {
+    const teamContainer = document.querySelector(".MatchResultContent");
+    teamContainer.addEventListener("click", function (e) {
+      const MatchResult = e.target.closest(".MatchResult");
+      console.log(MatchResult);
+      gotoScorePage({
+        matchResultId: MatchResult.getAttribute("matchResultId"),
+        // team1Id: MatchResult.getAttribute("team1")
+      });
+    });
+  }
   return (
     <div className="MatchResultPage">
       <StandingPageNavBar Logo="Match Result" />
@@ -62,10 +79,11 @@ function MatchResultPage(props) {
           <div className="Round">Round: {props.round}2</div>
         </div>
         <div className="MatchResultContent">
-          <div className="MatchResultContent">
+          <div onClick={handleMatchResultClick} className="MatchResultContent">
             {renderResultListWithDate?.map((r) => {
               return (
                 <MatchResult
+                  matchResultId={r.TRAN_DAU_ID_Tran_Dau}
                   team1={r.Ten_Doi_Thang}
                   team2={r.Ten_Doi_Thua}
                   point1={r.Ti_So[0]}
