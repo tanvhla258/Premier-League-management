@@ -58,11 +58,16 @@ exports.findAClub = async (req, res, next) => {
 exports.getAllPlayersInClub = async (req, res, next) => {
   const id = req.params.clubId;
 
-  //const club = await clubM.getOneClub(id);
   const players = await clubM.getPlayers(id);
   var playersAndLogo = [];
+  var imagePlayer = await clubM.getImageByID(id);
+
   for (let i = 0; i < players.length; i++) {
     var logoClub = await clubM.getLogoByID(players[i].DOI_BONG_ID_Doi_Bong);
+    if (imagePlayer[i] === undefined) {
+      imagePlayer[i] = null;
+    }
+
     playersAndLogo[i] = {
       ID_Cau_Thu: players[i].ID_Cau_Thu,
       Ten_CT: players[i].Ten_CT,
@@ -72,6 +77,7 @@ exports.getAllPlayersInClub = async (req, res, next) => {
       Ngay_Sinh_CT: players[i].Ngay_Sinh_CT,
       Tong_Ban_Thang: players[i].Tong_Ban_Thang,
       Logo: logoClub[0].Logo,
+      ImagePlayer: imagePlayer[i],
     };
   }
   res.send(playersAndLogo);

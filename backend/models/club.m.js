@@ -13,6 +13,11 @@ module.exports = {
     select Logo from ${table_name} where ID_Doi_Bong=${id}`);
     return logo;
   },
+  getImageByID: async (clubid) => {
+    const img = await db.load(`
+    select Picture from cau_thu where DOI_BONG_ID_Doi_Bong=${clubid} limit 6`);
+    return img;
+  },
   getLogoByName: async (name) => {
     const logo = await db.load(`
     select Logo from ${table_name} where Ten_DB ='${name}'`);
