@@ -73,10 +73,20 @@ function MatchResultPage(props) {
 
   function handleMatchResultClick() {
     const matchContainer = document.querySelector(".MatchResultContent");
-    matchContainer?.addEventListener("click", function (e) {
+    matchContainer.addEventListener("click", function (e) {
       const MatchResult = e.target.closest(".MatchResult");
-
-      console.log(MatchResult);
+      const couple = MatchResult.querySelectorAll(".MatchResultTeamInfo");
+      const team1 = couple[0].innerText;
+      const team2 = couple[1].innerText;
+      const teamChoose = renderResultListWithDate.filter(
+        (r) => r.Ten_Doi_Thang === team1 && r.Ten_Doi_Thua === team2
+      );
+      console.log(teamChoose);
+      // const team2 = MatchResult.querySelector(".MatchResultTeamInfo").innerText;
+      // const team1 = MatchResult.querySelector(".MatchResultTeamInfo").innerText;
+      // const team1 = MatchResult.querySelector(".MatchResultTeamInfo").innerText;
+      // const team1 = MatchResult.querySelector(".MatchResultTeamInfo").innerText;
+      // const team1 = MatchResult.querySelector(".MatchResultTeamInfo").innerText;
 
       // const MatchResultData = {
       //   id: MatchResult.getAttribute("id"),
@@ -91,9 +101,9 @@ function MatchResultPage(props) {
       //   playerScore: MatchResult.getAttribute("playerScore"),
       // };
       gotoScorePage({
-        id: MatchResult.getAttribute("matchResultId"),
-        team1: MatchResult.getAttribute("team1"),
-        team2: MatchResult.getAttribute("team2"),
+        id: MatchResult.getAttribute("key"),
+        team1: team1,
+        team2: team2,
         point1: MatchResult.getAttribute("point1"),
         point2: MatchResult.getAttribute("point2"),
         time: MatchResult.getAttribute("time"),

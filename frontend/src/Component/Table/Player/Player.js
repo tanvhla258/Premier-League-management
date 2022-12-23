@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../../../img/bruno.png";
 import "./Player.css";
+import noava from "../../../img/noava.png";
 
 function Player(props) {
   function eleOver(e) {
@@ -17,10 +17,13 @@ function Player(props) {
         onMouseLeave={eleLeave}
         playerId={props.playerId}
         className="Player"
-        style={{ width: "450px" }}
+        style={{ width: "450px", height: "150px" }}
       >
-        <div className="PlayerAva">
-          <img className="PlayerAvaImg" src={props.logo}></img>
+        <div
+          className="PlayerAva"
+          style={{ width: "100px", height: "100px", marginRight: "10px" }}
+        >
+          <img className="PlayerAvaImg" src={props.logo || noava}></img>
         </div>
         <div className="PlayerInfo">
           <span className="PlayerInfoName">
@@ -48,7 +51,7 @@ function Player(props) {
           style={{ width: "120px", height: "100px", marginRight: "10px" }}
           className="PlayerAva"
         >
-          <img className="PlayerAvaImg" src={props.logo}></img>
+          <img className="PlayerAvaImg" src={props.logo || noava}></img>
         </div>
         <div className="PlayerInfo">
           <span className="PlayerInfoName">
