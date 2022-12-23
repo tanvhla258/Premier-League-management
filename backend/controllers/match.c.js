@@ -13,6 +13,7 @@ exports.getAllMatches = async (req, res, next) => {
     var logo2 = await clubM.getLogoByName(team2[0].Ten_DB);
 
     matchesByName[i] = {
+      ID_Tran_Dau: matches[i].ID_Tran_Dau,
       DOI_BONG_ID_Doi_Bong_1: matches[i].DOI_BONG_ID_Doi_Bong_1,
       DOI_BONG_ID_Doi_Bong_2: matches[i].DOI_BONG_ID_Doi_Bong_2,
       Ten_DB_1: team1[0].Ten_DB,
