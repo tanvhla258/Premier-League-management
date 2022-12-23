@@ -1,3 +1,4 @@
+const { update } = require("../config/db");
 const db = require("../config/db");
 const table_name = "ket_qua_tran_dau";
 module.exports = {
@@ -28,6 +29,14 @@ module.exports = {
     select Ten_CT,Ten_DB
     from cau_thu as ct join doi_bong as db 
     where  ct.ID_Cau_Thu=${idplayer} and ct.DOI_BONG_ID_Doi_Bong = db.ID_Doi_Bong `);
+    return result;
+  },
+  updateMatchResult: async (match) => {
+    const condition = {
+      TRAN_DAU_ID_Tran_Dau: match.ID_Tran_Dau,
+    };
+    delete match.ID_Tran_Dau;
+    const result = await update(table_name, match, condition);
     return result;
   },
 };

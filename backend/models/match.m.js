@@ -20,7 +20,9 @@ module.exports = {
       ID_Tran_Dau: match.ID_Tran_Dau,
     };
     delete match.ID_Tran_Dau;
-    return db.update(table_name, match, condition);
+    const result = await db.update(table_name, match, condition);
+    console.log(result);
+    return result;
   },
   deleteMatch: async (id) => {
     return db.delete(table_name, "ID_Tran_Dau", id);

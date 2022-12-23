@@ -1,7 +1,7 @@
 const matchM = require("../models/match.m");
 const moment = require("moment");
 const clubM = require("../models/club.m");
-
+const matchResultM = require("../models/matchResult.m");
 exports.getAllMatches = async (req, res, next) => {
   const matches = await matchM.getAllMatches();
 
@@ -58,16 +58,17 @@ exports.getAMatch = async (req, res, next) => {
 };
 
 exports.updateAMatch = async (req, res, next) => {
-  const match = req.body;
   const datetime = req.body.day + " " + req.body.time;
-  console.log(match);
   const updateMatch = {
     ID_Tran_Dau: req.body.ID_Tran_Dau,
-    DOI_BONG_ID_Doi_Bong_1: req.body.DOI_BONG_ID_Doi_Bong_1,
-    DOI_BONG_ID_Doi_Bong_2: req.body.DOI_BONG_ID_Doi_Bong_2,
     Lich_Thi_Dau: datetime,
   };
-  res.send(await matchM.updateMatch(updateMatch));
+  const flag = await matchM.updateMatch(updateMatch);
+  if (flag === 1) {
+    res.send("Update successful");
+  } else {
+    res.send("Nothing new");
+  }
 };
 
 exports.deleteAMatch = async (req, res, next) => {
