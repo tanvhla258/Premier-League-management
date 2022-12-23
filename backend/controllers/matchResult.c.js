@@ -1,5 +1,6 @@
 const matchResultM = require("../models/matchResult.m");
 const clubM = require("../models/club.m");
+const topScoreM = require("../models/topScore.m");
 exports.getAllMatchResult = async (req, res, next) => {
   const matchResult = await matchResultM.getAllMatchResult();
   var matchParticular = [];
@@ -19,10 +20,14 @@ exports.getAllMatchResult = async (req, res, next) => {
       const name = await matchResultM.getScorePlayerAndClub(
         score[j].CAU_THU_ID_Cau_Thu
       );
+      const image = await topScoreM.getImageByPlayerID(
+        score[j].CAU_THU_ID_Cau_Thu
+      );
       playerNameScore[j] = {
         ten_cau_thu: name[0].Ten_CT,
         doi_bong: name[0].Ten_DB,
         Thong_tin_ban_thang: score[j],
+        image: image[0].Picture,
       };
     }
 

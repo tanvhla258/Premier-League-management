@@ -23,7 +23,6 @@ exports.getAllTopScore = async (req, res, next) => {
       Image: image[0].Picture,
     };
   }
-  console.log(topscore);
 
   res.send(topscore);
 };
