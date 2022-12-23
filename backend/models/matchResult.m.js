@@ -16,4 +16,11 @@ module.exports = {
     );
     return result;
   },
+  getScore: async (id) => {
+    const result = await db.load(`
+    select Thoi_Diem,LOAI_BAN_THANG_ID_Loai_Ban_Thang,CAU_THU_ID_Cau_Thu,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Ten_LBT 
+     from ghi_ban as gb join loai_ban_thang as lbt
+    where KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau=${id} and gb.LOAI_BAN_THANG_ID_Loai_Ban_Thang=lbt.ID_Loai_Ban_Thang `);
+    return result;
+  },
 };

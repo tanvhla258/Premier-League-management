@@ -3,6 +3,8 @@ const matchResultM = require("../models/matchResult.m");
 exports.getAllMatchResult = async (req, res, next) => {
   const matchResult = await matchResultM.getAllMatchResult();
   var matchParticular = [];
+  var playerScore = [];
+
   for (let i = 0; i < matchResult.length; i++) {
     var stadium = await matchResultM.getStadiumByHomeID(
       matchResult[i].TRAN_DAU_DOI_BONG_ID_Doi_Bong_1
@@ -10,13 +12,15 @@ exports.getAllMatchResult = async (req, res, next) => {
     var datetime = await matchResultM.getTimeByMatchID(
       matchResult[i].TRAN_DAU_ID_Tran_Dau
     );
-    // console.log(stadium);
-    // console.log(datetime);
+    var score = await matchResultM.getScore(
+      matchResult[i].TRAN_DAU_ID_Tran_Dau
+    );
 
     matchParticular[i] = {
       Ten_Doi_Thang: matchResult[i].Ten_Doi_Thang,
       Ten_Doi_Thua: matchResult[i].Ten_Doi_Thua,
       TRAN_DAU_ID_Tran_Dau: matchResult[i].TRAN_DAU_ID_Tran_Dau,
+      Player_Score: score,
       TRAN_DAU_DOI_BONG_ID_Doi_Bong_1:
         matchResult[i].TRAN_DAU_DOI_BONG_ID_Doi_Bong_1,
       TRAN_DAU_DOI_BONG_ID_Doi_Bong_2:
