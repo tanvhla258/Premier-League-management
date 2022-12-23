@@ -23,7 +23,7 @@ import LoginPage from "./Component/LoginPage/LoginPage";
 import LeaguePage from "./Component/LeaguePage/LeaguePage";
 import EditPlayer from "./Component/TeamPage/EditPlayer";
 import EditTeam from "./Component/LeaguePage/EditTeam";
-import ScorePage from "./Component/ScorePage copy/ScorePage";
+import ScorePage from "./Component/ScorePage/ScorePage";
 
 function App() {
   let { id } = useParams();

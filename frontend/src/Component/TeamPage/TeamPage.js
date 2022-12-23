@@ -193,7 +193,6 @@ function TeamPage(props) {
               PlayersData={[...listOfPlayers]}
               TeamList={[...TeamListData]}
               handlingId={handlingId}
-              //TeamData={listOfPlayers}
             />
           )}
         </div>

@@ -10,35 +10,30 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
 function ScorePage(props) {
-  const [listOfTopScore, setListOfTopScore] = useState([]);
+  const [ListScore, setListScore] = useState([]);
   const matchResultInfo = useLocation();
   console.log(matchResultInfo.state);
-  let TopScoreData = listOfTopScore?.map((ts, i) => {
+  let ListScoreData = ListScore?.map((ts, i) => {
     return { rank: i + 1, ...ts };
   });
-  console.log(TopScoreData);
   let [currentPage, setCurrentPage] = useState(0);
   const [PlayerPerPage] = useState(3);
-  let maxPage = Math.floor((TopScoreData.length - 1) / PlayerPerPage);
+  let maxPage = Math.floor((ListScoreData.length - 1) / PlayerPerPage);
   console.log(maxPage);
   let startItem = currentPage * PlayerPerPage;
   let endItem = startItem + PlayerPerPage;
 
-  let renderPlayerList = TopScoreData?.slice(startItem, endItem);
+  let renderPlayerList = ListScoreData?.slice(startItem, endItem);
   useEffect(() => {
-    const fetchTopScore = async () => {
+    const fetchResult = async () => {
       try {
-        const data = await fetch(
-          "http://localhost:5000/api/topScore/typeofscore"
-        ).then((res) => res.json());
-        console.log(data);
-        setListOfTopScore([...data]);
+        setListScore([...matchResultInfo.state.playerScore]);
       } catch (e) {
         console.log(e.message);
       }
     };
 
-    fetchTopScore();
+    fetchResult();
   }, []);
   function nextClick() {
     return currentPage < maxPage
@@ -67,11 +62,18 @@ function ScorePage(props) {
                   {/* <div className="ScoreRank">{p.rank}</div> */}
                   <Player
                     type="ScorePlayer"
-                    name={p.Ten_CT}
-                    teamName={p.Ten_DB}
+                    name={p.ten_cau_thu}
+                    teamName={p.doi_bong}
+                    logo={p.image}
                   />
-
-                  <div className="ScoreType">{p.Ten_LBT}</div>
+                  <div className="ScoreInfo">
+                    <div className="ScoreTime">
+                      {p.Thong_tin_ban_thang.Thoi_Diem}'
+                    </div>
+                    <div className="ScoreType">
+                      {p.Thong_tin_ban_thang.Ten_LBT}
+                    </div>
+                  </div>
                 </div>
               );
             })}
