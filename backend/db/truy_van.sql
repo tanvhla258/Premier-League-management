@@ -81,9 +81,11 @@ update cau_thu
 set DOI_BONG_ID_Doi_Bong = 1
 where ID_Cau_Thu = 1100;
 
-select * from cau_thu where ID_Cau_Thu = 1100;
+select * from cau_thu where DOI_BONG_ID_Doi_Bong = 120 ;
 
---set logo for clubs
+
+
+-- set logo for clubs
 update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/a/a1/Man_Utd_FC_.svg/1200px-Man_Utd_FC_.svg.png"where ID_Doi_Bong=101;
 update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/1/1d/Manchester_City_FC_logo.svg"where ID_Doi_Bong=102;
 update doi_bong set Logo ="https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Chelsea_crest.svg/1200px-Chelsea_crest.svg.png"where ID_Doi_Bong=103;

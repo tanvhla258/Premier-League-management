@@ -715,7 +715,173 @@ INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) 
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1452, 'Ronnie Stam','TN', 118,'1996-8-18');
 INSERT cau_thu (ID_Cau_Thu, Ten_CT, Loai_CT, DOI_BONG_ID_Doi_Bong,Ngay_Sinh_CT) VALUES (1453, 'Ben Watson.', 'TN',118,'1996-8-18');
 
+-- 3 cau thu dau
+
 update cau_thu set Picture = "https://persona.rin.ru/eng/galery/14344.jpg"where ID_Cau_Thu = 1001;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/31645-1447748712.jpg?lm=1"where ID_Cau_Thu = 1151;
+update cau_thu set Picture = "https://media.gettyimages.com/id/151271342/photo/bebe-of-manchester-united-poses-during-a-photocall-at-carrington-training-ground-on-august-21.jpg?s=612x612&w=gi&k=20&c=IrIcgNZmpaF1bodtohnJRosjGaMCxqnfCs1y5lz6bBw="where ID_Cau_Thu = 1152;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p15749.png"where ID_Cau_Thu = 1129;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/32617-1409567817.jpg?lm=1"where ID_Cau_Thu = 1130;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p17476.png"where ID_Cau_Thu = 1131;
+
+update cau_thu set Picture = "https://futhead.cursecdn.com/static/img/14/players/48940.png"where ID_Cau_Thu = 1049;
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/a_16/16746.jpg"where ID_Cau_Thu = 1050;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p41328.png"where ID_Cau_Thu = 1051;
+
+update cau_thu set Picture = "https://static.wikia.nocookie.net/the-football-database/images/9/9d/Arsenal_Arteta_001.png/revision/latest?cb=20131118192832"where ID_Cau_Thu = 1002;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p19524.png"where ID_Cau_Thu = 1003;
+update cau_thu set Picture = "https://www.arsenalpics.com/p/5/new-arsenal-signing-marouane-chamakh-3586081.jpg.webp"where ID_Cau_Thu = 1004;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p18656.png"where ID_Cau_Thu = 1363;
+update cau_thu set Picture = "https://futhead.cursecdn.com/static/img/14/players/1102.png"where ID_Cau_Thu = 1364;
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/2011-2012/a_0/460.jpg"where ID_Cau_Thu = 1365;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p28593.png"where ID_Cau_Thu = 1069;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p12745.png"where ID_Cau_Thu = 1070;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p27707.png"where ID_Cau_Thu = 1071;
+
+update cau_thu set Picture = "https://pbs.twimg.com/media/BQrLIm6CUAAYc6L.jpg:large"where ID_Cau_Thu = 1109;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p40555.png"where ID_Cau_Thu = 1110;
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/a_43/43779.jpg"where ID_Cau_Thu = 1111;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p19151.png"where ID_Cau_Thu = 1388;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/45921-1538465142.jpg?lm=1"where ID_Cau_Thu = 1389;
+update cau_thu set Picture = "https://www.bdfutbol.com/i/j/95589.jpg"where ID_Cau_Thu = 1390;
+
+update cau_thu set Picture = "https://sm.imgix.net/11/37/kemyagustien_swansea_20110827.jpg?w=1200&h=1200&auto=compress,format&fit=clip"where ID_Cau_Thu = 1341;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p15114.png"where ID_Cau_Thu = 1342;
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/a_15/15213.jpg"where ID_Cau_Thu = 1343;
+
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/a_1/1328.jpg"where ID_Cau_Thu = 1412;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p40142.png"where ID_Cau_Thu = 1413;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p12799.png"where ID_Cau_Thu = 1414;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p15201.png"where ID_Cau_Thu = 1197;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p42744.png"where ID_Cau_Thu = 1198;
+update cau_thu set Picture = "https://www.shrewsburytown.com/api/image/cropandgreyscale/c2f8a8c4-be8e-4830-a737-65d95cdeb015/?preset=player&greyscale=false"where ID_Cau_Thu = 1199;
+
+update cau_thu set Picture = "https://media.gettyimages.com/id/101609471/photo/mark-schwarzer-of-australia-poses-during-the-official-fifa-world-cup-2010-portrait-session-on.jpg?s=612x612&w=gi&k=20&c=l6zXUkSl7Lke-uDR8PM3xb5HIwt-3rPijk5l9H2vKDg="where ID_Cau_Thu = 1088;
+update cau_thu set Picture = "https://c8.alamy.com/comp/2BAW0JM/csaba-somogyi-fulham-goalkeeper-2BAW0JM.jpg"where ID_Cau_Thu = 1089;
+update cau_thu set Picture = "https://s.hs-data.com/bilder/spieler/gross/46957.jpg"where ID_Cau_Thu = 1090;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p20208.png"where ID_Cau_Thu = 1295;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p40349.png"where ID_Cau_Thu = 1296;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p50089.png"where ID_Cau_Thu = 1297;
+
+update cau_thu set Picture = "https://www.saintsplayers.co.uk/wp-content/uploads/2020/02/Butterfield-AtS-scaled.jpg"where ID_Cau_Thu = 1272;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/9975-1524318889.jpg?lm=1"where ID_Cau_Thu = 1273;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p40145.png"where ID_Cau_Thu = 1274;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p27450.png"where ID_Cau_Thu = 1024;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p51938.png"where ID_Cau_Thu = 1025;
+update cau_thu set Picture = "https://www.swfc.co.uk/api/image/cropandgreyscale/ac504dce-8b09-4979-9c0f-d283471abe3c/?preset=square&greyscale=false"where ID_Cau_Thu = 1026;
+
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/2018-2019/a_73/73298.jpg"where ID_Cau_Thu = 1175;
+update cau_thu set Picture = "https://media.gettyimages.com/id/450507710/photo/shola-ameobi-of-nigeria-poses-during-the-official-fifa-world-cup-2014-portrait-session-on-june.jpg?s=612x612&w=gi&k=20&c=Qz0Rd5_pcKqUyaHMyefHjSbyvo1mD1LqtVl0TMegH70="where ID_Cau_Thu = 1176;
+update cau_thu set Picture = "https://www.soccerzz.com/img/jogadores/30/788730_ori__20210601233838_vurnon_anita.png"where ID_Cau_Thu = 1177;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p17997.png"where ID_Cau_Thu = 1320;
+update cau_thu set Picture = "https://c8.alamy.com/comp/2EE1KAN/football-6902-international-stock-titus-bramble-england-under-21-mandatory-creditaction-images-darren-walsh-2EE1KAN.jpg"where ID_Cau_Thu = 1321;
+update cau_thu set Picture = "https://c8.alamy.com/comp/G5K0FH/englands-wes-brown-during-a-friendly-international-game-against-holland-G5K0FH.jpg"where ID_Cau_Thu = 1322;
+
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/a_4/4720.jpg"where ID_Cau_Thu = 1434;
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/a_20/20712.jpg"where ID_Cau_Thu = 1435;
+update cau_thu set Picture = "https://media.gettyimages.com/photos/jean-beausejour-of-chile-poses-during-the-official-fifa-world-cup-picture-id450184184?s=612x612"where ID_Cau_Thu = 1436;
+
+update cau_thu set Picture = "https://c8.alamy.com/comp/2EFNDFJ/football-wales-press-conference-vale-hotel-vale-of-glamorgan-resort-hensol-wales-51010-wales-simon-church-to-the-media-mandatory-credit-action-images-peter-cziborra-livepic-2EFNDFJ.jpg"where ID_Cau_Thu = 1247;
+update cau_thu set Picture = "https://sm.imgix.net/12/33/ShaunCummings_20120324.jpg?w=1200&h=1200&auto=compress,format&fit=clip"where ID_Cau_Thu = 1248;
+update cau_thu set Picture = "https://www.afcwimbledon.co.uk/api/image/cropandgreyscale/33349989-24cf-4f53-9380-562a9b4fea86/?preset=player&greyscale=false"where ID_Cau_Thu = 1249;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p1243.png"where ID_Cau_Thu = 1222;
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/a_52/52089.jpg"where ID_Cau_Thu = 1223;
+update cau_thu set Picture = "https://www.mediastorehouse.com.au/p/5/armand-traore-arsenal-1195574.jpg.webp"where ID_Cau_Thu = 1224;
+
+-- 3 cau thu tiep theo 
+
+SELECT * FROM bong_da.cau_thu;
+update cau_thu set Picture = "https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/124933.png"where ID_Cau_Thu = 1153;
+update cau_thu set Picture = "https://images.squarespace-cdn.com/content/v1/5a787f048c56a8f8f9e9798d/1548866428084-V1YTQNFTXMYO1NRM6XLP/Michael-Carrick-Carousel-11.jpg?format=1000w"where ID_Cau_Thu = 1154;
+update cau_thu set Picture = "https://medias.spotern.com/people/w320/1/1272-1532336937.jpg"where ID_Cau_Thu = 1155; 
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p20658.png"where ID_Cau_Thu = 1132;
+update cau_thu set Picture = "https://i2-prod.birminghammail.co.uk/sport/football/football-news/article9971040.ece/ALTERNATES/s615/JS71133798.jpg"where ID_Cau_Thu = 1133;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p15157.png"where ID_Cau_Thu = 1134;
+
+update cau_thu set Picture = "https://a.espncdn.com/combiner/i?img=/i/headshots/soccer/players/full/8054.png"where ID_Cau_Thu = 1052;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p41270.png"where ID_Cau_Thu = 1053;
+update cau_thu set Picture = "https://cdn.resfu.com/img_data/players/big/32837.jpg"where ID_Cau_Thu = 1054;
+
+update cau_thu set Picture = "https://media.gettyimages.com/id/473052004/photo/andre-santos-of-clube-de-regatas-do-flamengo-poses-during-a-portrait-session-on-august-14-2014.jpg?s=612x612&w=gi&k=20&c=bx0vgxeBfueGtixWOmoEWQO9_aviI13HQeR2tl-jZg0="where ID_Cau_Thu = 1005;
+update cau_thu set Picture = "https://futhead.cursecdn.com/static/img/14/players/163423.png"where ID_Cau_Thu = 1006;
+update cau_thu set Picture = "https://www.arsenalpics.com/p/5/johan-djourou-arsenal-523417.jpg.webp"where ID_Cau_Thu = 1007;
+
+update cau_thu set Picture = "https://i.pinimg.com/474x/3f/93/f6/3f93f6a379a7234373d206e450373b0c.jpg"where ID_Cau_Thu = 1366;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p37742.png"where ID_Cau_Thu = 1367;
+update cau_thu set Picture = "https://www.themoviedb.org/t/p/original/8Yf2xrdNV1HsBnCIAgDRIgN6DrT.jpg"where ID_Cau_Thu = 1368;
+
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/a_2/2190.jpg"where ID_Cau_Thu = 1072;
+update cau_thu set Picture = "https://bet-bet.net/wp-content/uploads/2021/03/Phil-Jagielka.png"where ID_Cau_Thu = 1073;
+update cau_thu set Picture = "https://i.pinimg.com/474x/d1/49/b8/d149b8a4ea42c584370ced3b7f2fb9d0.jpg"where ID_Cau_Thu = 1074;
+
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/3597-1476358918.jpg?lm=1"where ID_Cau_Thu = 1112;
+update cau_thu set Picture = "https://i.pinimg.com/originals/d3/c7/36/d3c736da5845944148c87dd9c528fb00.jpg"where ID_Cau_Thu = 1113;
+update cau_thu set Picture = "https://www.lfchistory.net/images/profiles/player_colejoe.jpg"where ID_Cau_Thu = 1114;
+
+update cau_thu set Picture = "https://images.fotmob.com/image_resources/playerimages/32734.png"where ID_Cau_Thu = 1391;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/90368-1487767598.jpg?lm=1"where ID_Cau_Thu = 1392;
+update cau_thu set Picture = "http://cdn.soccerwiki.org/images/player/3136.png"where ID_Cau_Thu = 1393;
+
+update cau_thu set Picture = "https://fmdataba.com/images/p2/534313.png"where ID_Cau_Thu = 1344;
+update cau_thu set Picture = "https://www.bdfutbol.com/i/j/6108c.jpg"where ID_Cau_Thu = 1345;
+update cau_thu set Picture = "https://alchetron.com/cdn/mark-gower-2771d357-1094-484a-898c-a49d5f66c8b-resize-750.png"where ID_Cau_Thu = 1346;
+
+update cau_thu set Picture = "https://e7.pngegg.com/pngimages/701/167/png-clipart-james-collins-west-ham-united-f-c-premier-league-wales-national-football-team-premier-league-tshirt-team-thumbnail.png"where ID_Cau_Thu = 1415;
+update cau_thu set Picture = "https://cdn.resfu.com/img_data/players/medium/38344.jpg?size=180x&lossy=1"where ID_Cau_Thu = 1416;
+update cau_thu set Picture = "http://cdn.soccerwiki.org/images/player/4657.png"where ID_Cau_Thu = 1417;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p41727.png"where ID_Cau_Thu = 1200;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p10954.png"where ID_Cau_Thu = 1201;
+update cau_thu set Picture = "https://www.scunthorpe-united.co.uk/api/image/cropandgreyscale/90f2ec7e-04d8-427b-a11a-0a7cb145fde7/?preset=player&greyscale=false"where ID_Cau_Thu = 1202;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p88734.png"where ID_Cau_Thu = 1091;
+update cau_thu set Picture = "http://cdn.soccerwiki.org/images/player/7784.png"where ID_Cau_Thu = 1092;
+update cau_thu set Picture = "http://cdn.soccerwiki.org/images/player/1843.png"where ID_Cau_Thu = 1093;
+
+update cau_thu set Picture = "https://futhead.cursecdn.com/static/img/19/players/51257.png"where ID_Cau_Thu = 1298;
+update cau_thu set Picture = "https://static.wikia.nocookie.net/the-football-database/images/2/27/Rory_Delap.png/revision/latest?cb=20210121174651"where ID_Cau_Thu = 1299;
+update cau_thu set Picture = "https://img.a.transfermarkt.technology/portrait/big/50987-1489602860.jpg?lm=1"where ID_Cau_Thu = 1300;
+
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p3673.png"where ID_Cau_Thu = 1275;
+update cau_thu set Picture = "https://resources.premierleague.com/premierleague/photos/players/250x250/p17339.png"where ID_Cau_Thu = 1276;
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/2020-2021/a_28/28883.jpg"where ID_Cau_Thu = 1277;
+
+update cau_thu set Picture = "http://cdn.soccerwiki.org/images/player/448.png"where ID_Cau_Thu = 1027;
+update cau_thu set Picture = "https://sortitoutsi.net/uploads/megapacks/cutoutfaces/originals/11.00/29000029.png"where ID_Cau_Thu = 1028;
+update cau_thu set Picture = "https://cdn.soccerwiki.org/images/player/29444.png"where ID_Cau_Thu = 1029;
+
+update cau_thu set Picture = "https://futhead.cursecdn.com/static/img/14/players/177134.png"where ID_Cau_Thu = 1178;
+update cau_thu set Picture = "https://cdn.soccerwiki.org/images/player/3883.png"where ID_Cau_Thu = 1179;
+update cau_thu set Picture = "http://cdn.soccerwiki.org/images/player/5580.png"where ID_Cau_Thu = 1180;
+
+update cau_thu set Picture = "https://m.footballdatabase.eu/images/photos/players/2020-2021/a_21/21824.jpg"where ID_Cau_Thu = 1323;
+update cau_thu set Picture = "https://fmdataba.com/images/p2/534073.png"where ID_Cau_Thu = 1324;
+update cau_thu set Picture = "https://futhead.cursecdn.com/static/img/19/players/193942.png"where ID_Cau_Thu = 1325;
+
+update cau_thu set Picture = "https://cdn.soccerwiki.org/images/player/18318.png"where ID_Cau_Thu = 1437;
+update cau_thu set Picture = "http://cdn.soccerwiki.org/images/player/592.png"where ID_Cau_Thu = 1438;
+update cau_thu set Picture = "https://futhead.cursecdn.com/static/img/15/players/45098.png"where ID_Cau_Thu = 1439;
+
+update cau_thu set Picture = "https://fmdataba.com/images/p2/534503.png"where ID_Cau_Thu = 1250;
+update cau_thu set Picture = "https://s.hs-data.com/bilder/spieler/gross/1168.jpg"where ID_Cau_Thu = 1251;
+update cau_thu set Picture = "https://www.playmakerstats.com/img/jogadores/13/300113_med_jem_karacan.jpg"where ID_Cau_Thu = 1252;
+
+update cau_thu set Picture = "https://pbs.twimg.com/profile_images/632932737809272832/13CnkvD4_400x400.jpg"where ID_Cau_Thu = 1225;
+update cau_thu set Picture = "http://cdn.soccerwiki.org/images/player/1975.png"where ID_Cau_Thu = 1226;
+update cau_thu set Picture = "https://cdn.resfu.com/img_data/players/big/24071.jpg"where ID_Cau_Thu = 1227;
+
+
+
 
 select * from cau_thu;
 
