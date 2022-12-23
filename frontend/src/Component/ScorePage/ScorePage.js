@@ -48,7 +48,7 @@ function ScorePage(props) {
       <StandingPageNavBar Logo=" Score" />
       <div className="ScoreTable">
         <div className="ScoreHeader">
-          <span>Player</span>
+          <span></span>
           <span className="ScoreGroup">
             <span className="ScoreGroupItem">Score Time</span>
             <span className="ScoreGroupItem">Score Type</span>

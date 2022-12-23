@@ -36,6 +36,8 @@ function MatchSchedulePage(props) {
 
     fetchMatch();
   }, []);
+
+  function gotoEditMatch() {}
   function popUp() {
     setDisplayPopUp(1);
   }
@@ -84,6 +86,17 @@ function MatchSchedulePage(props) {
     });
     console.log(inputs);
     setDisplayPopUp(0);
+  }
+  function handleMatchClick() {
+    const teamContainer = document.querySelector(".MatchScheduleTable");
+    teamContainer.addEventListener("click", function (e) {
+      const match = e.target.closest(".Match");
+      console.log(match);
+      gotoEditMatch({
+        id: match.getAttribute("MatchId"),
+        name: match.getAttribute("name"),
+      });
+    });
   }
 
   return (
@@ -156,7 +169,7 @@ function MatchSchedulePage(props) {
       </div>
       <StandingPageNavBar Logo="Schedule" />
 
-      <div className="MatchScheduleTable">
+      <div onClick={handleMatchClick} className="MatchScheduleTable">
         <MatchSchedule
           popUp={popUp}
           MatchSchedule={[...listOfMatches]}
