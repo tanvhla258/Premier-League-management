@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
+import StandingPageNavBar from "../StandingPage/StandingPageNavBar/StandingPageNavBar";
 import "./LeaguePage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

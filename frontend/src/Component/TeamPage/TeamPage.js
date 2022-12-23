@@ -3,7 +3,7 @@ import "./TeamPage.css";
 import Button from "../Button/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import NavLink from "../NavLink/NavLink";
-import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
+import StandingPageNavBar from "../StandingPage/StandingPageNavBar/StandingPageNavBar";
 import Player from "../Table/Player/Player";
 import PlayerTable from "../Table/PlayerTable/PlayerTable";
 import teamLogo from "../../img/mulogo.png";

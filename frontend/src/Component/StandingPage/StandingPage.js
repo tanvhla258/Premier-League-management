@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 import NavLink from "../NavLink/NavLink";
 import Standing from "../Table/Standing/Standing";
 import "./StandingPage.css";
-import StandingPageNavBar from "./StadningPageNavBar/StandingPageNavBar";
+import StandingPageNavBar from "./StandingPageNavBar/StandingPageNavBar";
 import inkImg from "../../img/ink.png";
 import PlayerBG1 from "../../img/kevin2.png";
 import PlayerBG2 from "../../img/van dijk.png";

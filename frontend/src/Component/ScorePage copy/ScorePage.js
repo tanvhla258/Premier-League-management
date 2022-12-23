@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./TopScorePage.css";
+import "./ScorePage.css";
 import StandingPageNavBar from "../StandingPage/StandingPageNavBar/StandingPageNavBar";
 import Player from "../Table/Player/Player";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +8,7 @@ import {
   faCaretLeft,
   faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
-function TopScorePage(props) {
+function ScorePage(props) {
   const [listOfTopScore, setListOfTopScore] = useState([]);
   let TopScoreData = listOfTopScore?.map((ts, i) => {
     return { rank: i + 1, ...ts };
@@ -26,8 +26,9 @@ function TopScorePage(props) {
     const fetchTopScore = async () => {
       try {
         const data = await fetch(
-          "http://localhost:5000/api/topScore/topGoal"
+          "http://localhost:5000/api/topScore/typeofscore"
         ).then((res) => res.json());
+        console.log(data);
         setListOfTopScore([...data]);
       } catch (e) {
         console.log(e.message);
@@ -45,26 +46,29 @@ function TopScorePage(props) {
     return currentPage > 0 ? setCurrentPage(currentPage - 1) : currentPage;
   }
   return (
-    <div className="TopScorePage">
-      <StandingPageNavBar Logo="Top Score" />
-      <div className="TopScoreTable">
-        <div className="TopScoreHeader">
+    <div className="ScorePage">
+      <StandingPageNavBar Logo=" Score" />
+      <div className="ScoreTable">
+        <div className="ScoreHeader">
           <span>Player</span>
-          <span>Point</span>
+          <span className="ScoreGroup">
+            <span className="ScoreGroupItem">Score Time</span>
+            <span className="ScoreGroupItem">Score Type</span>
+          </span>
         </div>
-        <div className="TopScoreContent">
-          <div className="TopScoreContentMain">
+        <div className="ScoreContent">
+          <div className="ScoreContentMain">
             {renderPlayerList?.map((p, index) => {
               return (
-                <div className="TopScoreItem">
-                  <div className="TopScoreRank">{p.rank}</div>
+                <div className="ScoreItem">
+                  {/* <div className="ScoreRank">{p.rank}</div> */}
                   <Player
-                    type="TopScorePlayer"
+                    type="ScorePlayer"
                     name={p.Ten_CT}
                     teamName={p.Ten_DB}
                   />
 
-                  <div className="TopScorePoint">{p.So_Ban_Thang}</div>
+                  <div className="ScoreType">{p.Ten_LBT}</div>
                 </div>
               );
             })}
@@ -89,4 +93,4 @@ function TopScorePage(props) {
   );
 }
 
-export default TopScorePage;
+export default ScorePage;

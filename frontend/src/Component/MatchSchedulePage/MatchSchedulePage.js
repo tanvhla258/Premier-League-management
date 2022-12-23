@@ -6,7 +6,7 @@ import axios from "axios";
 
 import NavLink from "../NavLink/NavLink";
 import MatchSchedule from "../Table/MatchSchedule/MatchSchedule";
-import StandingPageNavBar from "../StandingPage/StadningPageNavBar/StandingPageNavBar";
+import StandingPageNavBar from "../StandingPage/StandingPageNavBar/StandingPageNavBar";
 import add from "../../img/plus.png";
 import Swal from "sweetalert2";
 
