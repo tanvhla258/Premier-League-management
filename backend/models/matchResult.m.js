@@ -23,4 +23,11 @@ module.exports = {
     where KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau=${id} and gb.LOAI_BAN_THANG_ID_Loai_Ban_Thang=lbt.ID_Loai_Ban_Thang `);
     return result;
   },
+  getScorePlayerAndClub: async (idplayer) => {
+    const result = await db.load(`
+    select Ten_CT,Ten_DB
+    from cau_thu as ct join doi_bong as db 
+    where  ct.ID_Cau_Thu=${idplayer} and ct.DOI_BONG_ID_Doi_Bong = db.ID_Doi_Bong `);
+    return result;
+  },
 };

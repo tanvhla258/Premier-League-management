@@ -74,7 +74,6 @@ exports.getAllPlayersInClub = async (req, res, next) => {
       Logo: logoClub[0].Logo,
     };
   }
-  console.log(playersAndLogo);
   res.send(playersAndLogo);
 };
 exports.addPlayerToClub = async (req, res, next) => {
