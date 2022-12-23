@@ -17,7 +17,7 @@ function MatchResult(props) {
         <div className="Team1">
           <div className="MatchResultTeamInfo">
             <div className="TeamLogo">
-              <img className="TeamLogoImg" src={mu} />
+              <img className="TeamLogoImg" src={props.logo1} />
             </div>
 
             <div>{props.team1}</div>
@@ -27,7 +27,7 @@ function MatchResult(props) {
         <div className="Team2">
           <div className="MatchResultTeamInfo">
             <div className="TeamLogo">
-              <img className="TeamLogoImg" src={nc} />
+              <img className="TeamLogoImg" src={props.logo2} />
             </div>
             <div>{props.team2}</div>
           </div>
