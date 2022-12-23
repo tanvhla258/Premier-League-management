@@ -1086,34 +1086,34 @@ INSERT bang_xep_hang (ID_BXH,Hang,Thang,Hoa,Thua,Tong_Diem,DOI_BONG_ID_Doi_Bong,
 
 select * from bang_xep_hang;
 -- TRAN DAU 
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (1, 112, 111, 1,1, 'Craven Cottage','2020-09-14 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (2, 120, 109, 1, 1, 'Loftus Road','2020-09-16 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (3, 119, 113, 1, 1, 'Madejski Stadium','2020-09-18 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (4, 108, 107, 1, 1, 'The Hawthorns','2020-09-20 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (5, 110, 115, 1, 1, 'Upton Park','2020-09-22 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (6, 104, 117, 1, 1, 'Emirates Stadium','2020-09-24 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (7, 116, 105, 1, 1, 'St James'' Park','2020-09-26 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (8, 118, 103, 1, 1, 'DW Stadium','2020-09-28 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (9, 102, 114, 1, 1, 'Etihad Stadium','2020-09-30 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (10, 106, 101, 1, 1, 'Goodison Park','2020-10-4 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (1, 112, 111, 1,1, 'Craven Cottage','2022-12-25 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (2, 120, 109, 1, 1, 'Loftus Road','2022-12-26 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (3, 119, 113, 1, 1, 'Madejski Stadium','2022-12-27 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (4, 108, 107, 1, 1, 'The Hawthorns','2022-12-28 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (5, 110, 115, 1, 1, 'Upton Park','2022-12-29 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (6, 104, 117, 1, 1, 'Emirates Stadium','2022-12-30 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (7, 116, 105, 1, 1, 'St James'' Park','2022-12-31 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (8, 118, 103, 1, 1, 'DW Stadium','2023-01-01 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (9, 102, 114, 1, 1, 'Etihad Stadium','2023-01-02 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (10, 106, 101, 1, 1, 'Goodison Park','2023-01-03 20:00:00');
 
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (11, 103, 119,1,2, 'Madejski Stadium','2020-10-5 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (12, 109, 110,1,2, 'Upton Park','2020-10-6 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (13, 115, 106,1,2, 'Goodison Park','2020-10-7 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (14, 101, 112,1,2, 'Craven Cottage','2020-10-8 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (15, 111, 120,1,2, 'Loftus Road','2020-10-9 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (16, 114, 118,1,2, 'DW Stadium','2020-10-10 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (17, 105, 108,1,2, 'The Hawthorns','2020-10-11 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (18, 103, 116,1,2, 'St James'' Park','2020-10-12 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (11, 103, 119,1,2, 'Madejski Stadium','2023-01-04 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (12, 109, 110,1,2, 'Upton Park','2023-01-05 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (13, 115, 106,1,2, 'Goodison Park','2023-01-06 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (14, 101, 112,1,2, 'Craven Cottage','2023-01-07 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (15, 111, 120,1,2, 'Loftus Road','2023-01-08 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (16, 114, 118,1,2, 'DW Stadium','2023-01-09 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (17, 105, 108,1,2, 'The Hawthorns','2023-01-10 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (18, 103, 116,1,2, 'St James'' Park','2023-01-11 20:00:00');
 
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (19, 113, 104,1,3, 'Emirates Stadium','2020-10-13 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (20, 107, 102,1,3, 'Etihad Stadium','2020-10-14 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (21, 110, 112,1,3, 'Craven Cottage','2020-10-15 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (22, 109, 117,1,3, 'Stadium of Light','2020-10-16 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (23, 105, 111,1,3, 'Carrow Road','2020-10-17 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (24, 108, 106,1,3, 'Goodison Park','2020-10-18 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (25, 118, 113,1,3, 'Britannia Stadium','2020-10-19 20:00:00');
-INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (26, 102, 120,1,3, 'Loftus Road','2020-10-20 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (19, 113, 104,1,3, 'Emirates Stadium','2023-01-12 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (20, 107, 102,1,3, 'Etihad Stadium','2023-01-13 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (21, 110, 112,1,3, 'Craven Cottage','2023-01-14 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (22, 109, 117,1,3, 'Stadium of Light','2023-01-15 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (23, 105, 111,1,3, 'Carrow Road','2023-01-16 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (24, 108, 106,1,3, 'Goodison Park','2023-01-17 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (25, 118, 113,1,3, 'Britannia Stadium','2023-01-18 20:00:00');
+INSERT tran_dau ( ID_Tran_Dau,DOI_BONG_ID_Doi_Bong_1,DOI_BONG_ID_Doi_Bong_2,Vong_Dau,GIAI_DAU_ID_Giai_Dau,San,Lich_Thi_Dau) VALUES (26, 102, 120,1,3, 'Loftus Road','2023-01-19 20:00:00');
 select * from tran_dau;
 
 
