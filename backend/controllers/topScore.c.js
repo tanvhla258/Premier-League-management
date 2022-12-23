@@ -1,4 +1,5 @@
 const topScoreM = require("../models/topScore.m");
+const clubM = require("../models/club.m");
 
 exports.getAllTopScore = async (req, res, next) => {
   const score = await topScoreM.getAllTopScore();
@@ -14,12 +15,15 @@ exports.getAllTopScore = async (req, res, next) => {
     var clubName = await topScoreM.getClubNameByClubID(
       clubID[0].DOI_BONG_ID_Doi_Bong
     );
+    var image = await topScoreM.getImageByPlayerID(score[i].CAU_THU_ID_Cau_Thu);
     topscore[i] = {
       Ten_CT: playerName[0].Ten_CT,
       Ten_DB: clubName[0].Ten_DB,
       So_Ban_Thang: score[i].So_Ban_Thang,
+      Image: image[0].Picture,
     };
   }
+  console.log(topscore);
 
   res.send(topscore);
 };

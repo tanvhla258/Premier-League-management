@@ -10,6 +10,12 @@ module.exports = {
     );
     return result;
   },
+  getImageByPlayerID: async (id) => {
+    const image = await db.load(
+      `select Picture from cau_thu as ct join ghi_ban as gb where ${id}= ct.ID_Cau_Thu and ct.ID_Cau_Thu=gb.CAU_THU_ID_Cau_Thu`
+    );
+    return image;
+  },
   getAllTypeOfScore: async () => {
     const result = await db.load(
       `select * from ${table_name} as GHIBAN join loai_ban_thang AS LOAIBANTHANG 
