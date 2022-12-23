@@ -90,6 +90,8 @@ function MatchResultPage(props) {
                   point2={r.Ti_So[2]}
                   time={r.time}
                   day={r.date}
+                  logo1={r.Logo_Doi_Thang[0].Logo}
+                  logo2={r.Logo_Doi_Thua[0].Logo}
                 />
               );
             })}
