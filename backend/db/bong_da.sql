@@ -3,7 +3,7 @@
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=1;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=1;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
@@ -1313,6 +1313,3 @@ INSERT ghi_ban ( ID_Ghi_Ban,KET_QUA_TRAN_DAU_TRAN_DAU_ID_Tran_Dau,Thoi_diem,CAU_
 
 select * from ghi_ban;
 
--- USER
-INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone) VALUES ( 1,'123','abc.gmail.com','Hoaiminh','2002-1-2','0123456789');
-INSERT user ( ID_User,Password,Email,Ten_User,Ngay_Sinh,Phone) VALUES ( 2,'321','xyz.gmail.com','Vietpham','2002-2-28','9758734931');
