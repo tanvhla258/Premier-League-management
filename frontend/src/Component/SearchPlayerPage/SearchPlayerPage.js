@@ -31,6 +31,7 @@ function SearchPlayerPage(props) {
     } catch (e) {}
   }, [keySearch]);
   const [listOfPlayers, setlistOfPlayers] = useState([]);
+
   // useEffect(() => {
   //   try {
   //     const fetchAllPlayers = async function () {

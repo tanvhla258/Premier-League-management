@@ -26,6 +26,7 @@ exports.deletePlayer = async (req, res, next) => {
 exports.searchPlayer = async (req, res, next) => {
   const keyword = req.params.keyword;
   const player = await playerM.searchPlayer(keyword);
+  console.log(player);
   if (player.length === 0) {
     res.send("Empty");
   } else {
