@@ -15,6 +15,7 @@ import {
 import { useNavigate, useSearchParams } from "react-router-dom";
 library.add(faMagnifyingGlass);
 function PlayerTable(props) {
+  let today = new Date();
   let [currentPage, setCurrentPage] = useState(0);
 
   const [TeamPerPage] = useState(props.count ? props.count : 4);
@@ -149,10 +150,15 @@ function PlayerTable(props) {
                   <Player
                     key={p.ID_Cau_Thu}
                     playerId={p.ID_Cau_Thu}
-                    type="TeamPlayer"
+                    type="SearchPlayer"
                     name={p.Ten_CT}
                     country={p.Loai_CT}
-                    logo={p.ImagePlayer?.Picture}
+                    logo={p.Picture}
+                    age={
+                      today.getFullYear() -
+                      new Date(p.Ngay_Sinh_CT).getFullYear()
+                    }
+                    team={p.Ten_DB}
                   />
                 </div>
               );

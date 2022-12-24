@@ -23,7 +23,10 @@ function Player(props) {
           className="PlayerAva"
           style={{ width: "100px", height: "100px", marginRight: "10px" }}
         >
-          <img className="PlayerAvaImg" src={props.logo || noava}></img>
+          <img
+            className="PlayerAvaImg"
+            src={props.logo || props.Image || noava}
+          ></img>
         </div>
         <div className="PlayerInfo">
           <span className="PlayerInfoName">
@@ -40,7 +43,7 @@ function Player(props) {
         </div>
       </div>
     );
-  else
+  else if (props.type == "TopScorePlayer") {
     return (
       <div
         playerId={props.playerId}
@@ -65,6 +68,43 @@ function Player(props) {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div
+        onMouseOver={eleOver}
+        onMouseLeave={eleLeave}
+        playerId={props.playerId}
+        className="Player"
+        style={{ width: "450px", height: "150px" }}
+      >
+        <div
+          className="PlayerAva"
+          style={{ width: "100px", height: "100px", marginRight: "10px" }}
+        >
+          <img
+            className="PlayerAvaImg"
+            src={props.logo || props.Image || noava}
+          ></img>
+        </div>
+        <div className="PlayerInfo">
+          <div className="PlayerInfoName">
+            <span className="PlayerTag">Name</span>
+            <span className="PlayerTagName">{props.name}</span>
+          </div>
+
+          <div className="PlayerInfoAge">
+            <span className="PlayerTag">Age</span>
+            <span className="PlayerTagType">{props.age}</span>
+          </div>
+
+          <div className="PlayerInfoTeam">
+            <span className="PlayerTag">Team</span>
+            <span className="PlayerTagType">{props.team}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Player;

@@ -33,7 +33,7 @@
 
 }
 
-.PlayerInfoName{
+.PlayerInfoName,.PlayerInfoAge{
     margin-bottom: 14px;
 }
 .PlayerInfoCountry{
