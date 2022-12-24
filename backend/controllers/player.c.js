@@ -1,6 +1,7 @@
 const playerM = require("../models/player.m");
 exports.getPlayers = async (req, res, next) => {
   const players = await playerM.getAllPlayers();
+
   res.send(players);
 };
 exports.getAPlayer = async (req, res, next) => {

@@ -3,7 +3,9 @@ const table_name = "cau_thu";
 
 module.exports = {
   getAllPlayers: async () => {
-    const players = await db.load(`select * from ${table_name}`);
+    const players =
+      await db.load(`select * from ${table_name} as ct join doi_bong as db 
+    where ct.DOI_BONG_ID_Doi_Bong=db.ID_Doi_Bong`);
     return players;
   },
   getOnePlayer: async (id) => {
