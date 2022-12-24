@@ -21,7 +21,6 @@ module.exports = {
     };
     delete match.ID_Tran_Dau;
     const result = await db.update(table_name, match, condition);
-    console.log(result);
     return result;
   },
   deleteMatch: async (id) => {
@@ -37,7 +36,6 @@ module.exports = {
     const result = await db.load(
       `select ID_Doi_Bong ,San_Nha  from doi_bong where Ten_DB ='${name}'`
     );
-    console.log(result);
     return result;
   },
   checkExistMatch: async (home, away) => {

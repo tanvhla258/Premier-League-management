@@ -103,7 +103,6 @@ exports.getOnePlayerInClub = async (req, res, next) => {
   const id = req.params.clubId;
   const id_player = req.params.playerId;
   const one_player_in_club = await clubM.getOnePlayerInClub(id, id_player);
-  console.log(one_player_in_club);
   res.json(one_player_in_club);
 };
 exports.updateOnePlayerInClub = async (req, res, next) => {

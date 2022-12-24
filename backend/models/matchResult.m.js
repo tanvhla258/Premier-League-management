@@ -39,4 +39,5 @@ module.exports = {
     const result = await update(table_name, match, condition);
     return result;
   },
+  createMatchResult: async (match) => {},
 };

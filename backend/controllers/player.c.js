@@ -29,7 +29,6 @@ exports.searchPlayer = async (req, res, next) => {
   if (player.length === 0) {
     res.send("Empty");
   } else {
-    console.log(player);
     res.send(player);
   }
 };
