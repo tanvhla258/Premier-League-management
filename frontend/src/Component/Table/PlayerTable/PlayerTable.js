@@ -1,22 +1,26 @@
 import React, { useState } from "react";
-import add from "../../../img/plus.png";
 import Player from "../Player/Player";
 import "./PlayerTable.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faS,
   faCaretLeft,
   faCaretRight,
   faAdd,
-  faMinus,
+  faR,
+  faGlasses,
+  faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate, useSearchParams } from "react-router-dom";
+library.add(faMagnifyingGlass);
 function PlayerTable(props) {
-  let [currentPage, setCurrentPage] = useState(props.count ? props.count : 4);
-  const [TeamPerPage] = useState(4);
+  let [currentPage, setCurrentPage] = useState(0);
+
+  const [TeamPerPage] = useState(props.count ? props.count : 4);
   let maxPage = Math.floor((props.PlayersData?.length - 1) / TeamPerPage);
   let startItem = currentPage * TeamPerPage;
   let endItem = startItem + TeamPerPage;
-
   let renderPlayerList = props.PlayersData?.slice(startItem, endItem);
 
   function nextClick() {
@@ -115,10 +119,23 @@ function PlayerTable(props) {
     return (
       <div className="PlayerTable">
         <div className="PlayerTableHeader">
-          <div className="TeamName">
-            <span className="btn down"></span>
-          </div>
           <div className="TeamPlayers">Players: {props.PlayersData.length}</div>
+          <div className="Searchbar">
+            {/* <label className="searchbarlebel" htmlFor="searchbarinput">
+              Search
+            </label> */}
+            <form onSubmit={(e) => e.preventDefault}>
+              <input
+                placeholder="Search player.."
+                type="text"
+                name="search"
+                id="searchbarinput"
+                onChange={props.searching}
+              />
+            </form>
+
+            {/* <FontAwesomeIcon icon="faS faMagnifyingGlass" /> */}
+          </div>
           <div className="TeamForeignPlayers">
             Foreign Players:
             {props.PlayersData?.filter((p) => p.Loai_CT !== "TN").length}
