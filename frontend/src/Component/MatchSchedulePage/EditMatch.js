@@ -96,7 +96,7 @@ function EditMatch(props) {
   }
   function BackForm(e) {
     e.preventDefault();
-    window.location.href = "/MatchSchedulePages";
+    window.location.href = "/MatchSchedulePage";
   }
   return (
     <div className="EditMatch">

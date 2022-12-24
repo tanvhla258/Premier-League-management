@@ -35,7 +35,7 @@ function HomeNavBar(props) {
         <NavLink href="./TeamPage">Team management</NavLink>
         <NavLink href="./TopScorePage">Top Goal</NavLink>
         <NavLink href="./StandingPage">Standing</NavLink>
-        {/* <NavLink href="./ScorePage">Score</NavLink> */}
+        <NavLink href="./SearchPlayerPage">Players</NavLink>
 
         <div>
           <div

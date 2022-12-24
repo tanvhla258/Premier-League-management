@@ -11,7 +11,7 @@ import {
   faMinus,
 } from "@fortawesome/free-solid-svg-icons";
 function PlayerTable(props) {
-  let [currentPage, setCurrentPage] = useState(0);
+  let [currentPage, setCurrentPage] = useState(props.count ? props.count : 4);
   const [TeamPerPage] = useState(4);
   let maxPage = Math.floor((props.PlayersData?.length - 1) / TeamPerPage);
   let startItem = currentPage * TeamPerPage;
@@ -31,57 +31,60 @@ function PlayerTable(props) {
     props.handlingId(e.target.value);
   }
 
-  return (
-    <div className="PlayerTable">
-      <div className="PlayerTableHeader">
-        <div className="TeamName">
-          <span className="btn down">
-            <select
-              onChange={(e) => {
-                return chooseTeam(e);
-              }}
-              name="selectTeam"
-              id="selectTeam"
-            >
-              {props.TeamList?.map((team) => {
-                return <option value={team.ID_Doi_Bong}>{team.Ten_DB}</option>;
-              })}
-            </select>
-          </span>
-        </div>
-        <div className="TeamPlayers">Players: {props.PlayersData.length}</div>
-        <div className="TeamForeignPlayers">
-          Foreign Players:
-          {props.PlayersData?.filter((p) => p.Loai_CT !== "TN").length}
-        </div>
-        <div className="headerBtn">
-          <div className="add">
-            <FontAwesomeIcon
-              className="addIcon"
-              icon={faAdd}
-              onClick={props.popUp}
-            />
+  if (props.tableType === "TeamTable")
+    return (
+      <div className="PlayerTable">
+        <div className="PlayerTableHeader">
+          <div className="TeamName">
+            <span className="btn down">
+              <select
+                onChange={(e) => {
+                  return chooseTeam(e);
+                }}
+                name="selectTeam"
+                id="selectTeam"
+              >
+                {props.TeamList?.map((team) => {
+                  return (
+                    <option value={team.ID_Doi_Bong}>{team.Ten_DB}</option>
+                  );
+                })}
+              </select>
+            </span>
+          </div>
+          <div className="TeamPlayers">Players: {props.PlayersData.length}</div>
+          <div className="TeamForeignPlayers">
+            Foreign Players:
+            {props.PlayersData?.filter((p) => p.Loai_CT !== "TN").length}
+          </div>
+          <div className="headerBtn">
+            <div className="add">
+              <FontAwesomeIcon
+                className="addIcon"
+                icon={faAdd}
+                onClick={props.popUp}
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="PlayerTableContent">
-        <div className="PlayerTableContentMain">
-          {renderPlayerList?.map((p) => {
-            return (
-              <div key={p.ID_Cau_Thu} className="PlayerItem">
-                <Player
-                  key={p.ID_Cau_Thu}
-                  playerId={p.ID_Cau_Thu}
-                  type="TeamPlayer"
-                  name={p.Ten_CT}
-                  country={p.Loai_CT}
-                  logo={p.ImagePlayer?.Picture}
-                />
-              </div>
-            );
-          })}
+        <div className="PlayerTableContent">
+          <div className="PlayerTableContentMain">
+            {renderPlayerList?.map((p) => {
+              return (
+                <div key={p.ID_Cau_Thu} className="PlayerItem">
+                  <Player
+                    key={p.ID_Cau_Thu}
+                    playerId={p.ID_Cau_Thu}
+                    type="TeamPlayer"
+                    name={p.Ten_CT}
+                    country={p.Loai_CT}
+                    logo={p.ImagePlayer?.Picture}
+                  />
+                </div>
+              );
+            })}
 
-          {/* <div className="PlayerItem">
+            {/* <div className="PlayerItem">
           <Player
             type="TeamPlayer"
             name="Bruno Fernandes"
@@ -89,6 +92,55 @@ function PlayerTable(props) {
             country="Portugal"
           />
         </div> */}
+          </div>
+
+          <div className="ControlBtn">
+            <FontAwesomeIcon
+              className="fai"
+              icon={faCaretLeft}
+              size="2x"
+              onClick={prevClick}
+            />
+            <FontAwesomeIcon
+              className="fai"
+              icon={faCaretRight}
+              size="2x"
+              onClick={nextClick}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  else {
+    return (
+      <div className="PlayerTable">
+        <div className="PlayerTableHeader">
+          <div className="TeamName">
+            <span className="btn down"></span>
+          </div>
+          <div className="TeamPlayers">Players: {props.PlayersData.length}</div>
+          <div className="TeamForeignPlayers">
+            Foreign Players:
+            {props.PlayersData?.filter((p) => p.Loai_CT !== "TN").length}
+          </div>
+        </div>
+        <div className="PlayerTableContent">
+          <div className="PlayerTableContentMain">
+            {renderPlayerList?.map((p) => {
+              return (
+                <div key={p.ID_Cau_Thu} className="PlayerItem">
+                  <Player
+                    key={p.ID_Cau_Thu}
+                    playerId={p.ID_Cau_Thu}
+                    type="TeamPlayer"
+                    name={p.Ten_CT}
+                    country={p.Loai_CT}
+                    logo={p.ImagePlayer?.Picture}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="ControlBtn">
@@ -106,8 +158,8 @@ function PlayerTable(props) {
           />
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default PlayerTable;

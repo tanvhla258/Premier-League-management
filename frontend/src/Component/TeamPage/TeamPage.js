@@ -193,6 +193,7 @@ function TeamPage(props) {
               PlayersData={[...listOfPlayers]}
               TeamList={[...TeamListData]}
               handlingId={handlingId}
+              tableType="TeamTable"
             />
           )}
         </div>
