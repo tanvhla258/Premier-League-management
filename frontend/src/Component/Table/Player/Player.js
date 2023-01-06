@@ -10,7 +10,7 @@ function Player(props) {
   function eleLeave(e) {
     e.target.closest(".Player").style.boxShadow = "none";
   }
-  if (props.type == "TeamPlayer")
+  if (props.type === "TeamPlayer")
     return (
       <div
         onMouseOver={eleOver}
@@ -43,7 +43,7 @@ function Player(props) {
         </div>
       </div>
     );
-  else if (props.type == "TopScorePlayer") {
+  else if (props.type === "TopScorePlayer") {
     return (
       <div
         playerId={props.playerId}
@@ -71,8 +71,8 @@ function Player(props) {
   } else {
     return (
       <div
-        onMouseOver={eleOver}
-        onMouseLeave={eleLeave}
+        // onMouseOver={eleOver}
+        // onMouseLeave={eleLeave}
         playerId={props.playerId}
         className="Player"
         style={{ width: "450px", height: "150px" }}
@@ -92,14 +92,14 @@ function Player(props) {
             <span className="PlayerTagName">{props.name}</span>
           </div>
 
-          <div className="PlayerInfoAge">
+          {/* <div className="PlayerInfoAge">
             <span className="PlayerTag">Age</span>
             <span className="PlayerTagType">{props.age}</span>
-          </div>
+          </div> */}
 
           <div className="PlayerInfoTeam">
             <span className="PlayerTag">Team</span>
-            <span className="PlayerTagType">{props.team}</span>
+            <span className="PlayerTagType">{props.teamName}</span>
           </div>
         </div>
       </div>

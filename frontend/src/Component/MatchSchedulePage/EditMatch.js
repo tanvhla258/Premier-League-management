@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 function EditMatch(props) {
   const MatchScheduleData = useLocation().state.info;
+  console.log(MatchScheduleData);
   let MatchId = MatchScheduleData.ID_Tran_Dau;
   //let MatchId = MatchScheduleData.search.slice(-4);
   console.log(MatchScheduleData);

@@ -46,6 +46,7 @@ function App() {
         <Route path="/TeamPage/EditPlayer" element={<EditPlayer />} />
         <Route path="/LeaguePage/EditTeam" element={<EditTeam />} />
         <Route path="/MatchSchedulePage/EditMatch" element={<EditMatch />} />
+        <Route path="/MatchResultPage/ScorePage" element={<ScorePage />} />
       </Routes>
     </BrowserRouter>
     // <div className="App">

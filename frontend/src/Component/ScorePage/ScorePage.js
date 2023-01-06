@@ -11,6 +11,7 @@ import {
 import { useLocation } from "react-router-dom";
 function ScorePage(props) {
   const [ListScore, setListScore] = useState([]);
+  console.log(ListScore);
   const matchResultInfo = useLocation();
   console.log(matchResultInfo.state);
   let ListScoreData = ListScore?.map((ts, i) => {
@@ -65,6 +66,7 @@ function ScorePage(props) {
         <div className="ScoreContent">
           <div className="ScoreContentMain">
             {renderPlayerList?.map((p, index) => {
+              console.log(p);
               return (
                 <div className="ScoreItem">
                   {/* <div className="ScoreRank">{p.rank}</div> */}
