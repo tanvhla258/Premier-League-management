@@ -66,12 +66,11 @@ function EditTeam() {
     console.log(deleteTeam);
     try {
       axios.post(`http://localhost:5000/api/clubs/${teamid}`, deleteTeam);
-      //Thong bao update thanh cong
-      // Swal.fire(`Player ${teamid} has deleted`, "OK").then((result) => {
-      //   if (result.isConfirmed) {
-      //     window.location.href = "/LeaguePage";
-      //   }
-      // });
+      Swal.fire(`Team ${teamid} has deleted`, "OK").then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/LeaguePage";
+        }
+      });
     } catch (e) {
       console.log(e.message);
     }
