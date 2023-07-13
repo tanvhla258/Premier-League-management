@@ -78,7 +78,7 @@ function LeaguePage(props) {
     });
     try {
       axios
-        .post("http://localhost:5000/api/clubs/", newTeam)
+        .post("http://13.236.66.180:5000/api/clubs/", newTeam)
         .then((respone) => {
           console.log(respone.data);
         });
