@@ -27,7 +27,7 @@ function LeaguePage(props) {
   useEffect(() => {
     const fetchLeague = async () => {
       try {
-        const data = await fetch("http://localhost:5000/api/clubs").then(
+        const data = await fetch("http://13.236.66.180:5000/api/clubs").then(
           (res) => res.json()
         );
         console.log(data);
@@ -87,7 +87,7 @@ function LeaguePage(props) {
           window.location.href = "/LeaguePage";
         }
       });
-    } catch (e) {}
+    } catch (e) { }
 
     setDisplayPopUp(0);
   }
