@@ -42,7 +42,7 @@ app.use("/api/tech", require("./routes/tech.r"));
 app.use(function (req, res) {
   res.end("404 NOT FOUND");
 });
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 443;
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
