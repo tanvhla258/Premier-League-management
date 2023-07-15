@@ -17,11 +17,11 @@ function MatchSchedulePage(props) {
   useEffect(() => {
     const fetchMatch = async () => {
       try {
-        const data = await fetch("http://localhost:5000/api/matches").then(
+        const data = await fetch("http://52.64.166.62:443/api/matches").then(
           (res) => res.json()
         );
         const TeamListDataFetch = await fetch(
-          `http://localhost:5000/api/clubs/`
+          `http://52.64.166.62:443/api/clubs/`
         ).then((res) => res.json());
         console.log(data);
         setListOfMatches([...data]);
@@ -65,7 +65,7 @@ function MatchSchedulePage(props) {
     console.log(newMatch);
 
     axios
-      .post("http://localhost:5000/api/matches/", newMatch)
+      .post("http://52.64.166.62:443/api/matches/", newMatch)
       .then((respone) => {
         console.log(respone.data);
         Swal.fire("Create successfully!", "OK").then((result) => {

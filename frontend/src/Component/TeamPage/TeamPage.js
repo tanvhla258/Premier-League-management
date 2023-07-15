@@ -29,14 +29,14 @@ function TeamPage(props) {
     const fetchTeam = async () => {
       try {
         const PlayerData = await fetch(
-          `http://localhost:5000/api/clubs/${teamId}/players`
+          `http://52.64.166.62:443/api/clubs/${teamId}/players`
         ).then((res) => res.json());
         console.log(PlayerData);
         const TeamData = await fetch(
-          `http://localhost:5000/api/clubs/${teamId}`
+          `http://52.64.166.62:443/api/clubs/${teamId}`
         ).then((res) => res.json());
         const TeamListData = await fetch(
-          `http://localhost:5000/api/clubs/`
+          `http://52.64.166.62:443/api/clubs/`
         ).then((res) => res.json());
 
         console.log(TeamData);
@@ -75,7 +75,7 @@ function TeamPage(props) {
 
     try {
       axios.post(
-        `http://localhost:5000/api/clubs/${newPlayer.club}/players`,
+        `http://52.64.166.62:443/api/clubs/${newPlayer.club}/players`,
         newPlayer
       );
       //Thong bao update thanh cong

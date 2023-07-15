@@ -11,7 +11,7 @@ function EditTeam() {
     try {
       const fetchTeam = async function () {
         const data = await fetch(
-          `http://localhost:5000/api/clubs/${teamid}`
+          `http://52.64.166.62:443/api/clubs/${teamid}`
         ).then((res) => res.json());
         setTeam(data[0]);
       };
@@ -36,7 +36,7 @@ function EditTeam() {
     };
     console.log(updateTeam);
     try {
-      axios.put(`http://localhost:5000/api/clubs/${teamid}`, updateTeam);
+      axios.put(`http://52.64.166.62:443/api/clubs/${teamid}`, updateTeam);
 
       //Thong bao update thanh cong
       Swal.fire("Update successfully!", "OK").then((result) => {
@@ -65,7 +65,7 @@ function EditTeam() {
     };
     console.log(deleteTeam);
     try {
-      axios.post(`http://localhost:5000/api/clubs/${teamid}`, deleteTeam);
+      axios.post(`http://52.64.166.62:443/api/clubs/${teamid}`, deleteTeam);
       Swal.fire(`Team ${teamid} has deleted`, "OK").then((result) => {
         if (result.isConfirmed) {
           window.location.href = "/LeaguePage";

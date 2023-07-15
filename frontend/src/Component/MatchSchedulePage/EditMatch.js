@@ -21,7 +21,7 @@ function EditMatch(props) {
         //     let birthday = new Date(data[0].Ngay_Sinh_CT);
         //     data[0].Ngay_Sinh_CT = birthday.toLocaleDateString("en-CA");
         const TeamListDataFetch = await fetch(
-          `http://localhost:5000/api/clubs/`
+          `http://52.64.166.62:443/api/clubs/`
         ).then((res) => res.json());
         console.log(TeamListDataFetch);
         setTeamList([...TeamListDataFetch]);
@@ -51,7 +51,7 @@ function EditMatch(props) {
     console.log(updateMatch);
     try {
       axios.put(
-        `http://localhost:5000/api/matches/${MatchScheduleData.ID_Tran_Dau}`,
+        `http://52.64.166.62:443/api/matches/${MatchScheduleData.ID_Tran_Dau}`,
         updateMatch
       );
       //Thong bao update thanh cong

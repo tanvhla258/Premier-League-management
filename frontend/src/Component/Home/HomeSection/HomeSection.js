@@ -26,18 +26,18 @@ function HomeSection() {
   useEffect(() => {
     const fetchSectionData = async () => {
       try {
-        const data = await fetch("http://localhost:5000/api/rank").then((res) =>
+        const data = await fetch("http://52.64.166.62:443/api/rank").then((res) =>
           res.json()
         );
         data.sort(function (rankA, rankB) {
           return rankA.Hang - rankB.Hang;
         });
 
-        const data2 = await fetch("http://localhost:5000/api/matches").then(
+        const data2 = await fetch("http://52.64.166.62:443/api/matches").then(
           (res) => res.json()
         );
 
-        const teamData = await fetch("http://localhost:5000/api/clubs").then(
+        const teamData = await fetch("http://52.64.166.62:443/api/clubs").then(
           (res) => res.json()
         );
         teamData.sort(function (A, B) {

@@ -19,8 +19,7 @@ function SearchPlayerPage(props) {
     try {
       const fetchNewSearch = async function () {
         const fetchNewSearchData = await fetch(
-          `http://localhost:5000/api/players/${
-            keySearch ? `search/${keySearch}` : ""
+          `http://52.64.166.62:443/api/players/${keySearch ? `search/${keySearch}` : ""
           }`
         ).then((res) => res.json());
         console.log("newfetch");
@@ -28,7 +27,7 @@ function SearchPlayerPage(props) {
         console.log(fetchNewSearchData);
       };
       fetchNewSearch();
-    } catch (e) {}
+    } catch (e) { }
   }, [keySearch]);
   const [listOfPlayers, setlistOfPlayers] = useState([]);
 

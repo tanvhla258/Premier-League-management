@@ -27,7 +27,7 @@ function LeaguePage(props) {
   useEffect(() => {
     const fetchLeague = async () => {
       try {
-        const data = await fetch("http://13.236.66.180:5000/api/clubs").then(
+        const data = await fetch("http://52.64.166.62:443/api/clubs").then(
           (res) => res.json()
         );
         console.log(data);
@@ -78,7 +78,7 @@ function LeaguePage(props) {
     });
     try {
       axios
-        .post("http://13.236.66.180:5000/api/clubs/", newTeam)
+        .post("http://52.64.166.62:443/api/clubs", newTeam)
         .then((respone) => {
           console.log(respone.data);
         });

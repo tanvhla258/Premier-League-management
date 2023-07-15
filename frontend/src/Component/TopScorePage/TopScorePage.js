@@ -26,7 +26,7 @@ function TopScorePage(props) {
     const fetchTopScore = async () => {
       try {
         const data = await fetch(
-          "http://localhost:5000/api/topScore/topGoal"
+          "http://52.64.166.62:443/api/topScore/topGoal"
         ).then((res) => res.json());
         setListOfTopScore([...data]);
       } catch (e) {

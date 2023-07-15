@@ -35,10 +35,10 @@ function LoginPage(props) {
       Ten_User: userLog.value,
       Password: passLog.value,
     };
-    console.log(user) 
+    console.log(user)
 
     axios
-      .post("http://localhost:5000/api/users/login", user)
+      .post("http://52.64.166.62:443/api/users/login", user)
       .then((respone) => {
         if (
           respone.data === "Wrong password" ||
@@ -46,38 +46,38 @@ function LoginPage(props) {
         ) {
           localStorage.setItem("isLog", 0);
           console.log("NOT OK");
-            Swal.fire("Wrong password or username!!!", "", "Success").then((result) => {
+          Swal.fire("Wrong password or username!!!", "", "Success").then((result) => {
 
-              if (result.isConfirmed) {
-                 window.location.href = "/LoginPage";
-                    //window.alert = "/LoginPage";
-                    
-               }
-             });
+            if (result.isConfirmed) {
+              window.location.href = "/LoginPage";
+              //window.alert = "/LoginPage";
 
-            //return navigate("/LoginPage", { replace: true }), [navigate];
-            return navigate("/LoginPage");
-  
+            }
+          });
+
+          //return navigate("/LoginPage", { replace: true }), [navigate];
+          return navigate("/LoginPage");
+
         } else {
           localStorage.setItem("user", respone.data[0].Ten_User);
           localStorage.setItem("pass", respone.data[0].Password);
           localStorage.setItem("isLog", 1);
           console.log("OK");
-           Swal.fire("Sign in successfully!", "", "Success").then((result) => {
+          Swal.fire("Sign in successfully!", "", "Success").then((result) => {
 
-             if (result.isConfirmed) {
-               window.location.href = "/";
+            if (result.isConfirmed) {
+              window.location.href = "/";
 
-             }
-           });
+            }
+          });
 
           //return navigate("/", { replace: true }), [navigate];
           return navigate("/")
-  
+
         }
       });
 
-     return navigate("/a")
+    return navigate("/a")
 
 
   });

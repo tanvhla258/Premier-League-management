@@ -59,7 +59,7 @@ function LoginForm(props) {
     };
 
     axios
-      .post("http://localhost:5000/api/users/register", user)
+      .post("http://52.64.166.62:443/api/users/register", user)
       .then((respone) => {
         if (respone.data === "Username or Email has exist.Choose another") {
           localStorage.setItem("isLog", 0);
@@ -99,7 +99,7 @@ function LoginForm(props) {
             type="text"
             placeholder="username"
             name="username"
-            //autoComplete="off"
+          //autoComplete="off"
           />
           <input
             required
@@ -107,7 +107,7 @@ function LoginForm(props) {
             type="password"
             placeholder="password"
             name="password"
-            //autoComplete="off"
+          //autoComplete="off"
           />
           <input
             required
@@ -119,7 +119,7 @@ function LoginForm(props) {
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             title="Invalid email"
 
-            //autoComplete="off"
+          //autoComplete="off"
           />
           {/* <div id="message">
             <p id="letter" class="invalid">Email hợp lệ</p>
@@ -133,7 +133,7 @@ function LoginForm(props) {
             name="phone"
             pattern="[10-11]{1}[0-9]{9}"
             title="Phone number with 10-11 and remaing 9 digit with 0-9"
-            //autoComplete="off"
+          //autoComplete="off"
           />
 
           <button className="regBtn">

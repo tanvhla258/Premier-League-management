@@ -42,7 +42,7 @@ function MatchResultPage(props) {
   useEffect(() => {
     const fetchMatchResult = async () => {
       try {
-        const data = await fetch("http://localhost:5000/api/matchResult").then(
+        const data = await fetch("http://52.64.166.62:443/api/matchResult").then(
           (res) => res.json()
         );
         console.log(data);
